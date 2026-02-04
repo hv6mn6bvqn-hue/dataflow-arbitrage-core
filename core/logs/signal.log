@@ -126,3 +126,17 @@ confidence: 0.23
 delta_detected: potential
 note: prolonged stability with confidence drift
 ---
+timestamp: 2026-02-04T21:29:37.578470Z
+source: analyzer
+signal_type: stable
+confidence: 0.05
+delta_detected: true
+note: no meaningful change
+---
+timestamp: 2026-02-04T21:29:37.601868Z
+source: predictor
+signal_type: potential_delta
+confidence: 0.27
+delta_detected: potential
+note: prolonged stability with confidence drift
+---
