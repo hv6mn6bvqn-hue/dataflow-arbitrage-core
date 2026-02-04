@@ -1,20 +1,12 @@
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
+name: DataFlow Arbitrage Signal
 
-  - name: Set up Python
-    uses: actions/setup-python@v5
-    with:
-      python-version: "3.11"
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
 
-  - name: Run signal example
-    run: |
-      python core/signal_example.py >> core/signal_log.md
-
-  - name: Commit signal log
-    run: |
-      git config user.name "dataflow-bot"
-      git config user.email "automation@dataflow.local"
-      git add core/signal_log.md
-      git commit -m "Update signal log" || echo "No changes"
-      git push
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "DataFlow Arbitrage core is alive"
