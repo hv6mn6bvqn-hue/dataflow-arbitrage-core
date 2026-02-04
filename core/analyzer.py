@@ -1,12 +1,18 @@
 from pathlib import Path
 from datetime import datetime
 
-# Попытка подключить внешний источник
+# Подключаем источники (если доступны)
 try:
-    from sources.github_signal import generate_signal
-    GITHUB_SIGNAL_AVAILABLE = True
+    from sources.web_signal import generate_signal as web_signal
+    WEB_AVAILABLE = True
 except Exception:
-    GITHUB_SIGNAL_AVAILABLE = False
+    WEB_AVAILABLE = False
+
+try:
+    from sources.github_signal import generate_signal as github_signal
+    GITHUB_AVAILABLE = True
+except Exception:
+    GITHUB_AVAILABLE = False
 
 
 log_path = Path("core/logs/signal.log")
@@ -23,7 +29,7 @@ def read_last_entry():
     return entries[-2].strip()
 
 
-def write_entry(signal_type, confidence, note, source="analyzer"):
+def write_entry(signal_type, confidence, note, source):
     ts = datetime.utcnow().isoformat() + "Z"
     with log_path.open("a") as f:
         f.write(f"timestamp: {ts}\n")
@@ -36,28 +42,39 @@ def write_entry(signal_type, confidence, note, source="analyzer"):
 
 
 def main():
-    last = read_last_entry()
-
-    # 1️⃣ Если доступен GitHub-источник — используем его
-    if GITHUB_SIGNAL_AVAILABLE:
-        signal = generate_signal()
+    # 1️⃣ Web Signal — приоритет №1
+    if WEB_AVAILABLE:
+        signal = web_signal()
         write_entry(
-            signal_type=signal.get("signal_type", "external"),
+            signal_type=signal.get("signal_type", "web_unknown"),
             confidence=signal.get("confidence", "0.20"),
-            note=signal.get("note", "github signal"),
+            note=signal.get("note", ""),
+            source="web_signal"
+        )
+        return
+
+    # 2️⃣ GitHub Signal — приоритет №2
+    if GITHUB_AVAILABLE:
+        signal = github_signal()
+        write_entry(
+            signal_type=signal.get("signal_type", "github_unknown"),
+            confidence=signal.get("confidence", "0.15"),
+            note=signal.get("note", ""),
             source="github_signal"
         )
         return
 
-    # 2️⃣ Fallback — старая логика (как у тебя было)
+    # 3️⃣ Fallback — ядро
+    last = read_last_entry()
+
     if last is None:
-        write_entry("init", "0.10", "initial signal creation")
+        write_entry("init", "0.10", "initial signal creation", "analyzer")
         return
 
     if "signal_type: none" in last:
-        write_entry("activity_detected", "0.35", "state change detected")
+        write_entry("activity_detected", "0.35", "state change detected", "analyzer")
     else:
-        write_entry("stable", "0.05", "no meaningful change")
+        write_entry("stable", "0.05", "no meaningful change", "analyzer")
 
 
 if __name__ == "__main__":
