@@ -17,5 +17,5 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Python heartbeat
-        run: python --version
+      - name: Run signal script
+        run: python core/signal_example.py
