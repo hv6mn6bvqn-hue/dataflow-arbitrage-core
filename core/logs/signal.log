@@ -7,3 +7,10 @@ confidence: 0.00
 delta_detected: false
 note: heartbeat run
 ---
+timestamp: 2026-02-04T14:34:02.709229Z
+source: analyzer
+signal_type: activity_detected
+confidence: 0.35
+delta_detected: true
+note: state change detected
+---
