@@ -98,3 +98,17 @@ confidence: 0.05
 delta_detected: true
 note: no meaningful change
 ---
+timestamp: 2026-02-04T20:26:47.141563Z
+source: analyzer
+signal_type: stable
+confidence: 0.05
+delta_detected: true
+note: no meaningful change
+---
+timestamp: 2026-02-04T20:26:47.161730Z
+source: predictor
+signal_type: potential_delta
+confidence: 0.2
+delta_detected: potential
+note: prolonged stability with confidence drift
+---
