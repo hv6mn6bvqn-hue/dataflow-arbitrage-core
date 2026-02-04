@@ -12,5 +12,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Heartbeat
-        run: echo "Repository checked out successfully"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Python heartbeat
+        run: python --version
