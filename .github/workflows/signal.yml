@@ -15,22 +15,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Write signal log
-        run: |
-          TS=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          mkdir -p core/logs
-          echo "timestamp: $TS" >> core/logs/signal.log
-          echo "source: github_actions" >> core/logs/signal.log
-          echo "signal_type: none" >> core/logs/signal.log
-          echo "confidence: 0.00" >> core/logs/signal.log
-          echo "delta_detected: false" >> core/logs/signal.log
-          echo "note: heartbeat run" >> core/logs/signal.log
-          echo "---" >> core/logs/signal.log
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-      - name: Commit log update
+      - name: Run analyzer
+        run: |
+          mkdir -p core/logs
+          python core/analyzer.py
+
+      - name: Commit signal update
         run: |
           git config user.name "dataflow-bot"
           git config user.email "bot@dataflow.system"
           git add core/logs/signal.log
-          git commit -m "log heartbeat signal" || echo "no changes to commit"
+          git commit -m "update signal state" || echo "no changes"
           git push
