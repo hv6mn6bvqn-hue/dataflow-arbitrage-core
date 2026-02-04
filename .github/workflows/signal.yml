@@ -1,13 +1,3 @@
-name: DataFlow Arbitrage Signal
-
-permissions:
-  contents: write
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "*/30 * * * *"
-
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -15,21 +5,20 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Run signal and append log
+      - name: Write signal log
         run: |
-          echo "## Run $(date -u)" >> core/signal_log.md
-          python core/signal_example.py >> core/signal_log.md
-          echo "" >> core/signal_log.md
+          echo "timestamp: $(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> core/logs/signal.log
+          echo "source: github_actions" >> core/logs/signal.log
+          echo "signal_type: none" >> core/logs/signal.log
+          echo "confidence: 0.00" >> core/logs/signal.log
+          echo "delta_detected: false" >> core/logs/signal.log
+          echo "note: heartbeat run" >> core/logs/signal.log
+          echo "---" >> core/logs/signal.log
 
-      - name: Commit updated signal log
+      - name: Commit log update
         run: |
           git config user.name "dataflow-bot"
-          git config user.email "automation@dataflow.local"
-          git add core/signal_log.md
-          git commit -m "Update signal log" || echo "No changes"
+          git config user.email "bot@dataflow.system"
+          git add core/logs/signal.log
+          git commit -m "log heartbeat signal"
           git push
