@@ -17,5 +17,16 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Run signal script
-        run: python core/signal_example.py
+      - name: Run signal and append log
+        run: |
+          echo "## Run $(date -u)" >> core/signal_log.md
+          python core/signal_example.py >> core/signal_log.md
+          echo "" >> core/signal_log.md
+
+      - name: Commit updated signal log
+        run: |
+          git config user.name "dataflow-bot"
+          git config user.email "automation@dataflow.local"
+          git add core/signal_log.md
+          git commit -m "Update signal log" || echo "No changes"
+          git push
