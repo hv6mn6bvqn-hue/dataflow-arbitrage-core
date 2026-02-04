@@ -9,4 +9,8 @@ jobs:
   scan:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "DataFlow Arbitrage core is alive"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Heartbeat
+        run: echo "Repository checked out successfully"
