@@ -1,7 +1,9 @@
 from pathlib import Path
 from datetime import datetime
+import json
 
 LOG_PATH = Path("core/logs/signal.log")
+WEIGHTS_PATH = Path("core/state/weights.json")
 WINDOW_SIZE = 8
 
 PRIORITY_MAP = {
@@ -12,6 +14,12 @@ PRIORITY_MAP = {
 }
 
 
+def load_weights():
+    if WEIGHTS_PATH.exists():
+        return json.loads(WEIGHTS_PATH.read_text())
+    return {}
+
+
 def read_entries():
     if not LOG_PATH.exists():
         return []
@@ -20,9 +28,8 @@ def read_entries():
     entries = []
 
     for block in raw:
-        lines = block.strip().splitlines()
         entry = {}
-        for line in lines:
+        for line in block.splitlines():
             if ":" in line:
                 k, v = line.split(":", 1)
                 entry[k.strip()] = v.strip()
@@ -32,23 +39,26 @@ def read_entries():
     return entries[-WINDOW_SIZE:]
 
 
-def select_top_signal(entries):
+def select_top_signal(entries, weights):
     best = None
     best_score = -1
 
     for e in entries:
         stype = e.get("signal_type")
-        score = PRIORITY_MAP.get(stype, -1)
+        base = PRIORITY_MAP.get(stype, 0)
 
         try:
             conf = float(e.get("confidence", 0))
         except ValueError:
             conf = 0
 
-        total_score = score + conf
+        source = e.get("source", "")
+        weight = weights.get(source, 1.0)
 
-        if total_score > best_score:
-            best_score = total_score
+        score = (base + conf) * weight
+
+        if score > best_score:
+            best_score = score
             best = e
 
     return best
@@ -62,16 +72,17 @@ def write_priority_signal(signal):
         f.write(f"signal_type: PRIMARY::{signal.get('signal_type')}\n")
         f.write(f"confidence: {signal.get('confidence')}\n")
         f.write("delta_detected: prioritized\n")
-        f.write("note: highest priority signal selected\n")
+        f.write("note: self-learning weighted selection\n")
         f.write("---\n")
 
 
 def main():
+    weights = load_weights()
     entries = read_entries()
     if not entries:
         return
 
-    top = select_top_signal(entries)
+    top = select_top_signal(entries, weights)
     if top:
         write_priority_signal(top)
 
