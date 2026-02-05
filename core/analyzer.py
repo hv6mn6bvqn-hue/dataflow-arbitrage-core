@@ -38,9 +38,10 @@ def main():
     else:
         write_entry("stable", "0.05", "no meaningful change")
 
-    # запускаем predictor как следующий слой
+    # запуск всех predictors
     try:
         subprocess.run(["python", "core/predictor.py"], check=False)
+        subprocess.run(["python", "core/predictor_velocity.py"], check=False)
     except Exception:
         pass
 
