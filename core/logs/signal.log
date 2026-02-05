@@ -504,3 +504,10 @@ confidence: 0.1
 delta_detected: true
 note: background noise
 ---
+timestamp: 2026-02-05T16:34:03.605847Z
+source: predictor
+signal_type: noise
+confidence: 0.1
+delta_detected: true
+note: background noise
+---
