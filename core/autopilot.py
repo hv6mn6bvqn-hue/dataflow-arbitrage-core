@@ -6,7 +6,7 @@ EXPORT_FILE = Path("core/exports/primary_signal.json")
 STATE_FILE = Path("core/state/autopilot_state.json")
 LOG_PATH = Path("core/logs/signal.log")
 
-CONF_THRESHOLD = 0.6
+CONF_THRESHOLD = 0.3
 
 
 def load_signal():
