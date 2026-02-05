@@ -1,51 +1,38 @@
 from pathlib import Path
 from datetime import datetime
-import subprocess
+import json
+
+from predictor import run as run_predictor
 
 log_path = Path("core/logs/signal.log")
+export_dir = Path("core/exports/strong_signals")
 
+export_dir.mkdir(parents=True, exist_ok=True)
 
-def read_last_entry():
-    if not log_path.exists():
-        return None
-
-    entries = log_path.read_text().strip().split("---")
-    if len(entries) < 2:
-        return None
-
-    return entries[-2].strip()
-
-
-def write_entry(signal_type, confidence, note):
-    ts = datetime.utcnow().isoformat() + "Z"
+def write_log(entry):
     with log_path.open("a") as f:
-        f.write(f"timestamp: {ts}\n")
-        f.write("source: analyzer\n")
-        f.write(f"signal_type: {signal_type}\n")
-        f.write(f"confidence: {confidence}\n")
-        f.write("delta_detected: true\n")
-        f.write(f"note: {note}\n")
+        f.write(f"timestamp: {entry['timestamp']}\n")
+        f.write(f"source: {entry['source']}\n")
+        f.write(f"signal_type: {entry['signal_type']}\n")
+        f.write(f"confidence: {entry['confidence']}\n")
+        f.write(f"delta_detected: true\n")
+        f.write(f"note: {entry['note']}\n")
         f.write("---\n")
 
+def export_strong_signal(entry):
+    fname = f"signal_{entry['timestamp'].replace(':', '-')}.json"
+    path = export_dir / fname
+
+    with path.open("w") as f:
+        json.dump(entry, f, indent=2)
 
 def main():
-    last = read_last_entry()
+    entry = run_predictor()
 
-    if last is None:
-        write_entry("init", "0.10", "initial signal creation")
-    elif "signal_type: none" in last:
-        write_entry("activity_detected", "0.35", "state change detected")
-    else:
-        write_entry("stable", "0.05", "no meaningful change")
+    write_log(entry)
 
-    subprocess.run(["python", "core/predictor.py"], check=False)
-    subprocess.run(["python", "core/predictor_velocity.py"], check=False)
-    subprocess.run(["python", "core/prioritizer.py"], check=False)
-    subprocess.run(["python", "core/exporter.py"], check=False)
-    subprocess.run(["python", "core/autopilot.py"], check=False)
-    subprocess.run(["python", "core/feed_exporter.py"], check=False)
-    subprocess.run(["python", "core/learner.py"], check=False)
-
+    if entry["signal_type"] == "potential_strong" and entry["confidence"] >= 0.8:
+        export_strong_signal(entry)
 
 if __name__ == "__main__":
     main()
