@@ -476,3 +476,10 @@ confidence: 0.1
 delta_detected: true
 note: background noise
 ---
+timestamp: 2026-02-05T12:39:11.491647Z
+source: predictor
+signal_type: weak_activity
+confidence: 0.45
+delta_detected: true
+note: weak correlated movement
+---
