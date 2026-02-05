@@ -1,10 +1,10 @@
 from pathlib import Path
-from datetime import datetime
 import json
 
 from predictor import run as run_predictor
 from confirmation import register_signal, is_confirmed
 from action_hooks import emit_action
+from action_resolver import resolve_actions
 
 log_path = Path("core/logs/signal.log")
 export_dir = Path("core/exports/strong_signals")
@@ -45,6 +45,9 @@ def main():
 
         export_signal(confirmed_signal)
         emit_action(confirmed_signal)
+
+    # resolver always runs (safe)
+    resolve_actions(auto_approve=False)
 
 
 if __name__ == "__main__":
