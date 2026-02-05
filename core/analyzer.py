@@ -38,10 +38,10 @@ def main():
     else:
         write_entry("stable", "0.05", "no meaningful change")
 
-    # запуск всех predictors
     try:
         subprocess.run(["python", "core/predictor.py"], check=False)
         subprocess.run(["python", "core/predictor_velocity.py"], check=False)
+        subprocess.run(["python", "core/prioritizer.py"], check=False)
     except Exception:
         pass
 
