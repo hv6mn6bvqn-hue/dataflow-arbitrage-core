@@ -469,3 +469,10 @@ confidence: 1.00
 delta_detected: action
 note: strong signal accepted and stored
 ---
+timestamp: 2026-02-05T12:31:19.067365Z
+source: predictor
+signal_type: noise
+confidence: 0.1
+delta_detected: true
+note: background noise
+---
