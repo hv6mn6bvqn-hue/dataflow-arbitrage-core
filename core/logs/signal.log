@@ -483,3 +483,10 @@ confidence: 0.45
 delta_detected: true
 note: weak correlated movement
 ---
+timestamp: 2026-02-05T13:58:44.938344Z
+source: predictor
+signal_type: potential_strong
+confidence: 0.82
+delta_detected: true
+note: rare high-confidence pattern detected
+---
