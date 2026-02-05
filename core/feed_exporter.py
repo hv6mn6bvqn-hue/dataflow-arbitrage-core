@@ -1,41 +1,42 @@
 from pathlib import Path
 import json
-import shutil
-from datetime import datetime
 
-SOURCE_DIR = Path("core/exports/strong_signals")
-FEED_DIR = Path("feed/strong_signals")
-INDEX_FILE = Path("feed/index.json")
+STRONG_SIGNALS_DIR = Path("core/exports/strong_signals")
+FEED_DIR = Path("core/exports/feed")
+FEED_STRONG_DIR = FEED_DIR / "strong_signals"
+
+FEED_STRONG_DIR.mkdir(parents=True, exist_ok=True)
 
 
-def export_feed():
-    if not SOURCE_DIR.exists():
-        return
+def build_feed():
+    feed_index = []
 
-    FEED_DIR.mkdir(parents=True, exist_ok=True)
+    for signal_file in sorted(STRONG_SIGNALS_DIR.glob("signal_*.json")):
+        signal = json.loads(signal_file.read_text())
 
-    exported = []
+        public_signal = {
+            "timestamp": signal["timestamp"],
+            "signal_type": signal["signal_type"],
+            "confidence": signal["confidence"],
+            "confirmed": signal.get("confirmed", False)
+        }
 
-    for file in SOURCE_DIR.glob("*.json"):
-        target = FEED_DIR / file.name
-        shutil.copyfile(file, target)
+        target = FEED_STRONG_DIR / signal_file.name
+        target.write_text(json.dumps(public_signal, indent=2))
 
-        data = json.loads(file.read_text())
-        exported.append({
-            "file": file.name,
-            "signal_type": data.get("signal_type"),
-            "confidence": data.get("confidence")
+        feed_index.append({
+            "file": f"strong_signals/{signal_file.name}",
+            "timestamp": signal["timestamp"],
+            "confidence": signal["confidence"]
         })
 
-    index = {
-        "updated_at": datetime.utcnow().isoformat() + "Z",
-        "count": len(exported),
-        "signals": exported[-20:]
-    }
-
-    INDEX_FILE.parent.mkdir(parents=True, exist_ok=True)
-    INDEX_FILE.write_text(json.dumps(index, indent=2))
+    index_path = FEED_DIR / "index.json"
+    index_path.write_text(json.dumps({
+        "version": "1.0",
+        "signal_count": len(feed_index),
+        "signals": feed_index[-20:]
+    }, indent=2))
 
 
 if __name__ == "__main__":
-    export_feed()
+    build_feed()
