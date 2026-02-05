@@ -525,3 +525,10 @@ confidence: 0.82
 delta_detected: true
 note: rare high-confidence pattern detected
 ---
+timestamp: 2026-02-05T17:51:57.931083Z
+source: predictor
+signal_type: noise
+confidence: 0.1
+delta_detected: true
+note: background noise
+---
