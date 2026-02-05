@@ -42,6 +42,7 @@ def main():
         subprocess.run(["python", "core/predictor.py"], check=False)
         subprocess.run(["python", "core/predictor_velocity.py"], check=False)
         subprocess.run(["python", "core/prioritizer.py"], check=False)
+        subprocess.run(["python", "core/exporter.py"], check=False)
     except Exception:
         pass
 
