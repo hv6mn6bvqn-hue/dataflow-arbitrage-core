@@ -3,6 +3,7 @@ from datetime import datetime
 import json
 
 from predictor import run as run_predictor
+from confirmation import register_signal, is_confirmed
 
 log_path = Path("core/logs/signal.log")
 export_dir = Path("core/exports/strong_signals")
@@ -15,24 +16,28 @@ def write_log(entry):
         f.write(f"source: {entry['source']}\n")
         f.write(f"signal_type: {entry['signal_type']}\n")
         f.write(f"confidence: {entry['confidence']}\n")
-        f.write(f"delta_detected: true\n")
+        f.write("delta_detected: true\n")
         f.write(f"note: {entry['note']}\n")
         f.write("---\n")
 
-def export_strong_signal(entry):
+def export_signal(entry):
     fname = f"signal_{entry['timestamp'].replace(':', '-')}.json"
     path = export_dir / fname
-
     with path.open("w") as f:
         json.dump(entry, f, indent=2)
 
 def main():
     entry = run_predictor()
-
     write_log(entry)
 
-    if entry["signal_type"] == "potential_strong" and entry["confidence"] >= 0.8:
-        export_strong_signal(entry)
+    buffer = register_signal(entry)
+
+    if is_confirmed(buffer):
+        export_signal({
+            **entry,
+            "confirmed": True,
+            "confirmation_window": len(buffer)
+        })
 
 if __name__ == "__main__":
     main()
