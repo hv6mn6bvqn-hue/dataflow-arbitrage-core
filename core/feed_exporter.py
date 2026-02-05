@@ -1,11 +1,14 @@
 from pathlib import Path
 import json
+import shutil
 
 STRONG_SIGNALS_DIR = Path("core/exports/strong_signals")
 
 FEED_ROOT = Path("core/exports/feed")
 FEED_V1 = FEED_ROOT / "v1"
 FEED_V1_STRONG = FEED_V1 / "strong_signals"
+
+PUBLIC_ROOT = Path("docs/feed")
 
 FEED_V1_STRONG.mkdir(parents=True, exist_ok=True)
 
@@ -58,13 +61,20 @@ def build_manifest():
         }
     }
 
-    manifest_path = FEED_ROOT / "manifest.json"
-    manifest_path.write_text(json.dumps(manifest, indent=2))
+    (FEED_ROOT / "manifest.json").write_text(json.dumps(manifest, indent=2))
+
+
+def publish_to_docs():
+    if PUBLIC_ROOT.exists():
+        shutil.rmtree(PUBLIC_ROOT)
+
+    shutil.copytree(FEED_ROOT, PUBLIC_ROOT)
 
 
 def build_feed():
     build_feed_v1()
     build_manifest()
+    publish_to_docs()
 
 
 if __name__ == "__main__":
