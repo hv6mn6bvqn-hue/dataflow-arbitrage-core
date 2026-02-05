@@ -287,3 +287,17 @@ confidence: 0.3
 delta_detected: prioritized
 note: highest priority signal selected
 ---
+timestamp: 2026-02-05T07:07:21.823772Z
+source: analyzer
+signal_type: stable
+confidence: 0.05
+delta_detected: true
+note: no meaningful change
+---
+timestamp: 2026-02-05T07:07:21.888818Z
+source: prioritizer
+signal_type: PRIMARY::potential_delta
+confidence: 0.3
+delta_detected: prioritized
+note: highest priority signal selected
+---
