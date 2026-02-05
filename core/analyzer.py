@@ -43,6 +43,7 @@ def main():
     subprocess.run(["python", "core/prioritizer.py"], check=False)
     subprocess.run(["python", "core/exporter.py"], check=False)
     subprocess.run(["python", "core/autopilot.py"], check=False)
+    subprocess.run(["python", "core/feed_exporter.py"], check=False)
     subprocess.run(["python", "core/learner.py"], check=False)
 
 
