@@ -266,3 +266,24 @@ confidence: 0.3
 delta_detected: potential
 note: prolonged stability with confidence drift
 ---
+timestamp: 2026-02-05T07:02:04.980443Z
+source: analyzer
+signal_type: stable
+confidence: 0.05
+delta_detected: true
+note: no meaningful change
+---
+timestamp: 2026-02-05T07:02:05.000597Z
+source: predictor
+signal_type: potential_delta
+confidence: 0.3
+delta_detected: potential
+note: prolonged stability with confidence drift
+---
+timestamp: 2026-02-05T07:02:05.046495Z
+source: prioritizer
+signal_type: PRIMARY::potential_delta
+confidence: 0.3
+delta_detected: prioritized
+note: highest priority signal selected
+---
