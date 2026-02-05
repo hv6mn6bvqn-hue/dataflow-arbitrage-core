@@ -4,11 +4,13 @@ import json
 
 from predictor import run as run_predictor
 from confirmation import register_signal, is_confirmed
+from action_hooks import emit_action
 
 log_path = Path("core/logs/signal.log")
 export_dir = Path("core/exports/strong_signals")
 
 export_dir.mkdir(parents=True, exist_ok=True)
+
 
 def write_log(entry):
     with log_path.open("a") as f:
@@ -20,11 +22,13 @@ def write_log(entry):
         f.write(f"note: {entry['note']}\n")
         f.write("---\n")
 
+
 def export_signal(entry):
     fname = f"signal_{entry['timestamp'].replace(':', '-')}.json"
     path = export_dir / fname
     with path.open("w") as f:
         json.dump(entry, f, indent=2)
+
 
 def main():
     entry = run_predictor()
@@ -33,11 +37,15 @@ def main():
     buffer = register_signal(entry)
 
     if is_confirmed(buffer):
-        export_signal({
+        confirmed_signal = {
             **entry,
             "confirmed": True,
             "confirmation_window": len(buffer)
-        })
+        }
+
+        export_signal(confirmed_signal)
+        emit_action(confirmed_signal)
+
 
 if __name__ == "__main__":
     main()
