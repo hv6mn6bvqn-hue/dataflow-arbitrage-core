@@ -1,1 +1,0 @@
-Strong signals export directory
