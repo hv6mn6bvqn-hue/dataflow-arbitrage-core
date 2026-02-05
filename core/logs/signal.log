@@ -434,3 +434,17 @@ confidence: 0.3
 delta_detected: prioritized
 note: self-learning weighted selection
 ---
+timestamp: 2026-02-05T12:04:43.644385Z
+source: analyzer
+signal_type: stable
+confidence: 0.05
+delta_detected: true
+note: no meaningful change
+---
+timestamp: 2026-02-05T12:04:43.713741Z
+source: prioritizer
+signal_type: PRIMARY::potential_delta
+confidence: 0.3
+delta_detected: prioritized
+note: self-learning weighted selection
+---
