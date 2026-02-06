@@ -2,7 +2,7 @@ from pathlib import Path
 from datetime import datetime
 import json
 
-OUTPUT_PATH = Path("public/actions/index.json")
+OUTPUT_PATH = Path("docs/actions/index.json")
 
 def main():
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
