@@ -1,54 +1,79 @@
 from pathlib import Path
-import json
-
-from predictor import run as run_predictor
-from confirmation import register_signal, is_confirmed
-from action_hooks import emit_action
-from action_resolver import resolve_actions
-from feed_exporter import build_feed
+from datetime import datetime
 
 log_path = Path("core/logs/signal.log")
-export_dir = Path("core/exports/strong_signals")
+EXPORT_DIR = Path("core/exports/strong_signals")
+EXPORT_DIR.mkdir(parents=True, exist_ok=True)
 
-export_dir.mkdir(parents=True, exist_ok=True)
+
+def normalize_confidence(raw):
+    return max(0.0, min(1.0, round(raw, 2)))
 
 
-def write_log(entry):
+def classify_tier(confidence):
+    if confidence >= 0.85:
+        return "critical"
+    if confidence >= 0.65:
+        return "strong"
+    if confidence >= 0.40:
+        return "medium"
+    return "weak"
+
+
+def write_export(signal):
+    ts = signal["timestamp"].replace(":", "").replace("-", "")
+    fname = f"signal_{ts}.json"
+    (EXPORT_DIR / fname).write_text(
+        __import__("json").dumps(signal, indent=2)
+    )
+
+
+def read_last_entry():
+    if not log_path.exists():
+        return None
+
+    entries = log_path.read_text().strip().split("---")
+    if len(entries) < 2:
+        return None
+
+    return entries[-2]
+
+
+def write_log(signal):
     with log_path.open("a") as f:
-        f.write(f"timestamp: {entry['timestamp']}\n")
-        f.write(f"source: {entry['source']}\n")
-        f.write(f"signal_type: {entry['signal_type']}\n")
-        f.write(f"confidence: {entry['confidence']}\n")
-        f.write("delta_detected: true\n")
-        f.write(f"note: {entry['note']}\n")
+        for k, v in signal.items():
+            f.write(f"{k}: {v}\n")
         f.write("---\n")
 
 
-def export_signal(entry):
-    fname = f"signal_{entry['timestamp'].replace(':', '-')}.json"
-    path = export_dir / fname
-    with path.open("w") as f:
-        json.dump(entry, f, indent=2)
-
-
 def main():
-    entry = run_predictor()
-    write_log(entry)
+    last = read_last_entry()
 
-    buffer = register_signal(entry)
+    base_confidence = 0.1
+    note = "baseline"
 
-    if is_confirmed(buffer):
-        confirmed_signal = {
-            **entry,
-            "confirmed": True,
-            "confirmation_window": len(buffer)
-        }
+    if last and "activity_detected" in last:
+        base_confidence = 0.55
+        note = "recurrent activity"
 
-        export_signal(confirmed_signal)
-        emit_action(confirmed_signal)
+    if last and "strong" in last:
+        base_confidence = 0.75
+        note = "reinforced signal"
 
-    resolve_actions(auto_approve=False)
-    build_feed()
+    confidence = normalize_confidence(base_confidence)
+    tier = classify_tier(confidence)
+
+    signal = {
+        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "signal_type": "arbitrage_delta",
+        "confidence": confidence,
+        "tier": tier,
+        "confirmed": tier in ("strong", "critical"),
+        "note": note
+    }
+
+    write_log(signal)
+    write_export(signal)
 
 
 if __name__ == "__main__":
