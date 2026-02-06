@@ -21,10 +21,10 @@ def write_action(signal):
 
     with ACTIONS_LOG.open("a") as f:
         f.write(f"timestamp: {ts}\n")
-        f.write(f"action: SIMULATED_EXECUTION\n")
+        f.write("action: SIMULATED_EXECUTION\n")
         f.write(f"signal_type: {signal['type']}\n")
         f.write(f"confidence: {signal['confidence']}\n")
-        f.write(f"source: action_engine\n")
+        f.write("source: action_engine\n")
         f.write("---\n")
 
 def main():
