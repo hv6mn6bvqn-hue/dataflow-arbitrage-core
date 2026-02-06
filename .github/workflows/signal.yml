@@ -19,22 +19,21 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
       - name: Run analyzer
         run: |
           mkdir -p core/logs
           python core/analyzer.py
 
-      - name: Build feed for Pages
+      - name: Run action engine (simulation)
         run: |
-          mkdir -p docs/feed
-          python core/feed_builder.py docs/feed/index.json
+          python core/action_engine.py
 
-      - name: Commit Pages feed
+      - name: Commit updates
         run: |
           git config user.name "dataflow-bot"
           git config user.email "bot@dataflow.system"
-          git add core/logs/signal.log docs/feed/index.json
-          git commit -m "update pages feed" || echo "no changes"
+          git add core/logs/*.log
+          git commit -m "signal + action update" || echo "no changes"
           git push
