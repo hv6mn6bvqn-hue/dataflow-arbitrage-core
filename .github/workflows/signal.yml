@@ -28,13 +28,12 @@ jobs:
 
       - name: Run action engine
         run: |
-          mkdir -p core/exports/actions
           python core/action_engine.py
 
-      - name: Commit updates
+      - name: Commit public actions feed
         run: |
           git config user.name "dataflow-bot"
           git config user.email "bot@dataflow.system"
-          git add core/logs/signal.log core/exports/actions
-          git commit -m "update signals and actions" || echo "no changes"
+          git add public/actions/index.json
+          git commit -m "update public actions feed" || echo "no changes"
           git push
