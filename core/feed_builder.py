@@ -3,8 +3,9 @@ from pathlib import Path
 from datetime import datetime
 
 EXPORTS_DIR = Path("core/exports/strong_signals")
-FEED_DIR = Path("core/exports/feed/v1")
-FEED_INDEX = FEED_DIR / "index.json"
+
+INTERNAL_FEED_DIR = Path("core/exports/feed/v1")
+PUBLIC_FEED_DIR = Path("feed/v1")
 
 def load_signals():
     signals = []
@@ -15,7 +16,6 @@ def load_signals():
     for file in EXPORTS_DIR.glob("*.json"):
         try:
             data = json.loads(file.read_text())
-
             if data.get("tier") in ("strong", "critical"):
                 signals.append(data)
         except Exception:
@@ -24,8 +24,6 @@ def load_signals():
     return signals
 
 def build_feed(signals):
-    FEED_DIR.mkdir(parents=True, exist_ok=True)
-
     feed = {
         "feed_version": "v1",
         "schema_version": "1.0",
@@ -34,7 +32,13 @@ def build_feed(signals):
         "signals": signals
     }
 
-    FEED_INDEX.write_text(json.dumps(feed, indent=2))
+    INTERNAL_FEED_DIR.mkdir(parents=True, exist_ok=True)
+    PUBLIC_FEED_DIR.mkdir(parents=True, exist_ok=True)
+
+    content = json.dumps(feed, indent=2)
+
+    (INTERNAL_FEED_DIR / "index.json").write_text(content)
+    (PUBLIC_FEED_DIR / "index.json").write_text(content)
 
 def main():
     signals = load_signals()
