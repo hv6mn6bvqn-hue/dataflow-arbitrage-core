@@ -1,0 +1,43 @@
+{
+  "feed_version": "v1",
+  "generated_at": "2026-02-06T12:25:19.601574Z",
+  "signal_count": 6,
+  "signals": [
+    {
+      "timestamp": "2026-02-04T14:34:02.709229Z",
+      "confidence": 0.35,
+      "type": "activity_detected",
+      "source": "dataflow"
+    },
+    {
+      "timestamp": "2026-02-05T12:19:08.518850Z",
+      "confidence": 1.0,
+      "type": "ACTION_TRIGGERED",
+      "source": "dataflow"
+    },
+    {
+      "timestamp": "2026-02-05T12:39:11.491647Z",
+      "confidence": 0.45,
+      "type": "weak_activity",
+      "source": "dataflow"
+    },
+    {
+      "timestamp": "2026-02-05T13:58:44.938344Z",
+      "confidence": 0.82,
+      "type": "potential_strong",
+      "source": "dataflow"
+    },
+    {
+      "timestamp": "2026-02-05T17:15:19.446223Z",
+      "confidence": 0.45,
+      "type": "weak_activity",
+      "source": "dataflow"
+    },
+    {
+      "timestamp": "2026-02-05T17:39:02.950867Z",
+      "confidence": 0.82,
+      "type": "potential_strong",
+      "source": "dataflow"
+    }
+  ]
+}
