@@ -28,16 +28,13 @@ jobs:
 
       - name: Build feed
         run: |
+          mkdir -p feed
           python core/feed_builder.py
 
-      - name: Commit updates
+      - name: Commit feed update
         run: |
           git config user.name "dataflow-bot"
           git config user.email "bot@dataflow.system"
-
-          git add core/logs/signal.log
-          git add core/exports/feed/v1/index.json
-          git add feed/v1/index.json
-
-          git commit -m "update signals and public feed" || echo "no changes"
+          git add core/logs/signal.log feed/index.json
+          git commit -m "update signals feed" || echo "no changes"
           git push
