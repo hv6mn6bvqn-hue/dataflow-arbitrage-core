@@ -1,48 +1,89 @@
 import json
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, timedelta
 
-EXPORTS_DIR = Path("core/exports/strong_signals")
+LOG_PATH = Path("core/logs/signal.log")
+FEED_DIR = Path("feed")
+FEED_DIR.mkdir(parents=True, exist_ok=True)
 
-INTERNAL_FEED_DIR = Path("core/exports/feed/v1")
-PUBLIC_FEED_DIR = Path("feed/v1")
+FEED_FILE = FEED_DIR / "index.json"
 
-def load_signals():
-    signals = []
+TTL_MINUTES = {
+    "low": 15,
+    "medium": 60,
+    "high": 180
+}
 
-    if not EXPORTS_DIR.exists():
-        return signals
+def parse_log_entries():
+    if not LOG_PATH.exists():
+        return []
 
-    for file in EXPORTS_DIR.glob("*.json"):
-        try:
-            data = json.loads(file.read_text())
-            if data.get("tier") in ("strong", "critical"):
-                signals.append(data)
-        except Exception:
+    raw = LOG_PATH.read_text().strip().split("---")
+    entries = []
+
+    for block in raw:
+        lines = [l.strip() for l in block.strip().splitlines() if ":" in l]
+        if not lines:
             continue
 
-    return signals
+        data = {}
+        for line in lines:
+            k, v = line.split(":", 1)
+            data[k.strip()] = v.strip()
 
-def build_feed(signals):
+        entries.append(data)
+
+    return entries
+
+
+def rank_signal(confidence: float) -> str:
+    if confidence >= 0.7:
+        return "high"
+    if confidence >= 0.35:
+        return "medium"
+    return "low"
+
+
+def build_feed():
+    now = datetime.utcnow()
+    signals = []
+
+    entries = parse_log_entries()
+
+    for i, e in enumerate(entries):
+        try:
+            confidence = float(e.get("confidence", 0))
+        except ValueError:
+            continue
+
+        rank = rank_signal(confidence)
+
+        # ❗️Фильтр: low не публикуем
+        if rank == "low":
+            continue
+
+        ttl = TTL_MINUTES[rank]
+        expires_at = now + timedelta(minutes=ttl)
+
+        signal = {
+            "signal_id": f"df-{now.strftime('%Y%m%d')}-{i+1:03d}",
+            "type": e.get("signal_type", "unknown"),
+            "confidence": confidence,
+            "rank": rank,
+            "expires_at": expires_at.isoformat() + "Z"
+        }
+
+        signals.append(signal)
+
     feed = {
         "feed_version": "v1",
-        "schema_version": "1.0",
-        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "generated_at": now.isoformat() + "Z",
         "signal_count": len(signals),
         "signals": signals
     }
 
-    INTERNAL_FEED_DIR.mkdir(parents=True, exist_ok=True)
-    PUBLIC_FEED_DIR.mkdir(parents=True, exist_ok=True)
+    FEED_FILE.write_text(json.dumps(feed, indent=2))
 
-    content = json.dumps(feed, indent=2)
-
-    (INTERNAL_FEED_DIR / "index.json").write_text(content)
-    (PUBLIC_FEED_DIR / "index.json").write_text(content)
-
-def main():
-    signals = load_signals()
-    build_feed(signals)
 
 if __name__ == "__main__":
-    main()
+    build_feed()
