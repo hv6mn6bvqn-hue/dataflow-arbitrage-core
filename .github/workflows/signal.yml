@@ -26,15 +26,15 @@ jobs:
           mkdir -p core/logs
           python core/analyzer.py
 
-      - name: Build feed
+      - name: Build feed for Pages
         run: |
-          mkdir -p feed
-          python core/feed_builder.py
+          mkdir -p docs/feed
+          python core/feed_builder.py docs/feed/index.json
 
-      - name: Commit feed update
+      - name: Commit Pages feed
         run: |
           git config user.name "dataflow-bot"
           git config user.email "bot@dataflow.system"
-          git add core/logs/signal.log feed/index.json
-          git commit -m "update signals feed" || echo "no changes"
+          git add core/logs/signal.log docs/feed/index.json
+          git commit -m "update pages feed" || echo "no changes"
           git push
