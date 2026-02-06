@@ -1,23 +1,66 @@
-def is_actionable_signal(signal: dict) -> bool:
-    """
-    Central decision policy.
-    Determines whether a signal is strong enough to trigger an action.
-    """
+from datetime import datetime, timedelta
+from pathlib import Path
 
-    if not isinstance(signal, dict):
-        return False
+LOG_PATH = Path("core/logs/signal.log")
 
-    signal_type = str(signal.get("type", "")).lower()
-    confidence = float(signal.get("confidence", 0))
+# === POLICY PARAMETERS (меняются стратегически) ===
+MIN_CONFIDENCE = 0.75
+COOLDOWN_MINUTES = 60
+MAX_ACTIONS_PER_DAY = 5
 
-    # стратегический whitelist
-    actionable_types = {
-        "potential_strong",
-        "action_triggered",
-        "strong_signal"
-    }
+# === INTERNAL STATE ===
+_action_timestamps = []
 
-    if signal_type in actionable_types and confidence >= 0.7:
-        return True
 
-    return False
+def _parse_entries():
+    if not LOG_PATH.exists():
+        return []
+
+    raw = LOG_PATH.read_text().split("---")
+    entries = []
+
+    for block in raw:
+        block = block.strip()
+        if not block:
+            continue
+
+        entry = {}
+        for line in block.splitlines():
+            if ":" in line:
+                k, v = line.split(":", 1)
+                entry[k.strip()] = v.strip()
+        entries.append(entry)
+
+    return entries
+
+
+def policy_allows_action():
+    global _action_timestamps
+
+    now = datetime.utcnow()
+
+    entries = _parse_entries()
+    if not entries:
+        return False, "no signals"
+
+    last = entries[-1]
+
+    confidence = float(last.get("confidence", 0))
+    if confidence < MIN_CONFIDENCE:
+        return False, f"confidence {confidence} below threshold"
+
+    # cooldown
+    _action_timestamps = [
+        t for t in _action_timestamps
+        if now - t < timedelta(days=1)
+    ]
+
+    if len(_action_timestamps) >= MAX_ACTIONS_PER_DAY:
+        return False, "daily action limit reached"
+
+    if _action_timestamps:
+        if now - _action_timestamps[-1] < timedelta(minutes=COOLDOWN_MINUTES):
+            return False, "cooldown active"
+
+    _action_timestamps.append(now)
+    return True, "policy approved"
