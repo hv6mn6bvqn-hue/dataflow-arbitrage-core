@@ -11,6 +11,7 @@ permissions:
 jobs:
   scan:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -25,7 +26,7 @@ jobs:
           mkdir -p core/logs
           python core/analyzer.py
 
-      - name: Build feed index
+      - name: Build feed
         run: |
           python core/feed_builder.py
 
@@ -33,6 +34,10 @@ jobs:
         run: |
           git config user.name "dataflow-bot"
           git config user.email "bot@dataflow.system"
+
+          git add core/logs/signal.log
           git add core/exports/feed/v1/index.json
-          git commit -m "update feed index" || echo "no changes"
+          git add feed/v1/index.json
+
+          git commit -m "update signals and public feed" || echo "no changes"
           git push
