@@ -4,11 +4,13 @@ import json
 
 from core.signal_policy import is_actionable_signal
 
-FEED_PATH = Path("feed/index.json")
-ACTIONS_LOG = Path("core/logs/actions.log")
+BASE_DIR = Path(__file__).resolve().parent.parent
+FEED_PATH = BASE_DIR / "feed" / "index.json"
+ACTIONS_LOG = BASE_DIR / "core" / "logs" / "actions.log"
 
 def load_feed():
     if not FEED_PATH.exists():
+        print(f"[WARN] Feed not found at {FEED_PATH}")
         return []
 
     data = json.loads(FEED_PATH.read_text())
@@ -31,6 +33,7 @@ def main():
     signals = load_feed()
 
     if not signals:
+        print("[INFO] No signals to process")
         return
 
     for signal in signals:
