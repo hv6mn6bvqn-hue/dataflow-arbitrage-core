@@ -1,0 +1,49 @@
+{
+  "feed_version": "v1",
+  "generated_at": "2026-02-06T12:17:53.002875Z",
+  "signal_count": 6,
+  "signals": [
+    {
+      "signal_id": "df-20260206-002",
+      "type": "activity_detected",
+      "confidence": 0.35,
+      "rank": "medium",
+      "expires_at": "2026-02-06T13:17:53.002875Z"
+    },
+    {
+      "signal_id": "df-20260206-067",
+      "type": "ACTION_TRIGGERED",
+      "confidence": 1.0,
+      "rank": "high",
+      "expires_at": "2026-02-06T15:17:53.002875Z"
+    },
+    {
+      "signal_id": "df-20260206-069",
+      "type": "weak_activity",
+      "confidence": 0.45,
+      "rank": "medium",
+      "expires_at": "2026-02-06T13:17:53.002875Z"
+    },
+    {
+      "signal_id": "df-20260206-070",
+      "type": "potential_strong",
+      "confidence": 0.82,
+      "rank": "high",
+      "expires_at": "2026-02-06T15:17:53.002875Z"
+    },
+    {
+      "signal_id": "df-20260206-074",
+      "type": "weak_activity",
+      "confidence": 0.45,
+      "rank": "medium",
+      "expires_at": "2026-02-06T13:17:53.002875Z"
+    },
+    {
+      "signal_id": "df-20260206-075",
+      "type": "potential_strong",
+      "confidence": 0.82,
+      "rank": "high",
+      "expires_at": "2026-02-06T15:17:53.002875Z"
+    }
+  ]
+}
