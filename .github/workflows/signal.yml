@@ -27,6 +27,8 @@ jobs:
           python core/analyzer.py
 
       - name: Run action engine
+        env:
+          PYTHONPATH: .
         run: |
           python core/action_engine.py
 
