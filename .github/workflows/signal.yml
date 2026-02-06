@@ -25,10 +25,10 @@ jobs:
           mkdir -p core/logs
           python core/analyzer.py
 
-      - name: Commit signal update
+      - name: Commit public feed update
         run: |
           git config user.name "dataflow-bot"
           git config user.email "bot@dataflow.system"
-          git add core/logs/signal.log
-          git commit -m "update signal state" || echo "no changes"
+          git add core/exports docs/feed
+          git commit -m "auto update public feed" || echo "no changes"
           git push
