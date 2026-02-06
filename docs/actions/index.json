@@ -1,13 +1,7 @@
 {
-  "generated_at": "2026-02-06T22:39:59.997493Z",
-  "action_count": 1,
-  "actions": [
-    {
-      "timestamp": "2026-02-06T22:39:59.997489Z",
-      "action": "BLOCKED",
-      "confidence": 0.0,
-      "source": "policy_engine",
-      "note": "confidence 0.1 below threshold"
-    }
-  ]
+  "generated_at": "2026-02-06T22:45:48.487470Z",
+  "state": "IDLE",
+  "action": "MONITOR",
+  "confidence": 0.3,
+  "note": "confidence 0.1 below threshold"
 }
