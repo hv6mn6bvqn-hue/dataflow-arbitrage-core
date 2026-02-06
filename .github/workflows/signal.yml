@@ -18,17 +18,21 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Run analyzer
         run: |
           mkdir -p core/logs
           python core/analyzer.py
 
-      - name: Commit public feed update
+      - name: Build feed index
+        run: |
+          python core/feed_builder.py
+
+      - name: Commit updates
         run: |
           git config user.name "dataflow-bot"
           git config user.email "bot@dataflow.system"
-          git add core/exports docs/feed
-          git commit -m "auto update public feed" || echo "no changes"
+          git add core/exports/feed/v1/index.json
+          git commit -m "update feed index" || echo "no changes"
           git push
