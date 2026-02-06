@@ -1,19 +1,19 @@
 from pathlib import Path
-from datetime import datetime, timedelta
+from datetime import datetime
 import json
 
 STATE_PATH = Path("core/state.json")
 
 DEFAULT_STATE = {
     "state": "IDLE",
-    "last_transition": None
+    "last_transition": datetime.utcnow().isoformat() + "Z"
 }
 
 
 def load_state():
     if not STATE_PATH.exists():
+        save_state(DEFAULT_STATE)  # создаём файл сразу
         return DEFAULT_STATE.copy()
-
     return json.loads(STATE_PATH.read_text())
 
 
