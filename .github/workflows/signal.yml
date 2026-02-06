@@ -11,6 +11,7 @@ permissions:
 jobs:
   scan:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -18,21 +19,22 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Run analyzer
         run: |
           mkdir -p core/logs
-          python -m core.analyzer
+          python core/analyzer.py
 
-      - name: Run action engine (simulation)
+      - name: Run action engine
         run: |
-          python -m core.action_engine
+          mkdir -p core/exports/actions
+          python core/action_engine.py
 
       - name: Commit updates
         run: |
           git config user.name "dataflow-bot"
           git config user.email "bot@dataflow.system"
-          git add core/logs core/exports
+          git add core/logs/signal.log core/exports/actions
           git commit -m "update signals and actions" || echo "no changes"
           git push
