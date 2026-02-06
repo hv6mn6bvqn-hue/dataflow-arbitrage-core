@@ -2,43 +2,85 @@ from pathlib import Path
 from datetime import datetime
 import json
 
-from core.signal_policy import is_actionable_signal
+LOG_PATH = Path("core/logs/signal.log")
+EXPORT_DIR = Path("core/exports/actions")
+EXPORT_FILE = EXPORT_DIR / "index.json"
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-FEED_PATH = BASE_DIR / "feed" / "index.json"
-ACTIONS_LOG = BASE_DIR / "core" / "logs" / "actions.log"
+ACTION_CONFIDENCE_THRESHOLD = 0.8
 
-def load_feed():
-    if not FEED_PATH.exists():
-        print(f"[WARN] Feed not found at {FEED_PATH}")
+
+def parse_log_entries():
+    if not LOG_PATH.exists():
         return []
 
-    data = json.loads(FEED_PATH.read_text())
-    return data.get("signals", [])
+    raw = LOG_PATH.read_text().strip().split("---")
+    entries = []
 
-def write_action(signal):
-    ts = datetime.utcnow().isoformat() + "Z"
+    for block in raw:
+        block = block.strip()
+        if not block:
+            continue
 
-    ACTIONS_LOG.parent.mkdir(parents=True, exist_ok=True)
+        entry = {}
+        for line in block.splitlines():
+            if ":" not in line:
+                continue
+            k, v = line.split(":", 1)
+            entry[k.strip()] = v.strip()
 
-    with ACTIONS_LOG.open("a") as f:
-        f.write(f"timestamp: {ts}\n")
-        f.write("action: SIMULATED_EXECUTION\n")
-        f.write(f"signal_type: {signal['type']}\n")
-        f.write(f"confidence: {signal['confidence']}\n")
-        f.write("source: action_engine\n")
-        f.write("---\n")
+        entries.append(entry)
+
+    return entries
+
+
+def is_actionable(entry):
+    try:
+        confidence = float(entry.get("confidence", 0))
+    except ValueError:
+        return False
+
+    signal_type = entry.get("signal_type", "").lower()
+
+    return confidence >= ACTION_CONFIDENCE_THRESHOLD and signal_type in {
+        "potential_strong",
+        "action_triggered"
+    }
+
+
+def build_action_feed(entries):
+    actions = []
+
+    for e in entries:
+        if not is_actionable(e):
+            continue
+
+        actions.append({
+            "timestamp": e.get("timestamp"),
+            "type": e.get("signal_type"),
+            "confidence": float(e.get("confidence", 0)),
+            "source": "dataflow"
+        })
+
+    return {
+        "feed_version": "v1",
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "action_count": len(actions),
+        "actions": actions
+    }
+
 
 def main():
-    signals = load_feed()
+    EXPORT_DIR.mkdir(parents=True, exist_ok=True)
 
-    if not signals:
-        print("[INFO] No signals to process")
-        return
+    entries = parse_log_entries()
+    feed = build_action_feed(entries)
 
-    for signal in signals:
-        if is_actionable_signal(signal):
-            write_action(signal)
+    EXPORT_FILE.write_text(
+        json.dumps(feed, indent=2)
+    )
+
+    print(f"[action_engine] exported {feed['action_count']} actions")
+
 
 if __name__ == "__main__":
     main()
