@@ -1,5 +1,6 @@
 import os
-import requests
+import json
+import urllib.request
 
 
 def send_telegram(message: str):
@@ -11,16 +12,25 @@ def send_telegram(message: str):
         return False
 
     url = f"https://api.telegram.org/bot{token}/sendMessage"
-    payload = {
+    data = json.dumps({
         "chat_id": chat_id,
         "text": message,
         "parse_mode": "Markdown"
-    }
+    }).encode("utf-8")
 
-    r = requests.post(url, json=payload, timeout=10)
+    req = urllib.request.Request(
+        url,
+        data=data,
+        headers={"Content-Type": "application/json"}
+    )
 
-    if r.status_code != 200:
-        print("[TELEGRAM] failed", r.text)
+    try:
+        with urllib.request.urlopen(req, timeout=10) as response:
+            if response.status != 200:
+                print("[TELEGRAM] failed", response.read().decode())
+                return False
+    except Exception as e:
+        print("[TELEGRAM] error", str(e))
         return False
 
     print("[TELEGRAM] sent")
