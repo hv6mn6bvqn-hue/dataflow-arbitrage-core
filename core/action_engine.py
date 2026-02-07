@@ -8,6 +8,7 @@ from core.signal_policy import policy_allows_action
 from core.telegram_adapter import send_telegram
 from core.audit_logger import log_action
 
+ENGINE_VERSION = "v1.0.0"
 OUTPUT_PATH = Path("docs/actions/index.json")
 
 
@@ -33,11 +34,11 @@ def main():
 
         send_telegram(
             f"🚀 DataFlow Signal\n"
+            f"Version: {ENGINE_VERSION}\n"
             f"Action: {action}\n"
             f"Confidence: {confidence}\n"
             f"Note: {note}"
         )
-
     else:
         action = "MONITOR"
         confidence = decision["confidence"]
@@ -45,6 +46,7 @@ def main():
         execution = None
 
     payload = {
+        "engine_version": ENGINE_VERSION,
         "generated_at": datetime.utcnow().isoformat() + "Z",
         "state": current_state,
         "action": action,
@@ -53,9 +55,7 @@ def main():
         "execution": execution
     }
 
-    # audit log (append-only)
     log_action(payload)
-
     OUTPUT_PATH.write_text(json.dumps(payload, indent=2))
 
 
