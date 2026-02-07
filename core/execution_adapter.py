@@ -1,19 +1,22 @@
 from datetime import datetime
 
+PROD_MODE = True  # ← GO LIVE
 
-def execute(action, confidence, note, dry_run=True):
-    payload = {
-        "timestamp": datetime.utcnow().isoformat() + "Z",
+
+def execute(action: str, confidence: float, note: str, dry_run: bool = False):
+    timestamp = datetime.utcnow().isoformat() + "Z"
+
+    if PROD_MODE and not dry_run:
+        # здесь в будущем будет реальное исполнение (trade / api / webhook)
+        result = "EXECUTED"
+    else:
+        result = "SIMULATED"
+
+    return {
+        "timestamp": timestamp,
         "action": action,
         "confidence": confidence,
         "note": note,
-        "dry_run": dry_run
+        "mode": "PROD" if PROD_MODE else "DRY",
+        "result": result
     }
-
-    if dry_run:
-        print("[DRY-RUN] Execution skipped:", payload)
-        return payload
-
-    # future: real execution hook
-    print("[EXECUTE]", payload)
-    return payload
