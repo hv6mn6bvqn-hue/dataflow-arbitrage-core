@@ -1,7 +1,14 @@
+from datetime import datetime, timedelta
 from core.analyzer import read_last_entry
+from core.state_manager import load_state, save_state
 
 
 CONFIDENCE_THRESHOLD = 0.7
+COOLDOWN_MINUTES = 60  # бизнес-решение: не чаще 1 раза в час
+
+
+def _utcnow():
+    return datetime.utcnow()
 
 
 def policy_allows_action():
@@ -15,7 +22,6 @@ def policy_allows_action():
     """
 
     last = read_last_entry()
-
     if not last:
         return {
             "allow": False,
@@ -23,25 +29,40 @@ def policy_allows_action():
             "reason": "no signals available"
         }
 
-    if "confidence:" in last:
-        try:
-            confidence = float(
-                last.split("confidence:")[1].splitlines()[0].strip()
-            )
-        except Exception:
-            confidence = 0.0
-    else:
+    # parse confidence
+    try:
+        confidence = float(
+            last.split("confidence:")[1].splitlines()[0].strip()
+        )
+    except Exception:
         confidence = 0.0
 
-    if confidence >= CONFIDENCE_THRESHOLD:
+    if confidence < CONFIDENCE_THRESHOLD:
         return {
-            "allow": True,
+            "allow": False,
             "confidence": confidence,
-            "reason": f"confidence {confidence} >= threshold"
+            "reason": f"confidence {confidence} below threshold"
         }
 
+    # cooldown check
+    state = load_state()
+    last_exec_ts = state.get("last_exec_at")
+
+    if last_exec_ts:
+        last_exec_dt = datetime.fromisoformat(last_exec_ts.replace("Z", ""))
+        if _utcnow() - last_exec_dt < timedelta(minutes=COOLDOWN_MINUTES):
+            return {
+                "allow": False,
+                "confidence": confidence,
+                "reason": "cooldown active"
+            }
+
+    # allow + persist exec timestamp
+    state["last_exec_at"] = _utcnow().isoformat() + "Z"
+    save_state(state)
+
     return {
-        "allow": False,
+        "allow": True,
         "confidence": confidence,
-        "reason": f"confidence {confidence} below threshold"
+        "reason": "threshold passed and cooldown cleared"
     }
