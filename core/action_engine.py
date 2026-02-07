@@ -6,6 +6,7 @@ from core.state_manager import load_state
 from core.execution_adapter import execute
 from core.signal_policy import policy_allows_action
 from core.telegram_adapter import send_telegram
+from core.audit_logger import log_action
 
 OUTPUT_PATH = Path("docs/actions/index.json")
 
@@ -51,6 +52,9 @@ def main():
         "note": note,
         "execution": execution
     }
+
+    # audit log (append-only)
+    log_action(payload)
 
     OUTPUT_PATH.write_text(json.dumps(payload, indent=2))
 
