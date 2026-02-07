@@ -29,15 +29,15 @@ def main():
             action=action,
             confidence=confidence,
             note=note,
-            dry_run=True
+            dry_run=False  # ← PROD
         )
 
         send_telegram(
-            f"🚀 DataFlow Signal\n"
+            f"🚀 DataFlow EXECUTED\n"
             f"Version: {ENGINE_VERSION}\n"
             f"Action: {action}\n"
             f"Confidence: {confidence}\n"
-            f"Note: {note}"
+            f"Result: {execution['result']}"
         )
     else:
         action = "MONITOR"
