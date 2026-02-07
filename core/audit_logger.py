@@ -3,6 +3,7 @@ from datetime import datetime
 import json
 
 AUDIT_PATH = Path("docs/audit/actions_history.json")
+ENGINE_VERSION = "v1.0.0"
 
 
 def log_action(payload: dict):
@@ -15,6 +16,7 @@ def log_action(payload: dict):
 
     entry = {
         "logged_at": datetime.utcnow().isoformat() + "Z",
+        "engine_version": ENGINE_VERSION,
         **payload
     }
 
