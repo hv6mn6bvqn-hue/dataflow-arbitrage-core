@@ -5,6 +5,7 @@ import json
 from core.signal_policy import policy_allows_action
 from core.state_manager import load_state, transition
 from core.execution_adapter import execute
+from core.telegram_adapter import send_telegram
 
 OUTPUT_PATH = Path("docs/actions/index.json")
 
@@ -46,6 +47,13 @@ def main():
             confidence=confidence,
             note=reason,
             dry_run=True
+        )
+
+        send_telegram(
+            f"🚀 *DataFlow Signal*\n"
+            f"State: `{next_state}`\n"
+            f"Confidence: `{confidence}`\n"
+            f"Note: {reason}"
         )
 
     payload = {
