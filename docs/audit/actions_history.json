@@ -67,5 +67,15 @@
     "confidence": 0.1,
     "note": "confidence 0.1 below threshold after decay",
     "execution": null
+  },
+  {
+    "logged_at": "2026-02-07T20:48:58.816992Z",
+    "engine_version": "v1.0.0",
+    "generated_at": "2026-02-07T20:48:58.816893Z",
+    "state": "ACTIVE",
+    "action": "MONITOR",
+    "confidence": 0.1,
+    "note": "confidence 0.1 below threshold after decay",
+    "execution": null
   }
 ]
