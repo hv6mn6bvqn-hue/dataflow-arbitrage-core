@@ -12,6 +12,10 @@ jobs:
   scan:
     runs-on: ubuntu-latest
 
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -19,23 +23,16 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-
-      - name: Run analyzer
-        run: |
-          mkdir -p core/logs
-          python core/analyzer.py
+          python-version: '3.11'
 
       - name: Run action engine
-        env:
-          PYTHONPATH: .
         run: |
           python core/action_engine.py
 
-      - name: Commit system state and actions
+      - name: Commit action state
         run: |
           git config user.name "dataflow-bot"
           git config user.email "bot@dataflow.system"
-          git add core/state.json docs/actions/index.json
-          git commit -m "update system state and actions" || echo "no changes"
+          git add docs/actions/index.json core/state.json || true
+          git commit -m "update action state" || echo "no changes"
           git push
