@@ -1,0 +1,11 @@
+[
+  {
+    "logged_at": "2026-02-07T18:24:32.178920Z",
+    "generated_at": "2026-02-07T18:24:32.178855Z",
+    "state": "ACTIVE",
+    "action": "MONITOR",
+    "confidence": 0.1,
+    "note": "confidence 0.1 below threshold after decay",
+    "execution": null
+  }
+]
