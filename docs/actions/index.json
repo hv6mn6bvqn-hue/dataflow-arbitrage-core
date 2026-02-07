@@ -1,14 +1,8 @@
 {
-  "generated_at": "2026-02-07T13:28:29.274936Z",
+  "generated_at": "2026-02-07T13:35:17.175336Z",
   "state": "ACTIVE",
-  "action": "EXECUTE",
-  "confidence": 0.99,
-  "note": "forced test signal",
-  "execution": {
-    "timestamp": "2026-02-07T13:28:28.661415Z",
-    "action": "EXECUTE",
-    "confidence": 0.99,
-    "note": "forced test signal",
-    "dry_run": true
-  }
+  "action": "MONITOR",
+  "confidence": 0.1,
+  "note": "confidence 0.1 below threshold",
+  "execution": null
 }
