@@ -4,6 +4,7 @@ import json
 
 from core.signal_policy import policy_allows_action
 from core.state_manager import load_state, transition
+from core.execution_adapter import execute
 
 OUTPUT_PATH = Path("docs/actions/index.json")
 
@@ -11,19 +12,14 @@ OUTPUT_PATH = Path("docs/actions/index.json")
 def decide_next_state(confidence, current_state):
     if current_state == "IDLE" and confidence >= 0.4:
         return "WATCH"
-
     if current_state == "WATCH" and confidence >= 0.6:
         return "READY"
-
     if current_state == "READY" and confidence >= 0.75:
         return "ACTIVE"
-
     if current_state == "ACTIVE":
         return "COOLDOWN"
-
     if current_state == "COOLDOWN":
         return "IDLE"
-
     return current_state
 
 
@@ -41,16 +37,24 @@ def main():
         transition(next_state)
 
     action_type = "MONITOR"
+    execution_result = None
 
     if next_state == "ACTIVE" and allowed:
         action_type = "EXECUTE"
+        execution_result = execute(
+            action="EXECUTE",
+            confidence=confidence,
+            note=reason,
+            dry_run=True
+        )
 
     payload = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
         "state": next_state,
         "action": action_type,
         "confidence": confidence,
-        "note": reason
+        "note": reason,
+        "execution": execution_result
     }
 
     OUTPUT_PATH.write_text(json.dumps(payload, indent=2))
