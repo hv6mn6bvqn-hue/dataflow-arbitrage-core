@@ -1,4 +1,4 @@
-name: DataFlow Arbitrage Signal
+name: DataFlow Automation Pipeline
 
 on:
   schedule:
@@ -12,11 +12,6 @@ jobs:
   scan:
     runs-on: ubuntu-latest
 
-    env:
-      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-      PYTHONPATH: .
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,16 +19,34 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run analyzer
+        run: |
+          mkdir -p core/logs
+          python core/analyzer.py
 
       - name: Run action engine
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           python -m core.action_engine
 
-      - name: Commit action state
+      - name: Commit generated artifacts
         run: |
           git config user.name "dataflow-bot"
           git config user.email "bot@dataflow.system"
-          git add docs/actions/index.json core/state.json || true
-          git commit -m "update action state" || echo "no changes"
+
+          git add core/logs/signal.log || true
+          git add docs/actions/index.json || true
+          git add docs/audit/actions_history.json || true
+          git add core/state.json || true
+
+          git commit -m "update signals, actions and audit history" || echo "no changes"
           git push
