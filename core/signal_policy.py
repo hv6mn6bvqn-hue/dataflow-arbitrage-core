@@ -1,66 +1,47 @@
-from datetime import datetime, timedelta
-from pathlib import Path
-
-LOG_PATH = Path("core/logs/signal.log")
-
-# === POLICY PARAMETERS (меняются стратегически) ===
-MIN_CONFIDENCE = 0.75
-COOLDOWN_MINUTES = 60
-MAX_ACTIONS_PER_DAY = 5
-
-# === INTERNAL STATE ===
-_action_timestamps = []
+from core.analyzer import read_last_entry
 
 
-def _parse_entries():
-    if not LOG_PATH.exists():
-        return []
-
-    raw = LOG_PATH.read_text().split("---")
-    entries = []
-
-    for block in raw:
-        block = block.strip()
-        if not block:
-            continue
-
-        entry = {}
-        for line in block.splitlines():
-            if ":" in line:
-                k, v = line.split(":", 1)
-                entry[k.strip()] = v.strip()
-        entries.append(entry)
-
-    return entries
+CONFIDENCE_THRESHOLD = 0.7
 
 
 def policy_allows_action():
-    global _action_timestamps
+    """
+    Returns:
+    {
+        "allow": bool,
+        "confidence": float,
+        "reason": str
+    }
+    """
 
-    now = datetime.utcnow()
+    last = read_last_entry()
 
-    entries = _parse_entries()
-    if not entries:
-        return False, "no signals"
+    if not last:
+        return {
+            "allow": False,
+            "confidence": 0.0,
+            "reason": "no signals available"
+        }
 
-    last = entries[-1]
+    if "confidence:" in last:
+        try:
+            confidence = float(
+                last.split("confidence:")[1].splitlines()[0].strip()
+            )
+        except Exception:
+            confidence = 0.0
+    else:
+        confidence = 0.0
 
-    confidence = float(last.get("confidence", 0))
-    if confidence < MIN_CONFIDENCE:
-        return False, f"confidence {confidence} below threshold"
+    if confidence >= CONFIDENCE_THRESHOLD:
+        return {
+            "allow": True,
+            "confidence": confidence,
+            "reason": f"confidence {confidence} >= threshold"
+        }
 
-    # cooldown
-    _action_timestamps = [
-        t for t in _action_timestamps
-        if now - t < timedelta(days=1)
-    ]
-
-    if len(_action_timestamps) >= MAX_ACTIONS_PER_DAY:
-        return False, "daily action limit reached"
-
-    if _action_timestamps:
-        if now - _action_timestamps[-1] < timedelta(minutes=COOLDOWN_MINUTES):
-            return False, "cooldown active"
-
-    _action_timestamps.append(now)
-    return True, "policy approved"
+    return {
+        "allow": False,
+        "confidence": confidence,
+        "reason": f"confidence {confidence} below threshold"
+    }
