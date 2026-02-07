@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-02-07T15:15:17.762573Z",
+  "generated_at": "2026-02-07T15:45:31.803935Z",
   "state": "ACTIVE",
   "action": "MONITOR",
-  "confidence": 0.0003,
-  "note": "confidence 0.0003 below threshold after decay",
+  "confidence": 0.0002,
+  "note": "confidence 0.0002 below threshold after decay",
   "execution": null
 }
