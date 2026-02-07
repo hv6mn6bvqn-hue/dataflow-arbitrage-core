@@ -2,8 +2,9 @@ from datetime import datetime
 from pathlib import Path
 import json
 
-from core.state_manager import transition, load_state
+from core.state_manager import load_state
 from core.execution_adapter import execute
+from core.signal_policy import policy_allows_action
 from core.telegram_adapter import send_telegram
 
 OUTPUT_PATH = Path("docs/actions/index.json")
@@ -12,33 +13,43 @@ OUTPUT_PATH = Path("docs/actions/index.json")
 def main():
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-    # FORCE ACTIVE — TEST ONLY
-    transition("ACTIVE")
+    state = load_state()
+    current_state = state.get("state", "IDLE")
 
-    confidence = 0.99
-    reason = "forced test signal"
+    decision = policy_allows_action()
 
-    execution_result = execute(
-        action="EXECUTE",
-        confidence=confidence,
-        note=reason,
-        dry_run=True
-    )
+    if decision["allow"]:
+        action = "EXECUTE"
+        confidence = decision["confidence"]
+        note = decision["reason"]
 
-    send_telegram(
-        f"🚀 *DataFlow Test Signal*\n"
-        f"State: `ACTIVE`\n"
-        f"Confidence: `{confidence}`\n"
-        f"Note: {reason}"
-    )
+        execution = execute(
+            action=action,
+            confidence=confidence,
+            note=note,
+            dry_run=True
+        )
+
+        send_telegram(
+            f"🚀 DataFlow Signal\n"
+            f"Action: {action}\n"
+            f"Confidence: {confidence}\n"
+            f"Note: {note}"
+        )
+
+    else:
+        action = "MONITOR"
+        confidence = decision["confidence"]
+        note = decision["reason"]
+        execution = None
 
     payload = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
-        "state": "ACTIVE",
-        "action": "EXECUTE",
+        "state": current_state,
+        "action": action,
         "confidence": confidence,
-        "note": reason,
-        "execution": execution_result
+        "note": note,
+        "execution": execution
     }
 
     OUTPUT_PATH.write_text(json.dumps(payload, indent=2))
