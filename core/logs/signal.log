@@ -889,3 +889,10 @@ tier: weak
 confirmed: False
 note: baseline
 ---
+timestamp: 2026-02-08T04:14:52.805650Z
+signal_type: arbitrage_delta
+confidence: 0.1
+tier: weak
+confirmed: False
+note: baseline
+---
