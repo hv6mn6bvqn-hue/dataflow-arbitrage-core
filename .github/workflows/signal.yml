@@ -1,15 +1,13 @@
-name: DataFlow Signal Pipeline
+name: DataFlow Signal Pipeline — Diagnostic
 
 on:
-  schedule:
-    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  signal:
+  diagnostic:
     runs-on: ubuntu-latest
 
     steps:
@@ -26,23 +24,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Run analyzer
-        run: python core/analyzer.py
+      - name: 🔍 Diagnostic — check secrets availability
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          echo "=== TELEGRAM SECRETS DIAGNOSTIC ==="
+          echo "TOKEN LENGTH: ${#TELEGRAM_TOKEN}"
+          if [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "CHAT ID: NOT SET"
+          else
+            echo "CHAT ID: SET"
+          fi
+          echo "=================================="
 
       - name: Run action engine
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python -m core.action_engine
-
-      - name: Commit results
-        run: |
-          git config user.name "dataflow-bot"
-          git config user.email "bot@dataflow.system"
-
-          git add docs/actions/index.json || true
-          git add docs/audit/actions_history.json || true
-          git add core/state.json || true
-
-          git commit -m "update actions and audit" || echo "no changes"
-          git push
