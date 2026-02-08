@@ -1,4 +1,4 @@
-name: DataFlow Automation Pipeline
+name: DataFlow Signal Pipeline
 
 on:
   schedule:
@@ -9,11 +9,11 @@ permissions:
   contents: write
 
 jobs:
-  scan:
+  signal:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -27,26 +27,22 @@ jobs:
           pip install requests
 
       - name: Run analyzer
-        run: |
-          mkdir -p core/logs
-          python core/analyzer.py
+        run: python core/analyzer.py
 
       - name: Run action engine
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: |
-          python -m core.action_engine
+        run: python -m core.action_engine
 
-      - name: Commit generated artifacts
+      - name: Commit results
         run: |
           git config user.name "dataflow-bot"
           git config user.email "bot@dataflow.system"
 
-          git add core/logs/signal.log || true
           git add docs/actions/index.json || true
           git add docs/audit/actions_history.json || true
           git add core/state.json || true
 
-          git commit -m "update signals, actions and audit history" || echo "no changes"
+          git commit -m "update actions and audit" || echo "no changes"
           git push
