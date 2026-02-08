@@ -2,24 +2,35 @@ from pathlib import Path
 from datetime import datetime
 import json
 
-AUDIT_PATH = Path("docs/audit/actions_history.json")
-ENGINE_VERSION = "v1.0.0"
+AUDIT_DIR = Path("audit")
+AUDIT_DIR.mkdir(exist_ok=True)
+
+AUDIT_PATH = AUDIT_DIR / "index.json"
 
 
-def log_action(payload: dict):
-    AUDIT_PATH.parent.mkdir(parents=True, exist_ok=True)
+def _load_audit():
+    if not AUDIT_PATH.exists():
+        return []
+    return json.loads(AUDIT_PATH.read_text())
 
-    if AUDIT_PATH.exists():
-        history = json.loads(AUDIT_PATH.read_text())
-    else:
-        history = []
 
-    entry = {
+def _save_audit(records):
+    AUDIT_PATH.write_text(json.dumps(records, indent=2))
+
+
+def log_audit(entry: dict):
+    """
+    Append a single audit entry.
+    Contract-stable audit logger.
+    """
+
+    record = {
         "logged_at": datetime.utcnow().isoformat() + "Z",
-        "engine_version": ENGINE_VERSION,
-        **payload
+        **entry
     }
 
-    history.append(entry)
+    records = _load_audit()
+    records.append(record)
+    _save_audit(records)
 
-    AUDIT_PATH.write_text(json.dumps(history, indent=2))
+    return record
