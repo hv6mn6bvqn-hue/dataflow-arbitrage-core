@@ -1,9 +1,16 @@
 {
   "engine_version": "v1.0.0",
-  "generated_at": "2026-02-08T06:37:16.885563Z",
+  "generated_at": "2026-02-08T07:25:21.726299Z",
   "state": "ACTIVE",
-  "action": "MONITOR",
-  "confidence": 0.1,
-  "note": "confidence 0.1 below threshold after decay",
-  "execution": null
+  "action": "EXECUTE",
+  "confidence": 0.99,
+  "note": "controlled execute test M11.1",
+  "execution": {
+    "timestamp": "2026-02-08T07:25:21.726271Z",
+    "action": "EXECUTE",
+    "confidence": 0.99,
+    "note": "controlled execute test M11.1",
+    "mode": "PROD",
+    "result": "EXECUTED"
+  }
 }
