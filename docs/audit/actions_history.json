@@ -279,5 +279,22 @@
       "mode": "PROD",
       "result": "EXECUTED"
     }
+  },
+  {
+    "logged_at": "2026-02-08T09:43:43.187069Z",
+    "engine_version": "v1.0.0",
+    "generated_at": "2026-02-08T09:43:43.186963Z",
+    "state": "ACTIVE",
+    "action": "EXECUTE",
+    "confidence": 0.99,
+    "note": "controlled execute test M11.1",
+    "execution": {
+      "timestamp": "2026-02-08T09:43:43.186937Z",
+      "action": "EXECUTE",
+      "confidence": 0.99,
+      "note": "controlled execute test M11.1",
+      "mode": "PROD",
+      "result": "EXECUTED"
+    }
   }
 ]
