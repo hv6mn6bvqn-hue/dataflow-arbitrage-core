@@ -3,8 +3,8 @@ import requests
 
 
 def send_telegram(message: str):
-    token = os.getenv("TELEGRAM_TOKEN")
-    chat_id = os.getenv("TELEGRAM_CHAT_ID")
+    token = os.getenv("TELEGRAM_TOKEN", "").strip()
+    chat_id = os.getenv("TELEGRAM_CHAT_ID", "").strip()
 
     if not token or not chat_id:
         print("[TELEGRAM] skipped — credentials not set")
@@ -14,8 +14,7 @@ def send_telegram(message: str):
 
     payload = {
         "chat_id": chat_id,
-        "text": message,
-        "parse_mode": "Markdown"
+        "text": message
     }
 
     try:
