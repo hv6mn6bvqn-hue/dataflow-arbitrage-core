@@ -1,69 +1,67 @@
-import json
-import uuid
 from datetime import datetime
-from pathlib import Path
+import json
 
 from core.signal_policy import evaluate_signal
 from core.state_manager import transition, load_state
-from core.telegram_adapter import send_telegram
 from core.audit_logger import log_audit
+from core.telegram_adapter import send_telegram
+from core.feed_loader import load_latest_signal
 
-ENGINE_VERSION = "v1.1.0"
-
-ACTIONS_PATH = Path("docs/actions/index.json")
+ENGINE_VERSION = "v1.0.0"
 
 
 def main():
-    run_id = str(uuid.uuid4())
-    generated_at = datetime.utcnow().isoformat() + "Z"
+    signal = load_latest_signal()
+    state = load_state()
 
-    # test signal (как сейчас)
-    signal = {
-        "confidence": 0.1,
-        "note": "confidence 0.1 below threshold after decay"
-    }
+    if not signal:
+        print("[ENGINE] No signal found")
+        return
 
     decision = evaluate_signal(signal)
 
-    state = load_state()
-    action = decision["action"]
+    action = decision["decision"]  # ← КЛЮЧЕВОЕ ИЗМЕНЕНИЕ
+    confidence = decision["confidence"]
 
     execution = None
-    if decision["allow"]:
+
+    if action == "EXECUTE":
         transition("ACTIVE")
         execution = {
-            "timestamp": generated_at,
-            "action": action,
-            "confidence": decision["confidence"],
-            "note": decision["note"],
-            "dry_run": True
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "action": "EXECUTE",
+            "confidence": confidence,
+            "note": decision["explanation"],
+            "dry_run": True,
         }
 
         send_telegram(
             title="🚀 DataFlow EXECUTED",
-            payload={
-                "run_id": run_id,
-                "version": ENGINE_VERSION,
-                "action": action,
-                "confidence": decision["confidence"],
-                "note": decision["note"]
-            }
+            message=(
+                f"Version: {ENGINE_VERSION}\n"
+                f"Action: EXECUTE\n"
+                f"Confidence: {confidence}\n"
+                f"Reason: {decision['explanation']}"
+            )
         )
+
+    elif action == "MONITOR":
+        transition("ACTIVE")
+
+    else:  # IGNORE
+        transition("IDLE")
 
     output = {
         "engine_version": ENGINE_VERSION,
-        "run_id": run_id,
-        "generated_at": generated_at,
-        "state": state["state"],
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "state": load_state()["state"],
         "action": action,
-        "confidence": decision["confidence"],
-        "note": decision["note"],
-        "execution": execution
+        "confidence": confidence,
+        "note": decision["explanation"],
+        "execution": execution,
     }
 
-    ACTIONS_PATH.parent.mkdir(parents=True, exist_ok=True)
-    ACTIONS_PATH.write_text(json.dumps(output, indent=2))
-
+    print(json.dumps(output, indent=2))
     log_audit(output)
 
 
