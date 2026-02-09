@@ -2,48 +2,40 @@ from datetime import datetime
 from pathlib import Path
 import json
 
+from core.feed_loader import load_feed
 from core.signal_policy import evaluate_signal
 
-FEED_PATH = Path("docs/feed/index.json")
+ENGINE_VERSION = "v1.0.0"
 OUTPUT_PATH = Path("docs/backtest/index.json")
 
 
-def load_signals():
-    if not FEED_PATH.exists():
-        raise FileNotFoundError("Feed not found for backtest")
-
-    data = json.loads(FEED_PATH.read_text())
-    return data.get("signals", [])
-
-
 def run_backtest():
-    signals = load_signals()
+    feed = load_feed()
     results = []
 
-    for signal in signals:
+    for signal in feed.get("signals", []):
         decision = evaluate_signal(signal)
 
         results.append({
-            "signal_timestamp": signal.get("timestamp"),
-            "signal_type": signal.get("type"),
-            "confidence": signal.get("confidence"),
-            "decision": decision,
+            "signal_timestamp": signal["timestamp"],
+            "signal_type": signal["type"],
+            "confidence": signal["confidence"],
+            "decision": decision
         })
 
-    return {
-        "engine_version": "v1.0.0",
+    output = {
+        "engine_version": ENGINE_VERSION,
         "generated_at": datetime.utcnow().isoformat() + "Z",
-        "signal_count": len(signals),
-        "results": results,
+        "signal_count": len(results),
+        "results": results
     }
 
-
-def main():
-    report = run_backtest()
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT_PATH.write_text(json.dumps(report, indent=2))
+    OUTPUT_PATH.write_text(json.dumps(output, indent=2))
+
     print("[BACKTEST] completed")
+    print(f"[BACKTEST] signals processed: {len(results)}")
 
 
 if __name__ == "__main__":
-    main()
+    run_backtest()
