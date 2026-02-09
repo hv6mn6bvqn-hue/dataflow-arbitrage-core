@@ -46,3 +46,11 @@ jobs:
 
       - name: Run metrics engine
         run: python -m core.metrics_engine
+
+      - name: Commit metrics
+        run: |
+          git config user.name "dataflow-bot"
+          git config user.email "bot@dataflow.local"
+          git add docs/metrics/index.json
+          git commit -m "Update metrics" || echo "No metrics changes"
+          git push
