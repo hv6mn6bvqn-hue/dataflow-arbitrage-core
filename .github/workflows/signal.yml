@@ -55,5 +55,8 @@ jobs:
           git commit -m "Update metrics" || echo "No metrics changes"
           git push
 
+      - name: Generate performance snapshot
+        run: python -m core.performance_engine
+
       - name: Publish performance snapshot
         run: python -m core.performance_engine
