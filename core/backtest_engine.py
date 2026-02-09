@@ -1,40 +1,35 @@
-from datetime import datetime
 from pathlib import Path
+from datetime import datetime
 import json
 
 from core.feed_loader import load_feed
 from core.signal_policy import evaluate_signal
 
-ENGINE_VERSION = "v1.0.0"
-OUTPUT_PATH = Path("docs/backtest/index.json")
+BACKTEST_PATH = Path("docs/backtest/index.json")
 
 
 def run_backtest():
-    feed = load_feed()
+    feed = load_feed()  # <-- теперь это list
     results = []
 
-    for signal in feed.get("signals", []):
+    for signal in feed:
         decision = evaluate_signal(signal)
 
         results.append({
-            "signal_timestamp": signal["timestamp"],
-            "signal_type": signal["type"],
-            "confidence": signal["confidence"],
+            "evaluated_at": datetime.utcnow().isoformat() + "Z",
+            "signal": signal,
             "decision": decision
         })
 
     output = {
-        "engine_version": ENGINE_VERSION,
+        "engine_version": "v1.0.0",
         "generated_at": datetime.utcnow().isoformat() + "Z",
-        "signal_count": len(results),
+        "total_signals": len(feed),
         "results": results
     }
 
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT_PATH.write_text(json.dumps(output, indent=2))
-
-    print("[BACKTEST] completed")
-    print(f"[BACKTEST] signals processed: {len(results)}")
+    BACKTEST_PATH.parent.mkdir(parents=True, exist_ok=True)
+    BACKTEST_PATH.write_text(json.dumps(output, indent=2))
 
 
 if __name__ == "__main__":
