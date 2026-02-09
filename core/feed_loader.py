@@ -1,19 +1,26 @@
-import json
 from pathlib import Path
+import json
 
 FEED_PATH = Path("docs/feed/index.json")
 
 
-def load_latest_signal():
+def load_feed():
+    """
+    Load full feed (for backtest / replay).
+    Returns list of signals.
+    """
     if not FEED_PATH.exists():
-        print("[FEED] feed/index.json not found")
-        return None
+        return []
 
     data = json.loads(FEED_PATH.read_text())
+    return data.get("signals", [])
 
-    signals = data.get("signals", [])
+
+def load_latest_signal():
+    """
+    Load latest signal only (for action engine).
+    """
+    signals = load_feed()
     if not signals:
-        print("[FEED] no signals in feed")
         return None
-
-    return signals[-1]  # последний сигнал — самый свежий
+    return signals[-1]
