@@ -1,4 +1,4 @@
-name: DataFlow Signal Pipeline — Diagnostic
+name: DataFlow Full Pipeline
 
 on:
   workflow_dispatch:
@@ -7,11 +7,11 @@ permissions:
   contents: write
 
 jobs:
-  diagnostic:
+  pipeline:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -24,26 +24,22 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: 🔍 Diagnostic — check secrets availability
-        env:
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: |
-          echo "=== TELEGRAM SECRETS DIAGNOSTIC ==="
-          echo "TOKEN LENGTH: ${#TELEGRAM_TOKEN}"
-          if [ -z "$TELEGRAM_CHAT_ID" ]; then
-            echo "CHAT ID: NOT SET"
-          else
-            echo "CHAT ID: SET"
-          fi
-          echo "=================================="
-
-      - name: Run action engine
+      - name: Run Action Engine (PROD)
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python -m core.action_engine
 
-      - name: ▶ Replay simulation
+      - name: Run Replay Engine
         run: python -m core.replay_engine
 
+      - name: Run Backtest Engine
+        run: python -m core.backtest_engine
+
+      - name: Commit generated artifacts
+        run: |
+          git config user.name "dataflow-bot"
+          git config user.email "dataflow@users.noreply.github.com"
+          git add docs || true
+          git commit -m "update: actions, audit, backtest" || echo "Nothing to commit"
+          git push
