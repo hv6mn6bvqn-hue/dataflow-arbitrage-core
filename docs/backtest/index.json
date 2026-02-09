@@ -1,0 +1,103 @@
+{
+  "engine_version": "v1.0.0",
+  "generated_at": "2026-02-09T15:29:38.223602Z",
+  "total_signals": 6,
+  "results": [
+    {
+      "evaluated_at": "2026-02-09T15:29:38.223578Z",
+      "signal": {
+        "timestamp": "2026-02-04T14:34:02.709229Z",
+        "confidence": 0.35,
+        "type": "activity_detected",
+        "source": "dataflow"
+      },
+      "decision": {
+        "allow": false,
+        "action": "MONITOR",
+        "confidence": 0.35,
+        "note": "confidence below thresholds",
+        "dry_run": true
+      }
+    },
+    {
+      "evaluated_at": "2026-02-09T15:29:38.223594Z",
+      "signal": {
+        "timestamp": "2026-02-05T12:19:08.518850Z",
+        "confidence": 1.0,
+        "type": "ACTION_TRIGGERED",
+        "source": "dataflow"
+      },
+      "decision": {
+        "allow": true,
+        "action": "EXECUTE",
+        "confidence": 1.0,
+        "note": "confidence above EXECUTE threshold",
+        "dry_run": false
+      }
+    },
+    {
+      "evaluated_at": "2026-02-09T15:29:38.223596Z",
+      "signal": {
+        "timestamp": "2026-02-05T12:39:11.491647Z",
+        "confidence": 0.45,
+        "type": "weak_activity",
+        "source": "dataflow"
+      },
+      "decision": {
+        "allow": false,
+        "action": "MONITOR",
+        "confidence": 0.45,
+        "note": "confidence below thresholds",
+        "dry_run": true
+      }
+    },
+    {
+      "evaluated_at": "2026-02-09T15:29:38.223597Z",
+      "signal": {
+        "timestamp": "2026-02-05T13:58:44.938344Z",
+        "confidence": 0.82,
+        "type": "potential_strong",
+        "source": "dataflow"
+      },
+      "decision": {
+        "allow": true,
+        "action": "ALERT",
+        "confidence": 0.82,
+        "note": "confidence above ALERT threshold",
+        "dry_run": true
+      }
+    },
+    {
+      "evaluated_at": "2026-02-09T15:29:38.223598Z",
+      "signal": {
+        "timestamp": "2026-02-05T17:15:19.446223Z",
+        "confidence": 0.45,
+        "type": "weak_activity",
+        "source": "dataflow"
+      },
+      "decision": {
+        "allow": false,
+        "action": "MONITOR",
+        "confidence": 0.45,
+        "note": "confidence below thresholds",
+        "dry_run": true
+      }
+    },
+    {
+      "evaluated_at": "2026-02-09T15:29:38.223600Z",
+      "signal": {
+        "timestamp": "2026-02-05T17:39:02.950867Z",
+        "confidence": 0.82,
+        "type": "potential_strong",
+        "source": "dataflow"
+      },
+      "decision": {
+        "allow": true,
+        "action": "ALERT",
+        "confidence": 0.82,
+        "note": "confidence above ALERT threshold",
+        "dry_run": true
+      }
+    }
+  ]
+}
