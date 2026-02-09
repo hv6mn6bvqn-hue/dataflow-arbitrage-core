@@ -1,4 +1,4 @@
-name: DataFlow Full Pipeline
+name: DataFlow Signal Pipeline
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ permissions:
   contents: write
 
 jobs:
-  pipeline:
+  signal:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,39 +24,29 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
 
-      - name: Run Action Engine (PROD)
+      - name: Run action engine
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python -m core.action_engine
-
-      - name: Run Replay Engine
-        run: python -m core.replay_engine
-
-      - name: Run Backtest Engine
-        run: python -m core.backtest_engine
-
-      - name: Commit generated artifacts
         run: |
-          git config user.name "dataflow-bot"
-          git config user.email "dataflow@users.noreply.github.com"
-          git add docs || true
-          git commit -m "update: actions, audit, backtest" || echo "Nothing to commit"
-          git push
+          python -m core.action_engine
 
-      - name: Run metrics engine
-        run: python -m core.metrics_engine
-
-      - name: Commit metrics
+      - name: Run backtest engine
         run: |
-          git config user.name "dataflow-bot"
-          git config user.email "bot@dataflow.local"
-          git add docs/metrics/index.json
-          git commit -m "Update metrics" || echo "No metrics changes"
+          python -m core.backtest_engine
+
+      - name: Update metrics
+        run: |
+          python -m core.metrics_engine
+
+      - name: Update performance
+        run: |
+          python -m core.performance_engine
+
+      - name: Commit and publish artifacts
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add docs/
+          git commit -m "Update DataFlow artifacts" || echo "No changes to commit"
           git push
-
-      - name: Generate performance snapshot
-        run: python -m core.performance_engine
-
-      - name: Publish performance snapshot
-        run: python -m core.performance_engine
