@@ -54,3 +54,6 @@ jobs:
           git add docs/metrics/index.json
           git commit -m "Update metrics" || echo "No metrics changes"
           git push
+
+      - name: Publish performance snapshot
+        run: python -m core.performance_engine
