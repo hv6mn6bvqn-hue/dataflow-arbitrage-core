@@ -1,49 +1,55 @@
+import json
 from pathlib import Path
 from datetime import datetime
-import json
+
+AUDIT_PATH = Path("docs/audit/index.json")
+PERFORMANCE_PATH = Path("docs/performance/index.json")
 
 ENGINE_VERSION = "v1.0.0"
 
-AUDIT_PATH = Path("docs/audit/index.json")
-METRICS_PATH = Path("docs/metrics/index.json")
-OUTPUT_PATH = Path("docs/performance/index.json")
+
+def load_audit():
+    if not AUDIT_PATH.exists():
+        return []
+    with open(AUDIT_PATH, "r") as f:
+        return json.load(f)
 
 
-def load_json(path):
-    if not path.exists():
-        return None
-    return json.loads(path.read_text())
+def compute_performance(audit):
+    total = len(audit)
+    executions = [a for a in audit if a.get("action") == "EXECUTE"]
 
+    execution_count = len(executions)
+    execution_rate = execution_count / total if total > 0 else 0
 
-def run_performance_snapshot():
-    audit = load_json(AUDIT_PATH) or []
-    metrics = load_json(METRICS_PATH) or {}
+    avg_conf = (
+        sum(a.get("confidence", 0) for a in executions) / execution_count
+        if execution_count > 0
+        else 0
+    )
 
-    executions = [
-        a for a in audit
-        if a.get("action") == "EXECUTE"
-        and a.get("execution", {}).get("result") == "EXECUTED"
-    ]
-
-    snapshot = {
+    return {
         "engine_version": ENGINE_VERSION,
-        "generated_at": datetime.utcnow().isoformat() + "Z",
-        "total_decisions": metrics.get("total_decisions", len(audit)),
-        "executions": len(executions),
-        "execution_rate": (
-            len(executions) / len(audit) if audit else 0
-        ),
-        "avg_confidence_execute": (
-            sum(e["confidence"] for e in executions) / len(executions)
-            if executions else 0
-        )
+        "last_updated": datetime.utcnow().isoformat() + "Z",
+        "total_decisions": total,
+        "executions": execution_count,
+        "execution_rate": round(execution_rate, 4),
+        "avg_confidence_execute": round(avg_conf, 4),
     }
 
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT_PATH.write_text(json.dumps(snapshot, indent=2))
 
-    print("[PERFORMANCE] snapshot published")
+def publish_performance(data):
+    PERFORMANCE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(PERFORMANCE_PATH, "w") as f:
+        json.dump(data, f, indent=2)
+
+
+def main():
+    audit = load_audit()
+    performance = compute_performance(audit)
+    publish_performance(performance)
+    print("[PERFORMANCE] updated")
 
 
 if __name__ == "__main__":
-    run_performance_snapshot()
+    main()
