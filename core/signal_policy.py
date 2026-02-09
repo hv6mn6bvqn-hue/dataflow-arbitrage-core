@@ -1,53 +1,34 @@
-from datetime import datetime
+# core/signal_policy.py
 
-CONFIDENCE_THRESHOLD_EXECUTE = 0.8
-CONFIDENCE_THRESHOLD_MONITOR = 0.3
+THRESHOLD_EXECUTE = 0.9
+THRESHOLD_ALERT = 0.7
 
 
 def evaluate_signal(signal: dict) -> dict:
-    """
-    Explainable decision engine.
-    Returns structured decision with reasons.
-    """
-
     confidence = float(signal.get("confidence", 0))
-    signal_type = signal.get("type", "unknown")
 
-    rules_triggered = []
-    decision = "IGNORE"
+    if confidence >= THRESHOLD_EXECUTE:
+        return {
+            "allow": True,
+            "action": "EXECUTE",
+            "confidence": confidence,
+            "note": "confidence above EXECUTE threshold",
+            "dry_run": False
+        }
 
-    # Rule 1: High confidence → EXECUTE
-    if confidence >= CONFIDENCE_THRESHOLD_EXECUTE:
-        decision = "EXECUTE"
-        rules_triggered.append(
-            f"confidence >= {CONFIDENCE_THRESHOLD_EXECUTE}"
-        )
-
-    # Rule 2: Medium confidence → MONITOR
-    elif confidence >= CONFIDENCE_THRESHOLD_MONITOR:
-        decision = "MONITOR"
-        rules_triggered.append(
-            f"{CONFIDENCE_THRESHOLD_MONITOR} <= confidence < {CONFIDENCE_THRESHOLD_EXECUTE}"
-        )
-
-    # Rule 3: Low confidence → IGNORE
-    else:
-        decision = "IGNORE"
-        rules_triggered.append(
-            f"confidence < {CONFIDENCE_THRESHOLD_MONITOR}"
-        )
-
-    explanation = (
-        f"Decision '{decision}' because "
-        f"confidence={confidence} and signal_type='{signal_type}'. "
-        f"Rules: {', '.join(rules_triggered)}"
-    )
+    if confidence >= THRESHOLD_ALERT:
+        return {
+            "allow": True,
+            "action": "ALERT",
+            "confidence": confidence,
+            "note": "confidence above ALERT threshold",
+            "dry_run": True
+        }
 
     return {
-        "decision": decision,
+        "allow": False,
+        "action": "MONITOR",
         "confidence": confidence,
-        "signal_type": signal_type,
-        "rules_triggered": rules_triggered,
-        "explanation": explanation,
-        "evaluated_at": datetime.utcnow().isoformat() + "Z",
+        "note": "confidence below thresholds",
+        "dry_run": True
     }
