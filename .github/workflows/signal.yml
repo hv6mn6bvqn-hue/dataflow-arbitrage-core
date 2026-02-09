@@ -45,5 +45,5 @@ jobs:
         run: python -m core.action_engine
 
       - name: ▶ Replay simulation
-        run: python core/replay_engine.py
+        run: python -m core.replay_engine
 
