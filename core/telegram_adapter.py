@@ -1,10 +1,8 @@
 import os
 import requests
 
-TELEGRAM_API = "https://api.telegram.org"
 
-
-def send_telegram(message: str, title: str | None = None):
+def send_telegram(title: str, payload: dict):
     token = os.getenv("TELEGRAM_TOKEN")
     chat_id = os.getenv("TELEGRAM_CHAT_ID")
 
@@ -12,21 +10,25 @@ def send_telegram(message: str, title: str | None = None):
         print("[TELEGRAM] skipped — credentials not set")
         return
 
-    text = message
-    if title:
-        text = f"{title}\n\n{message}"
+    # 🔒 КРИТИЧЕСКИЙ FIX M7.2
+    # Убираем \n, пробелы, мусор из GitHub Secrets
+    token = token.strip()
+    chat_id = chat_id.strip()
 
-    url = f"{TELEGRAM_API}/bot{token}/sendMessage"
+    message = title + "\n"
+    for k, v in payload.items():
+        message += f"{k}: {v}\n"
 
-    payload = {
-        "chat_id": chat_id,
-        "text": text,
-        "parse_mode": "HTML"
-    }
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
 
-    try:
-        r = requests.post(url, json=payload, timeout=10)
-        r.raise_for_status()
-        print("[TELEGRAM] message sent")
-    except Exception as e:
-        print(f"[TELEGRAM] error: {e}")
+    response = requests.post(
+        url,
+        json={
+            "chat_id": chat_id,
+            "text": message,
+        },
+        timeout=10,
+    )
+
+    response.raise_for_status()
+    print("[TELEGRAM] message sent")
