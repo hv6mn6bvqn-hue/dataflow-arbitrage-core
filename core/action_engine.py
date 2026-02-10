@@ -1,11 +1,10 @@
-import os
 import json
 from datetime import datetime
 
-from core.feed_loader import load_latest_signal
 from core.signal_policy import evaluate_signal
 from core.audit_logger import log_audit
-from core.telegram_notifier import send_telegram
+from core.telegram_adapter import send_telegram  # ← ВАЖНО
+from core.feed_loader import load_latest_signal
 
 
 ENGINE_VERSION = "v1.0.0"
@@ -15,14 +14,18 @@ def main():
     signal = load_latest_signal()
     decision = evaluate_signal(signal)
 
+    action = decision.get("action")
+    confidence = decision.get("confidence")
+    note = decision.get("note")
+
     execution = None
 
-    if decision["action"] == "EXECUTE":
+    if action == "EXECUTE":
         execution = {
             "timestamp": datetime.utcnow().isoformat() + "Z",
-            "action": decision["action"],
-            "confidence": decision["confidence"],
-            "note": decision["note"],
+            "action": action,
+            "confidence": confidence,
+            "note": note,
             "mode": "PROD",
             "result": "EXECUTED",
         }
@@ -31,8 +34,8 @@ def main():
             title="🚀 DataFlow EXECUTED",
             payload={
                 "Version": ENGINE_VERSION,
-                "Action": decision["action"],
-                "Confidence": decision["confidence"],
+                "Action": action,
+                "Confidence": confidence,
                 "Result": "EXECUTED",
             },
         )
@@ -41,14 +44,15 @@ def main():
         "logged_at": datetime.utcnow().isoformat() + "Z",
         "engine_version": ENGINE_VERSION,
         "generated_at": signal.get("generated_at"),
-        "state": decision["state"],
-        "action": decision["action"],
-        "confidence": decision["confidence"],
-        "note": decision["note"],
+        "state": signal.get("state"),
+        "action": action,
+        "confidence": confidence,
+        "note": note,
         "execution": execution,
     }
 
     log_audit(record)
+    print(json.dumps(record, indent=2))
 
 
 if __name__ == "__main__":
