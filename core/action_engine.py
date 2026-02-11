@@ -1,4 +1,3 @@
-import os
 from datetime import datetime
 
 from core.feed_loader import load_latest_signal
@@ -23,14 +22,14 @@ def build_message(decision: dict) -> str:
 def main():
     print("[ENGINE] starting action engine")
 
-    # 1️⃣ Загружаем последний сигнал
+    # 1️⃣ Загружаем сигнал
     signal = load_latest_signal()
 
     if not signal:
         print("[ENGINE] no signal found")
         return
 
-    # 2️⃣ Оцениваем сигнал
+    # 2️⃣ Оценка
     decision = evaluate_signal(signal)
 
     if not isinstance(decision, dict):
@@ -44,7 +43,7 @@ def main():
         print("[ENGINE] no action returned")
         return
 
-    # 3️⃣ Формируем execution metadata
+    # 3️⃣ Execution metadata
     execution = {
         "timestamp": datetime.utcnow().isoformat() + "Z",
         "action": action,
@@ -61,24 +60,10 @@ def main():
     log_audit(decision)
 
     # 5️⃣ Telegram
-    token = os.getenv("TELEGRAM_TOKEN")
-    chat_id = os.getenv("TELEGRAM_CHAT_ID")
-
-    if not token or not chat_id:
-        print("[TELEGRAM] missing credentials")
-        return
-
-    token = token.strip()
-    chat_id = chat_id.strip()
-
     message = build_message(decision)
 
     print("[TELEGRAM] sending request")
-    send_telegram(
-        token=token,
-        chat_id=chat_id,
-        message=message
-    )
+    send_telegram(message)
     print("[TELEGRAM] message sent")
 
     print("[ENGINE] completed")
