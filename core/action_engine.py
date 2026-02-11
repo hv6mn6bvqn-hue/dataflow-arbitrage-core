@@ -1,7 +1,7 @@
 import os
-import json
 from datetime import datetime
 
+from core.feed_loader import load_latest_signal
 from core.signal_policy import evaluate_signal
 from core.audit_logger import log_audit
 from core.telegram_adapter import send_telegram
@@ -23,14 +23,20 @@ def build_message(decision: dict) -> str:
 def main():
     print("[ENGINE] starting action engine")
 
-    # 1️⃣ Получаем решение
-    decision = evaluate_signal()
+    # 1️⃣ Загружаем последний сигнал
+    signal = load_latest_signal()
+
+    if not signal:
+        print("[ENGINE] no signal found")
+        return
+
+    # 2️⃣ Оцениваем сигнал
+    decision = evaluate_signal(signal)
 
     if not isinstance(decision, dict):
         print("[ENGINE] invalid decision format")
         return
 
-    # 2️⃣ Обязательные поля
     action = decision.get("action")
     confidence = decision.get("confidence", 0)
 
@@ -38,7 +44,7 @@ def main():
         print("[ENGINE] no action returned")
         return
 
-    # 3️⃣ Добавляем execution metadata
+    # 3️⃣ Формируем execution metadata
     execution = {
         "timestamp": datetime.utcnow().isoformat() + "Z",
         "action": action,
