@@ -1,10 +1,10 @@
 {
   "engine_version": "v1.0.0",
-  "generated_at": "2026-02-11T10:57:52.953668Z",
+  "generated_at": "2026-02-11T11:11:12.079508Z",
   "total_signals": 6,
   "results": [
     {
-      "evaluated_at": "2026-02-11T10:57:52.953646Z",
+      "evaluated_at": "2026-02-11T11:11:12.079484Z",
       "signal": {
         "timestamp": "2026-02-04T14:34:02.709229Z",
         "confidence": 0.35,
@@ -13,7 +13,7 @@
       },
       "decision": {
         "engine_version": "v1.0.0",
-        "generated_at": "2026-02-11T10:57:52.953636Z",
+        "generated_at": "2026-02-11T11:11:12.079472Z",
         "state": "ACTIVE",
         "action": "SKIP",
         "confidence": 0.35,
@@ -21,7 +21,7 @@
       }
     },
     {
-      "evaluated_at": "2026-02-11T10:57:52.953651Z",
+      "evaluated_at": "2026-02-11T11:11:12.079490Z",
       "signal": {
         "timestamp": "2026-02-05T12:19:08.518850Z",
         "confidence": 1.0,
@@ -30,7 +30,7 @@
       },
       "decision": {
         "engine_version": "v1.0.0",
-        "generated_at": "2026-02-11T10:57:52.953648Z",
+        "generated_at": "2026-02-11T11:11:12.079487Z",
         "state": "ACTIVE",
         "action": "EXECUTE",
         "confidence": 1.0,
@@ -38,7 +38,7 @@
       }
     },
     {
-      "evaluated_at": "2026-02-11T10:57:52.953654Z",
+      "evaluated_at": "2026-02-11T11:11:12.079494Z",
       "signal": {
         "timestamp": "2026-02-05T12:39:11.491647Z",
         "confidence": 0.45,
@@ -47,7 +47,7 @@
       },
       "decision": {
         "engine_version": "v1.0.0",
-        "generated_at": "2026-02-11T10:57:52.953653Z",
+        "generated_at": "2026-02-11T11:11:12.079492Z",
         "state": "ACTIVE",
         "action": "SKIP",
         "confidence": 0.45,
@@ -55,7 +55,7 @@
       }
     },
     {
-      "evaluated_at": "2026-02-11T10:57:52.953661Z",
+      "evaluated_at": "2026-02-11T11:11:12.079501Z",
       "signal": {
         "timestamp": "2026-02-05T13:58:44.938344Z",
         "confidence": 0.82,
@@ -64,7 +64,7 @@
       },
       "decision": {
         "engine_version": "v1.0.0",
-        "generated_at": "2026-02-11T10:57:52.953658Z",
+        "generated_at": "2026-02-11T11:11:12.079498Z",
         "state": "ACTIVE",
         "action": "ALERT",
         "confidence": 0.82,
@@ -72,7 +72,7 @@
       }
     },
     {
-      "evaluated_at": "2026-02-11T10:57:52.953664Z",
+      "evaluated_at": "2026-02-11T11:11:12.079504Z",
       "signal": {
         "timestamp": "2026-02-05T17:15:19.446223Z",
         "confidence": 0.45,
@@ -81,7 +81,7 @@
       },
       "decision": {
         "engine_version": "v1.0.0",
-        "generated_at": "2026-02-11T10:57:52.953663Z",
+        "generated_at": "2026-02-11T11:11:12.079503Z",
         "state": "ACTIVE",
         "action": "SKIP",
         "confidence": 0.45,
@@ -89,7 +89,7 @@
       }
     },
     {
-      "evaluated_at": "2026-02-11T10:57:52.953667Z",
+      "evaluated_at": "2026-02-11T11:11:12.079507Z",
       "signal": {
         "timestamp": "2026-02-05T17:39:02.950867Z",
         "confidence": 0.82,
@@ -98,7 +98,7 @@
       },
       "decision": {
         "engine_version": "v1.0.0",
-        "generated_at": "2026-02-11T10:57:52.953666Z",
+        "generated_at": "2026-02-11T11:11:12.079506Z",
         "state": "ACTIVE",
         "action": "ALERT",
         "confidence": 0.82,
