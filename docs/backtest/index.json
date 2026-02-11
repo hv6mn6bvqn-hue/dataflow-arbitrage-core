@@ -1,10 +1,10 @@
 {
   "engine_version": "v1.0.0",
-  "generated_at": "2026-02-10T05:51:52.881975Z",
+  "generated_at": "2026-02-11T10:54:51.565391Z",
   "total_signals": 6,
   "results": [
     {
-      "evaluated_at": "2026-02-10T05:51:52.881951Z",
+      "evaluated_at": "2026-02-11T10:54:51.565368Z",
       "signal": {
         "timestamp": "2026-02-04T14:34:02.709229Z",
         "confidence": 0.35,
@@ -20,7 +20,7 @@
       }
     },
     {
-      "evaluated_at": "2026-02-10T05:51:52.881967Z",
+      "evaluated_at": "2026-02-11T10:54:51.565382Z",
       "signal": {
         "timestamp": "2026-02-05T12:19:08.518850Z",
         "confidence": 1.0,
@@ -36,7 +36,7 @@
       }
     },
     {
-      "evaluated_at": "2026-02-10T05:51:52.881970Z",
+      "evaluated_at": "2026-02-11T10:54:51.565384Z",
       "signal": {
         "timestamp": "2026-02-05T12:39:11.491647Z",
         "confidence": 0.45,
@@ -52,7 +52,7 @@
       }
     },
     {
-      "evaluated_at": "2026-02-10T05:51:52.881971Z",
+      "evaluated_at": "2026-02-11T10:54:51.565386Z",
       "signal": {
         "timestamp": "2026-02-05T13:58:44.938344Z",
         "confidence": 0.82,
@@ -68,7 +68,7 @@
       }
     },
     {
-      "evaluated_at": "2026-02-10T05:51:52.881973Z",
+      "evaluated_at": "2026-02-11T10:54:51.565387Z",
       "signal": {
         "timestamp": "2026-02-05T17:15:19.446223Z",
         "confidence": 0.45,
@@ -84,7 +84,7 @@
       }
     },
     {
-      "evaluated_at": "2026-02-10T05:51:52.881974Z",
+      "evaluated_at": "2026-02-11T10:54:51.565390Z",
       "signal": {
         "timestamp": "2026-02-05T17:39:02.950867Z",
         "confidence": 0.82,
