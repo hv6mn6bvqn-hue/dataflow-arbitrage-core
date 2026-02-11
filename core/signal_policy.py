@@ -1,34 +1,52 @@
-# core/signal_policy.py
+from datetime import datetime
 
-THRESHOLD_EXECUTE = 0.9
-THRESHOLD_ALERT = 0.7
+
+ENGINE_VERSION = "v1.0.0"
 
 
 def evaluate_signal(signal: dict) -> dict:
+    """
+    Единственная точка принятия решения.
+
+    Всегда возвращает decision в стандартизированном формате.
+    """
+
+    if not signal:
+        return build_decision(
+            state="IDLE",
+            action="SKIP",
+            confidence=0.0,
+            note="empty signal"
+        )
+
     confidence = float(signal.get("confidence", 0))
+    state = signal.get("state", "ACTIVE")
 
-    if confidence >= THRESHOLD_EXECUTE:
-        return {
-            "allow": True,
-            "action": "EXECUTE",
-            "confidence": confidence,
-            "note": "confidence above EXECUTE threshold",
-            "dry_run": False
-        }
+    # Бизнес-пороги
+    if confidence >= 0.9:
+        action = "EXECUTE"
+        note = "high confidence threshold reached"
+    elif confidence >= 0.75:
+        action = "ALERT"
+        note = "medium confidence alert zone"
+    else:
+        action = "SKIP"
+        note = "confidence below execution threshold"
 
-    if confidence >= THRESHOLD_ALERT:
-        return {
-            "allow": True,
-            "action": "ALERT",
-            "confidence": confidence,
-            "note": "confidence above ALERT threshold",
-            "dry_run": True
-        }
+    return build_decision(
+        state=state,
+        action=action,
+        confidence=confidence,
+        note=note
+    )
 
+
+def build_decision(state: str, action: str, confidence: float, note: str) -> dict:
     return {
-        "allow": False,
-        "action": "MONITOR",
-        "confidence": confidence,
-        "note": "confidence below thresholds",
-        "dry_run": True
+        "engine_version": ENGINE_VERSION,
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "state": state,
+        "action": action,
+        "confidence": round(confidence, 4),
+        "note": note
     }
