@@ -7,7 +7,7 @@ permissions:
   contents: write
 
 jobs:
-  signal:
+  engine:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,6 +23,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests
+
+      - name: Run signal policy
+        run: |
+          python -m core.signal_policy
 
       - name: Run action engine
         env:
@@ -44,7 +48,8 @@ jobs:
           python -m core.performance_engine
 
       - name: Update portfolio
-        run: python -m core.portfolio_engine
+        run: |
+          python -m core.portfolio_engine
 
       - name: Commit and publish artifacts
         run: |
