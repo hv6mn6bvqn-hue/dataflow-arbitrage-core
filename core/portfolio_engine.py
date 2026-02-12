@@ -7,7 +7,8 @@ PORTFOLIO_FILE = "core/portfolio_state.json"
 PUBLIC_FILE = "docs/portfolio/index.json"
 
 INITIAL_CAPITAL = 10000
-RISK_FACTOR = 100
+MAX_RISK_PCT = 0.02   # 2% risk per trade
+RETURN_FACTOR = 1     # placeholder market return
 
 
 def load_decision():
@@ -22,7 +23,6 @@ def load_portfolio():
         return {
             "capital": INITIAL_CAPITAL,
             "equity": INITIAL_CAPITAL,
-            "positions": [],
             "history": []
         }
     with open(PORTFOLIO_FILE, "r") as f:
@@ -48,7 +48,7 @@ def calculate_drawdown(history):
         equity = point["equity"]
         if equity > peak:
             peak = equity
-        dd = (peak - equity)
+        dd = peak - equity
         if dd > max_dd:
             max_dd = dd
 
@@ -65,15 +65,22 @@ def main():
 
     action = decision.get("action")
     confidence = decision.get("confidence", 0)
+    engine_version = decision.get("engine_version")
 
     if action == "EXECUTE":
-        pnl = confidence * RISK_FACTOR
+        capital = portfolio["equity"]
+
+        risk_amount = capital * MAX_RISK_PCT
+        position_size = risk_amount * confidence
+        pnl = position_size * RETURN_FACTOR
+
         portfolio["equity"] += pnl
 
         portfolio["history"].append({
             "timestamp": datetime.utcnow().isoformat() + "Z",
-            "pnl": pnl,
-            "equity": portfolio["equity"]
+            "position_size": round(position_size, 2),
+            "pnl": round(pnl, 2),
+            "equity": round(portfolio["equity"], 2)
         })
 
         print(f"[PORTFOLIO] executed trade, pnl={pnl}")
@@ -81,12 +88,12 @@ def main():
     drawdown = calculate_drawdown(portfolio["history"])
 
     public_data = {
-        "engine_version": decision.get("engine_version"),
+        "engine_version": engine_version,
         "last_updated": datetime.utcnow().isoformat() + "Z",
         "capital": portfolio["capital"],
-        "equity": portfolio["equity"],
+        "equity": round(portfolio["equity"], 2),
         "total_trades": len(portfolio["history"]),
-        "drawdown": drawdown
+        "drawdown": round(drawdown, 2)
     }
 
     save_portfolio(portfolio)
