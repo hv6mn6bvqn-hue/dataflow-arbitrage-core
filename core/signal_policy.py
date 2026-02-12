@@ -1,20 +1,14 @@
 import json
-import os
 from datetime import datetime
 
-STATE_FILE = "core/state.json"
+DECISION_FILE = "core/last_decision.json"
 ENGINE_VERSION = "v1.0.0"
 
-# --- Risk thresholds ---
 EXECUTE_THRESHOLD = 0.75
 ALERT_THRESHOLD = 0.50
 
 
 def evaluate_signal(signal: dict) -> dict:
-    """
-    Evaluates incoming signal and returns structured decision.
-    """
-
     confidence = float(signal.get("confidence", 0))
 
     if confidence >= EXECUTE_THRESHOLD:
@@ -27,7 +21,7 @@ def evaluate_signal(signal: dict) -> dict:
         action = "SKIP"
         state = "IDLE"
 
-    decision = {
+    return {
         "engine_version": ENGINE_VERSION,
         "timestamp": datetime.utcnow().isoformat() + "Z",
         "action": action,
@@ -35,19 +29,13 @@ def evaluate_signal(signal: dict) -> dict:
         "state": state
     }
 
-    return decision
-
 
 def save_decision(decision: dict):
-    with open(STATE_FILE, "w") as f:
+    with open(DECISION_FILE, "w") as f:
         json.dump(decision, f, indent=2)
 
 
 def load_signal() -> dict:
-    """
-    Temporary signal loader.
-    Replace later with real feed integration.
-    """
     return {
         "confidence": 0.82
     }
