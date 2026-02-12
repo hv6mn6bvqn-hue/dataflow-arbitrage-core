@@ -1,52 +1,69 @@
+import json
+import os
 from datetime import datetime
 
-
+STATE_FILE = "core/state.json"
 ENGINE_VERSION = "v1.0.0"
+
+# --- Risk thresholds ---
+EXECUTE_THRESHOLD = 0.75
+ALERT_THRESHOLD = 0.50
 
 
 def evaluate_signal(signal: dict) -> dict:
     """
-    Единственная точка принятия решения.
-
-    Всегда возвращает decision в стандартизированном формате.
+    Evaluates incoming signal and returns structured decision.
     """
 
-    if not signal:
-        return build_decision(
-            state="IDLE",
-            action="SKIP",
-            confidence=0.0,
-            note="empty signal"
-        )
-
     confidence = float(signal.get("confidence", 0))
-    state = signal.get("state", "ACTIVE")
 
-    # Бизнес-пороги
-    if confidence >= 0.9:
+    if confidence >= EXECUTE_THRESHOLD:
         action = "EXECUTE"
-        note = "high confidence threshold reached"
-    elif confidence >= 0.75:
+        state = "ACTIVE"
+    elif confidence >= ALERT_THRESHOLD:
         action = "ALERT"
-        note = "medium confidence alert zone"
+        state = "ACTIVE"
     else:
         action = "SKIP"
-        note = "confidence below execution threshold"
+        state = "IDLE"
 
-    return build_decision(
-        state=state,
-        action=action,
-        confidence=confidence,
-        note=note
-    )
-
-
-def build_decision(state: str, action: str, confidence: float, note: str) -> dict:
-    return {
+    decision = {
         "engine_version": ENGINE_VERSION,
-        "generated_at": datetime.utcnow().isoformat() + "Z",
-        "state": state,
+        "timestamp": datetime.utcnow().isoformat() + "Z",
         "action": action,
         "confidence": round(confidence, 4),
-        "note": note
+        "state": state
     }
+
+    return decision
+
+
+def save_decision(decision: dict):
+    with open(STATE_FILE, "w") as f:
+        json.dump(decision, f, indent=2)
+
+
+def load_signal() -> dict:
+    """
+    Temporary signal loader.
+    Replace later with real feed integration.
+    """
+    return {
+        "confidence": 0.82
+    }
+
+
+def main():
+    print("[POLICY] evaluating signal")
+
+    signal = load_signal()
+    decision = evaluate_signal(signal)
+
+    save_decision(decision)
+
+    print(f"[POLICY] action={decision['action']}")
+    print("[POLICY] decision saved")
+
+
+if __name__ == "__main__":
+    main()
