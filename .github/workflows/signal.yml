@@ -2,6 +2,8 @@ name: DataFlow Signal Pipeline
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
 
 permissions:
   contents: write
@@ -11,22 +13,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v4
+
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install requests
 
+
+      - name: Run discovery engine
+        run: |
+          python -m core.discovery_engine
+
+
       - name: Run signal policy
         run: |
           python -m core.signal_policy
+
 
       - name: Run action engine
         env:
@@ -35,21 +47,26 @@ jobs:
         run: |
           python -m core.action_engine
 
+
       - name: Run backtest engine
         run: |
           python -m core.backtest_engine
+
 
       - name: Update metrics
         run: |
           python -m core.metrics_engine
 
+
       - name: Update performance
         run: |
           python -m core.performance_engine
 
+
       - name: Update portfolio
         run: |
           python -m core.portfolio_engine
+
 
       - name: Commit and publish artifacts
         run: |
