@@ -1,7 +1,7 @@
 import requests
 from datetime import datetime
 
-BINANCE_API = "https://api.binance.com/api/v3/ticker/24hr"
+BINANCE_API = "https://api.binance.com/api/v3/ticker/price"
 
 
 def fetch_signals():
@@ -17,28 +17,28 @@ def fetch_signals():
 
     for asset in data:
 
+        symbol = asset.get("symbol")
+
         try:
-            change = float(asset["priceChangePercent"])
-        except Exception:
+            price = float(asset.get("price"))
+        except:
             continue
 
-        confidence = min(abs(change) / 20, 1.0)
-
-        if confidence < 0.30:
+        if price <= 0:
             continue
 
         signal = {
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "market": "crypto",
-            "symbol": asset["symbol"],
-            "change_percent": change,
-            "confidence": round(confidence, 2),
-            "type": "market_divergence",
+            "symbol": symbol,
+            "price": price,
+            "confidence": 0.5,
+            "type": "price_snapshot",
             "source": "binance"
         }
 
         signals.append(signal)
 
-    print(f"[BINANCE] signals found: {len(signals)}")
+    print(f"[BINANCE] price snapshots: {len(signals)}")
 
     return signals
