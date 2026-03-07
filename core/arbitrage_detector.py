@@ -1,126 +1,97 @@
-from pathlib import Path
 import json
+from pathlib import Path
 from datetime import datetime
 
-FEED_PATH = Path("docs/feed/index.json")
-ARBITRAGE_PATH = Path("docs/arbitrage/index.json")
+FEED_FILE = Path("docs/feed/market_prices.json")
+EXPORT_FILE = Path("docs/feed/arbitrage_opportunities.json")
 
 
-def normalize_symbol(symbol):
+def load_prices():
 
-    if not symbol:
-        return None
-
-    symbol = symbol.upper()
-
-    # Binance
-    if symbol.endswith("USDT"):
-        return symbol.replace("USDT", "")
-
-    if symbol.endswith("BUSD"):
-        return symbol.replace("BUSD", "")
-
-    # Coinbase
-    if "-" in symbol:
-        return symbol.split("-")[0]
-
-    return symbol
-
-
-def load_feed():
-
-    if not FEED_PATH.exists():
+    if not FEED_FILE.exists():
         return []
 
-    data = json.loads(FEED_PATH.read_text())
+    data = json.loads(FEED_FILE.read_text())
 
-    return data.get("signals", [])
+    return data.get("prices", [])
 
 
-def detect_arbitrage(signals):
+def detect_arbitrage(prices):
 
-    markets = {}
     opportunities = []
 
-    for s in signals:
+    price_map = {}
 
-        raw_symbol = s.get("symbol")
-        price = s.get("price")
-        source = s.get("source")
+    for p in prices:
 
-        if not raw_symbol or price is None:
+        symbol = p["symbol"]
+        bid = p["bid"]
+        ask = p["ask"]
+
+        if symbol not in price_map:
+            price_map[symbol] = []
+
+        price_map[symbol].append((bid, ask))
+
+    for symbol, quotes in price_map.items():
+
+        if len(quotes) < 2:
             continue
 
-        symbol = normalize_symbol(raw_symbol)
+        bids = [q[0] for q in quotes]
+        asks = [q[1] for q in quotes]
 
-        try:
-            price = float(price)
-        except:
-            continue
+        best_bid = max(bids)
+        best_ask = min(asks)
 
-        markets.setdefault(symbol, {})
-        markets[symbol][source] = price
-
-    for symbol, sources in markets.items():
-
-        if len(sources) < 2:
-            continue
-
-        prices = list(sources.values())
-
-        low = min(prices)
-        high = max(prices)
-
-        spread = high - low
+        spread = best_bid - best_ask
 
         if spread <= 0:
             continue
 
-        percent = (spread / low) * 100
+        percent = spread / best_ask
 
-        if percent < 0.05:
-            continue
+        if percent > 0.002:
 
-        opportunity = {
-            "timestamp": datetime.utcnow().isoformat() + "Z",
-            "symbol": symbol,
-            "buy_price": round(low, 6),
-            "sell_price": round(high, 6),
-            "spread": round(spread, 6),
-            "spread_percent": round(percent, 4),
-            "type": "cross_exchange_arbitrage",
-            "confidence": min(percent / 5, 1.0)
-        }
-
-        opportunities.append(opportunity)
+            opportunities.append({
+                "symbol": symbol,
+                "spread": spread,
+                "percent": round(percent, 5),
+                "timestamp": datetime.utcnow().isoformat() + "Z"
+            })
 
     return opportunities
 
 
-def save_opportunities(data):
+def save_opportunities(opps):
 
-    ARBITRAGE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    EXPORT_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-    result = {
+    payload = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
-        "count": len(data),
-        "opportunities": data
+        "count": len(opps),
+        "opportunities": opps
     }
 
-    ARBITRAGE_PATH.write_text(json.dumps(result, indent=2))
+    EXPORT_FILE.write_text(json.dumps(payload, indent=2))
 
 
 def main():
 
     print("[ARBITRAGE] scanning markets")
 
-    signals = load_feed()
+    prices = load_prices()
 
-    opportunities = detect_arbitrage(signals)
+    if not prices:
+        print("[ARBITRAGE] no price data")
+        return
 
-    print(f"[ARBITRAGE] opportunities found: {len(opportunities)}")
+    opps = detect_arbitrage(prices)
 
-    save_opportunities(opportunities)
+    print(f"[ARBITRAGE] opportunities found: {len(opps)}")
+
+    if opps:
+        save_opportunities(opps)
 
 
 if __name__ == "__main__":
