@@ -4,7 +4,7 @@ from datetime import datetime
 COINBASE_PRODUCTS = "https://api.exchange.coinbase.com/products"
 
 
-def fetch_signals():
+def fetch_prices():
 
     signals = []
 
@@ -18,6 +18,9 @@ def fetch_signals():
     for product in products:
 
         symbol = product.get("id")
+
+        if not symbol:
+            continue
 
         ticker_url = f"https://api.exchange.coinbase.com/products/{symbol}/ticker"
 
