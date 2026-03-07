@@ -20,23 +20,31 @@ def fetch_prices():
         print("[MARKET_FEED] request error:", e)
         return []
 
+    if not isinstance(data, list):
+        print("[MARKET_FEED] unexpected API response:", data)
+        return []
+
     prices = []
 
     for item in data:
 
-        symbol = item["symbol"]
+        try:
+            symbol = item["symbol"]
 
-        if not symbol.endswith("USDT"):
+            if not symbol.endswith("USDT"):
+                continue
+
+            bid = float(item["bidPrice"])
+            ask = float(item["askPrice"])
+
+            prices.append({
+                "symbol": symbol,
+                "bid": bid,
+                "ask": ask
+            })
+
+        except Exception:
             continue
-
-        bid = float(item["bidPrice"])
-        ask = float(item["askPrice"])
-
-        prices.append({
-            "symbol": symbol,
-            "bid": bid,
-            "ask": ask
-        })
 
     return prices
 
@@ -60,7 +68,7 @@ def main():
     prices = fetch_prices()
 
     if not prices:
-        print("[MARKET_FEED] no data")
+        print("[MARKET_FEED] no valid price data")
         return
 
     write_feed(prices)
