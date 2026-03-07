@@ -30,9 +30,9 @@ jobs:
           pip install requests
 
 
-      - name: Run discovery engine v2
+      - name: Run DataFlow system pipeline
         run: |
-          python -m core.discovery_engine_v2
+          python -m core.system_pipeline
 
 
       - name: Run signal policy
