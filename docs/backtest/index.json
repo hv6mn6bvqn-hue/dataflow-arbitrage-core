@@ -1,10 +1,10 @@
 {
   "engine_version": "v1.0.0",
-  "generated_at": "2026-03-07T07:27:23.630646Z",
+  "generated_at": "2026-03-07T07:29:06.129069Z",
   "total_signals": 6,
   "results": [
     {
-      "evaluated_at": "2026-03-07T07:27:23.630624Z",
+      "evaluated_at": "2026-03-07T07:29:06.129046Z",
       "signal": {
         "timestamp": "2026-02-04T14:34:02.709229Z",
         "confidence": 0.35,
@@ -13,14 +13,14 @@
       },
       "decision": {
         "engine_version": "v1.0.0",
-        "timestamp": "2026-03-07T07:27:23.630612Z",
+        "timestamp": "2026-03-07T07:29:06.129021Z",
         "action": "SKIP",
         "confidence": 0.35,
         "state": "IDLE"
       }
     },
     {
-      "evaluated_at": "2026-03-07T07:27:23.630631Z",
+      "evaluated_at": "2026-03-07T07:29:06.129054Z",
       "signal": {
         "timestamp": "2026-02-05T12:19:08.518850Z",
         "confidence": 1.0,
@@ -29,14 +29,14 @@
       },
       "decision": {
         "engine_version": "v1.0.0",
-        "timestamp": "2026-03-07T07:27:23.630626Z",
+        "timestamp": "2026-03-07T07:29:06.129049Z",
         "action": "EXECUTE",
         "confidence": 1.0,
         "state": "ACTIVE"
       }
     },
     {
-      "evaluated_at": "2026-03-07T07:27:23.630634Z",
+      "evaluated_at": "2026-03-07T07:29:06.129058Z",
       "signal": {
         "timestamp": "2026-02-05T12:39:11.491647Z",
         "confidence": 0.45,
@@ -45,14 +45,14 @@
       },
       "decision": {
         "engine_version": "v1.0.0",
-        "timestamp": "2026-03-07T07:27:23.630633Z",
+        "timestamp": "2026-03-07T07:29:06.129056Z",
         "action": "SKIP",
         "confidence": 0.45,
         "state": "IDLE"
       }
     },
     {
-      "evaluated_at": "2026-03-07T07:27:23.630637Z",
+      "evaluated_at": "2026-03-07T07:29:06.129061Z",
       "signal": {
         "timestamp": "2026-02-05T13:58:44.938344Z",
         "confidence": 0.82,
@@ -61,14 +61,14 @@
       },
       "decision": {
         "engine_version": "v1.0.0",
-        "timestamp": "2026-03-07T07:27:23.630636Z",
+        "timestamp": "2026-03-07T07:29:06.129059Z",
         "action": "EXECUTE",
         "confidence": 0.82,
         "state": "ACTIVE"
       }
     },
     {
-      "evaluated_at": "2026-03-07T07:27:23.630642Z",
+      "evaluated_at": "2026-03-07T07:29:06.129065Z",
       "signal": {
         "timestamp": "2026-02-05T17:15:19.446223Z",
         "confidence": 0.45,
@@ -77,14 +77,14 @@
       },
       "decision": {
         "engine_version": "v1.0.0",
-        "timestamp": "2026-03-07T07:27:23.630640Z",
+        "timestamp": "2026-03-07T07:29:06.129064Z",
         "action": "SKIP",
         "confidence": 0.45,
         "state": "IDLE"
       }
     },
     {
-      "evaluated_at": "2026-03-07T07:27:23.630644Z",
+      "evaluated_at": "2026-03-07T07:29:06.129068Z",
       "signal": {
         "timestamp": "2026-02-05T17:39:02.950867Z",
         "confidence": 0.82,
@@ -93,7 +93,7 @@
       },
       "decision": {
         "engine_version": "v1.0.0",
-        "timestamp": "2026-03-07T07:27:23.630643Z",
+        "timestamp": "2026-03-07T07:29:06.129067Z",
         "action": "EXECUTE",
         "confidence": 0.82,
         "state": "ACTIVE"
