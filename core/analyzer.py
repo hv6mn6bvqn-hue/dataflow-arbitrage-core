@@ -1,79 +1,76 @@
 from pathlib import Path
+import json
 from datetime import datetime
 
-log_path = Path("core/logs/signal.log")
+FEED_PATH = Path("docs/feed/index.json")
 EXPORT_DIR = Path("core/exports/strong_signals")
+
 EXPORT_DIR.mkdir(parents=True, exist_ok=True)
 
 
-def normalize_confidence(raw):
-    return max(0.0, min(1.0, round(raw, 2)))
+def load_feed():
+
+    if not FEED_PATH.exists():
+        return []
+
+    data = json.loads(FEED_PATH.read_text())
+    return data.get("signals", [])
 
 
-def classify_tier(confidence):
-    if confidence >= 0.85:
+def calculate_market_strength(signals):
+
+    if not signals:
+        return 0.1
+
+    confidences = [s.get("confidence", 0.1) for s in signals]
+
+    return sum(confidences) / len(confidences)
+
+
+def classify_tier(conf):
+
+    if conf >= 0.85:
         return "critical"
-    if confidence >= 0.65:
+    if conf >= 0.65:
         return "strong"
-    if confidence >= 0.40:
+    if conf >= 0.40:
         return "medium"
+
     return "weak"
 
 
 def write_export(signal):
+
     ts = signal["timestamp"].replace(":", "").replace("-", "")
     fname = f"signal_{ts}.json"
+
     (EXPORT_DIR / fname).write_text(
-        __import__("json").dumps(signal, indent=2)
+        json.dumps(signal, indent=2)
     )
 
 
-def read_last_entry():
-    if not log_path.exists():
-        return None
-
-    entries = log_path.read_text().strip().split("---")
-    if len(entries) < 2:
-        return None
-
-    return entries[-2]
-
-
-def write_log(signal):
-    with log_path.open("a") as f:
-        for k, v in signal.items():
-            f.write(f"{k}: {v}\n")
-        f.write("---\n")
-
-
 def main():
-    last = read_last_entry()
 
-    base_confidence = 0.1
-    note = "baseline"
+    print("[ANALYZER] loading feed")
 
-    if last and "activity_detected" in last:
-        base_confidence = 0.55
-        note = "recurrent activity"
+    signals = load_feed()
 
-    if last and "strong" in last:
-        base_confidence = 0.75
-        note = "reinforced signal"
+    market_strength = calculate_market_strength(signals)
 
-    confidence = normalize_confidence(base_confidence)
-    tier = classify_tier(confidence)
+    tier = classify_tier(market_strength)
 
     signal = {
         "timestamp": datetime.utcnow().isoformat() + "Z",
-        "signal_type": "arbitrage_delta",
-        "confidence": confidence,
+        "signal_type": "market_strength",
+        "confidence": round(market_strength, 4),
         "tier": tier,
         "confirmed": tier in ("strong", "critical"),
-        "note": note
+        "signal_count": len(signals)
     }
 
-    write_log(signal)
     write_export(signal)
+
+    print(f"[ANALYZER] market strength {market_strength}")
 
 
 if __name__ == "__main__":
