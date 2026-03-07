@@ -1,7 +1,7 @@
 {
   "feed_version": "v2",
-  "generated_at": "2026-03-07T13:37:29.443951Z",
-  "signal_count": 1008,
+  "generated_at": "2026-03-07T13:39:59.395868Z",
+  "signal_count": 1512,
   "signals": [
     {
       "timestamp": "2026-03-07T13:25:03.900887Z",
@@ -9071,6 +9071,4542 @@
       "market": "crypto",
       "symbol": "ALGO-BTC",
       "price": 1.24e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:43.119554Z",
+      "market": "crypto",
+      "symbol": "DOT-BTC",
+      "price": 2.195e-05,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:43.331936Z",
+      "market": "crypto",
+      "symbol": "FLOCK-USD",
+      "price": 0.0565,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:43.424247Z",
+      "market": "crypto",
+      "symbol": "KEYCAT-USD",
+      "price": 0.000528,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:43.550100Z",
+      "market": "crypto",
+      "symbol": "HYPE-USD",
+      "price": 30.87,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:43.647639Z",
+      "market": "crypto",
+      "symbol": "SPK-USD",
+      "price": 0.01997,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:43.750070Z",
+      "market": "crypto",
+      "symbol": "EGLD-USD",
+      "price": 4.13,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:44.181888Z",
+      "market": "crypto",
+      "symbol": "WLD-USD",
+      "price": 0.385,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:44.274553Z",
+      "market": "crypto",
+      "symbol": "PROVE-USD",
+      "price": 0.2685,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:44.437709Z",
+      "market": "crypto",
+      "symbol": "GFI-USD",
+      "price": 0.1327,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:44.551841Z",
+      "market": "crypto",
+      "symbol": "GRT-GBP",
+      "price": 0.0189,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:44.757931Z",
+      "market": "crypto",
+      "symbol": "IOTX-USD",
+      "price": 0.01465,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:44.842366Z",
+      "market": "crypto",
+      "symbol": "FUN1-USD",
+      "price": 0.03806,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:45.176589Z",
+      "market": "crypto",
+      "symbol": "VELO-USD",
+      "price": 0.01629,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:45.265449Z",
+      "market": "crypto",
+      "symbol": "COOKIE-USD",
+      "price": 0.01977,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:45.520576Z",
+      "market": "crypto",
+      "symbol": "LDO-USD",
+      "price": 0.293,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:45.822319Z",
+      "market": "crypto",
+      "symbol": "AURORA-USD",
+      "price": 0.0283,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:45.910697Z",
+      "market": "crypto",
+      "symbol": "BEAM-USD",
+      "price": 0.001988,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:46.114285Z",
+      "market": "crypto",
+      "symbol": "AVT-USD",
+      "price": 0.59,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:46.220800Z",
+      "market": "crypto",
+      "symbol": "MANA-EUR",
+      "price": 0.079,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:46.297625Z",
+      "market": "crypto",
+      "symbol": "ZEN-USD",
+      "price": 5.418,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:46.425755Z",
+      "market": "crypto",
+      "symbol": "APE-USD",
+      "price": 0.095,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:46.518674Z",
+      "market": "crypto",
+      "symbol": "AAVE-BTC",
+      "price": 0.0016144,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:46.606080Z",
+      "market": "crypto",
+      "symbol": "ETH-GBP",
+      "price": 1478.88,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:46.687143Z",
+      "market": "crypto",
+      "symbol": "FIL-USD",
+      "price": 0.976,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:46.774768Z",
+      "market": "crypto",
+      "symbol": "DOGINME-USD",
+      "price": 0.0001026,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:46.828298Z",
+      "market": "crypto",
+      "symbol": "SHIB-USD",
+      "price": 5.41e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:46.916737Z",
+      "market": "crypto",
+      "symbol": "USD1-USD",
+      "price": 0.9995,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:47.004389Z",
+      "market": "crypto",
+      "symbol": "ANKR-EUR",
+      "price": 0.00375,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:47.137270Z",
+      "market": "crypto",
+      "symbol": "USDC-GBP",
+      "price": 0.746,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:47.321483Z",
+      "market": "crypto",
+      "symbol": "RAD-USD",
+      "price": 0.234,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:47.406863Z",
+      "market": "crypto",
+      "symbol": "CBETH-USD",
+      "price": 2224.43,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:47.486107Z",
+      "market": "crypto",
+      "symbol": "RENDER-USD",
+      "price": 1.385,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:47.753013Z",
+      "market": "crypto",
+      "symbol": "IMU-USD",
+      "price": 0.00288,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:48.060405Z",
+      "market": "crypto",
+      "symbol": "PAXG-USD",
+      "price": 5181.24,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:48.152865Z",
+      "market": "crypto",
+      "symbol": "ALEO-USD",
+      "price": 0.063,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:48.246262Z",
+      "market": "crypto",
+      "symbol": "BCH-EUR",
+      "price": 388.33,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:48.333201Z",
+      "market": "crypto",
+      "symbol": "IMX-USD",
+      "price": 0.1564,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:48.553000Z",
+      "market": "crypto",
+      "symbol": "SOL-GBP",
+      "price": 63.03,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:48.665487Z",
+      "market": "crypto",
+      "symbol": "REQ-USD",
+      "price": 0.0617,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:48.763239Z",
+      "market": "crypto",
+      "symbol": "CBETH-ETH",
+      "price": 1.1246,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:48.922583Z",
+      "market": "crypto",
+      "symbol": "LCX-USD",
+      "price": 0.0449,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:49.180515Z",
+      "market": "crypto",
+      "symbol": "ENS-USDT",
+      "price": 5.84,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:49.392859Z",
+      "market": "crypto",
+      "symbol": "EDGE-USD",
+      "price": 0.14093,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:49.640134Z",
+      "market": "crypto",
+      "symbol": "WAXL-USD",
+      "price": 0.0537,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:50.088713Z",
+      "market": "crypto",
+      "symbol": "ETH-USD",
+      "price": 1978.2,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:50.164941Z",
+      "market": "crypto",
+      "symbol": "OCEAN-USD",
+      "price": 0.1042,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:50.375532Z",
+      "market": "crypto",
+      "symbol": "SD-USD",
+      "price": 0.1402,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:50.581729Z",
+      "market": "crypto",
+      "symbol": "WLFI-USD",
+      "price": 0.09685,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:50.775078Z",
+      "market": "crypto",
+      "symbol": "BAT-EUR",
+      "price": 0.08567,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:50.866009Z",
+      "market": "crypto",
+      "symbol": "FIS-USD",
+      "price": 0.0171,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:50.962248Z",
+      "market": "crypto",
+      "symbol": "AVAX-USD",
+      "price": 9.0,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:51.048285Z",
+      "market": "crypto",
+      "symbol": "XRP-USDT",
+      "price": 1.3676,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:51.128547Z",
+      "market": "crypto",
+      "symbol": "SAPIEN-USD",
+      "price": 0.07432,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:51.293378Z",
+      "market": "crypto",
+      "symbol": "AUCTION-USD",
+      "price": 4.67,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:51.401155Z",
+      "market": "crypto",
+      "symbol": "TRIA-USD",
+      "price": 0.023648,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:51.472167Z",
+      "market": "crypto",
+      "symbol": "JASMY-USD",
+      "price": 0.00556,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:51.584143Z",
+      "market": "crypto",
+      "symbol": "ELA-USD",
+      "price": 0.601,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:51.676153Z",
+      "market": "crypto",
+      "symbol": "PLUME-USD",
+      "price": 0.01125,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:52.048741Z",
+      "market": "crypto",
+      "symbol": "DOT-EUR",
+      "price": 1.29,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:52.142401Z",
+      "market": "crypto",
+      "symbol": "ICP-EUR",
+      "price": 2.145,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:52.249521Z",
+      "market": "crypto",
+      "symbol": "RONIN-USD",
+      "price": 0.0895,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:52.499647Z",
+      "market": "crypto",
+      "symbol": "NEON-USD",
+      "price": 0.03065,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:52.589404Z",
+      "market": "crypto",
+      "symbol": "AUDIO-USD",
+      "price": 0.0226,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:52.670600Z",
+      "market": "crypto",
+      "symbol": "ARPA-USD",
+      "price": 0.0099,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:52.766726Z",
+      "market": "crypto",
+      "symbol": "REZ-USD",
+      "price": 0.00307,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:52.849061Z",
+      "market": "crypto",
+      "symbol": "TIME-USD",
+      "price": 2.81,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:53.223718Z",
+      "market": "crypto",
+      "symbol": "BIGTIME-USD",
+      "price": 0.01331,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:53.583239Z",
+      "market": "crypto",
+      "symbol": "SOL-USD",
+      "price": 84.2,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:53.684474Z",
+      "market": "crypto",
+      "symbol": "CRO-USD",
+      "price": 0.07497,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:53.764419Z",
+      "market": "crypto",
+      "symbol": "ETHFI-USD",
+      "price": 0.532,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:53.853612Z",
+      "market": "crypto",
+      "symbol": "C98-USD",
+      "price": 0.0251,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:54.144045Z",
+      "market": "crypto",
+      "symbol": "PRIME-USD",
+      "price": 0.444,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:54.278652Z",
+      "market": "crypto",
+      "symbol": "TRU-USD",
+      "price": 0.0048,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:54.384900Z",
+      "market": "crypto",
+      "symbol": "AKT-USD",
+      "price": 0.397,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:54.503200Z",
+      "market": "crypto",
+      "symbol": "USDT-EUR",
+      "price": 0.86196,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:54.618481Z",
+      "market": "crypto",
+      "symbol": "BADGER-USD",
+      "price": 0.3743,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:55.050167Z",
+      "market": "crypto",
+      "symbol": "BTC-GBP",
+      "price": 50641.0,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:55.144512Z",
+      "market": "crypto",
+      "symbol": "YB-USD",
+      "price": 0.1606,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:55.233581Z",
+      "market": "crypto",
+      "symbol": "CGLD-USD",
+      "price": 0.0744,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:55.344740Z",
+      "market": "crypto",
+      "symbol": "RED-USD",
+      "price": 0.1304,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:55.482196Z",
+      "market": "crypto",
+      "symbol": "ALLO-USD",
+      "price": 0.1215,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:55.560225Z",
+      "market": "crypto",
+      "symbol": "LINK-EUR",
+      "price": 7.59,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:55.663665Z",
+      "market": "crypto",
+      "symbol": "HBAR-USDT",
+      "price": 0.09635,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:55.775770Z",
+      "market": "crypto",
+      "symbol": "ETH-EUR",
+      "price": 1705.9,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:55.880001Z",
+      "market": "crypto",
+      "symbol": "LIGHTER-USD",
+      "price": 1.143,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:56.045534Z",
+      "market": "crypto",
+      "symbol": "FARTCOIN-USD",
+      "price": 0.1528,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:56.222389Z",
+      "market": "crypto",
+      "symbol": "STX-USDT",
+      "price": 0.2614,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:56.486555Z",
+      "market": "crypto",
+      "symbol": "SOL-ETH",
+      "price": 0.04255,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:56.562818Z",
+      "market": "crypto",
+      "symbol": "RSC-USD",
+      "price": 0.0886,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:56.673461Z",
+      "market": "crypto",
+      "symbol": "EIGEN-USD",
+      "price": 0.181,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:56.755912Z",
+      "market": "crypto",
+      "symbol": "ZEC-USD",
+      "price": 208.18,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:56.835010Z",
+      "market": "crypto",
+      "symbol": "CRV-GBP",
+      "price": 0.1785,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:56.891222Z",
+      "market": "crypto",
+      "symbol": "CTSI-USD",
+      "price": 0.0238,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:56.970244Z",
+      "market": "crypto",
+      "symbol": "BTRST-USD",
+      "price": 0.077,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:57.020626Z",
+      "market": "crypto",
+      "symbol": "S-USD",
+      "price": 0.03947,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:57.107003Z",
+      "market": "crypto",
+      "symbol": "SHDW-USD",
+      "price": 0.033,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:57.298082Z",
+      "market": "crypto",
+      "symbol": "BNT-USD",
+      "price": 0.2829,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:57.457807Z",
+      "market": "crypto",
+      "symbol": "FET-USD",
+      "price": 0.1462,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:57.630712Z",
+      "market": "crypto",
+      "symbol": "COSMOSDYDX-USD",
+      "price": 0.0837,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:57.717282Z",
+      "market": "crypto",
+      "symbol": "ORCA-USD",
+      "price": 0.9004,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:57.809656Z",
+      "market": "crypto",
+      "symbol": "POLS-USD",
+      "price": 0.0577,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:58.220060Z",
+      "market": "crypto",
+      "symbol": "KNC-USD",
+      "price": 0.1294,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:58.291676Z",
+      "market": "crypto",
+      "symbol": "XRP-USD",
+      "price": 1.3629,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:58.344134Z",
+      "market": "crypto",
+      "symbol": "NEAR-USD",
+      "price": 1.231,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:58.712553Z",
+      "market": "crypto",
+      "symbol": "MNDE-USD",
+      "price": 0.02164,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:58.800980Z",
+      "market": "crypto",
+      "symbol": "RLS-USD",
+      "price": 0.00392,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:58.974340Z",
+      "market": "crypto",
+      "symbol": "LSETH-ETH",
+      "price": 1.09722,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:59.072549Z",
+      "market": "crypto",
+      "symbol": "BIO-USD",
+      "price": 0.0215,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:59.154831Z",
+      "market": "crypto",
+      "symbol": "LTC-BTC",
+      "price": 0.000793,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:59.245235Z",
+      "market": "crypto",
+      "symbol": "MINA-USD",
+      "price": 0.0553,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:59.328812Z",
+      "market": "crypto",
+      "symbol": "ETC-EUR",
+      "price": 7.08,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:59.536640Z",
+      "market": "crypto",
+      "symbol": "ACX-USD",
+      "price": 0.0334,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:59.719117Z",
+      "market": "crypto",
+      "symbol": "USDC-SGD",
+      "price": 1.275,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:59.896962Z",
+      "market": "crypto",
+      "symbol": "TRUMP-USD",
+      "price": 3.06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:38:59.982126Z",
+      "market": "crypto",
+      "symbol": "SNX-GBP",
+      "price": 0.238,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:00.094796Z",
+      "market": "crypto",
+      "symbol": "APE-EUR",
+      "price": 0.083,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:00.304456Z",
+      "market": "crypto",
+      "symbol": "GRT-USD",
+      "price": 0.0255,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:00.399645Z",
+      "market": "crypto",
+      "symbol": "UNI-GBP",
+      "price": 2.85,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:00.494186Z",
+      "market": "crypto",
+      "symbol": "CVX-USD",
+      "price": 2.178,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:01.147535Z",
+      "market": "crypto",
+      "symbol": "ALEPH-USD",
+      "price": 0.0205,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:01.235629Z",
+      "market": "crypto",
+      "symbol": "COW-USD",
+      "price": 0.2367,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:01.456404Z",
+      "market": "crypto",
+      "symbol": "JASMY-USDT",
+      "price": 0.00554,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:01.534894Z",
+      "market": "crypto",
+      "symbol": "SPA-USD",
+      "price": 0.003416,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:01.713765Z",
+      "market": "crypto",
+      "symbol": "METIS-USD",
+      "price": 3.26,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:02.066328Z",
+      "market": "crypto",
+      "symbol": "JUPITER-USD",
+      "price": 0.1766,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:02.155358Z",
+      "market": "crypto",
+      "symbol": "RARE-USD",
+      "price": 0.0158,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:02.260002Z",
+      "market": "crypto",
+      "symbol": "GRT-BTC",
+      "price": 3.7e-07,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:02.697282Z",
+      "market": "crypto",
+      "symbol": "PIRATE-USD",
+      "price": 0.0069,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:02.869963Z",
+      "market": "crypto",
+      "symbol": "HFT-USD",
+      "price": 0.0157,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:02.965981Z",
+      "market": "crypto",
+      "symbol": "DEXT-USD",
+      "price": 0.1312,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:03.059492Z",
+      "market": "crypto",
+      "symbol": "DOGE-EUR",
+      "price": 0.0778,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:03.327086Z",
+      "market": "crypto",
+      "symbol": "T-USD",
+      "price": 0.00643,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:03.412933Z",
+      "market": "crypto",
+      "symbol": "WAL-USD",
+      "price": 0.075,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:03.494971Z",
+      "market": "crypto",
+      "symbol": "TROLL-USD",
+      "price": 0.01426,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:03.679258Z",
+      "market": "crypto",
+      "symbol": "DAI-USD",
+      "price": 1.0,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:03.874333Z",
+      "market": "crypto",
+      "symbol": "MSOL-USD",
+      "price": 114.5,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:03.958610Z",
+      "market": "crypto",
+      "symbol": "BNKR-USD",
+      "price": 0.0005063,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:04.047814Z",
+      "market": "crypto",
+      "symbol": "MINA-EUR",
+      "price": 0.0479,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:04.124413Z",
+      "market": "crypto",
+      "symbol": "XPL-USD",
+      "price": 0.0983,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:04.208242Z",
+      "market": "crypto",
+      "symbol": "ROBO-USD",
+      "price": 0.04124,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:04.293966Z",
+      "market": "crypto",
+      "symbol": "ADA-ETH",
+      "price": 0.00013,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:04.482760Z",
+      "market": "crypto",
+      "symbol": "LINEA-USD",
+      "price": 0.00316,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:04.603687Z",
+      "market": "crypto",
+      "symbol": "ZORA-USD",
+      "price": 0.01847,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:04.866548Z",
+      "market": "crypto",
+      "symbol": "TURBO-USD",
+      "price": 0.00091,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:05.015891Z",
+      "market": "crypto",
+      "symbol": "BCH-GBP",
+      "price": 336.4,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:05.296202Z",
+      "market": "crypto",
+      "symbol": "KITE-USD",
+      "price": 0.256,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:05.388905Z",
+      "market": "crypto",
+      "symbol": "VVV-USD",
+      "price": 5.8833,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:05.477179Z",
+      "market": "crypto",
+      "symbol": "AAVE-USD",
+      "price": 109.8,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:05.559712Z",
+      "market": "crypto",
+      "symbol": "OMNI-USD",
+      "price": 0.712,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:05.669413Z",
+      "market": "crypto",
+      "symbol": "KARRAT-USD",
+      "price": 0.0057,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:05.716447Z",
+      "market": "crypto",
+      "symbol": "A8-USD",
+      "price": 0.0088,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:05.794744Z",
+      "market": "crypto",
+      "symbol": "BLAST-USD",
+      "price": 0.00051,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:05.995272Z",
+      "market": "crypto",
+      "symbol": "BOBBOB-USD",
+      "price": 0.00571,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:06.092409Z",
+      "market": "crypto",
+      "symbol": "ARB-USD",
+      "price": 0.0988,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:06.183419Z",
+      "market": "crypto",
+      "symbol": "RAY-USD",
+      "price": 0.5784,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:06.477508Z",
+      "market": "crypto",
+      "symbol": "STX-USD",
+      "price": 0.2602,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:06.686709Z",
+      "market": "crypto",
+      "symbol": "GIGA-USD",
+      "price": 0.002,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:06.781521Z",
+      "market": "crypto",
+      "symbol": "CVC-USD",
+      "price": 0.0301,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:06.883011Z",
+      "market": "crypto",
+      "symbol": "BTC-EUR",
+      "price": 58508.22,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:06.972482Z",
+      "market": "crypto",
+      "symbol": "PYTH-USD",
+      "price": 0.0471,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:07.249965Z",
+      "market": "crypto",
+      "symbol": "FAI-USD",
+      "price": 0.0083,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:07.364990Z",
+      "market": "crypto",
+      "symbol": "MET-USD",
+      "price": 0.1658,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:07.448055Z",
+      "market": "crypto",
+      "symbol": "AXL-USD",
+      "price": 0.0537,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:07.764198Z",
+      "market": "crypto",
+      "symbol": "AVAX-USDT",
+      "price": 9.0,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:07.838621Z",
+      "market": "crypto",
+      "symbol": "MANTLE-USD",
+      "price": 0.6796,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:07.943224Z",
+      "market": "crypto",
+      "symbol": "MANA-USD",
+      "price": 0.0924,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:08.374979Z",
+      "market": "crypto",
+      "symbol": "SAND-USD",
+      "price": 0.0802,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:08.681741Z",
+      "market": "crypto",
+      "symbol": "USDT-USDC",
+      "price": 1.0,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:08.858468Z",
+      "market": "crypto",
+      "symbol": "XTZ-EUR",
+      "price": 0.3161,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:08.966874Z",
+      "market": "crypto",
+      "symbol": "UNI-EUR",
+      "price": 3.3,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:09.050680Z",
+      "market": "crypto",
+      "symbol": "LRC-USD",
+      "price": 0.032,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:09.153520Z",
+      "market": "crypto",
+      "symbol": "MASK-USD",
+      "price": 0.44,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:09.293018Z",
+      "market": "crypto",
+      "symbol": "AUDD-USDC",
+      "price": 0.7042,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:09.376241Z",
+      "market": "crypto",
+      "symbol": "CRO-EUR",
+      "price": 0.0646,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:09.472549Z",
+      "market": "crypto",
+      "symbol": "GNO-USD",
+      "price": 125.96,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:09.634777Z",
+      "market": "crypto",
+      "symbol": "MDT-USD",
+      "price": 0.0103,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:09.721243Z",
+      "market": "crypto",
+      "symbol": "KMNO-USD",
+      "price": 0.02117,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:09.811360Z",
+      "market": "crypto",
+      "symbol": "TRUST-USD",
+      "price": 0.06925,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:09.981539Z",
+      "market": "crypto",
+      "symbol": "VARA-USD",
+      "price": 0.00094,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:10.081175Z",
+      "market": "crypto",
+      "symbol": "ALGO-USD",
+      "price": 0.0841,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:10.278998Z",
+      "market": "crypto",
+      "symbol": "W-USD",
+      "price": 0.01814,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:10.391159Z",
+      "market": "crypto",
+      "symbol": "GMT-USD",
+      "price": 0.0109,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:10.514508Z",
+      "market": "crypto",
+      "symbol": "STRK-USD",
+      "price": 0.039,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:10.589176Z",
+      "market": "crypto",
+      "symbol": "BREV-USD",
+      "price": 0.1563,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:10.783579Z",
+      "market": "crypto",
+      "symbol": "ICP-BTC",
+      "price": 3.659e-05,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:10.871258Z",
+      "market": "crypto",
+      "symbol": "OSMO-USD",
+      "price": 0.0331,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:11.134994Z",
+      "market": "crypto",
+      "symbol": "COTI-USD",
+      "price": 0.0118,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:11.228904Z",
+      "market": "crypto",
+      "symbol": "DASH-BTC",
+      "price": 0.00048,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:11.316976Z",
+      "market": "crypto",
+      "symbol": "NCT-USD",
+      "price": 0.00666,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:11.395643Z",
+      "market": "crypto",
+      "symbol": "ZRO-USD",
+      "price": 1.907,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:11.490621Z",
+      "market": "crypto",
+      "symbol": "DOOD-USD",
+      "price": 0.002973,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:11.598317Z",
+      "market": "crypto",
+      "symbol": "CRV-EUR",
+      "price": 0.2059,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:11.791172Z",
+      "market": "crypto",
+      "symbol": "COMP-BTC",
+      "price": 0.00025876,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:11.878446Z",
+      "market": "crypto",
+      "symbol": "ALGO-EUR",
+      "price": 0.0725,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:11.960655Z",
+      "market": "crypto",
+      "symbol": "ATOM-EUR",
+      "price": 1.554,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:12.142150Z",
+      "market": "crypto",
+      "symbol": "ABT-USD",
+      "price": 0.1671,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:12.567997Z",
+      "market": "crypto",
+      "symbol": "TNSR-USD",
+      "price": 0.046,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:12.654297Z",
+      "market": "crypto",
+      "symbol": "APT-USD",
+      "price": 0.9486,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:12.811133Z",
+      "market": "crypto",
+      "symbol": "TOSHI-USD",
+      "price": 0.0002037,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:12.929200Z",
+      "market": "crypto",
+      "symbol": "ZKP-USD",
+      "price": 0.09003,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:13.151491Z",
+      "market": "crypto",
+      "symbol": "ZK-USD",
+      "price": 0.01913,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:13.237661Z",
+      "market": "crypto",
+      "symbol": "WIF-USD",
+      "price": 0.18,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:13.336258Z",
+      "market": "crypto",
+      "symbol": "VTHO-USD",
+      "price": 0.000575,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:13.436694Z",
+      "market": "crypto",
+      "symbol": "RECALL-USD",
+      "price": 0.0472,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:13.544961Z",
+      "market": "crypto",
+      "symbol": "AGLD-USD",
+      "price": 0.2748,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:13.739189Z",
+      "market": "crypto",
+      "symbol": "SXT-USD",
+      "price": 0.0179,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:13.915686Z",
+      "market": "crypto",
+      "symbol": "CRV-USD",
+      "price": 0.2389,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:14.082581Z",
+      "market": "crypto",
+      "symbol": "SPELL-USD",
+      "price": 0.0001718,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:14.344655Z",
+      "market": "crypto",
+      "symbol": "USDT-GBP",
+      "price": 0.7462,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:14.416744Z",
+      "market": "crypto",
+      "symbol": "FLOKI-USD",
+      "price": 2.8e-05,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:14.594199Z",
+      "market": "crypto",
+      "symbol": "RLC-USD",
+      "price": 0.3761,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:14.681702Z",
+      "market": "crypto",
+      "symbol": "PUMP-USD",
+      "price": 0.001921,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:14.770367Z",
+      "market": "crypto",
+      "symbol": "STORJ-USD",
+      "price": 0.0913,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:14.864014Z",
+      "market": "crypto",
+      "symbol": "SWELL-USD",
+      "price": 0.00122,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:14.932907Z",
+      "market": "crypto",
+      "symbol": "XYO-USD",
+      "price": 0.00406,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:15.024530Z",
+      "market": "crypto",
+      "symbol": "DOT-USDT",
+      "price": 1.5,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:15.142079Z",
+      "market": "crypto",
+      "symbol": "XLM-EUR",
+      "price": 0.1304,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:15.342867Z",
+      "market": "crypto",
+      "symbol": "ANKR-USD",
+      "price": 0.00435,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:15.433269Z",
+      "market": "crypto",
+      "symbol": "GST-USD",
+      "price": 0.001653,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:15.534018Z",
+      "market": "crypto",
+      "symbol": "CLANKER-USD",
+      "price": 27.19,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:15.618789Z",
+      "market": "crypto",
+      "symbol": "WET-USD",
+      "price": 0.1046,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:15.803016Z",
+      "market": "crypto",
+      "symbol": "APT-USDT",
+      "price": 0.9547,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:16.077129Z",
+      "market": "crypto",
+      "symbol": "ILV-USD",
+      "price": 3.54,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:16.157332Z",
+      "market": "crypto",
+      "symbol": "MPLX-USD",
+      "price": 0.031,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:16.542754Z",
+      "market": "crypto",
+      "symbol": "BAND-USD",
+      "price": 0.217,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:16.722514Z",
+      "market": "crypto",
+      "symbol": "RAVE-USD",
+      "price": 0.2837,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:16.976604Z",
+      "market": "crypto",
+      "symbol": "CTX-USD",
+      "price": 0.5557,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:17.057124Z",
+      "market": "crypto",
+      "symbol": "CFG-USD",
+      "price": 0.1462,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:17.253490Z",
+      "market": "crypto",
+      "symbol": "ICP-USD",
+      "price": 2.489,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:17.331970Z",
+      "market": "crypto",
+      "symbol": "KSM-USD",
+      "price": 4.49,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:17.408092Z",
+      "market": "crypto",
+      "symbol": "KAITO-USD",
+      "price": 0.3584,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:17.504126Z",
+      "market": "crypto",
+      "symbol": "FET-USDT",
+      "price": 0.1463,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:17.673809Z",
+      "market": "crypto",
+      "symbol": "RPL-USD",
+      "price": 1.89,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:17.733801Z",
+      "market": "crypto",
+      "symbol": "HONEY-USD",
+      "price": 0.0031,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:17.821724Z",
+      "market": "crypto",
+      "symbol": "DOGE-BTC",
+      "price": 1.33e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:17.905446Z",
+      "market": "crypto",
+      "symbol": "ZAMA-USD",
+      "price": 0.01942,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:18.173337Z",
+      "market": "crypto",
+      "symbol": "QNT-USDT",
+      "price": 66.12,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:18.434305Z",
+      "market": "crypto",
+      "symbol": "ASM-USD",
+      "price": 0.00679,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:18.762695Z",
+      "market": "crypto",
+      "symbol": "BAT-USD",
+      "price": 0.09907,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:19.021127Z",
+      "market": "crypto",
+      "symbol": "SOL-EUR",
+      "price": 72.55,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:19.103491Z",
+      "market": "crypto",
+      "symbol": "FLR-USD",
+      "price": 0.00895,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:19.504959Z",
+      "market": "crypto",
+      "symbol": "ZRX-USD",
+      "price": 0.104789,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:19.586052Z",
+      "market": "crypto",
+      "symbol": "TAO-USD",
+      "price": 183.08,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:19.935333Z",
+      "market": "crypto",
+      "symbol": "DOGE-USDT",
+      "price": 0.0905,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:20.120081Z",
+      "market": "crypto",
+      "symbol": "DASH-USD",
+      "price": 32.74,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:20.228322Z",
+      "market": "crypto",
+      "symbol": "DOLO-USD",
+      "price": 0.03334,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:20.334730Z",
+      "market": "crypto",
+      "symbol": "DNT-USD",
+      "price": 0.0075,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:20.424386Z",
+      "market": "crypto",
+      "symbol": "USDC-EUR",
+      "price": 0.8619,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:20.668602Z",
+      "market": "crypto",
+      "symbol": "ICP-GBP",
+      "price": 1.86,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:20.746780Z",
+      "market": "crypto",
+      "symbol": "IMX-USDT",
+      "price": 0.156,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:20.854159Z",
+      "market": "crypto",
+      "symbol": "2Z-USD",
+      "price": 0.07414,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:21.044981Z",
+      "market": "crypto",
+      "symbol": "COMP-USD",
+      "price": 17.47,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:21.127898Z",
+      "market": "crypto",
+      "symbol": "RNBW-USD",
+      "price": 0.01909,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:21.385423Z",
+      "market": "crypto",
+      "symbol": "KERNEL-USD",
+      "price": 0.0773,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:21.463795Z",
+      "market": "crypto",
+      "symbol": "ZETA-USD",
+      "price": 0.0505,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:21.578117Z",
+      "market": "crypto",
+      "symbol": "ROSE-USDT",
+      "price": 0.0116,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:21.672254Z",
+      "market": "crypto",
+      "symbol": "ACH-USD",
+      "price": 0.006896,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:21.820173Z",
+      "market": "crypto",
+      "symbol": "GODS-USD",
+      "price": 0.03272,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:22.077691Z",
+      "market": "crypto",
+      "symbol": "PNG-USD",
+      "price": 0.0263,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:22.174816Z",
+      "market": "crypto",
+      "symbol": "CRO-USDT",
+      "price": 0.075,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:22.484314Z",
+      "market": "crypto",
+      "symbol": "XTZ-USD",
+      "price": 0.3659,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:22.563216Z",
+      "market": "crypto",
+      "symbol": "YFI-USD",
+      "price": 2520.26,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:22.721445Z",
+      "market": "crypto",
+      "symbol": "FARM-USD",
+      "price": 12.4,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:22.804972Z",
+      "market": "crypto",
+      "symbol": "SUSHI-USD",
+      "price": 0.198,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:22.983079Z",
+      "market": "crypto",
+      "symbol": "AVNT-USD",
+      "price": 0.1574,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:23.075628Z",
+      "market": "crypto",
+      "symbol": "PEPE-USD",
+      "price": 3.35e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:23.367850Z",
+      "market": "crypto",
+      "symbol": "RARI-USD",
+      "price": 0.1502,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:23.732455Z",
+      "market": "crypto",
+      "symbol": "DEGEN-USD",
+      "price": 0.000686,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:23.830246Z",
+      "market": "crypto",
+      "symbol": "SHIB-EUR",
+      "price": 4.66e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:23.912174Z",
+      "market": "crypto",
+      "symbol": "XLM-BTC",
+      "price": 2.23e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:24.037945Z",
+      "market": "crypto",
+      "symbol": "CHZ-EUR",
+      "price": 0.0303,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:24.125243Z",
+      "market": "crypto",
+      "symbol": "BCH-BTC",
+      "price": 0.006631,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:24.195287Z",
+      "market": "crypto",
+      "symbol": "MATH-USD",
+      "price": 0.0268,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:24.411096Z",
+      "market": "crypto",
+      "symbol": "DIA-USD",
+      "price": 0.18051,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:24.698452Z",
+      "market": "crypto",
+      "symbol": "AVAX-EUR",
+      "price": 7.75,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:24.782964Z",
+      "market": "crypto",
+      "symbol": "LINK-ETH",
+      "price": 0.00442882,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:24.908858Z",
+      "market": "crypto",
+      "symbol": "YFI-BTC",
+      "price": 0.0373233,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:25.033250Z",
+      "market": "crypto",
+      "symbol": "NKN-USD",
+      "price": 0.0056,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:25.292999Z",
+      "market": "crypto",
+      "symbol": "ARKM-USD",
+      "price": 0.103,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:25.377380Z",
+      "market": "crypto",
+      "symbol": "AWE-USD",
+      "price": 0.05163,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:25.447255Z",
+      "market": "crypto",
+      "symbol": "BAL-USD",
+      "price": 0.1474,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:25.610026Z",
+      "market": "crypto",
+      "symbol": "EURC-USDC",
+      "price": 1.1602,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:25.690968Z",
+      "market": "crypto",
+      "symbol": "XTZ-GBP",
+      "price": 0.2736,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:25.767492Z",
+      "market": "crypto",
+      "symbol": "BLZ-USD",
+      "price": 0.0125,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:25.822412Z",
+      "market": "crypto",
+      "symbol": "FORT-USD",
+      "price": 0.0141,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:25.934350Z",
+      "market": "crypto",
+      "symbol": "PRCL-USD",
+      "price": 0.0142,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:26.137937Z",
+      "market": "crypto",
+      "symbol": "ZETACHAIN-USD",
+      "price": 0.0505,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:26.227892Z",
+      "market": "crypto",
+      "symbol": "ESP-USD",
+      "price": 0.11166,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:26.345185Z",
+      "market": "crypto",
+      "symbol": "AVAX-BTC",
+      "price": 0.00013234,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:26.440666Z",
+      "market": "crypto",
+      "symbol": "XAN-USD",
+      "price": 0.00645,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:26.594665Z",
+      "market": "crypto",
+      "symbol": "ATOM-USD",
+      "price": 1.817,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:26.868092Z",
+      "market": "crypto",
+      "symbol": "HNT-USD",
+      "price": 1.196,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:27.044672Z",
+      "market": "crypto",
+      "symbol": "TIA-USD",
+      "price": 0.3248,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:27.132897Z",
+      "market": "crypto",
+      "symbol": "BICO-USD",
+      "price": 0.0191,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:27.733622Z",
+      "market": "crypto",
+      "symbol": "NOM-USD",
+      "price": 0.00338,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:27.874035Z",
+      "market": "crypto",
+      "symbol": "BTC-USD",
+      "price": 67882.92,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:27.960015Z",
+      "market": "crypto",
+      "symbol": "1INCH-EUR",
+      "price": 0.081,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:28.044770Z",
+      "market": "crypto",
+      "symbol": "QI-USD",
+      "price": 0.001884,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:28.348932Z",
+      "market": "crypto",
+      "symbol": "L3-USD",
+      "price": 0.00691,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:28.515419Z",
+      "market": "crypto",
+      "symbol": "SYND-USD",
+      "price": 0.0636,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:28.599436Z",
+      "market": "crypto",
+      "symbol": "CORECHAIN-USD",
+      "price": 0.0806,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:28.698445Z",
+      "market": "crypto",
+      "symbol": "ELSA-USD",
+      "price": 0.0744,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:28.790402Z",
+      "market": "crypto",
+      "symbol": "ETC-BTC",
+      "price": 0.00012,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:28.989022Z",
+      "market": "crypto",
+      "symbol": "SQD-USD",
+      "price": 0.0357,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:29.057661Z",
+      "market": "crypto",
+      "symbol": "SAND-USDT",
+      "price": 0.0809,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:29.141830Z",
+      "market": "crypto",
+      "symbol": "ASTER-USD",
+      "price": 0.694,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:29.217886Z",
+      "market": "crypto",
+      "symbol": "CHZ-USD",
+      "price": 0.035,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:29.261640Z",
+      "market": "crypto",
+      "symbol": "PLU-USD",
+      "price": 0.16486,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:29.497580Z",
+      "market": "crypto",
+      "symbol": "DBR-USD",
+      "price": 0.0157,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:29.599812Z",
+      "market": "crypto",
+      "symbol": "JTO-USD",
+      "price": 0.257,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:29.983878Z",
+      "market": "crypto",
+      "symbol": "LPT-USD",
+      "price": 2.24,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:30.068168Z",
+      "market": "crypto",
+      "symbol": "LSETH-USD",
+      "price": 2198.76,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:30.186606Z",
+      "market": "crypto",
+      "symbol": "AST-USD",
+      "price": 0.0081,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:30.256326Z",
+      "market": "crypto",
+      "symbol": "AXS-USD",
+      "price": 1.142,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:30.378055Z",
+      "market": "crypto",
+      "symbol": "FIDA-USD",
+      "price": 0.0154,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:30.645491Z",
+      "market": "crypto",
+      "symbol": "B3-USD",
+      "price": 0.000348,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:30.836662Z",
+      "market": "crypto",
+      "symbol": "LINK-GBP",
+      "price": 6.57,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:30.909432Z",
+      "market": "crypto",
+      "symbol": "POL-USD",
+      "price": 0.0977,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:31.002991Z",
+      "market": "crypto",
+      "symbol": "SEAM-USD",
+      "price": 0.1061,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:31.091226Z",
+      "market": "crypto",
+      "symbol": "AAVE-GBP",
+      "price": 82.01,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:31.257547Z",
+      "market": "crypto",
+      "symbol": "SUKU-USD",
+      "price": 0.0077,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:31.347282Z",
+      "market": "crypto",
+      "symbol": "THQ-USD",
+      "price": 0.02965,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:31.433079Z",
+      "market": "crypto",
+      "symbol": "OXT-USD",
+      "price": 0.0162,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:31.614114Z",
+      "market": "crypto",
+      "symbol": "MASK-GBP",
+      "price": 0.321,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:31.754595Z",
+      "market": "crypto",
+      "symbol": "UNI-BTC",
+      "price": 5.62e-05,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:31.990986Z",
+      "market": "crypto",
+      "symbol": "PENGU-USD",
+      "price": 0.006735,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:32.206331Z",
+      "market": "crypto",
+      "symbol": "PYR-USD",
+      "price": 0.301,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:32.290970Z",
+      "market": "crypto",
+      "symbol": "KRL-USD",
+      "price": 0.1512,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:32.374595Z",
+      "market": "crypto",
+      "symbol": "PERP-USD",
+      "price": 0.0444,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:32.478507Z",
+      "market": "crypto",
+      "symbol": "XLM-USDT",
+      "price": 0.1512,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:32.549894Z",
+      "market": "crypto",
+      "symbol": "BTC-USDT",
+      "price": 67848.39,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:32.627265Z",
+      "market": "crypto",
+      "symbol": "TRAC-USD",
+      "price": 0.3021,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:32.831656Z",
+      "market": "crypto",
+      "symbol": "MAGIC-USD",
+      "price": 0.0604,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:32.956054Z",
+      "market": "crypto",
+      "symbol": "DOT-GBP",
+      "price": 1.11,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:33.133736Z",
+      "market": "crypto",
+      "symbol": "APR-USD",
+      "price": 0.1168,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:33.207163Z",
+      "market": "crypto",
+      "symbol": "LTC-USD",
+      "price": 53.9,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:33.555867Z",
+      "market": "crypto",
+      "symbol": "SUPER-USD",
+      "price": 0.1121,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:34.209092Z",
+      "market": "crypto",
+      "symbol": "HOME-USD",
+      "price": 0.02531,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:34.296060Z",
+      "market": "crypto",
+      "symbol": "APE-USDT",
+      "price": 0.095,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:34.399613Z",
+      "market": "crypto",
+      "symbol": "PENDLE-USD",
+      "price": 1.224,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:34.483674Z",
+      "market": "crypto",
+      "symbol": "MLN-USD",
+      "price": 3.44,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:34.610404Z",
+      "market": "crypto",
+      "symbol": "AERGO-USD",
+      "price": 0.0542,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:34.780902Z",
+      "market": "crypto",
+      "symbol": "BARD-USD",
+      "price": 1.1811,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:34.987978Z",
+      "market": "crypto",
+      "symbol": "KAVA-USD",
+      "price": 0.0667,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:35.157392Z",
+      "market": "crypto",
+      "symbol": "ATOM-GBP",
+      "price": 1.349,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:35.223018Z",
+      "market": "crypto",
+      "symbol": "SKY-USD",
+      "price": 0.07156,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:35.364929Z",
+      "market": "crypto",
+      "symbol": "FORTH-USD",
+      "price": 0.8348,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:35.441016Z",
+      "market": "crypto",
+      "symbol": "BNB-USD",
+      "price": 626.37,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:35.951067Z",
+      "market": "crypto",
+      "symbol": "FLUID-USD",
+      "price": 2.168,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:36.139586Z",
+      "market": "crypto",
+      "symbol": "MOG-USD",
+      "price": 1.5e-07,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:36.351275Z",
+      "market": "crypto",
+      "symbol": "HIGH-USD",
+      "price": 0.136,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:36.508632Z",
+      "market": "crypto",
+      "symbol": "ICP-USDT",
+      "price": 2.492,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:36.629581Z",
+      "market": "crypto",
+      "symbol": "AIOZ-USD",
+      "price": 0.0639,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:36.714018Z",
+      "market": "crypto",
+      "symbol": "FOX-USD",
+      "price": 0.0069,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:36.782180Z",
+      "market": "crypto",
+      "symbol": "SEI-USD",
+      "price": 0.06586,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:36.865775Z",
+      "market": "crypto",
+      "symbol": "DRIFT-USD",
+      "price": 0.082,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:36.951106Z",
+      "market": "crypto",
+      "symbol": "UP-USD",
+      "price": 0.03798,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:37.033304Z",
+      "market": "crypto",
+      "symbol": "HOPR-USD",
+      "price": 0.0221,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:37.110347Z",
+      "market": "crypto",
+      "symbol": "INV-USD",
+      "price": 18.06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:37.377685Z",
+      "market": "crypto",
+      "symbol": "XSGD-USDC",
+      "price": 0.7813,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:37.473383Z",
+      "market": "crypto",
+      "symbol": "DEEP-USD",
+      "price": 0.02808,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:38.130596Z",
+      "market": "crypto",
+      "symbol": "ATH-USD",
+      "price": 0.00602,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:38.211688Z",
+      "market": "crypto",
+      "symbol": "PNUT-USD",
+      "price": 0.0454,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:38.295302Z",
+      "market": "crypto",
+      "symbol": "BOBA-USD",
+      "price": 0.0222,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:38.385250Z",
+      "market": "crypto",
+      "symbol": "MON-USD",
+      "price": 0.02223,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:38.474711Z",
+      "market": "crypto",
+      "symbol": "AMP-USD",
+      "price": 0.00141,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:38.598353Z",
+      "market": "crypto",
+      "symbol": "NOICE-USD",
+      "price": 4.61e-05,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:38.690424Z",
+      "market": "crypto",
+      "symbol": "INDEX-USD",
+      "price": 0.29,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:38.782956Z",
+      "market": "crypto",
+      "symbol": "CRV-BTC",
+      "price": 3.54e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:39.254375Z",
+      "market": "crypto",
+      "symbol": "XTZ-BTC",
+      "price": 5.4e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:39.339315Z",
+      "market": "crypto",
+      "symbol": "SHIB-USDT",
+      "price": 5.4e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:39.509192Z",
+      "market": "crypto",
+      "symbol": "API3-USD",
+      "price": 0.277,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:39.598298Z",
+      "market": "crypto",
+      "symbol": "CAKE-USD",
+      "price": 1.339,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:39.866630Z",
+      "market": "crypto",
+      "symbol": "USDS-USD",
+      "price": 0.9997,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:40.043533Z",
+      "market": "crypto",
+      "symbol": "ENS-USD",
+      "price": 5.87,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:40.132298Z",
+      "market": "crypto",
+      "symbol": "SENT-USD",
+      "price": 0.02402,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:40.245662Z",
+      "market": "crypto",
+      "symbol": "NMR-USD",
+      "price": 7.81,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:40.360856Z",
+      "market": "crypto",
+      "symbol": "WCT-USD",
+      "price": 0.0586,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:40.445114Z",
+      "market": "crypto",
+      "symbol": "ALGO-GBP",
+      "price": 0.0628,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:40.564292Z",
+      "market": "crypto",
+      "symbol": "PAX-USD",
+      "price": 0.9997,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:40.876433Z",
+      "market": "crypto",
+      "symbol": "MORPHO-USD",
+      "price": 1.7937,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:41.048714Z",
+      "market": "crypto",
+      "symbol": "HYPER-USD",
+      "price": 0.0887,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:41.233069Z",
+      "market": "crypto",
+      "symbol": "NEAR-USDT",
+      "price": 1.232,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:41.321258Z",
+      "market": "crypto",
+      "symbol": "ADA-USD",
+      "price": 0.2577,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:41.409731Z",
+      "market": "crypto",
+      "symbol": "ETC-USD",
+      "price": 8.22,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:41.502180Z",
+      "market": "crypto",
+      "symbol": "DIMO-USD",
+      "price": 0.01239,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:41.548312Z",
+      "market": "crypto",
+      "symbol": "WELL-USD",
+      "price": 0.004403,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:41.680605Z",
+      "market": "crypto",
+      "symbol": "ADA-EUR",
+      "price": 0.2222,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:42.234078Z",
+      "market": "crypto",
+      "symbol": "PUNDIX-USD",
+      "price": 0.1492,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:42.322175Z",
+      "market": "crypto",
+      "symbol": "ADA-USDT",
+      "price": 0.2581,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:42.450942Z",
+      "market": "crypto",
+      "symbol": "NEWT-USD",
+      "price": 0.0643,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:42.499939Z",
+      "market": "crypto",
+      "symbol": "ENA-USD",
+      "price": 0.1025,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:42.669591Z",
+      "market": "crypto",
+      "symbol": "TON-USD",
+      "price": 1.331,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:42.818527Z",
+      "market": "crypto",
+      "symbol": "INJ-USD",
+      "price": 2.901,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:42.894094Z",
+      "market": "crypto",
+      "symbol": "USDT-USD",
+      "price": 0.99998,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:43.164642Z",
+      "market": "crypto",
+      "symbol": "JITOSOL-USD",
+      "price": 107.13,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:43.363454Z",
+      "market": "crypto",
+      "symbol": "ATOM-USDT",
+      "price": 1.815,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:43.446756Z",
+      "market": "crypto",
+      "symbol": "POPCAT-USD",
+      "price": 0.0507,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:43.532460Z",
+      "market": "crypto",
+      "symbol": "GTC-USD",
+      "price": 0.0811,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:43.634449Z",
+      "market": "crypto",
+      "symbol": "WMTX-USD",
+      "price": 0.06611,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:43.728646Z",
+      "market": "crypto",
+      "symbol": "LINK-USDT",
+      "price": 8.79,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:43.812032Z",
+      "market": "crypto",
+      "symbol": "ETH-BTC",
+      "price": 0.02915,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:43.965066Z",
+      "market": "crypto",
+      "symbol": "FIGHT-USD",
+      "price": 0.00524,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:44.129561Z",
+      "market": "crypto",
+      "symbol": "BLUR-USD",
+      "price": 0.0193,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:44.256463Z",
+      "market": "crypto",
+      "symbol": "LTC-GBP",
+      "price": 40.23,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:44.419015Z",
+      "market": "crypto",
+      "symbol": "STG-USD",
+      "price": 0.1714,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:44.724983Z",
+      "market": "crypto",
+      "symbol": "00-USD",
+      "price": 0.0046,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:44.818343Z",
+      "market": "crypto",
+      "symbol": "SHPING-USD",
+      "price": 0.001571,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:44.889195Z",
+      "market": "crypto",
+      "symbol": "GLM-USD",
+      "price": 0.1287,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:45.085938Z",
+      "market": "crypto",
+      "symbol": "BERA-USD",
+      "price": 0.543,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:45.158849Z",
+      "market": "crypto",
+      "symbol": "ONDO-USD",
+      "price": 0.25127,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:45.323536Z",
+      "market": "crypto",
+      "symbol": "HBAR-USD",
+      "price": 0.09631,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:45.411296Z",
+      "market": "crypto",
+      "symbol": "ERA-USD",
+      "price": 0.1432,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:45.588764Z",
+      "market": "crypto",
+      "symbol": "SOL-BTC",
+      "price": 0.001241,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:45.754143Z",
+      "market": "crypto",
+      "symbol": "EUL-USD",
+      "price": 1.003,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:45.850945Z",
+      "market": "crypto",
+      "symbol": "FIL-EUR",
+      "price": 0.84,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:45.969177Z",
+      "market": "crypto",
+      "symbol": "G-USD",
+      "price": 0.00329,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:46.038020Z",
+      "market": "crypto",
+      "symbol": "ETH-USDT",
+      "price": 1978.2,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:46.120621Z",
+      "market": "crypto",
+      "symbol": "ADA-GBP",
+      "price": 0.1928,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:46.249621Z",
+      "market": "crypto",
+      "symbol": "PRO-USD",
+      "price": 0.3527,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:46.321348Z",
+      "market": "crypto",
+      "symbol": "ME-USD",
+      "price": 0.1127,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:46.416980Z",
+      "market": "crypto",
+      "symbol": "CELR-USD",
+      "price": 0.00251,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:46.506040Z",
+      "market": "crypto",
+      "symbol": "GWEI-USD",
+      "price": 0.046084,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:46.590382Z",
+      "market": "crypto",
+      "symbol": "UNI-USD",
+      "price": 3.823,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:46.975397Z",
+      "market": "crypto",
+      "symbol": "VOXEL-USD",
+      "price": 0.0084,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:47.065204Z",
+      "market": "crypto",
+      "symbol": "LQTY-USD",
+      "price": 0.2771,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:47.845938Z",
+      "market": "crypto",
+      "symbol": "ALT-USD",
+      "price": 0.00716,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:47.934878Z",
+      "market": "crypto",
+      "symbol": "DOT-USD",
+      "price": 1.489,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:48.010648Z",
+      "market": "crypto",
+      "symbol": "BIRB-USD",
+      "price": 0.1413,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:48.058486Z",
+      "market": "crypto",
+      "symbol": "LINK-USD",
+      "price": 8.785,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:48.135053Z",
+      "market": "crypto",
+      "symbol": "ACS-USD",
+      "price": 0.0001805,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:48.224046Z",
+      "market": "crypto",
+      "symbol": "SKR-USD",
+      "price": 0.02459,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:48.310585Z",
+      "market": "crypto",
+      "symbol": "INX-USD",
+      "price": 0.011355,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:48.472838Z",
+      "market": "crypto",
+      "symbol": "1INCH-GBP",
+      "price": 0.069,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:48.733661Z",
+      "market": "crypto",
+      "symbol": "FIL-GBP",
+      "price": 0.73,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:48.902687Z",
+      "market": "crypto",
+      "symbol": "POWR-USD",
+      "price": 0.0617,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:49.066022Z",
+      "market": "crypto",
+      "symbol": "TRB-USD",
+      "price": 14.91,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:49.202130Z",
+      "market": "crypto",
+      "symbol": "DOGE-USD",
+      "price": 0.09021,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:49.605726Z",
+      "market": "crypto",
+      "symbol": "USELESS-USD",
+      "price": 0.0406,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:49.692627Z",
+      "market": "crypto",
+      "symbol": "ATOM-BTC",
+      "price": 2.68e-05,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:50.022855Z",
+      "market": "crypto",
+      "symbol": "SPX-USD",
+      "price": 0.3122,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:50.106001Z",
+      "market": "crypto",
+      "symbol": "RSR-USD",
+      "price": 0.001625,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:50.418304Z",
+      "market": "crypto",
+      "symbol": "AZTEC-USD",
+      "price": 0.02171,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:50.494229Z",
+      "market": "crypto",
+      "symbol": "OP-USDT",
+      "price": 0.12,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:50.612697Z",
+      "market": "crypto",
+      "symbol": "BCH-USD",
+      "price": 450.17,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:50.698492Z",
+      "market": "crypto",
+      "symbol": "USDC-AUD",
+      "price": 1.4264,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:50.825908Z",
+      "market": "crypto",
+      "symbol": "IP-USD",
+      "price": 0.824,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:50.933177Z",
+      "market": "crypto",
+      "symbol": "USDC-CAD",
+      "price": 1.36,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:50.983812Z",
+      "market": "crypto",
+      "symbol": "SUI-USD",
+      "price": 0.9024,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:51.139158Z",
+      "market": "crypto",
+      "symbol": "XLM-USD",
+      "price": 0.151384,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:51.439236Z",
+      "market": "crypto",
+      "symbol": "SHIB-GBP",
+      "price": 4.03e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:51.525607Z",
+      "market": "crypto",
+      "symbol": "ALCX-USD",
+      "price": 6.16,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:51.823452Z",
+      "market": "crypto",
+      "symbol": "ENS-EUR",
+      "price": 5.05,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:51.931981Z",
+      "market": "crypto",
+      "symbol": "GHST-USD",
+      "price": 0.085,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:52.021776Z",
+      "market": "crypto",
+      "symbol": "BONK-USD",
+      "price": 5.79e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:52.117282Z",
+      "market": "crypto",
+      "symbol": "GRT-EUR",
+      "price": 0.0218,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:52.200475Z",
+      "market": "crypto",
+      "symbol": "AERO-USD",
+      "price": 0.33287,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:52.291564Z",
+      "market": "crypto",
+      "symbol": "TOWNS-USD",
+      "price": 0.00323,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:52.378399Z",
+      "market": "crypto",
+      "symbol": "BAT-BTC",
+      "price": 1.45e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:52.627052Z",
+      "market": "crypto",
+      "symbol": "CHZ-GBP",
+      "price": 0.0261,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:52.872071Z",
+      "market": "crypto",
+      "symbol": "PROMPT-USD",
+      "price": 0.04319,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:52.944349Z",
+      "market": "crypto",
+      "symbol": "ALGO-BTC",
+      "price": 1.24e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:53.049032Z",
+      "market": "crypto",
+      "symbol": "VET-USD",
+      "price": 0.00706,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:53.136574Z",
+      "market": "crypto",
+      "symbol": "FLOW-USD",
+      "price": 0.039,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:53.233157Z",
+      "market": "crypto",
+      "symbol": "KTA-USD",
+      "price": 0.2349,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:53.390090Z",
+      "market": "crypto",
+      "symbol": "LAYER-USD",
+      "price": 0.0824,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:53.491349Z",
+      "market": "crypto",
+      "symbol": "LTC-EUR",
+      "price": 46.43,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:53.659332Z",
+      "market": "crypto",
+      "symbol": "ZKC-USD",
+      "price": 0.0815,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:53.741862Z",
+      "market": "crypto",
+      "symbol": "ETC-GBP",
+      "price": 6.14,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:53.832837Z",
+      "market": "crypto",
+      "symbol": "LRDS-USD",
+      "price": 0.0358,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:53.905389Z",
+      "market": "crypto",
+      "symbol": "LMTS-USD",
+      "price": 0.19582,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:53.981533Z",
+      "market": "crypto",
+      "symbol": "MOODENG-USD",
+      "price": 0.0488,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:54.071176Z",
+      "market": "crypto",
+      "symbol": "SYRUP-USD",
+      "price": 0.227,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:54.278863Z",
+      "market": "crypto",
+      "symbol": "1INCH-USD",
+      "price": 0.094,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:54.349393Z",
+      "market": "crypto",
+      "symbol": "SKL-USD",
+      "price": 0.0064,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:54.463123Z",
+      "market": "crypto",
+      "symbol": "OPN-USD",
+      "price": 0.3092,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:54.583433Z",
+      "market": "crypto",
+      "symbol": "LINK-BTC",
+      "price": 0.00012944,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:54.702696Z",
+      "market": "crypto",
+      "symbol": "UMA-USD",
+      "price": 0.418,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:54.817843Z",
+      "market": "crypto",
+      "symbol": "MAMO-USD",
+      "price": 0.01442,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:55.004097Z",
+      "market": "crypto",
+      "symbol": "CHZ-USDT",
+      "price": 0.0357,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:55.079767Z",
+      "market": "crypto",
+      "symbol": "XCN-USD",
+      "price": 0.00471,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:55.639344Z",
+      "market": "crypto",
+      "symbol": "ALICE-USD",
+      "price": 0.118,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:55.764235Z",
+      "market": "crypto",
+      "symbol": "TREE-USD",
+      "price": 0.0679,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:55.896762Z",
+      "market": "crypto",
+      "symbol": "LA-USD",
+      "price": 0.2395,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:56.072072Z",
+      "market": "crypto",
+      "symbol": "SWFTC-USD",
+      "price": 0.00352,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:56.160988Z",
+      "market": "crypto",
+      "symbol": "IRYS-USD",
+      "price": 0.01747,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:56.448145Z",
+      "market": "crypto",
+      "symbol": "OGN-USD",
+      "price": 0.01955,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:56.516455Z",
+      "market": "crypto",
+      "symbol": "XRP-EUR",
+      "price": 1.1745,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:56.638006Z",
+      "market": "crypto",
+      "symbol": "IDEX-USD",
+      "price": 0.0068,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:56.723915Z",
+      "market": "crypto",
+      "symbol": "SUP-USD",
+      "price": 0.01146,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:57.055917Z",
+      "market": "crypto",
+      "symbol": "SNX-EUR",
+      "price": 0.271,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:57.175373Z",
+      "market": "crypto",
+      "symbol": "IO-USD",
+      "price": 0.101,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:57.257234Z",
+      "market": "crypto",
+      "symbol": "SOL-USDT",
+      "price": 84.17,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:57.602325Z",
+      "market": "crypto",
+      "symbol": "ADA-BTC",
+      "price": 3.8e-06,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:57.776403Z",
+      "market": "crypto",
+      "symbol": "DOGE-GBP",
+      "price": 0.0673,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:58.227201Z",
+      "market": "crypto",
+      "symbol": "OP-USD",
+      "price": 0.119,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:58.318318Z",
+      "market": "crypto",
+      "symbol": "AAVE-EUR",
+      "price": 94.75,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:58.393527Z",
+      "market": "crypto",
+      "symbol": "FIL-BTC",
+      "price": 1.438e-05,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:58.520916Z",
+      "market": "crypto",
+      "symbol": "SAFE-USD",
+      "price": 0.1023,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:58.632229Z",
+      "market": "crypto",
+      "symbol": "POND-USD",
+      "price": 0.00234,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:58.725067Z",
+      "market": "crypto",
+      "symbol": "SNX-USD",
+      "price": 0.314,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:58.850485Z",
+      "market": "crypto",
+      "symbol": "BAT-ETH",
+      "price": 5.004e-05,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:59.129674Z",
+      "market": "crypto",
+      "symbol": "ROSE-USD",
+      "price": 0.01165,
+      "confidence": 0.5,
+      "type": "price_snapshot",
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-07T13:39:59.300307Z",
+      "market": "crypto",
+      "symbol": "QNT-USD",
+      "price": 65.7,
       "confidence": 0.5,
       "type": "price_snapshot",
       "source": "coinbase"
