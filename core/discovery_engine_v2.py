@@ -5,8 +5,67 @@ from pathlib import Path
 import json
 from datetime import datetime
 
-
 FEED_PATH = Path("docs/feed/index.json")
+
+MIN_PRICE = 0.0001
+MAX_PRICE = 100000
+
+BLACKLIST = [
+    "SCAM",
+    "TEST"
+]
+
+
+def valid_symbol(symbol):
+
+    if not symbol:
+        return False
+
+    symbol = symbol.upper()
+
+    for bad in BLACKLIST:
+        if bad in symbol:
+            return False
+
+    return True
+
+
+def valid_price(price):
+
+    try:
+        price = float(price)
+    except:
+        return False
+
+    if price < MIN_PRICE:
+        return False
+
+    if price > MAX_PRICE:
+        return False
+
+    return True
+
+
+def liquidity_filter(signals):
+
+    filtered = []
+
+    for s in signals:
+
+        symbol = s.get("symbol")
+        price = s.get("price")
+
+        if not valid_symbol(symbol):
+            continue
+
+        if not valid_price(price):
+            continue
+
+        s["filtered_at"] = datetime.utcnow().isoformat() + "Z"
+
+        filtered.append(s)
+
+    return filtered
 
 
 async def run_connector(module):
@@ -97,7 +156,11 @@ def main():
 
     signals = asyncio.run(discover())
 
-    print(f"[DISCOVERY V2] signals added: {len(signals)}")
+    print(f"[DISCOVERY V2] raw signals: {len(signals)}")
+
+    signals = liquidity_filter(signals)
+
+    print(f"[DISCOVERY V2] after liquidity filter: {len(signals)}")
 
     save_feed(signals)
 
