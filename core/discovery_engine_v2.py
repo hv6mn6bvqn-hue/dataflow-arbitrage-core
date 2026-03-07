@@ -1,168 +1,98 @@
-import asyncio
-import importlib
-import pkgutil
+import requests
+from datetime import datetime
 from pathlib import Path
 import json
-from datetime import datetime
 
 FEED_PATH = Path("docs/feed/index.json")
 
-MIN_PRICE = 0.0001
-MAX_PRICE = 100000
-
-BLACKLIST = [
-    "SCAM",
-    "TEST"
-]
+CONNECTORS = {
+    "coinbase": "https://api.exchange.coinbase.com/products"
+}
 
 
-def valid_symbol(symbol):
+def fetch_coinbase_prices():
 
-    if not symbol:
-        return False
-
-    symbol = symbol.upper()
-
-    for bad in BLACKLIST:
-        if bad in symbol:
-            return False
-
-    return True
-
-
-def valid_price(price):
+    signals = []
 
     try:
-        price = float(price)
-    except:
-        return False
-
-    if price < MIN_PRICE:
-        return False
-
-    if price > MAX_PRICE:
-        return False
-
-    return True
-
-
-def liquidity_filter(signals):
-
-    filtered = []
-
-    for s in signals:
-
-        symbol = s.get("symbol")
-        price = s.get("price")
-
-        if not valid_symbol(symbol):
-            continue
-
-        if not valid_price(price):
-            continue
-
-        s["filtered_at"] = datetime.utcnow().isoformat() + "Z"
-
-        filtered.append(s)
-
-    return filtered
-
-
-async def run_connector(module):
-
-    try:
-
-        if hasattr(module, "fetch_prices"):
-
-            result = module.fetch_prices()
-
-            if asyncio.iscoroutine(result):
-                result = await result
-
-            print(f"[DISCOVERY] {module.__name__} → {len(result)} prices")
-
-            return result
-
-        return []
-
+        r = requests.get(CONNECTORS["coinbase"], timeout=10)
+        products = r.json()
     except Exception as e:
+        print("[DISCOVERY] coinbase error:", e)
+        return signals
 
-        print(f"[DISCOVERY] connector error {module.__name__}: {e}")
+    for product in products:
 
-        return []
+        symbol = product.get("id")
 
-
-def load_connectors():
-
-    connectors = []
-
-    package = importlib.import_module("connectors.crypto")
-
-    for _, name, _ in pkgutil.iter_modules(package.__path__):
-
-        module_name = f"connectors.crypto.{name}"
+        if not symbol.endswith("-USD"):
+            continue
 
         try:
+            ticker = requests.get(
+                f"https://api.exchange.coinbase.com/products/{symbol}/ticker",
+                timeout=5
+            ).json()
 
-            module = importlib.import_module(module_name)
+            price = float(ticker.get("price", 0))
 
-            connectors.append(module)
+            if price <= 0:
+                continue
 
-            print(f"[CONNECTOR] loaded {module_name}")
+            signals.append({
+                "timestamp": datetime.utcnow().isoformat() + "Z",
+                "symbol": symbol.replace("-USD", "USDT"),
+                "price": price,
+                "source": "coinbase",
+                "confidence": 0.5,
+                "type": "price_snapshot"
+            })
 
-        except Exception as e:
+        except Exception:
+            continue
 
-            print(f"[CONNECTOR] failed {module_name}: {e}")
-
-    return connectors
-
-
-async def discover():
-
-    connectors = load_connectors()
-
-    tasks = []
-
-    for c in connectors:
-        tasks.append(run_connector(c))
-
-    results = await asyncio.gather(*tasks)
-
-    merged = []
-
-    for r in results:
-        merged.extend(r)
-
-    return merged
+    return signals
 
 
-def save_feed(signals):
+def load_feed():
+
+    if not FEED_PATH.exists():
+        return {
+            "feed_version": "v2",
+            "generated_at": "",
+            "signal_count": 0,
+            "signals": []
+        }
+
+    return json.loads(FEED_PATH.read_text())
+
+
+def save_feed(feed):
 
     FEED_PATH.parent.mkdir(parents=True, exist_ok=True)
-
-    data = {
-        "feed_version": "v2",
-        "generated_at": datetime.utcnow().isoformat() + "Z",
-        "signal_count": len(signals),
-        "signals": signals
-    }
-
-    FEED_PATH.write_text(json.dumps(data, indent=2))
+    FEED_PATH.write_text(json.dumps(feed, indent=2))
 
 
 def main():
 
     print("[DISCOVERY V2] loading connectors")
 
-    signals = asyncio.run(discover())
+    signals = fetch_coinbase_prices()
 
     print(f"[DISCOVERY V2] raw signals: {len(signals)}")
 
-    signals = liquidity_filter(signals)
+    if not signals:
+        return
 
-    print(f"[DISCOVERY V2] after liquidity filter: {len(signals)}")
+    feed = load_feed()
 
-    save_feed(signals)
+    feed["signals"].extend(signals)
+    feed["signal_count"] = len(feed["signals"])
+    feed["generated_at"] = datetime.utcnow().isoformat() + "Z"
+
+    save_feed(feed)
+
+    print(f"[DISCOVERY V2] signals added: {len(signals)}")
 
 
 if __name__ == "__main__":
