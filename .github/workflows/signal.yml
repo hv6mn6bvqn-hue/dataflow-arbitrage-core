@@ -30,7 +30,7 @@ jobs:
           pip install requests
 
 
-      - name: Run discovery engine
+      - name: Run discovery engine v2
         run: |
           python -m core.discovery_engine_v2
 
@@ -38,6 +38,11 @@ jobs:
       - name: Run signal policy
         run: |
           python -m core.signal_policy
+
+
+      - name: Run arbitrage detector
+        run: |
+          python -m core.arbitrage_detector
 
 
       - name: Run action engine
