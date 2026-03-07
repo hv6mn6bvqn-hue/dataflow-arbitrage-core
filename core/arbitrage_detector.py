@@ -7,12 +7,10 @@ ARBITRAGE_PATH = Path("docs/arbitrage/index.json")
 
 
 def load_feed():
-
     if not FEED_PATH.exists():
         return []
 
     data = json.loads(FEED_PATH.read_text())
-
     return data.get("signals", [])
 
 
@@ -20,45 +18,61 @@ def detect_arbitrage(signals):
 
     opportunities = []
 
-    symbols = {}
+    # структура: symbol -> source -> price
+    markets = {}
 
     for s in signals:
 
         symbol = s.get("symbol")
+        source = s.get("source")
 
-        if not symbol:
+        if not symbol or not source:
             continue
 
-        if symbol not in symbols:
-            symbols[symbol] = []
+        price = s.get("price")
 
-        symbols[symbol].append(s)
-
-    for symbol, entries in symbols.items():
-
-        if len(entries) < 2:
+        # если price нет — пропускаем
+        if price is None:
             continue
 
-        prices = []
-
-        for e in entries:
-            if "change_percent" in e:
-                prices.append(e["change_percent"])
-
-        if len(prices) < 2:
+        try:
+            price = float(price)
+        except:
             continue
 
-        spread = max(prices) - min(prices)
+        markets.setdefault(symbol, {})
+        markets[symbol][source] = price
 
-        if spread < 5:
+    for symbol, sources in markets.items():
+
+        if len(sources) < 2:
+            continue
+
+        prices = list(sources.values())
+
+        low = min(prices)
+        high = max(prices)
+
+        spread = high - low
+
+        if spread <= 0:
+            continue
+
+        percent = (spread / low) * 100
+
+        # фильтр минимального спреда
+        if percent < 0.5:
             continue
 
         opportunity = {
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "symbol": symbol,
-            "spread": round(spread, 2),
-            "type": "arbitrage_opportunity",
-            "confidence": min(spread / 20, 1.0)
+            "buy_price": round(low, 4),
+            "sell_price": round(high, 4),
+            "spread": round(spread, 4),
+            "spread_percent": round(percent, 3),
+            "type": "cross_exchange_arbitrage",
+            "confidence": min(percent / 5, 1.0)
         }
 
         opportunities.append(opportunity)
@@ -81,7 +95,7 @@ def save_opportunities(data):
 
 def main():
 
-    print("[ARBITRAGE] scanning signals")
+    print("[ARBITRAGE] scanning markets")
 
     signals = load_feed()
 
