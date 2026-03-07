@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-BINANCE_TICKER = "https://api.binance.com/api/v3/ticker/bookTicker"
+COINBASE_PRODUCTS = "https://api.exchange.coinbase.com/products"
 
 FEED_DIR = Path("docs/feed")
 FEED_DIR.mkdir(parents=True, exist_ok=True)
@@ -11,36 +11,37 @@ FEED_DIR.mkdir(parents=True, exist_ok=True)
 FEED_FILE = FEED_DIR / "market_prices.json"
 
 
-def fetch_prices():
+def fetch_coinbase():
 
     try:
-        r = requests.get(BINANCE_TICKER, timeout=10)
-        data = r.json()
+        r = requests.get(COINBASE_PRODUCTS, timeout=10)
+        products = r.json()
     except Exception as e:
-        print("[MARKET_FEED] request error:", e)
-        return []
-
-    if not isinstance(data, list):
-        print("[MARKET_FEED] unexpected API response:", data)
+        print("[MARKET_FEED] coinbase request error:", e)
         return []
 
     prices = []
 
-    for item in data:
+    for p in products:
 
         try:
-            symbol = item["symbol"]
+            symbol = p["id"]
 
-            if not symbol.endswith("USDT"):
+            if not symbol.endswith("-USD"):
                 continue
 
-            bid = float(item["bidPrice"])
-            ask = float(item["askPrice"])
+            ticker_url = f"https://api.exchange.coinbase.com/products/{symbol}/ticker"
+            tr = requests.get(ticker_url, timeout=5)
+            t = tr.json()
+
+            bid = float(t["bid"])
+            ask = float(t["ask"])
 
             prices.append({
-                "symbol": symbol,
+                "symbol": symbol.replace("-USD", "USDT"),
                 "bid": bid,
-                "ask": ask
+                "ask": ask,
+                "source": "coinbase"
             })
 
         except Exception:
@@ -53,7 +54,7 @@ def write_feed(prices):
 
     payload = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
-        "source": "binance",
+        "source": "coinbase",
         "count": len(prices),
         "prices": prices
     }
@@ -63,9 +64,9 @@ def write_feed(prices):
 
 def main():
 
-    print("[MARKET_FEED] fetching prices")
+    print("[MARKET_FEED] fetching prices from coinbase")
 
-    prices = fetch_prices()
+    prices = fetch_coinbase()
 
     if not prices:
         print("[MARKET_FEED] no valid price data")
