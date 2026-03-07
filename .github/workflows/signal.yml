@@ -32,7 +32,7 @@ jobs:
 
       - name: Run discovery engine
         run: |
-          python -m core.discovery_engine
+          python -m core.discovery_engine_v2
 
 
       - name: Run signal policy
