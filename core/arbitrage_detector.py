@@ -6,34 +6,52 @@ FEED_PATH = Path("docs/feed/index.json")
 ARBITRAGE_PATH = Path("docs/arbitrage/index.json")
 
 
+def normalize_symbol(symbol):
+
+    if not symbol:
+        return None
+
+    symbol = symbol.upper()
+
+    # Binance
+    if symbol.endswith("USDT"):
+        return symbol.replace("USDT", "")
+
+    if symbol.endswith("BUSD"):
+        return symbol.replace("BUSD", "")
+
+    # Coinbase
+    if "-" in symbol:
+        return symbol.split("-")[0]
+
+    return symbol
+
+
 def load_feed():
+
     if not FEED_PATH.exists():
         return []
 
     data = json.loads(FEED_PATH.read_text())
+
     return data.get("signals", [])
 
 
 def detect_arbitrage(signals):
 
-    opportunities = []
-
-    # структура: symbol -> source -> price
     markets = {}
+    opportunities = []
 
     for s in signals:
 
-        symbol = s.get("symbol")
+        raw_symbol = s.get("symbol")
+        price = s.get("price")
         source = s.get("source")
 
-        if not symbol or not source:
+        if not raw_symbol or price is None:
             continue
 
-        price = s.get("price")
-
-        # если price нет — пропускаем
-        if price is None:
-            continue
+        symbol = normalize_symbol(raw_symbol)
 
         try:
             price = float(price)
@@ -60,17 +78,16 @@ def detect_arbitrage(signals):
 
         percent = (spread / low) * 100
 
-        # фильтр минимального спреда
-        if percent < 0.5:
+        if percent < 0.05:
             continue
 
         opportunity = {
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "symbol": symbol,
-            "buy_price": round(low, 4),
-            "sell_price": round(high, 4),
-            "spread": round(spread, 4),
-            "spread_percent": round(percent, 3),
+            "buy_price": round(low, 6),
+            "sell_price": round(high, 6),
+            "spread": round(spread, 6),
+            "spread_percent": round(percent, 4),
             "type": "cross_exchange_arbitrage",
             "confidence": min(percent / 5, 1.0)
         }
