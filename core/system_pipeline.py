@@ -1,98 +1,93 @@
 import json
 from datetime import datetime
 
-from core.discovery_engine_v2 import main as discovery
-from core.arbitrage_detector import main as arbitrage
+from core.discovery_engine_v2 import main as discovery_main
+from core.analyzer import analyze_market
+from core.predictor import predict_market
+from core.predictor_velocity import analyze_velocity
+from core.confirmation import confirm_signals
 
-from core.signal_policy import main as signal_policy
-from core.prioritizer import main as prioritizer
-from core.analyzer import main as analyzer
+from core.arbitrage_detector import main as arbitrage_main
+from core.prioritizer import prioritize_signals
+from core.signal_policy import evaluate_signal
 
-from core.predictor import main as predictor
-from core.predictor_velocity import main as predictor_velocity
-from core.confirmation import main as confirmation
+from core.action_resolver import resolve_action
+from core.action_engine import main as action_main
+from core.execution_adapter import main as execution_main
 
-from core.action_resolver import main as action_resolver
-from core.action_engine import main as action_engine
-from core.execution_adapter import main as execution_adapter
+from core.portfolio_engine import main as portfolio_main
+from core.metrics_engine import main as metrics_main
+from core.performance_engine import main as performance_main
 
-from core.portfolio_engine import main as portfolio_engine
-from core.metrics_engine import main as metrics_engine
-from core.performance_engine import main as performance_engine
-
-from core.replay_engine import main as replay_engine
-from core.learner import main as learner
-from core.state_manager import main as state_manager
-
-from core.autopilot import main as autopilot
-from core.audit_logger import main as audit_logger
-from core.exporter import main as exporter
+from core.learner import learn_from_history
+from core.state_manager import save_state
 
 
-def run_step(name, fn):
+def run_stage(name, fn):
 
-    print(f"[PIPELINE] starting {name}")
+    print(f"[PIPELINE] {name}")
 
     try:
-        fn()
-        print(f"[PIPELINE] finished {name}")
+        return fn()
 
     except Exception as e:
-        print(f"[PIPELINE] error in {name}: {e}")
+        print(f"[PIPELINE] ERROR {name}: {e}")
+        return None
 
 
 def main():
 
-    started = datetime.utcnow().isoformat()
+    print("[SYSTEM] DataFlow FULL autonomous pipeline starting")
 
-    print("[SYSTEM] DataFlow autonomous pipeline starting")
+    # 1. Discovery
+    run_stage("discovery", discovery_main)
 
-    # DATA DISCOVERY
-    run_step("discovery", discovery)
+    # 2. Market intelligence
+    market_analysis = run_stage("analyzer", analyze_market)
+    velocity = run_stage("velocity", analyze_velocity)
 
-    # MARKET ANALYSIS
-    run_step("analyzer", analyzer)
-    run_step("predictor", predictor)
-    run_step("predictor_velocity", predictor_velocity)
-    run_step("confirmation", confirmation)
+    # 3. Prediction
+    predictions = run_stage("predictor", predict_market)
 
-    # SIGNAL GENERATION
-    run_step("arbitrage_detector", arbitrage)
-    run_step("prioritizer", prioritizer)
-    run_step("signal_policy", signal_policy)
+    # 4. Signal layer
+    signals = run_stage("confirmation", confirm_signals)
 
-    # EXECUTION
-    run_step("action_resolver", action_resolver)
-    run_step("action_engine", action_engine)
-    run_step("execution_adapter", execution_adapter)
+    # 5. Arbitrage detection
+    opportunities = run_stage("arbitrage", arbitrage_main)
 
-    # PORTFOLIO
-    run_step("portfolio_engine", portfolio_engine)
-    run_step("metrics_engine", metrics_engine)
-    run_step("performance_engine", performance_engine)
+    # 6. Policy + prioritization
+    if signals:
+        for s in signals:
+            decision = evaluate_signal(s)
 
-    # LEARNING
-    run_step("replay_engine", replay_engine)
-    run_step("learner", learner)
-    run_step("state_manager", state_manager)
+            s["decision"] = decision
 
-    # AUTONOMY
-    run_step("autopilot", autopilot)
-    run_step("audit_logger", audit_logger)
-    run_step("exporter", exporter)
+        run_stage("prioritize", lambda: prioritize_signals(signals))
 
-    finished = datetime.utcnow().isoformat()
+    # 7. Execution
+    run_stage("action_engine", action_main)
+    run_stage("execution", execution_main)
 
-    summary = {
-        "started": started,
-        "finished": finished,
+    # 8. Portfolio + metrics
+    run_stage("portfolio", portfolio_main)
+    run_stage("metrics", metrics_main)
+    run_stage("performance", performance_main)
+
+    # 9. Learning + memory
+    run_stage("learning", learn_from_history)
+
+    run_stage("state", save_state)
+
+    # Save system state
+    state = {
+        "timestamp": datetime.utcnow().isoformat(),
         "status": "completed"
     }
 
     with open("docs/system_run.json", "w") as f:
-        json.dump(summary, f, indent=2)
+        json.dump(state, f, indent=2)
 
-    print("[SYSTEM] pipeline finished")
+    print("[SYSTEM] Pipeline completed")
 
 
 if __name__ == "__main__":
