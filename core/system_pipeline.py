@@ -1,52 +1,43 @@
-import json
+import importlib
 from datetime import datetime
 
-import importlib
-
-
 ENGINE_SEQUENCE = [
+    "core.market_feed",
     "core.discovery_engine_v2",
     "core.arbitrage_detector",
+    "core.analyzer",
     "core.signal_policy",
     "core.action_engine",
     "core.portfolio_engine",
     "core.metrics_engine",
-    "core.performance_engine",
+    "core.performance_engine"
 ]
 
 
 def run_module(module_name):
 
-    print(f"[PIPELINE] running {module_name}")
-
     try:
         module = importlib.import_module(module_name)
 
         if hasattr(module, "main"):
+            print(f"[PIPELINE] running {module_name}")
             module.main()
         else:
-            print(f"[PIPELINE] {module_name} has no main()")
+            print(f"[PIPELINE] skipped {module_name} (no main function)")
 
     except Exception as e:
-        print(f"[PIPELINE] ERROR {module_name}: {e}")
+        print(f"[PIPELINE] error in {module_name}: {e}")
 
 
 def main():
 
-    print("[SYSTEM] DataFlow FULL pipeline starting")
+    print("\n[PIPELINE] DataFlow system start")
+    print("[PIPELINE] timestamp:", datetime.utcnow().isoformat(), "\n")
 
-    for engine in ENGINE_SEQUENCE:
-        run_module(engine)
+    for module_name in ENGINE_SEQUENCE:
+        run_module(module_name)
 
-    state = {
-        "timestamp": datetime.utcnow().isoformat(),
-        "status": "completed"
-    }
-
-    with open("docs/system_run.json", "w") as f:
-        json.dump(state, f, indent=2)
-
-    print("[SYSTEM] Pipeline finished")
+    print("\n[PIPELINE] cycle complete\n")
 
 
 if __name__ == "__main__":
