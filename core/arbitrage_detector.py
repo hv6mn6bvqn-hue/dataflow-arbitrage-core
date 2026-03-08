@@ -2,96 +2,106 @@ import json
 from pathlib import Path
 from datetime import datetime
 
-FEED_FILE = Path("docs/feed/market_prices.json")
-EXPORT_FILE = Path("docs/feed/arbitrage_opportunities.json")
+FEED_PATH = Path("docs/feed/index.json")
+EXPORT_DIR = Path("exports")
+
+EXPORT_DIR.mkdir(exist_ok=True)
 
 
-def load_prices():
+def load_feed():
 
-    if not FEED_FILE.exists():
+    if not FEED_PATH.exists():
         return []
 
-    data = json.loads(FEED_FILE.read_text())
+    data = json.loads(FEED_PATH.read_text())
 
-    return data.get("prices", [])
+    return data.get("signals", [])
 
 
-def detect_arbitrage(prices):
+def group_by_symbol(signals):
+
+    markets = {}
+
+    for s in signals:
+
+        symbol = s.get("symbol")
+
+        if not symbol:
+            continue
+
+        markets.setdefault(symbol, []).append(s)
+
+    return markets
+
+
+def detect_arbitrage(markets):
 
     opportunities = []
 
-    price_map = {}
+    for symbol, entries in markets.items():
 
-    for p in prices:
-
-        symbol = p["symbol"]
-        bid = p["bid"]
-        ask = p["ask"]
-
-        if symbol not in price_map:
-            price_map[symbol] = []
-
-        price_map[symbol].append((bid, ask))
-
-    for symbol, quotes in price_map.items():
-
-        if len(quotes) < 2:
+        if len(entries) < 2:
             continue
 
-        bids = [q[0] for q in quotes]
-        asks = [q[1] for q in quotes]
+        prices = []
 
-        best_bid = max(bids)
-        best_ask = min(asks)
+        for e in entries:
 
-        spread = best_bid - best_ask
+            price = e.get("price") or e.get("ask") or e.get("bid")
+
+            if price:
+                prices.append((e.get("source"), float(price)))
+
+        if len(prices) < 2:
+            continue
+
+        prices.sort(key=lambda x: x[1])
+
+        low_exchange, low_price = prices[0]
+        high_exchange, high_price = prices[-1]
+
+        spread = high_price - low_price
 
         if spread <= 0:
             continue
 
-        percent = spread / best_ask
-
-        if percent > 0.002:
-
-            opportunities.append({
-                "symbol": symbol,
-                "spread": spread,
-                "percent": round(percent, 5),
-                "timestamp": datetime.utcnow().isoformat() + "Z"
-            })
+        opportunities.append({
+            "type": "signal",
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "symbol": symbol,
+            "buy_from": low_exchange,
+            "sell_to": high_exchange,
+            "buy_price": low_price,
+            "sell_price": high_price,
+            "spread": spread
+        })
 
     return opportunities
 
 
-def save_opportunities(opps):
+def export(opportunities):
 
-    EXPORT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    for i, signal in enumerate(opportunities):
 
-    payload = {
-        "generated_at": datetime.utcnow().isoformat() + "Z",
-        "count": len(opps),
-        "opportunities": opps
-    }
+        file = EXPORT_DIR / f"arb_signal_{i}.json"
 
-    EXPORT_FILE.write_text(json.dumps(payload, indent=2))
+        file.write_text(json.dumps(signal, indent=2))
 
 
 def main():
 
     print("[ARBITRAGE] scanning markets")
 
-    prices = load_prices()
+    signals = load_feed()
 
-    if not prices:
-        print("[ARBITRAGE] no price data")
-        return
+    markets = group_by_symbol(signals)
 
-    opps = detect_arbitrage(prices)
+    opportunities = detect_arbitrage(markets)
 
-    print(f"[ARBITRAGE] opportunities found: {len(opps)}")
+    print(f"[ARBITRAGE] opportunities found: {len(opportunities)}")
 
-    if opps:
-        save_opportunities(opps)
+    if opportunities:
+        export(opportunities)
 
 
 if __name__ == "__main__":
