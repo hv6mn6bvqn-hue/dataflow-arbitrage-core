@@ -1,756 +1,12 @@
 {
-  "generated_at": "2026-03-08T15:25:12.690523Z",
+  "generated_at": "2026-03-08T15:46:29.685474Z",
   "source": "coinbase",
-  "count": 378,
+  "count": 377,
   "prices": [
     {
-      "symbol": "TONUSDT",
-      "bid": 1.33,
-      "ask": 1.331,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PNUTUSDT",
-      "bid": 0.0435,
-      "ask": 0.0436,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ALTUSDT",
-      "bid": 0.00711,
-      "ask": 0.00712,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "OCEANUSDT",
-      "bid": 0.1126,
-      "ask": 0.1144,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AEROUSDT",
-      "bid": 0.31821,
-      "ask": 0.31852,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "OPUSDT",
-      "bid": 0.114,
-      "ask": 0.115,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BIOUSDT",
-      "bid": 0.02034,
-      "ask": 0.02036,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DEEPUSDT",
-      "bid": 0.02886,
-      "ask": 0.02889,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SHDWUSDT",
-      "bid": 0.031,
-      "ask": 0.032,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MASKUSDT",
-      "bid": 0.42,
-      "ask": 0.43,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "API3USDT",
-      "bid": 0.273,
-      "ask": 0.274,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RADUSDT",
-      "bid": 0.231,
-      "ask": 0.233,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "IPUSDT",
-      "bid": 0.794,
-      "ask": 0.795,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LQTYUSDT",
-      "bid": 0.2695,
-      "ask": 0.2698,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AIOZUSDT",
-      "bid": 0.0643,
-      "ask": 0.0644,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LAYERUSDT",
-      "bid": 0.0797,
-      "ask": 0.08,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PENGUUSDT",
-      "bid": 0.006482,
-      "ask": 0.006483,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "INDEXUSDT",
-      "bid": 0.29,
-      "ask": 0.3,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "APEUSDT",
-      "bid": 0.092,
-      "ask": 0.093,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LDOUSDT",
-      "bid": 0.283,
-      "ask": 0.284,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SUPUSDT",
-      "bid": 0.01139,
-      "ask": 0.0114,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FAIUSDT",
-      "bid": 0.00662,
-      "ask": 0.00665,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TURBOUSDT",
-      "bid": 0.000885,
-      "ask": 0.000886,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ZKPUSDT",
-      "bid": 0.08431,
-      "ask": 0.08445,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "XLMUSDT",
-      "bid": 0.148924,
-      "ask": 0.148954,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SAPIENUSDT",
-      "bid": 0.07492,
-      "ask": 0.07493,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BATUSDT",
-      "bid": 0.09501,
-      "ask": 0.09505,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LAUSDT",
-      "bid": 0.2192,
-      "ask": 0.2195,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "POLSUSDT",
-      "bid": 0.0638,
-      "ask": 0.0645,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TROLLUSDT",
-      "bid": 0.01394,
-      "ask": 0.01395,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "VVVUSDT",
-      "bid": 5.9668,
-      "ask": 5.9718,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "WMTXUSDT",
-      "bid": 0.06533,
-      "ask": 0.06607,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AXLUSDT",
-      "bid": 0.0522,
-      "ask": 0.0524,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ILVUSDT",
-      "bid": 3.55,
-      "ask": 3.56,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SPKUSDT",
-      "bid": 0.01948,
-      "ask": 0.0195,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "QNTUSDT",
-      "bid": 63.77,
-      "ask": 63.82,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "KARRATUSDT",
-      "bid": 0.0054,
-      "ask": 0.0055,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DAIUSDT",
-      "bid": 0.9999,
-      "ask": 1.0,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TUSDT",
-      "bid": 0.00668,
-      "ask": 0.00669,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "YBUSDT",
-      "bid": 0.1567,
-      "ask": 0.1568,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BIRBUSDT",
-      "bid": 0.1411,
-      "ask": 0.1412,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ZKCUSDT",
-      "bid": 0.0805,
-      "ask": 0.0806,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "OPNUSDT",
-      "bid": 0.3171,
-      "ask": 0.3173,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RSCUSDT",
-      "bid": 0.0842,
-      "ask": 0.0843,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "UNIUSDT",
-      "bid": 3.684,
-      "ask": 3.686,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AVTUSDT",
-      "bid": 0.67,
-      "ask": 0.68,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ATOMUSDT",
-      "bid": 1.73,
-      "ask": 1.732,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "COOKIEUSDT",
-      "bid": 0.01936,
-      "ask": 0.01939,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "WETUSDT",
-      "bid": 0.107,
-      "ask": 0.1071,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SENTUSDT",
-      "bid": 0.02295,
-      "ask": 0.02296,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AWEUSDT",
-      "bid": 0.04984,
-      "ask": 0.0499,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "NOICEUSDT",
-      "bid": 4.73e-05,
-      "ask": 4.76e-05,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BEAMUSDT",
-      "bid": 0.001895,
-      "ask": 0.001902,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AZTECUSDT",
-      "bid": 0.02088,
-      "ask": 0.02089,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AAVEUSDT",
-      "bid": 106.54,
-      "ask": 106.58,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FILUSDT",
-      "bid": 0.935,
-      "ask": 0.937,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "VETUSDT",
-      "bid": 0.00683,
-      "ask": 0.00684,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "IOUSDT",
-      "bid": 0.101,
-      "ask": 0.102,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LTCUSDT",
-      "bid": 52.68,
-      "ask": 52.69,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "WAXLUSDT",
-      "bid": 0.0522,
-      "ask": 0.0524,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SKLUSDT",
-      "bid": 0.0063,
-      "ask": 0.0064,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BONKUSDT",
-      "bid": 5.59e-06,
-      "ask": 5.6e-06,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FUN1USDT",
-      "bid": 0.03535,
-      "ask": 0.0354,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "INVUSDT",
-      "bid": 17.63,
-      "ask": 18.02,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "GHSTUSDT",
-      "bid": 0.084,
-      "ask": 0.085,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "CTXUSDT",
-      "bid": 0.5744,
-      "ask": 0.5751,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PLUUSDT",
-      "bid": 0.14852,
-      "ask": 0.14899,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TRUUSDT",
-      "bid": 0.0048,
-      "ask": 0.0049,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "OMNIUSDT",
-      "bid": 0.74,
-      "ask": 0.742,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RAREUSDT",
-      "bid": 0.0154,
-      "ask": 0.0155,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ELAUSDT",
-      "bid": 0.578,
-      "ask": 0.581,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ROBOUSDT",
-      "bid": 0.04003,
-      "ask": 0.04005,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ARBUSDT",
-      "bid": 0.0949,
-      "ask": 0.095,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "REZUSDT",
-      "bid": 0.00318,
-      "ask": 0.00319,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AMPUSDT",
-      "bid": 0.00137,
-      "ask": 0.00138,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "GSTUSDT",
-      "bid": 0.001621,
-      "ask": 0.001639,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BLASTUSDT",
-      "bid": 0.00049,
-      "ask": 0.0005,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RPLUSDT",
-      "bid": 1.8,
-      "ask": 1.81,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "KEYCATUSDT",
-      "bid": 0.00054,
-      "ask": 0.000541,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "STXUSDT",
-      "bid": 0.2541,
-      "ask": 0.2544,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BADGERUSDT",
-      "bid": 0.3731,
-      "ask": 0.3734,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MAGICUSDT",
-      "bid": 0.0597,
-      "ask": 0.0598,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SWFTCUSDT",
-      "bid": 0.003343,
-      "ask": 0.003349,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BARDUSDT",
-      "bid": 1.0734,
-      "ask": 1.0735,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LPTUSDT",
-      "bid": 2.21,
-      "ask": 2.22,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "bid": 0.08876,
-      "ask": 0.08877,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BICOUSDT",
-      "bid": 0.0186,
-      "ask": 0.0188,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SHIBUSDT",
-      "bid": 5.27e-06,
-      "ask": 5.28e-06,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "WUSDT",
-      "bid": 0.01758,
-      "ask": 0.01759,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TRUMPUSDT",
-      "bid": 3.01,
-      "ask": 3.02,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PUMPUSDT",
-      "bid": 0.001894,
-      "ask": 0.001896,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "USDTUSDT",
-      "bid": 1.00002,
-      "ask": 1.00005,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SANDUSDT",
-      "bid": 0.0779,
-      "ask": 0.078,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PNGUSDT",
-      "bid": 0.0258,
-      "ask": 0.02589,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ACHUSDT",
-      "bid": 0.006809,
-      "ask": 0.00682,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "WELLUSDT",
-      "bid": 0.004367,
-      "ask": 0.004385,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SNXUSDT",
-      "bid": 0.302,
-      "ask": 0.303,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "JITOSOLUSDT",
-      "bid": 103.89,
-      "ask": 103.99,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "L3USDT",
-      "bid": 0.00684,
-      "ask": 0.00687,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "NKNUSDT",
-      "bid": 0.0055,
-      "ask": 0.0056,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BLURUSDT",
-      "bid": 0.0185,
-      "ask": 0.0187,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SUKUUSDT",
-      "bid": 0.0076,
-      "ask": 0.0077,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "WIFUSDT",
-      "bid": 0.176,
-      "ask": 0.177,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MLNUSDT",
-      "bid": 3.36,
-      "ask": 3.37,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DOLOUSDT",
-      "bid": 0.03211,
-      "ask": 0.03232,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ZENUSDT",
-      "bid": 5.263,
-      "ask": 5.269,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ZKUSDT",
-      "bid": 0.0184,
-      "ask": 0.01842,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FIGHTUSDT",
-      "bid": 0.00478,
-      "ask": 0.00479,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BTCUSDT",
-      "bid": 67214.9,
-      "ask": 67214.91,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "NEONUSDT",
-      "bid": 0.03097,
-      "ask": 0.03104,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BOBAUSDT",
-      "bid": 0.0215,
-      "ask": 0.0217,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ZROUSDT",
-      "bid": 1.982,
-      "ask": 1.983,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MEUSDT",
-      "bid": 0.1109,
-      "ask": 0.111,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "KERNELUSDT",
-      "bid": 0.0795,
-      "ask": 0.0797,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "UMAUSDT",
-      "bid": 0.409,
-      "ask": 0.41,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "WLFIUSDT",
-      "bid": 0.09719,
-      "ask": 0.09725,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TIMEUSDT",
-      "bid": 2.86,
-      "ask": 2.92,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TREEUSDT",
-      "bid": 0.0654,
-      "ask": 0.0656,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "POWRUSDT",
-      "bid": 0.062,
-      "ask": 0.0622,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "OGNUSDT",
-      "bid": 0.01897,
-      "ask": 0.01901,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "COMPUSDT",
-      "bid": 16.63,
-      "ask": 16.65,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "KITEUSDT",
-      "bid": 0.30288,
-      "ask": 0.30327,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "XANUSDT",
-      "bid": 0.00617,
-      "ask": 0.00618,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PRIMEUSDT",
-      "bid": 0.424,
-      "ask": 0.425,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ELSAUSDT",
-      "bid": 0.0719,
-      "ask": 0.072,
+      "symbol": "SWELLUSDT",
+      "bid": 0.00124,
+      "ask": 0.00125,
       "source": "coinbase"
     },
     {
@@ -760,369 +16,81 @@
       "source": "coinbase"
     },
     {
-      "symbol": "COWUSDT",
-      "bid": 0.2146,
-      "ask": 0.2147,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DIAUSDT",
-      "bid": 0.17704,
-      "ask": 0.17739,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ICPUSDT",
-      "bid": 2.429,
-      "ask": 2.43,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ALGOUSDT",
-      "bid": 0.0821,
-      "ask": 0.0822,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "HOPRUSDT",
-      "bid": 0.0201,
-      "ask": 0.0202,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "METUSDT",
-      "bid": 0.1563,
-      "ask": 0.1565,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SHPINGUSDT",
-      "bid": 0.001332,
-      "ask": 0.001339,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "STGUSDT",
-      "bid": 0.1773,
-      "ask": 0.1776,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BNBUSDT",
-      "bid": 616.67,
-      "ask": 616.9,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RONINUSDT",
-      "bid": 0.088,
-      "ask": 0.0883,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SQDUSDT",
-      "bid": 0.0396,
-      "ask": 0.0397,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SKYUSDT",
-      "bid": 0.07314,
-      "ask": 0.07315,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FARTCOINUSDT",
-      "bid": 0.1455,
-      "ask": 0.1457,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FISUSDT",
-      "bid": 0.0169,
-      "ask": 0.017,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AVAXUSDT",
-      "bid": 8.87,
-      "ask": 8.88,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MPLXUSDT",
-      "bid": 0.0304,
-      "ask": 0.0305,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "2ZUSDT",
-      "bid": 0.07302,
-      "ask": 0.07309,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ADAUSDT",
-      "bid": 0.2502,
-      "ask": 0.2503,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ARKMUSDT",
-      "bid": 0.099,
-      "ask": 0.1,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "YFIUSDT",
-      "bid": 2489.27,
-      "ask": 2491.34,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "1INCHUSDT",
-      "bid": 0.09,
-      "ask": 0.091,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ARPAUSDT",
-      "bid": 0.0096,
-      "ask": 0.0097,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DIMOUSDT",
-      "bid": 0.01201,
-      "ask": 0.01209,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ZRXUSDT",
-      "bid": 0.101843,
-      "ask": 0.102034,
+      "symbol": "AERGOUSDT",
+      "bid": 0.0537,
+      "ask": 0.0538,
       "source": "coinbase"
     },
     {
       "symbol": "PLUMEUSDT",
-      "bid": 0.01375,
-      "ask": 0.01379,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ERAUSDT",
-      "bid": 0.1416,
-      "ask": 0.142,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DOGINMEUSDT",
-      "bid": 0.0001067,
-      "ask": 0.0001079,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ETHFIUSDT",
-      "bid": 0.518,
-      "ask": 0.519,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DEXTUSDT",
-      "bid": 0.1281,
-      "ask": 0.1379,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "REDUSDT",
-      "bid": 0.125,
-      "ask": 0.1251,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "GNOUSDT",
-      "bid": 122.81,
-      "ask": 123.4,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "EDGEUSDT",
-      "bid": 0.13572,
-      "ask": 0.13602,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SUPERUSDT",
-      "bid": 0.11174,
-      "ask": 0.11186,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AURORAUSDT",
-      "bid": 0.0289,
-      "ask": 0.0291,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FIDAUSDT",
-      "bid": 0.0149,
-      "ask": 0.015,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MONUSDT",
-      "bid": 0.02126,
-      "ask": 0.02127,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FORTUSDT",
-      "bid": 0.0136,
+      "bid": 0.01361,
       "ask": 0.0137,
       "source": "coinbase"
     },
     {
-      "symbol": "SPAUSDT",
-      "bid": 0.003364,
-      "ask": 0.003365,
+      "symbol": "CTXUSDT",
+      "bid": 0.574,
+      "ask": 0.5752,
       "source": "coinbase"
     },
     {
-      "symbol": "HFTUSDT",
-      "bid": 0.015,
-      "ask": 0.0151,
+      "symbol": "COWUSDT",
+      "bid": 0.2142,
+      "ask": 0.2143,
       "source": "coinbase"
     },
     {
-      "symbol": "ALLOUSDT",
-      "bid": 0.1236,
-      "ask": 0.1238,
+      "symbol": "PNGUSDT",
+      "bid": 0.02582,
+      "ask": 0.02595,
       "source": "coinbase"
     },
     {
-      "symbol": "POLUSDT",
-      "bid": 0.0945,
-      "ask": 0.0946,
+      "symbol": "FETUSDT",
+      "bid": 0.1415,
+      "ask": 0.1417,
       "source": "coinbase"
     },
     {
-      "symbol": "KNCUSDT",
-      "bid": 0.1241,
-      "ask": 0.1243,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AERGOUSDT",
-      "bid": 0.0538,
-      "ask": 0.0539,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ONDOUSDT",
-      "bid": 0.24526,
-      "ask": 0.24541,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "CRVUSDT",
-      "bid": 0.2329,
-      "ask": 0.233,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "WCTUSDT",
-      "bid": 0.0564,
-      "ask": 0.0566,
+      "symbol": "BTCUSDT",
+      "bid": 67196.5,
+      "ask": 67196.51,
       "source": "coinbase"
     },
     {
       "symbol": "PAXUSDT",
-      "bid": 0.9988,
-      "ask": 0.9996,
+      "bid": 0.9987,
+      "ask": 0.9997,
       "source": "coinbase"
     },
     {
-      "symbol": "PROMPTUSDT",
-      "bid": 0.04243,
-      "ask": 0.04247,
+      "symbol": "ZAMAUSDT",
+      "bid": 0.0198,
+      "ask": 0.01982,
       "source": "coinbase"
     },
     {
-      "symbol": "XTZUSDT",
-      "bid": 0.3631,
-      "ask": 0.3633,
+      "symbol": "IDEXUSDT",
+      "bid": 0.007,
+      "ask": 0.0071,
       "source": "coinbase"
     },
     {
-      "symbol": "CAKEUSDT",
-      "bid": 1.306,
-      "ask": 1.307,
+      "symbol": "BLASTUSDT",
+      "bid": 0.00049,
+      "ask": 0.0005,
       "source": "coinbase"
     },
     {
-      "symbol": "MATHUSDT",
-      "bid": 0.0269,
-      "ask": 0.0273,
+      "symbol": "PRIMEUSDT",
+      "bid": 0.421,
+      "ask": 0.422,
       "source": "coinbase"
     },
     {
-      "symbol": "INJUSDT",
-      "bid": 2.812,
-      "ask": 2.815,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ALICEUSDT",
-      "bid": 0.115,
-      "ask": 0.116,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "A8USDT",
-      "bid": 0.0086,
-      "ask": 0.0087,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "HONEYUSDT",
-      "bid": 0.0031,
-      "ask": 0.0032,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "IMUUSDT",
-      "bid": 0.00288,
-      "ask": 0.00289,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "HBARUSDT",
-      "bid": 0.09476,
-      "ask": 0.09477,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "VOXELUSDT",
-      "bid": 0.0082,
-      "ask": 0.0083,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MORPHOUSDT",
-      "bid": 1.8599,
-      "ask": 1.8625,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AGLDUSDT",
-      "bid": 0.2681,
-      "ask": 0.2687,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "HYPERUSDT",
-      "bid": 0.0882,
-      "ask": 0.0884,
+      "symbol": "EGLDUSDT",
+      "bid": 4.07,
+      "ask": 4.08,
       "source": "coinbase"
     },
     {
@@ -1132,81 +100,57 @@
       "source": "coinbase"
     },
     {
-      "symbol": "AKTUSDT",
-      "bid": 0.394,
-      "ask": 0.395,
+      "symbol": "APTUSDT",
+      "bid": 0.9302,
+      "ask": 0.9306,
       "source": "coinbase"
     },
     {
-      "symbol": "FOXUSDT",
-      "bid": 0.00658,
-      "ask": 0.00669,
+      "symbol": "L3USDT",
+      "bid": 0.00684,
+      "ask": 0.00687,
       "source": "coinbase"
     },
     {
-      "symbol": "AVNTUSDT",
-      "bid": 0.1509,
-      "ask": 0.151,
+      "symbol": "RLCUSDT",
+      "bid": 0.3599,
+      "ask": 0.3609,
       "source": "coinbase"
     },
     {
-      "symbol": "ZAMAUSDT",
-      "bid": 0.01993,
-      "ask": 0.01995,
+      "symbol": "PUNDIXUSDT",
+      "bid": 0.1468,
+      "ask": 0.1471,
       "source": "coinbase"
     },
     {
-      "symbol": "QIUSDT",
-      "bid": 0.001803,
-      "ask": 0.001808,
+      "symbol": "POWRUSDT",
+      "bid": 0.062,
+      "ask": 0.0622,
       "source": "coinbase"
     },
     {
-      "symbol": "VELOUSDT",
-      "bid": 0.01581,
-      "ask": 0.01585,
+      "symbol": "SQDUSDT",
+      "bid": 0.0398,
+      "ask": 0.0399,
       "source": "coinbase"
     },
     {
-      "symbol": "DASHUSDT",
-      "bid": 30.76,
-      "ask": 30.78,
+      "symbol": "MONUSDT",
+      "bid": 0.02122,
+      "ask": 0.02123,
       "source": "coinbase"
     },
     {
-      "symbol": "ENSUSDT",
-      "bid": 5.67,
-      "ask": 5.68,
+      "symbol": "SPELLUSDT",
+      "bid": 0.0001704,
+      "ask": 0.0001705,
       "source": "coinbase"
     },
     {
-      "symbol": "BTRSTUSDT",
-      "bid": 0.077,
-      "ask": 0.078,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TRIAUSDT",
-      "bid": 0.022288,
-      "ask": 0.022398,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MNDEUSDT",
-      "bid": 0.02132,
-      "ask": 0.02146,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "bid": 1942.87,
-      "ask": 1942.88,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DNTUSDT",
-      "bid": 0.0072,
-      "ask": 0.0073,
+      "symbol": "COOKIEUSDT",
+      "bid": 0.01932,
+      "ask": 0.01934,
       "source": "coinbase"
     },
     {
@@ -1216,189 +160,15 @@
       "source": "coinbase"
     },
     {
-      "symbol": "GWEIUSDT",
-      "bid": 0.0483,
-      "ask": 0.048387,
+      "symbol": "ALEPHUSDT",
+      "bid": 0.0201,
+      "ask": 0.0203,
       "source": "coinbase"
     },
     {
-      "symbol": "SKRUSDT",
-      "bid": 0.02421,
-      "ask": 0.02424,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PERPUSDT",
-      "bid": 0.045,
-      "ask": 0.0451,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "IRYSUSDT",
-      "bid": 0.01662,
-      "ask": 0.01665,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ASTUSDT",
-      "bid": 0.0076,
-      "ask": 0.0077,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ACSUSDT",
-      "bid": 0.0001763,
-      "ask": 0.0001772,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TRUSTUSDT",
-      "bid": 0.06784,
-      "ask": 0.06788,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ACXUSDT",
-      "bid": 0.0325,
-      "ask": 0.0326,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FLRUSDT",
-      "bid": 0.00893,
-      "ask": 0.00894,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ORCAUSDT",
-      "bid": 0.8863,
-      "ask": 0.8872,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "EIGENUSDT",
-      "bid": 0.179,
-      "ask": 0.18,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ROSEUSDT",
-      "bid": 0.01115,
-      "ask": 0.01117,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "JTOUSDT",
-      "bid": 0.2519,
-      "ask": 0.2522,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PYTHUSDT",
-      "bid": 0.0458,
-      "ask": 0.0459,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "XPLUSDT",
-      "bid": 0.0945,
-      "ask": 0.0946,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "NEWTUSDT",
-      "bid": 0.064,
-      "ask": 0.0641,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "EULUSDT",
-      "bid": 0.918,
-      "ask": 0.919,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RAYUSDT",
-      "bid": 0.5667,
-      "ask": 0.5676,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "XRPUSDT",
-      "bid": 1.3464,
-      "ask": 1.3465,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PEPEUSDT",
-      "bid": 3.16e-06,
-      "ask": 3.17e-06,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "NCTUSDT",
-      "bid": 0.00647,
-      "ask": 0.00648,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "CFGUSDT",
-      "bid": 0.144,
-      "ask": 0.1442,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DEGENUSDT",
-      "bid": 0.000692,
-      "ask": 0.000693,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RLCUSDT",
-      "bid": 0.3604,
-      "ask": 0.3614,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "VARAUSDT",
-      "bid": 0.00093,
-      "ask": 0.00094,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ETCUSDT",
-      "bid": 8.02,
-      "ask": 8.03,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DOTUSDT",
-      "bid": 1.449,
-      "ask": 1.45,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BIGTIMEUSDT",
-      "bid": 0.01302,
-      "ask": 0.01304,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SYRUPUSDT",
-      "bid": 0.2201,
-      "ask": 0.2202,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "VTHOUSDT",
-      "bid": 0.000565,
-      "ask": 0.000566,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BNTUSDT",
-      "bid": 0.2762,
-      "ask": 0.277,
+      "symbol": "XANUSDT",
+      "bid": 0.00617,
+      "ask": 0.00618,
       "source": "coinbase"
     },
     {
@@ -1408,519 +178,51 @@
       "source": "coinbase"
     },
     {
+      "symbol": "SYRUPUSDT",
+      "bid": 0.221,
+      "ask": 0.2211,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DBRUSDT",
+      "bid": 0.01559,
+      "ask": 0.0156,
+      "source": "coinbase"
+    },
+    {
       "symbol": "FLOWUSDT",
       "bid": 0.041,
       "ask": 0.042,
       "source": "coinbase"
     },
     {
-      "symbol": "POPCATUSDT",
-      "bid": 0.049,
-      "ask": 0.0491,
+      "symbol": "API3USDT",
+      "bid": 0.273,
+      "ask": 0.274,
       "source": "coinbase"
     },
     {
-      "symbol": "STRKUSDT",
-      "bid": 0.037,
-      "ask": 0.038,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "JUPITERUSDT",
-      "bid": 0.1626,
-      "ask": 0.163,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "APTUSDT",
-      "bid": 0.9308,
-      "ask": 0.931,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FARMUSDT",
-      "bid": 13.45,
-      "ask": 13.49,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "COTIUSDT",
-      "bid": 0.0117,
-      "ask": 0.0118,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "THQUSDT",
-      "bid": 0.02972,
-      "ask": 0.02978,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "CVXUSDT",
-      "bid": 2.314,
-      "ask": 2.322,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AUCTIONUSDT",
-      "bid": 4.68,
-      "ask": 4.69,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TRBUSDT",
-      "bid": 14.53,
-      "ask": 14.54,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "XYOUSDT",
-      "bid": 0.00397,
-      "ask": 0.004,
+      "symbol": "OPNUSDT",
+      "bid": 0.3201,
+      "ask": 0.3202,
       "source": "coinbase"
     },
     {
       "symbol": "GLMUSDT",
-      "bid": 0.1235,
-      "ask": 0.1238,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BOBBOBUSDT",
-      "bid": 0.00587,
-      "ask": 0.00589,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "COSMOSDYDXUSDT",
-      "bid": 0.0793,
-      "ask": 0.0795,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PENDLEUSDT",
-      "bid": 1.183,
-      "ask": 1.185,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "KMNOUSDT",
-      "bid": 0.01939,
-      "ask": 0.0194,
+      "bid": 0.1237,
+      "ask": 0.1239,
       "source": "coinbase"
     },
     {
       "symbol": "ALCXUSDT",
-      "bid": 6.01,
-      "ask": 6.03,
+      "bid": 5.94,
+      "ask": 5.95,
       "source": "coinbase"
     },
     {
-      "symbol": "KAVAUSDT",
-      "bid": 0.0645,
-      "ask": 0.0647,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "XCNUSDT",
-      "bid": 0.00469,
-      "ask": 0.0047,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TOSHIUSDT",
-      "bid": 0.0002029,
-      "ask": 0.0002031,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RLSUSDT",
-      "bid": 0.00385,
-      "ask": 0.00386,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SUSHIUSDT",
-      "bid": 0.1895,
-      "ask": 0.1897,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BNKRUSDT",
-      "bid": 0.0004858,
-      "ask": 0.0004871,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "NOMUSDT",
-      "bid": 0.00335,
-      "ask": 0.00336,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SPXUSDT",
-      "bid": 0.3016,
-      "ask": 0.3019,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SUIUSDT",
-      "bid": 0.886,
-      "ask": 0.8863,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "NEARUSDT",
-      "bid": 1.221,
-      "ask": 1.222,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "OXTUSDT",
-      "bid": 0.0155,
-      "ask": 0.0156,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "GTCUSDT",
-      "bid": 0.0794,
-      "ask": 0.0797,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "CLANKERUSDT",
-      "bid": 26.7,
-      "ask": 26.72,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FLOCKUSDT",
-      "bid": 0.0554,
-      "ask": 0.0555,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "IDEXUSDT",
-      "bid": 0.0069,
-      "ask": 0.0071,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "HYPEUSDT",
-      "bid": 30.62,
-      "ask": 30.65,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SEAMUSDT",
-      "bid": 0.1089,
-      "ask": 0.1092,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RAVEUSDT",
-      "bid": 0.2666,
-      "ask": 0.2675,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DOODUSDT",
-      "bid": 0.002871,
-      "ask": 0.00288,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BCHUSDT",
-      "bid": 446.99,
-      "ask": 447.16,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ZORAUSDT",
-      "bid": 0.01769,
-      "ask": 0.01771,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SAFEUSDT",
-      "bid": 0.0989,
-      "ask": 0.099,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MANAUSDT",
-      "bid": 0.0898,
-      "ask": 0.0899,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TIAUSDT",
-      "bid": 0.3143,
-      "ask": 0.3145,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PROUSDT",
-      "bid": 0.3533,
-      "ask": 0.3534,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ESPUSDT",
-      "bid": 0.1063,
-      "ask": 0.10644,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ZETACHAINUSDT",
-      "bid": 0.05,
-      "ask": 0.0503,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LCXUSDT",
-      "bid": 0.0441,
-      "ask": 0.0445,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "USDSUSDT",
-      "bid": 1.0,
-      "ask": 1.0002,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PUNDIXUSDT",
-      "bid": 0.147,
-      "ask": 0.1473,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "GMTUSDT",
-      "bid": 0.0106,
-      "ask": 0.0107,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "INXUSDT",
-      "bid": 0.011601,
-      "ask": 0.011608,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FLUIDUSDT",
-      "bid": 2.121,
-      "ask": 2.124,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "KSMUSDT",
-      "bid": 4.48,
-      "ask": 4.5,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ENAUSDT",
-      "bid": 0.0986,
-      "ask": 0.0987,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ABTUSDT",
-      "bid": 0.1603,
-      "ask": 0.1624,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SXTUSDT",
-      "bid": 0.0171,
-      "ask": 0.0172,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RNBWUSDT",
-      "bid": 0.01823,
-      "ask": 0.01828,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FLOKIUSDT",
-      "bid": 2.73e-05,
-      "ask": 2.74e-05,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ASTERUSDT",
-      "bid": 0.683,
-      "ask": 0.685,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SDUSDT",
-      "bid": 0.1396,
-      "ask": 0.14,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "APRUSDT",
-      "bid": 0.1071,
-      "ask": 0.1074,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "IMXUSDT",
-      "bid": 0.1504,
-      "ask": 0.1505,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "DBRUSDT",
-      "bid": 0.01581,
-      "ask": 0.01582,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "IOTXUSDT",
-      "bid": 0.01352,
-      "ask": 0.01369,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "OSMOUSDT",
-      "bid": 0.0321,
-      "ask": 0.0323,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LIGHTERUSDT",
-      "bid": 1.072,
-      "ask": 1.073,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "NMRUSDT",
-      "bid": 7.7,
-      "ask": 7.71,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "CTSIUSDT",
-      "bid": 0.0235,
-      "ask": 0.0236,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "C98USDT",
-      "bid": 0.0249,
-      "ask": 0.025,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TOWNSUSDT",
-      "bid": 0.00339,
-      "ask": 0.0034,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MAMOUSDT",
-      "bid": 0.01362,
-      "ask": 0.0137,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "HOMEUSDT",
-      "bid": 0.02296,
-      "ask": 0.0231,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "BREVUSDT",
-      "bid": 0.1409,
-      "ask": 0.1412,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RSRUSDT",
-      "bid": 0.001632,
-      "ask": 0.001635,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "CVCUSDT",
-      "bid": 0.029,
-      "ask": 0.0291,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "PROVEUSDT",
-      "bid": 0.2638,
-      "ask": 0.264,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RECALLUSDT",
-      "bid": 0.0455,
-      "ask": 0.0456,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "KRLUSDT",
-      "bid": 0.1502,
-      "ask": 0.151,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "CROUSDT",
-      "bid": 0.0742,
-      "ask": 0.07429,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ZECUSDT",
-      "bid": 196.94,
-      "ask": 197.04,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LSETHUSDT",
-      "bid": 2130.4,
-      "ask": 2146.21,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "EGLDUSDT",
-      "bid": 4.08,
-      "ask": 4.09,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "GUSDT",
-      "bid": 0.0032,
-      "ask": 0.00321,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "RENDERUSDT",
-      "bid": 1.356,
-      "ask": 1.357,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MOGUSDT",
-      "bid": 1.4e-07,
-      "ask": 1.5e-07,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "CBETHUSDT",
-      "bid": 2184.05,
-      "ask": 2185.03,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "WLDUSDT",
-      "bid": 0.3685,
-      "ask": 0.3686,
+      "symbol": "TONUSDT",
+      "bid": 1.317,
+      "ask": 1.318,
       "source": "coinbase"
     },
     {
@@ -1930,285 +232,165 @@
       "source": "coinbase"
     },
     {
-      "symbol": "DRIFTUSDT",
-      "bid": 0.079,
-      "ask": 0.08,
+      "symbol": "GWEIUSDT",
+      "bid": 0.04771,
+      "ask": 0.04786,
       "source": "coinbase"
     },
     {
-      "symbol": "ASMUSDT",
-      "bid": 0.0083,
-      "ask": 0.00832,
+      "symbol": "ALICEUSDT",
+      "bid": 0.114,
+      "ask": 0.115,
       "source": "coinbase"
     },
     {
-      "symbol": "SUSDT",
-      "bid": 0.03839,
-      "ask": 0.03841,
+      "symbol": "BCHUSDT",
+      "bid": 446.65,
+      "ask": 446.66,
       "source": "coinbase"
     },
     {
-      "symbol": "BERAUSDT",
-      "bid": 0.536,
-      "ask": 0.537,
+      "symbol": "RAREUSDT",
+      "bid": 0.0154,
+      "ask": 0.0155,
       "source": "coinbase"
     },
     {
-      "symbol": "MANTLEUSDT",
-      "bid": 0.6701,
-      "ask": 0.6708,
+      "symbol": "CVCUSDT",
+      "bid": 0.0289,
+      "ask": 0.029,
       "source": "coinbase"
     },
     {
-      "symbol": "FETUSDT",
-      "bid": 0.1418,
-      "ask": 0.142,
+      "symbol": "ETCUSDT",
+      "bid": 8.02,
+      "ask": 8.03,
       "source": "coinbase"
     },
     {
-      "symbol": "SYNDUSDT",
-      "bid": 0.0543,
-      "ask": 0.0544,
+      "symbol": "TRUSTUSDT",
+      "bid": 0.06757,
+      "ask": 0.0676,
       "source": "coinbase"
     },
     {
-      "symbol": "MSOLUSDT",
-      "bid": 111.74,
-      "ask": 112.08,
+      "symbol": "TRUMPUSDT",
+      "bid": 3.01,
+      "ask": 3.02,
       "source": "coinbase"
     },
     {
-      "symbol": "CORECHAINUSDT",
-      "bid": 0.0783,
-      "ask": 0.0787,
+      "symbol": "POPCATUSDT",
+      "bid": 0.049,
+      "ask": 0.0491,
       "source": "coinbase"
     },
     {
-      "symbol": "SWELLUSDT",
-      "bid": 0.00124,
-      "ask": 0.00125,
+      "symbol": "ENAUSDT",
+      "bid": 0.0986,
+      "ask": 0.0987,
       "source": "coinbase"
     },
     {
-      "symbol": "TAOUSDT",
-      "bid": 174.84,
-      "ask": 174.89,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TRACUSDT",
-      "bid": 0.3022,
-      "ask": 0.3034,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "B3USDT",
-      "bid": 0.000346,
-      "ask": 0.000348,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LINKUSDT",
-      "bid": 8.574,
-      "ask": 8.576,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "GFIUSDT",
-      "bid": 0.1292,
-      "ask": 0.1294,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "AUDIOUSDT",
-      "bid": 0.0211,
-      "ask": 0.0212,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "KTAUSDT",
-      "bid": 0.2293,
-      "ask": 0.2298,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "HNTUSDT",
-      "bid": 1.162,
-      "ask": 1.163,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LINEAUSDT",
-      "bid": 0.00304,
-      "ask": 0.00305,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "KAITOUSDT",
-      "bid": 0.3569,
-      "ask": 0.3573,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ATHUSDT",
-      "bid": 0.00578,
-      "ask": 0.00579,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ALEPHUSDT",
-      "bid": 0.0201,
-      "ask": 0.0203,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "TNSRUSDT",
-      "bid": 0.045,
-      "ask": 0.046,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "GODSUSDT",
-      "bid": 0.03267,
-      "ask": 0.03271,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MINAUSDT",
-      "bid": 0.0532,
-      "ask": 0.0534,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "WALUSDT",
-      "bid": 0.07288,
-      "ask": 0.07299,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ANKRUSDT",
-      "bid": 0.00426,
-      "ask": 0.00428,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MDTUSDT",
-      "bid": 0.00979,
-      "ask": 0.00982,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LRCUSDT",
-      "bid": 0.0306,
-      "ask": 0.0307,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "USELESSUSDT",
-      "bid": 0.0377,
-      "ask": 0.0378,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "ZETAUSDT",
-      "bid": 0.0501,
-      "ask": 0.0502,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "REQUSDT",
-      "bid": 0.0613,
-      "ask": 0.0615,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "LRDSUSDT",
-      "bid": 0.0361,
-      "ask": 0.0364,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "FORTHUSDT",
-      "bid": 0.8615,
-      "ask": 0.8629,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "CHZUSDT",
-      "bid": 0.0363,
-      "ask": 0.0364,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "MOODENGUSDT",
-      "bid": 0.0467,
-      "ask": 0.0469,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SEIUSDT",
-      "bid": 0.06348,
-      "ask": 0.06352,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "bid": 82.14,
-      "ask": 82.15,
+      "symbol": "PERPUSDT",
+      "bid": 0.0433,
+      "ask": 0.0435,
       "source": "coinbase"
     },
     {
       "symbol": "GIGAUSDT",
       "bid": 0.00195,
-      "ask": 0.00197,
+      "ask": 0.00196,
       "source": "coinbase"
     },
     {
-      "symbol": "UPUSDT",
-      "bid": 0.03708,
-      "ask": 0.03718,
+      "symbol": "ICPUSDT",
+      "bid": 2.426,
+      "ask": 2.427,
       "source": "coinbase"
     },
     {
-      "symbol": "SPELLUSDT",
-      "bid": 0.0001706,
-      "ask": 0.0001708,
+      "symbol": "AURORAUSDT",
+      "bid": 0.0289,
+      "ask": 0.0291,
       "source": "coinbase"
     },
     {
-      "symbol": "METISUSDT",
-      "bid": 3.12,
-      "ask": 3.13,
+      "symbol": "VTHOUSDT",
+      "bid": 0.000564,
+      "ask": 0.000565,
       "source": "coinbase"
     },
     {
-      "symbol": "PRCLUSDT",
-      "bid": 0.0177,
-      "ask": 0.0178,
+      "symbol": "SAFEUSDT",
+      "bid": 0.0987,
+      "ask": 0.0988,
       "source": "coinbase"
     },
     {
-      "symbol": "PYRUSDT",
-      "bid": 0.296,
-      "ask": 0.297,
+      "symbol": "TOSHIUSDT",
+      "bid": 0.0002033,
+      "ask": 0.0002035,
       "source": "coinbase"
     },
     {
-      "symbol": "STORJUSDT",
-      "bid": 0.0886,
-      "ask": 0.0887,
+      "symbol": "TIMEUSDT",
+      "bid": 2.85,
+      "ask": 2.92,
       "source": "coinbase"
     },
     {
-      "symbol": "LMTSUSDT",
-      "bid": 0.16763,
-      "ask": 0.1683,
+      "symbol": "ETHUSDT",
+      "bid": 1942.03,
+      "ask": 1942.05,
       "source": "coinbase"
     },
     {
-      "symbol": "BANDUSDT",
-      "bid": 0.208,
-      "ask": 0.209,
+      "symbol": "ZETACHAINUSDT",
+      "bid": 0.0496,
+      "ask": 0.05,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ACHUSDT",
+      "bid": 0.006798,
+      "ask": 0.006804,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LQTYUSDT",
+      "bid": 0.2686,
+      "ask": 0.2688,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MPLXUSDT",
+      "bid": 0.0304,
+      "ask": 0.0305,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BIGTIMEUSDT",
+      "bid": 0.01299,
+      "ask": 0.013,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SYNDUSDT",
+      "bid": 0.0538,
+      "ask": 0.0539,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "USDSUSDT",
+      "bid": 1.0,
+      "ask": 1.0001,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BERAUSDT",
+      "bid": 0.532,
+      "ask": 0.533,
       "source": "coinbase"
     },
     {
@@ -2218,45 +400,699 @@
       "source": "coinbase"
     },
     {
-      "symbol": "JASMYUSDT",
-      "bid": 0.00543,
-      "ask": 0.00544,
+      "symbol": "STXUSDT",
+      "bid": 0.2538,
+      "ask": 0.254,
       "source": "coinbase"
     },
     {
-      "symbol": "AXSUSDT",
-      "bid": 1.12,
-      "ask": 1.121,
+      "symbol": "RSCUSDT",
+      "bid": 0.0842,
+      "ask": 0.0843,
       "source": "coinbase"
     },
     {
-      "symbol": "PONDUSDT",
-      "bid": 0.00228,
-      "ask": 0.00229,
+      "symbol": "RAVEUSDT",
+      "bid": 0.2654,
+      "ask": 0.2661,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "RENDERUSDT",
+      "bid": 1.35,
+      "ask": 1.352,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BATUSDT",
+      "bid": 0.0947,
+      "ask": 0.09483,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SUIUSDT",
+      "bid": 0.8833,
+      "ask": 0.8834,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "NEARUSDT",
+      "bid": 1.215,
+      "ask": 1.216,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "STRKUSDT",
+      "bid": 0.037,
+      "ask": 0.038,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "CTSIUSDT",
+      "bid": 0.0236,
+      "ask": 0.0237,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "IMUUSDT",
+      "bid": 0.00288,
+      "ask": 0.00289,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "YBUSDT",
+      "bid": 0.1566,
+      "ask": 0.1569,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "KSMUSDT",
+      "bid": 4.46,
+      "ask": 4.48,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PNUTUSDT",
+      "bid": 0.0434,
+      "ask": 0.0435,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "bid": 616.17,
+      "ask": 616.31,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "KERNELUSDT",
+      "bid": 0.0801,
+      "ask": 0.0803,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ZENUSDT",
+      "bid": 5.246,
+      "ask": 5.25,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "HYPERUSDT",
+      "bid": 0.0881,
+      "ask": 0.0883,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "GSTUSDT",
+      "bid": 0.001624,
+      "ask": 0.001642,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FOXUSDT",
+      "bid": 0.00658,
+      "ask": 0.00674,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ZRXUSDT",
+      "bid": 0.101725,
+      "ask": 0.102051,
       "source": "coinbase"
     },
     {
       "symbol": "PAXGUSDT",
-      "bid": 5173.33,
-      "ask": 5173.96,
+      "bid": 5172.91,
+      "ask": 5173.85,
       "source": "coinbase"
     },
     {
-      "symbol": "CELRUSDT",
-      "bid": 0.00247,
-      "ask": 0.00248,
-      "source": "coinbase"
-    },
-    {
-      "symbol": "CGLDUSDT",
-      "bid": 0.0723,
-      "ask": 0.0724,
+      "symbol": "KRLUSDT",
+      "bid": 0.1505,
+      "ask": 0.151,
       "source": "coinbase"
     },
     {
       "symbol": "BLZUSDT",
-      "bid": 0.0122,
+      "bid": 0.0123,
       "ask": 0.0124,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ZETAUSDT",
+      "bid": 0.0498,
+      "ask": 0.0499,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LDOUSDT",
+      "bid": 0.282,
+      "ask": 0.283,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "XLMUSDT",
+      "bid": 0.148784,
+      "ask": 0.148806,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MAMOUSDT",
+      "bid": 0.01361,
+      "ask": 0.01369,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DIAUSDT",
+      "bid": 0.17689,
+      "ask": 0.17709,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BEAMUSDT",
+      "bid": 0.001894,
+      "ask": 0.001903,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LINKUSDT",
+      "bid": 8.552,
+      "ask": 8.555,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SUPERUSDT",
+      "bid": 0.11157,
+      "ask": 0.1117,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LRDSUSDT",
+      "bid": 0.0361,
+      "ask": 0.0362,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "A8USDT",
+      "bid": 0.0086,
+      "ask": 0.0087,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "bid": 81.92,
+      "ask": 81.93,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "XCNUSDT",
+      "bid": 0.0047,
+      "ask": 0.00471,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ACXUSDT",
+      "bid": 0.0324,
+      "ask": 0.0325,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SUKUUSDT",
+      "bid": 0.0076,
+      "ask": 0.0077,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FLOKIUSDT",
+      "bid": 2.73e-05,
+      "ask": 2.74e-05,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LCXUSDT",
+      "bid": 0.0443,
+      "ask": 0.0448,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "KEYCATUSDT",
+      "bid": 0.00054,
+      "ask": 0.000541,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "WAXLUSDT",
+      "bid": 0.052,
+      "ask": 0.0523,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MORPHOUSDT",
+      "bid": 1.8642,
+      "ask": 1.8677,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PROMPTUSDT",
+      "bid": 0.04237,
+      "ask": 0.0424,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SPKUSDT",
+      "bid": 0.01947,
+      "ask": 0.01949,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "CROUSDT",
+      "bid": 0.07409,
+      "ask": 0.07416,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MNDEUSDT",
+      "bid": 0.02132,
+      "ask": 0.02147,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ASTERUSDT",
+      "bid": 0.684,
+      "ask": 0.685,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "COTIUSDT",
+      "bid": 0.0117,
+      "ask": 0.0118,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AWEUSDT",
+      "bid": 0.0497,
+      "ask": 0.04975,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "bid": 8.85,
+      "ask": 8.86,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FAIUSDT",
+      "bid": 0.00661,
+      "ask": 0.00664,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "KAITOUSDT",
+      "bid": 0.3581,
+      "ask": 0.3584,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "METUSDT",
+      "bid": 0.1559,
+      "ask": 0.1562,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SPXUSDT",
+      "bid": 0.2997,
+      "ask": 0.3,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "UMAUSDT",
+      "bid": 0.407,
+      "ask": 0.408,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SHIBUSDT",
+      "bid": 5.27e-06,
+      "ask": 5.28e-06,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "JUPITERUSDT",
+      "bid": 0.1621,
+      "ask": 0.1624,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ABTUSDT",
+      "bid": 0.1606,
+      "ask": 0.1627,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "bid": 0.08866,
+      "ask": 0.08867,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SENTUSDT",
+      "bid": 0.02295,
+      "ask": 0.02296,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "C98USDT",
+      "bid": 0.0249,
+      "ask": 0.025,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "USDTUSDT",
+      "bid": 1.00004,
+      "ask": 1.00005,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PENGUUSDT",
+      "bid": 0.00647,
+      "ask": 0.006471,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ARKMUSDT",
+      "bid": 0.099,
+      "ask": 0.1,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "HBARUSDT",
+      "bid": 0.09467,
+      "ask": 0.09469,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "KMNOUSDT",
+      "bid": 0.01923,
+      "ask": 0.01924,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "APEUSDT",
+      "bid": 0.092,
+      "ask": 0.093,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AMPUSDT",
+      "bid": 0.00137,
+      "ask": 0.00138,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "RSRUSDT",
+      "bid": 0.001619,
+      "ask": 0.001621,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "XPLUSDT",
+      "bid": 0.0942,
+      "ask": 0.0943,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SHDWUSDT",
+      "bid": 0.031,
+      "ask": 0.032,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "VOXELUSDT",
+      "bid": 0.0082,
+      "ask": 0.0083,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "OPUSDT",
+      "bid": 0.114,
+      "ask": 0.115,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LTCUSDT",
+      "bid": 52.59,
+      "ask": 52.6,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "QIUSDT",
+      "bid": 0.001796,
+      "ask": 0.001801,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SWFTCUSDT",
+      "bid": 0.003344,
+      "ask": 0.003349,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "TUSDT",
+      "bid": 0.00667,
+      "ask": 0.00669,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "NMRUSDT",
+      "bid": 7.73,
+      "ask": 7.74,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "IOTXUSDT",
+      "bid": 0.0135,
+      "ask": 0.0137,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SKRUSDT",
+      "bid": 0.02419,
+      "ask": 0.02421,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "INXUSDT",
+      "bid": 0.011617,
+      "ask": 0.011629,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SANDUSDT",
+      "bid": 0.0779,
+      "ask": 0.078,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ATOMUSDT",
+      "bid": 1.727,
+      "ask": 1.728,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ARPAUSDT",
+      "bid": 0.0096,
+      "ask": 0.0097,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "2ZUSDT",
+      "bid": 0.07328,
+      "ask": 0.07334,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "COSMOSDYDXUSDT",
+      "bid": 0.079,
+      "ask": 0.0792,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FIGHTUSDT",
+      "bid": 0.00475,
+      "ask": 0.00476,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "CBETHUSDT",
+      "bid": 2183.5,
+      "ask": 2184.59,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "NOICEUSDT",
+      "bid": 4.75e-05,
+      "ask": 4.77e-05,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PYTHUSDT",
+      "bid": 0.0456,
+      "ask": 0.0457,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "OSMOUSDT",
+      "bid": 0.0321,
+      "ask": 0.0322,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FUN1USDT",
+      "bid": 0.03529,
+      "ask": 0.03531,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "EIGENUSDT",
+      "bid": 0.179,
+      "ask": 0.18,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DEGENUSDT",
+      "bid": 0.000693,
+      "ask": 0.000695,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BOBBOBUSDT",
+      "bid": 0.00588,
+      "ask": 0.0059,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FLUIDUSDT",
+      "bid": 2.112,
+      "ask": 2.119,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "OGNUSDT",
+      "bid": 0.01892,
+      "ask": 0.01895,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FARTCOINUSDT",
+      "bid": 0.1455,
+      "ask": 0.1457,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "RADUSDT",
+      "bid": 0.232,
+      "ask": 0.233,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "TRBUSDT",
+      "bid": 14.48,
+      "ask": 14.5,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DIMOUSDT",
+      "bid": 0.01201,
+      "ask": 0.01209,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ELSAUSDT",
+      "bid": 0.0719,
+      "ask": 0.072,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DOGINMEUSDT",
+      "bid": 0.0001063,
+      "ask": 0.0001077,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AXSUSDT",
+      "bid": 1.116,
+      "ask": 1.117,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FLOCKUSDT",
+      "bid": 0.0555,
+      "ask": 0.0556,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MANAUSDT",
+      "bid": 0.0895,
+      "ask": 0.0896,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LPTUSDT",
+      "bid": 2.2,
+      "ask": 2.21,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DEXTUSDT",
+      "bid": 0.1279,
+      "ask": 0.1375,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MOGUSDT",
+      "bid": 1.4e-07,
+      "ask": 1.5e-07,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ASTUSDT",
+      "bid": 0.0076,
+      "ask": 0.0078,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "RECALLUSDT",
+      "bid": 0.0453,
+      "ask": 0.0454,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SPAUSDT",
+      "bid": 0.003364,
+      "ask": 0.003365,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "RONINUSDT",
+      "bid": 0.088,
+      "ask": 0.0882,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "REDUSDT",
+      "bid": 0.125,
+      "ask": 0.1252,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "RNBWUSDT",
+      "bid": 0.01818,
+      "ask": 0.01827,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "IMXUSDT",
+      "bid": 0.15,
+      "ask": 0.1501,
       "source": "coinbase"
     },
     {
@@ -2266,9 +1102,1167 @@
       "source": "coinbase"
     },
     {
+      "symbol": "ALGOUSDT",
+      "bid": 0.082,
+      "ask": 0.0821,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PYRUSDT",
+      "bid": 0.296,
+      "ask": 0.297,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "WMTXUSDT",
+      "bid": 0.06531,
+      "ask": 0.06604,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "CAKEUSDT",
+      "bid": 1.304,
+      "ask": 1.306,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SKLUSDT",
+      "bid": 0.0063,
+      "ask": 0.0064,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ORCAUSDT",
+      "bid": 0.8868,
+      "ask": 0.8876,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "WELLUSDT",
+      "bid": 0.004368,
+      "ask": 0.004387,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "INDEXUSDT",
+      "bid": 0.29,
+      "ask": 0.3,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "INJUSDT",
+      "bid": 2.805,
+      "ask": 2.806,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DRIFTUSDT",
+      "bid": 0.078,
+      "ask": 0.079,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "NEWTUSDT",
+      "bid": 0.0647,
+      "ask": 0.0649,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ELAUSDT",
+      "bid": 0.578,
+      "ask": 0.583,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FORTUSDT",
+      "bid": 0.0135,
+      "ask": 0.0136,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MINAUSDT",
+      "bid": 0.0531,
+      "ask": 0.0533,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "TRACUSDT",
+      "bid": 0.3025,
+      "ask": 0.3036,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ERAUSDT",
+      "bid": 0.1402,
+      "ask": 0.1406,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "POLSUSDT",
+      "bid": 0.0626,
+      "ask": 0.0635,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "CFGUSDT",
+      "bid": 0.1452,
+      "ask": 0.1453,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "GHSTUSDT",
+      "bid": 0.084,
+      "ask": 0.085,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SNXUSDT",
+      "bid": 0.301,
+      "ask": 0.302,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FIDAUSDT",
+      "bid": 0.0149,
+      "ask": 0.015,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DOODUSDT",
+      "bid": 0.002865,
+      "ask": 0.002886,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SEIUSDT",
+      "bid": 0.06336,
+      "ask": 0.0634,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MEUSDT",
+      "bid": 0.1107,
+      "ask": 0.1108,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "NKNUSDT",
+      "bid": 0.0054,
+      "ask": 0.0055,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PROUSDT",
+      "bid": 0.3534,
+      "ask": 0.3535,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "KNCUSDT",
+      "bid": 0.1238,
+      "ask": 0.1241,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DOLOUSDT",
+      "bid": 0.03218,
+      "ask": 0.03232,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MSOLUSDT",
+      "bid": 111.42,
+      "ask": 111.78,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AZTECUSDT",
+      "bid": 0.02099,
+      "ask": 0.021,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "EULUSDT",
+      "bid": 0.909,
+      "ask": 0.91,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "JTOUSDT",
+      "bid": 0.2519,
+      "ask": 0.2521,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "WETUSDT",
+      "bid": 0.1066,
+      "ask": 0.1068,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AAVEUSDT",
+      "bid": 106.19,
+      "ask": 106.22,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "REQUSDT",
+      "bid": 0.0612,
+      "ask": 0.0614,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "TRUUSDT",
+      "bid": 0.0048,
+      "ask": 0.0049,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MASKUSDT",
+      "bid": 0.42,
+      "ask": 0.43,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BNTUSDT",
+      "bid": 0.2762,
+      "ask": 0.2771,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "VELOUSDT",
+      "bid": 0.0158,
+      "ask": 0.01584,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FISUSDT",
+      "bid": 0.0169,
+      "ask": 0.0171,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SAPIENUSDT",
+      "bid": 0.0742,
+      "ask": 0.07424,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "TROLLUSDT",
+      "bid": 0.01385,
+      "ask": 0.01389,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DNTUSDT",
+      "bid": 0.0073,
+      "ask": 0.0074,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "NOMUSDT",
+      "bid": 0.00335,
+      "ask": 0.00336,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "GMTUSDT",
+      "bid": 0.0106,
+      "ask": 0.0107,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PENDLEUSDT",
+      "bid": 1.18,
+      "ask": 1.182,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AIOZUSDT",
+      "bid": 0.0644,
+      "ask": 0.0645,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "VARAUSDT",
+      "bid": 0.00092,
+      "ask": 0.00093,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "APRUSDT",
+      "bid": 0.1062,
+      "ask": 0.1066,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "B3USDT",
+      "bid": 0.000345,
+      "ask": 0.000347,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BONKUSDT",
+      "bid": 5.58e-06,
+      "ask": 5.59e-06,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AKTUSDT",
+      "bid": 0.394,
+      "ask": 0.395,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ARBUSDT",
+      "bid": 0.0946,
+      "ask": 0.0948,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "GFIUSDT",
+      "bid": 0.1293,
+      "ask": 0.1295,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "WIFUSDT",
+      "bid": 0.176,
+      "ask": 0.177,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ACSUSDT",
+      "bid": 0.0001757,
+      "ask": 0.0001766,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ROBOUSDT",
+      "bid": 0.04001,
+      "ask": 0.04002,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SHPINGUSDT",
+      "bid": 0.001288,
+      "ask": 0.001302,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ZORAUSDT",
+      "bid": 0.01762,
+      "ask": 0.01763,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "XTZUSDT",
+      "bid": 0.363,
+      "ask": 0.3632,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "WCTUSDT",
+      "bid": 0.0566,
+      "ask": 0.0567,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LAYERUSDT",
+      "bid": 0.0796,
+      "ask": 0.0798,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "COMPUSDT",
+      "bid": 16.63,
+      "ask": 16.65,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "GUSDT",
+      "bid": 0.00319,
+      "ask": 0.0032,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "RPLUSDT",
+      "bid": 1.79,
+      "ask": 1.8,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BANDUSDT",
+      "bid": 0.207,
+      "ask": 0.209,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "OCEANUSDT",
+      "bid": 0.1129,
+      "ask": 0.114,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "XYOUSDT",
+      "bid": 0.00396,
+      "ask": 0.00398,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DAIUSDT",
+      "bid": 0.9999,
+      "ask": 1.0,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BREVUSDT",
+      "bid": 0.1399,
+      "ask": 0.1402,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SXTUSDT",
+      "bid": 0.017,
+      "ask": 0.0171,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "OXTUSDT",
+      "bid": 0.0155,
+      "ask": 0.0156,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LMTSUSDT",
+      "bid": 0.17007,
+      "ask": 0.17035,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "RLSUSDT",
+      "bid": 0.00382,
+      "ask": 0.00384,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AVTUSDT",
+      "bid": 0.67,
+      "ask": 0.69,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AVNTUSDT",
+      "bid": 0.151,
+      "ask": 0.1511,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ADAUSDT",
+      "bid": 0.2493,
+      "ask": 0.2494,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ETHFIUSDT",
+      "bid": 0.516,
+      "ask": 0.517,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MATHUSDT",
+      "bid": 0.0268,
+      "ask": 0.0272,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PROVEUSDT",
+      "bid": 0.2628,
+      "ask": 0.263,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "WUSDT",
+      "bid": 0.01753,
+      "ask": 0.01754,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "REZUSDT",
+      "bid": 0.00318,
+      "ask": 0.00319,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ALLOUSDT",
+      "bid": 0.1222,
+      "ask": 0.1224,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "THQUSDT",
+      "bid": 0.02974,
+      "ask": 0.02978,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BTRSTUSDT",
+      "bid": 0.073,
+      "ask": 0.074,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ROSEUSDT",
+      "bid": 0.01112,
+      "ask": 0.01113,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "GTCUSDT",
+      "bid": 0.079,
+      "ask": 0.08,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FORTHUSDT",
+      "bid": 0.8554,
+      "ask": 0.8573,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BIOUSDT",
+      "bid": 0.02031,
+      "ask": 0.02032,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "METISUSDT",
+      "bid": 3.11,
+      "ask": 3.12,
+      "source": "coinbase"
+    },
+    {
       "symbol": "BALUSDT",
       "bid": 0.1472,
       "ask": 0.1473,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BICOUSDT",
+      "bid": 0.0185,
+      "ask": 0.0187,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "OMNIUSDT",
+      "bid": 0.74,
+      "ask": 0.742,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SKYUSDT",
+      "bid": 0.07276,
+      "ask": 0.07278,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "HNTUSDT",
+      "bid": 1.158,
+      "ask": 1.16,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BLURUSDT",
+      "bid": 0.0185,
+      "ask": 0.0187,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "USELESSUSDT",
+      "bid": 0.0376,
+      "ask": 0.0377,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "EDGEUSDT",
+      "bid": 0.13565,
+      "ask": 0.136,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "WALUSDT",
+      "bid": 0.07277,
+      "ask": 0.07287,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "HONEYUSDT",
+      "bid": 0.0031,
+      "ask": 0.0032,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "RAYUSDT",
+      "bid": 0.5662,
+      "ask": 0.5675,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "KITEUSDT",
+      "bid": 0.3028,
+      "ask": 0.3031,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PRCLUSDT",
+      "bid": 0.0177,
+      "ask": 0.0178,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BADGERUSDT",
+      "bid": 0.3724,
+      "ask": 0.3727,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ONDOUSDT",
+      "bid": 0.24499,
+      "ask": 0.24512,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "VETUSDT",
+      "bid": 0.00681,
+      "ask": 0.00682,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "GNOUSDT",
+      "bid": 122.65,
+      "ask": 123.27,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "TAOUSDT",
+      "bid": 174.98,
+      "ask": 175.02,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ANKRUSDT",
+      "bid": 0.00425,
+      "ask": 0.00426,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LAUSDT",
+      "bid": 0.2187,
+      "ask": 0.2189,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FILUSDT",
+      "bid": 0.934,
+      "ask": 0.935,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "CGLDUSDT",
+      "bid": 0.0723,
+      "ask": 0.0724,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "TREEUSDT",
+      "bid": 0.0654,
+      "ask": 0.0655,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "GODSUSDT",
+      "bid": 0.03281,
+      "ask": 0.03287,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PUMPUSDT",
+      "bid": 0.001889,
+      "ask": 0.001891,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DASHUSDT",
+      "bid": 30.76,
+      "ask": 30.77,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "UNIUSDT",
+      "bid": 3.684,
+      "ask": 3.686,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DOTUSDT",
+      "bid": 1.447,
+      "ask": 1.449,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ZKPUSDT",
+      "bid": 0.0841,
+      "ask": 0.08418,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "INVUSDT",
+      "bid": 17.39,
+      "ask": 17.98,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SEAMUSDT",
+      "bid": 0.109,
+      "ask": 0.1092,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LINEAUSDT",
+      "bid": 0.00303,
+      "ask": 0.00304,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BOBAUSDT",
+      "bid": 0.0215,
+      "ask": 0.0217,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AGLDUSDT",
+      "bid": 0.2676,
+      "ask": 0.268,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AEROUSDT",
+      "bid": 0.31882,
+      "ask": 0.31899,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "STORJUSDT",
+      "bid": 0.0882,
+      "ask": 0.0883,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "WLFIUSDT",
+      "bid": 0.0973,
+      "ask": 0.09732,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AUDIOUSDT",
+      "bid": 0.0209,
+      "ask": 0.021,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LIGHTERUSDT",
+      "bid": 1.073,
+      "ask": 1.074,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "POLUSDT",
+      "bid": 0.0942,
+      "ask": 0.0943,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "TNSRUSDT",
+      "bid": 0.045,
+      "ask": 0.046,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ZKUSDT",
+      "bid": 0.01836,
+      "ask": 0.01838,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ZKCUSDT",
+      "bid": 0.0801,
+      "ask": 0.0803,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "IPUSDT",
+      "bid": 0.793,
+      "ask": 0.794,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SDUSDT",
+      "bid": 0.1405,
+      "ask": 0.1413,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "KARRATUSDT",
+      "bid": 0.0054,
+      "ask": 0.0055,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "TOWNSUSDT",
+      "bid": 0.00336,
+      "ask": 0.00338,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "NEONUSDT",
+      "bid": 0.03093,
+      "ask": 0.031,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "STGUSDT",
+      "bid": 0.1777,
+      "ask": 0.1781,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "TIAUSDT",
+      "bid": 0.3139,
+      "ask": 0.314,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MAGICUSDT",
+      "bid": 0.0597,
+      "ask": 0.0598,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ZECUSDT",
+      "bid": 196.35,
+      "ask": 196.36,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MOODENGUSDT",
+      "bid": 0.0466,
+      "ask": 0.0467,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "CELRUSDT",
+      "bid": 0.00246,
+      "ask": 0.00247,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PLUUSDT",
+      "bid": 0.14643,
+      "ask": 0.14899,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LRCUSDT",
+      "bid": 0.0304,
+      "ask": 0.0305,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BIRBUSDT",
+      "bid": 0.1409,
+      "ask": 0.141,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "HFTUSDT",
+      "bid": 0.015,
+      "ask": 0.0151,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BARDUSDT",
+      "bid": 1.0725,
+      "ask": 1.0736,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PONDUSDT",
+      "bid": 0.00228,
+      "ask": 0.00229,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "QNTUSDT",
+      "bid": 63.79,
+      "ask": 63.83,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "KTAUSDT",
+      "bid": 0.2292,
+      "ask": 0.2297,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MANTLEUSDT",
+      "bid": 0.6713,
+      "ask": 0.6719,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ESPUSDT",
+      "bid": 0.10563,
+      "ask": 0.10569,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "TURBOUSDT",
+      "bid": 0.000882,
+      "ask": 0.000884,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "IOUSDT",
+      "bid": 0.1,
+      "ask": 0.101,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "DEEPUSDT",
+      "bid": 0.02875,
+      "ask": 0.02878,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "HYPEUSDT",
+      "bid": 30.43,
+      "ask": 30.46,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ATHUSDT",
+      "bid": 0.00577,
+      "ask": 0.00579,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "XRPUSDT",
+      "bid": 1.3442,
+      "ask": 1.3443,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "CHZUSDT",
+      "bid": 0.0361,
+      "ask": 0.0362,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ILVUSDT",
+      "bid": 3.53,
+      "ask": 3.54,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "JITOSOLUSDT",
+      "bid": 103.61,
+      "ask": 103.71,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "CRVUSDT",
+      "bid": 0.2326,
+      "ask": 0.2327,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "VVVUSDT",
+      "bid": 5.9751,
+      "ask": 5.9808,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SUSDT",
+      "bid": 0.03833,
+      "ask": 0.03834,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SUPUSDT",
+      "bid": 0.01139,
+      "ask": 0.0114,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "UPUSDT",
+      "bid": 0.03708,
+      "ask": 0.03717,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "WLDUSDT",
+      "bid": 0.3672,
+      "ask": 0.3673,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FLRUSDT",
+      "bid": 0.00891,
+      "ask": 0.00892,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "HOPRUSDT",
+      "bid": 0.0201,
+      "ask": 0.0202,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MDTUSDT",
+      "bid": 0.00981,
+      "ask": 0.00985,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "PEPEUSDT",
+      "bid": 3.17e-06,
+      "ask": 3.18e-06,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ASMUSDT",
+      "bid": 0.00839,
+      "ask": 0.0084,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "JASMYUSDT",
+      "bid": 0.00542,
+      "ask": 0.00543,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "CORECHAINUSDT",
+      "bid": 0.0782,
+      "ask": 0.0785,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "HOMEUSDT",
+      "bid": 0.02317,
+      "ask": 0.02331,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "MLNUSDT",
+      "bid": 3.37,
+      "ask": 3.38,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "TRIAUSDT",
+      "bid": 0.022358,
+      "ask": 0.022457,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ALTUSDT",
+      "bid": 0.0071,
+      "ask": 0.00711,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "CVXUSDT",
+      "bid": 2.319,
+      "ask": 2.325,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "FARMUSDT",
+      "bid": 13.38,
+      "ask": 13.43,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "CLANKERUSDT",
+      "bid": 26.56,
+      "ask": 26.61,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "SUSHIUSDT",
+      "bid": 0.19,
+      "ask": 0.1903,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AXLUSDT",
+      "bid": 0.0522,
+      "ask": 0.0523,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "LSETHUSDT",
+      "bid": 2130.36,
+      "ask": 2145.33,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "1INCHUSDT",
+      "bid": 0.09,
+      "ask": 0.091,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "NCTUSDT",
+      "bid": 0.00648,
+      "ask": 0.0065,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "IRYSUSDT",
+      "bid": 0.0166,
+      "ask": 0.01662,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ZROUSDT",
+      "bid": 1.98,
+      "ask": 1.982,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "KAVAUSDT",
+      "bid": 0.0645,
+      "ask": 0.0646,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "BNKRUSDT",
+      "bid": 0.0004854,
+      "ask": 0.0004866,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "YFIUSDT",
+      "bid": 2484.73,
+      "ask": 2486.99,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "AUCTIONUSDT",
+      "bid": 4.67,
+      "ask": 4.68,
       "source": "coinbase"
     }
   ]
