@@ -4,7 +4,7 @@ from datetime import datetime
 COINBASE_PRODUCTS = "https://api.exchange.coinbase.com/products"
 
 
-def fetch_prices():
+def fetch():
 
     signals = []
 
