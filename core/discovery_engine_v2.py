@@ -13,10 +13,11 @@ def normalize_symbol(symbol):
     if not symbol:
         return None
 
-    symbol = symbol.upper()
+    symbol = str(symbol).upper()
 
     symbol = symbol.replace("-", "")
     symbol = symbol.replace("/", "")
+    symbol = symbol.replace("USDT", "")
     symbol = symbol.replace("USD", "")
 
     if symbol == "XBT":
@@ -28,6 +29,7 @@ def normalize_symbol(symbol):
 def load_feed():
 
     if not FEED_PATH.exists():
+
         return {
             "feed_version": "v2",
             "generated_at": "",
@@ -50,6 +52,10 @@ def normalize_prices(data):
     normalized = []
 
     for entry in data:
+
+        # защита от мусорных значений
+        if not isinstance(entry, dict):
+            continue
 
         symbol = normalize_symbol(entry.get("symbol"))
 
@@ -76,6 +82,9 @@ def main():
         if hasattr(connector, "fetch"):
 
             data = connector.fetch()
+
+            if not isinstance(data, list):
+                continue
 
             data = normalize_prices(data)
 
