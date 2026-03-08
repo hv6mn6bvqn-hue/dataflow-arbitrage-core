@@ -1,7 +1,7 @@
 {
   "feed_version": "v2",
-  "generated_at": "2026-03-08T15:51:33.020359Z",
-  "signal_count": 5436,
+  "generated_at": "2026-03-08T15:56:28.509502Z",
+  "signal_count": 5441,
   "signals": [
     {
       "timestamp": "2026-03-07T23:24:03.874469Z",
@@ -44361,6 +44361,36 @@
       "symbol": "XDG",
       "bid": 0.0885987,
       "ask": 0.0886026,
+      "source": "kraken"
+    },
+    {
+      "symbol": "ADA",
+      "bid": 0.249406,
+      "ask": 0.249452,
+      "source": "kraken"
+    },
+    {
+      "symbol": "XETHZ",
+      "bid": 1941.41,
+      "ask": 1941.73,
+      "source": "kraken"
+    },
+    {
+      "symbol": "SOL",
+      "bid": 82.05,
+      "ask": 82.06,
+      "source": "kraken"
+    },
+    {
+      "symbol": "XBTCZ",
+      "bid": 67167.0,
+      "ask": 67167.1,
+      "source": "kraken"
+    },
+    {
+      "symbol": "XDG",
+      "bid": 0.0886832,
+      "ask": 0.0886833,
       "source": "kraken"
     }
   ]
