@@ -1,7 +1,7 @@
 {
   "feed_version": "v2",
-  "generated_at": "2026-03-08T12:51:22.030600Z",
-  "signal_count": 5401,
+  "generated_at": "2026-03-08T13:41:30.589277Z",
+  "signal_count": 5406,
   "signals": [
     {
       "timestamp": "2026-03-07T23:24:03.874469Z",
@@ -44151,6 +44151,36 @@
       "symbol": "XDGUSD",
       "bid": 0.0889535,
       "ask": 0.0889629,
+      "source": "kraken"
+    },
+    {
+      "symbol": "ADAUSD",
+      "bid": 0.251283,
+      "ask": 0.251475,
+      "source": "kraken"
+    },
+    {
+      "symbol": "XETHZUSD",
+      "bid": 1933.85,
+      "ask": 1934.34,
+      "source": "kraken"
+    },
+    {
+      "symbol": "SOLUSD",
+      "bid": 81.62,
+      "ask": 81.63,
+      "source": "kraken"
+    },
+    {
+      "symbol": "XBTCZUSD",
+      "bid": 66998.3,
+      "ask": 66998.4,
+      "source": "kraken"
+    },
+    {
+      "symbol": "XDGUSD",
+      "bid": 0.0883221,
+      "ask": 0.0883222,
       "source": "kraken"
     }
   ]
