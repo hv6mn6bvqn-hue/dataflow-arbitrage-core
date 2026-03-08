@@ -45,40 +45,49 @@ def detect_arbitrage(markets):
         if len(entries) < 2:
             continue
 
-        prices = []
+        for i in range(len(entries)):
+            for j in range(i + 1, len(entries)):
 
-        for e in entries:
+                a = entries[i]
+                b = entries[j]
 
-            price = e.get("price") or e.get("ask") or e.get("bid")
+                source_a = a.get("source")
+                source_b = b.get("source")
 
-            if price:
-                prices.append((e.get("source"), float(price)))
+                if source_a == source_b:
+                    continue
 
-        if len(prices) < 2:
-            continue
+                price_a = a.get("price") or a.get("ask") or a.get("bid")
+                price_b = b.get("price") or b.get("ask") or b.get("bid")
 
-        prices.sort(key=lambda x: x[1])
+                if not price_a or not price_b:
+                    continue
 
-        low_exchange, low_price = prices[0]
-        high_exchange, high_price = prices[-1]
+                price_a = float(price_a)
+                price_b = float(price_b)
 
-        spread = high_price - low_price
-        spread_percent = (spread / low_price) * 100
+                low_price = min(price_a, price_b)
+                high_price = max(price_a, price_b)
 
-        if spread_percent < MIN_SPREAD_PERCENT:
-            continue
+                spread = high_price - low_price
+                spread_percent = (spread / low_price) * 100
 
-        opportunities.append({
-            "type": "signal",
-            "timestamp": datetime.utcnow().isoformat() + "Z",
-            "symbol": symbol,
-            "buy_from": low_exchange,
-            "sell_to": high_exchange,
-            "buy_price": low_price,
-            "sell_price": high_price,
-            "spread": spread,
-            "spread_percent": spread_percent
-        })
+                if spread_percent < MIN_SPREAD_PERCENT:
+                    continue
+
+                buy_exchange = source_a if price_a < price_b else source_b
+                sell_exchange = source_b if price_a < price_b else source_a
+
+                opportunities.append({
+                    "type": "signal",
+                    "timestamp": datetime.utcnow().isoformat() + "Z",
+                    "symbol": symbol,
+                    "buy_from": buy_exchange,
+                    "sell_to": sell_exchange,
+                    "spread_percent": spread_percent,
+                    "buy_price": low_price,
+                    "sell_price": high_price
+                })
 
     return opportunities
 
