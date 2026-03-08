@@ -15,7 +15,14 @@ def fetch():
         print("[BINANCE] request error:", e)
         return signals
 
+    if not isinstance(data, list):
+        print("[BINANCE] unexpected response")
+        return signals
+
     for asset in data:
+
+        if not isinstance(asset, dict):
+            continue
 
         symbol = asset.get("symbol")
 
@@ -27,17 +34,13 @@ def fetch():
         if price <= 0:
             continue
 
-        signal = {
+        signals.append({
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "market": "crypto",
             "symbol": symbol,
             "price": price,
-            "confidence": 0.5,
-            "type": "price_snapshot",
             "source": "binance"
-        }
-
-        signals.append(signal)
+        })
 
     print(f"[BINANCE] price snapshots: {len(signals)}")
 
