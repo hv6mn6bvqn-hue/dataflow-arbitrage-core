@@ -1,28 +1,28 @@
 import requests
 from datetime import datetime
 
-BINANCE_API = "https://api.binance.com/api/v3/ticker/price"
+URL = "https://api.binance.com/api/v3/ticker/price"
 
+HEADERS = {
+    "User-Agent": "DataFlow-Arbitrage-System"
+}
 
 def fetch():
 
     signals = []
 
     try:
-        r = requests.get(BINANCE_API, timeout=10)
+        r = requests.get(URL, headers=HEADERS, timeout=10)
         data = r.json()
     except Exception as e:
         print("[BINANCE] request error:", e)
         return signals
 
     if not isinstance(data, list):
-        print("[BINANCE] unexpected response")
+        print("[BINANCE] unexpected response:", data)
         return signals
 
     for asset in data:
-
-        if not isinstance(asset, dict):
-            continue
 
         symbol = asset.get("symbol")
 
