@@ -1,121 +1,92 @@
 import json
-from pathlib import Path
+import os
 from datetime import datetime
 
-FEED_PATH = Path("docs/feed/index.json")
-EXPORT_DIR = Path("exports")
+INPUT_FILE = "sources/arbitrage_matrix.json"
+OUTPUT_FILE = "sources/arbitrage.json"
 
-EXPORT_DIR.mkdir(exist_ok=True)
+SPREAD_MIN = 0.004
+SPREAD_MAX = 0.05
 
-MIN_SPREAD_PERCENT = 0.5
 
+def load_matrix():
 
-def load_feed():
+    try:
 
-    if not FEED_PATH.exists():
+        with open(INPUT_FILE, "r") as f:
+
+            return json.load(f)
+
+    except Exception as e:
+
+        print("[ARBITRAGE] load error:", e)
+
         return []
 
-    data = json.loads(FEED_PATH.read_text())
 
-    return data.get("signals", [])
+def filter_opportunities(matrix):
 
+    results = []
 
-def group_by_symbol(signals):
+    for m in matrix:
 
-    markets = {}
+        spread = m.get("spread")
 
-    for s in signals:
-
-        symbol = s.get("symbol")
-
-        if not symbol:
+        if spread is None:
             continue
 
-        markets.setdefault(symbol, []).append(s)
-
-    return markets
-
-
-def detect_arbitrage(markets):
-
-    opportunities = []
-
-    for symbol, entries in markets.items():
-
-        if len(entries) < 2:
+        if spread < SPREAD_MIN:
             continue
 
-        for i in range(len(entries)):
-            for j in range(i + 1, len(entries)):
+        if spread > SPREAD_MAX:
+            continue
 
-                a = entries[i]
-                b = entries[j]
+        results.append({
 
-                source_a = a.get("source")
-                source_b = b.get("source")
+            "timestamp": datetime.utcnow().isoformat() + "Z",
 
-                if source_a == source_b:
-                    continue
+            "symbol": m["symbol"],
 
-                price_a = a.get("price") or a.get("ask") or a.get("bid")
-                price_b = b.get("price") or b.get("ask") or b.get("bid")
+            "buy_exchange": m["buy_exchange"],
+            "buy_price": m["buy_price"],
 
-                if not price_a or not price_b:
-                    continue
+            "sell_exchange": m["sell_exchange"],
+            "sell_price": m["sell_price"],
 
-                price_a = float(price_a)
-                price_b = float(price_b)
+            "spread": spread
 
-                low_price = min(price_a, price_b)
-                high_price = max(price_a, price_b)
+        })
 
-                spread = high_price - low_price
-                spread_percent = (spread / low_price) * 100
-
-                if spread_percent < MIN_SPREAD_PERCENT:
-                    continue
-
-                buy_exchange = source_a if price_a < price_b else source_b
-                sell_exchange = source_b if price_a < price_b else source_a
-
-                opportunities.append({
-                    "type": "signal",
-                    "timestamp": datetime.utcnow().isoformat() + "Z",
-                    "symbol": symbol,
-                    "buy_from": buy_exchange,
-                    "sell_to": sell_exchange,
-                    "spread_percent": spread_percent,
-                    "buy_price": low_price,
-                    "sell_price": high_price
-                })
-
-    return opportunities
+    return results
 
 
-def export(opportunities):
+def save_results(results):
 
-    for i, signal in enumerate(opportunities):
+    try:
 
-        file = EXPORT_DIR / f"arb_signal_{i}.json"
+        os.makedirs("sources", exist_ok=True)
 
-        file.write_text(json.dumps(signal, indent=2))
+        with open(OUTPUT_FILE, "w") as f:
+
+            json.dump(results, f, indent=2)
+
+        print(f"[ARBITRAGE] opportunities saved: {len(results)}")
+
+    except Exception as e:
+
+        print("[ARBITRAGE] save error:", e)
 
 
 def main():
 
-    print("[ARBITRAGE] scanning markets")
+    print("[ARBITRAGE] loading matrix opportunities")
 
-    signals = load_feed()
+    matrix = load_matrix()
 
-    markets = group_by_symbol(signals)
+    print(f"[ARBITRAGE] matrix loaded: {len(matrix)}")
 
-    opportunities = detect_arbitrage(markets)
+    opportunities = filter_opportunities(matrix)
 
     print(f"[ARBITRAGE] opportunities found: {len(opportunities)}")
 
-    if opportunities:
-        export(opportunities)
-
-
-if __name__ == "__main__":
-    main()
+    save_results(opportunities)
