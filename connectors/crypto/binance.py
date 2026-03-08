@@ -4,7 +4,7 @@ from datetime import datetime
 BINANCE_API = "https://api.binance.com/api/v3/ticker/price"
 
 
-def fetch_signals():
+def fetch():
 
     signals = []
 
