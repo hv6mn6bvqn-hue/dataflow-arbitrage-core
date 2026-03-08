@@ -1,7 +1,5 @@
 import os
 import importlib
-from datetime import datetime
-
 
 CONNECTOR_PATH = "connectors.crypto"
 
@@ -21,23 +19,24 @@ def load_connectors():
             continue
 
         module_name = file.replace(".py", "")
-
         full_module = f"{CONNECTOR_PATH}.{module_name}"
 
         try:
+
             module = importlib.import_module(full_module)
+
             connectors.append(module)
 
             print(f"[CONNECTOR] loaded {full_module}")
 
         except Exception as e:
 
-            print(f"[CONNECTOR] failed {full_module}:", e)
+            print(f"[CONNECTOR] failed {full_module}: {e}")
 
     return connectors
 
 
-def run():
+def main():
 
     print("[DISCOVERY V2] loading connectors")
 
@@ -51,8 +50,10 @@ def run():
 
             if hasattr(connector, "fetch"):
                 signals = connector.fetch()
+
             elif hasattr(connector, "fetch_prices"):
                 signals = connector.fetch_prices()
+
             else:
                 continue
 
@@ -62,8 +63,6 @@ def run():
 
         except Exception as e:
 
-            print(f"[DISCOVERY] error {connector.__name__}:", e)
+            print(f"[DISCOVERY] error {connector.__name__}: {e}")
 
     print(f"[DISCOVERY V2] raw signals: {len(all_signals)}")
-
-    return all_signals
