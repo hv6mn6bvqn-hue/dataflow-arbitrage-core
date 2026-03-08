@@ -1,7 +1,7 @@
 {
   "feed_version": "v2",
-  "generated_at": "2026-03-08T16:31:38.020379Z",
-  "signal_count": 6457,
+  "generated_at": "2026-03-08T16:58:55.655898Z",
+  "signal_count": 6965,
   "signals": [
     {
       "timestamp": "2026-03-07T23:24:03.874469Z",
@@ -51493,6 +51493,3557 @@
       "market": "crypto",
       "symbol": "DOGE",
       "price": 0.0887,
+      "source": "coinbase"
+    },
+    {
+      "symbol": "ADA",
+      "bid": 0.2495,
+      "ask": 0.249627,
+      "source": "kraken"
+    },
+    {
+      "symbol": "XETHZ",
+      "bid": 1937.48,
+      "ask": 1937.53,
+      "source": "kraken"
+    },
+    {
+      "symbol": "SOL",
+      "bid": 81.48,
+      "ask": 81.49,
+      "source": "kraken"
+    },
+    {
+      "symbol": "XBTCZ",
+      "bid": 66894.2,
+      "ask": 66894.3,
+      "source": "kraken"
+    },
+    {
+      "symbol": "XDG",
+      "bid": 0.0884541,
+      "ask": 0.0884636,
+      "source": "kraken"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:19.258498Z",
+      "market": "crypto",
+      "symbol": "ILV",
+      "price": 3.54,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:20.100762Z",
+      "market": "crypto",
+      "symbol": "ROSE",
+      "price": 0.0114,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:20.194944Z",
+      "market": "crypto",
+      "symbol": "ETH",
+      "price": 1937.3,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:20.371208Z",
+      "market": "crypto",
+      "symbol": "SYRUP",
+      "price": 0.2202,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:20.919031Z",
+      "market": "crypto",
+      "symbol": "AVAXEUR",
+      "price": 7.62,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:21.080794Z",
+      "market": "crypto",
+      "symbol": "HONEY",
+      "price": 0.0031,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:21.447736Z",
+      "market": "crypto",
+      "symbol": "GBP",
+      "price": 0.7467,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:22.218724Z",
+      "market": "crypto",
+      "symbol": "PENGU",
+      "price": 0.006444,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:22.570770Z",
+      "market": "crypto",
+      "symbol": "ATOM",
+      "price": 1.724,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:22.769101Z",
+      "market": "crypto",
+      "symbol": "BERA",
+      "price": 0.531,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:23.069406Z",
+      "market": "crypto",
+      "symbol": "IDEX",
+      "price": 0.007,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:23.253402Z",
+      "market": "crypto",
+      "symbol": "IP",
+      "price": 0.792,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:23.335688Z",
+      "market": "crypto",
+      "symbol": "ABT",
+      "price": 0.1626,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:23.505296Z",
+      "market": "crypto",
+      "symbol": "PNUT",
+      "price": 0.0433,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:23.640683Z",
+      "market": "crypto",
+      "symbol": "CFG",
+      "price": 0.144,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:24.005762Z",
+      "market": "crypto",
+      "symbol": "TROLL",
+      "price": 0.01376,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:24.165007Z",
+      "market": "crypto",
+      "symbol": "DEXT",
+      "price": 0.1293,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:24.655876Z",
+      "market": "crypto",
+      "symbol": "BIGTIME",
+      "price": 0.01295,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:25.009023Z",
+      "market": "crypto",
+      "symbol": "GMT",
+      "price": 0.0106,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:25.153975Z",
+      "market": "crypto",
+      "symbol": "ZEC",
+      "price": 197.13,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:25.492086Z",
+      "market": "crypto",
+      "symbol": "GNO",
+      "price": 122.4,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:25.731663Z",
+      "market": "crypto",
+      "symbol": "EUR",
+      "price": 0.86313,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:26.622687Z",
+      "market": "crypto",
+      "symbol": "FORTH",
+      "price": 0.8721,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:26.765485Z",
+      "market": "crypto",
+      "symbol": "GLM",
+      "price": 0.124,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:27.202915Z",
+      "market": "crypto",
+      "symbol": "ESP",
+      "price": 0.10566,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:27.826748Z",
+      "market": "crypto",
+      "symbol": "CTX",
+      "price": 0.5597,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:27.982002Z",
+      "market": "crypto",
+      "symbol": "PRIME",
+      "price": 0.419,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:28.126758Z",
+      "market": "crypto",
+      "symbol": "00",
+      "price": 0.0046,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:28.266101Z",
+      "market": "crypto",
+      "symbol": "CHZ",
+      "price": 0.0369,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:29.044618Z",
+      "market": "crypto",
+      "symbol": "LRDS",
+      "price": 0.0353,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:29.985466Z",
+      "market": "crypto",
+      "symbol": "POPCAT",
+      "price": 0.049,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:30.460344Z",
+      "market": "crypto",
+      "symbol": "TRAC",
+      "price": 0.3048,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:30.785170Z",
+      "market": "crypto",
+      "symbol": "ZK",
+      "price": 0.01827,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:30.997410Z",
+      "market": "crypto",
+      "symbol": "ROBO",
+      "price": 0.0393,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:31.152569Z",
+      "market": "crypto",
+      "symbol": "MON",
+      "price": 0.021,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:31.360354Z",
+      "market": "crypto",
+      "symbol": "MASKGBP",
+      "price": 0.317,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:32.099406Z",
+      "market": "crypto",
+      "symbol": "LINKGBP",
+      "price": 6.36,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:32.234581Z",
+      "market": "crypto",
+      "symbol": "AUDIO",
+      "price": 0.021,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:32.431224Z",
+      "market": "crypto",
+      "symbol": "OCEAN",
+      "price": 0.1239,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:32.573945Z",
+      "market": "crypto",
+      "symbol": "VOXEL",
+      "price": 0.0082,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:32.765143Z",
+      "market": "crypto",
+      "symbol": "CRVBTC",
+      "price": 3.49e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:33.000119Z",
+      "market": "crypto",
+      "symbol": "SAND",
+      "price": 0.0778,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:33.176785Z",
+      "market": "crypto",
+      "symbol": "COTI",
+      "price": 0.0116,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:33.344817Z",
+      "market": "crypto",
+      "symbol": "PROMPT",
+      "price": 0.04218,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:33.552492Z",
+      "market": "crypto",
+      "symbol": "DOTGBP",
+      "price": 1.08,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:34.324701Z",
+      "market": "crypto",
+      "symbol": "ENA",
+      "price": 0.098,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:34.498119Z",
+      "market": "crypto",
+      "symbol": "FARTCOIN",
+      "price": 0.1437,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:34.632854Z",
+      "market": "crypto",
+      "symbol": "XYO",
+      "price": 0.00395,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:34.945248Z",
+      "market": "crypto",
+      "symbol": "GRTGBP",
+      "price": 0.0186,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:35.294674Z",
+      "market": "crypto",
+      "symbol": "C",
+      "price": 0.9999,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:35.449564Z",
+      "market": "crypto",
+      "symbol": "FILBTC",
+      "price": 1.394e-05,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:35.527494Z",
+      "market": "crypto",
+      "symbol": "SPX",
+      "price": 0.2975,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:35.683329Z",
+      "market": "crypto",
+      "symbol": "INV",
+      "price": 17.96,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:36.072680Z",
+      "market": "crypto",
+      "symbol": "SOLGBP",
+      "price": 60.84,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:36.261199Z",
+      "market": "crypto",
+      "symbol": "SHIB",
+      "price": 5.25e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:36.474820Z",
+      "market": "crypto",
+      "symbol": "ICPBTC",
+      "price": 3.623e-05,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:36.640578Z",
+      "market": "crypto",
+      "symbol": "XSGDC",
+      "price": 0.7827,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:37.329131Z",
+      "market": "crypto",
+      "symbol": "B3",
+      "price": 0.000344,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:37.504056Z",
+      "market": "crypto",
+      "symbol": "SPK",
+      "price": 0.01951,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:37.868436Z",
+      "market": "crypto",
+      "symbol": "FLR",
+      "price": 0.00893,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:38.087554Z",
+      "market": "crypto",
+      "symbol": "IMX",
+      "price": 0.1495,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:39.384305Z",
+      "market": "crypto",
+      "symbol": "UNIBTC",
+      "price": 5.502e-05,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:39.793259Z",
+      "market": "crypto",
+      "symbol": "CBETH",
+      "price": 2178.72,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:40.068664Z",
+      "market": "crypto",
+      "symbol": "ARB",
+      "price": 0.0944,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:40.277777Z",
+      "market": "crypto",
+      "symbol": "ZRO",
+      "price": 1.961,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:40.465745Z",
+      "market": "crypto",
+      "symbol": "SOLEUR",
+      "price": 70.32,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:40.579152Z",
+      "market": "crypto",
+      "symbol": "TRUMP",
+      "price": 3.0,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:41.155377Z",
+      "market": "crypto",
+      "symbol": "WLD",
+      "price": 0.3659,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:41.364088Z",
+      "market": "crypto",
+      "symbol": "ATH",
+      "price": 0.00576,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:41.582332Z",
+      "market": "crypto",
+      "symbol": "BOBA",
+      "price": 0.0213,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:41.751479Z",
+      "market": "crypto",
+      "symbol": "HOPR",
+      "price": 0.0202,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:41.953779Z",
+      "market": "crypto",
+      "symbol": "BCHBTC",
+      "price": 0.006644,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:42.127712Z",
+      "market": "crypto",
+      "symbol": "DOT",
+      "price": 1.45,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:42.291761Z",
+      "market": "crypto",
+      "symbol": "KNC",
+      "price": 0.1234,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:42.843746Z",
+      "market": "crypto",
+      "symbol": "KTA",
+      "price": 0.2296,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:43.160101Z",
+      "market": "crypto",
+      "symbol": "RED",
+      "price": 0.1243,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:43.306016Z",
+      "market": "crypto",
+      "symbol": "RAVE",
+      "price": 0.265,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:43.473061Z",
+      "market": "crypto",
+      "symbol": "DASHBTC",
+      "price": 0.000457,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:43.638213Z",
+      "market": "crypto",
+      "symbol": "JUPITER",
+      "price": 0.1617,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:43.995970Z",
+      "market": "crypto",
+      "symbol": "ACS",
+      "price": 0.0001753,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:44.157378Z",
+      "market": "crypto",
+      "symbol": "LINKEUR",
+      "price": 7.35,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:44.371647Z",
+      "market": "crypto",
+      "symbol": "SUSHI",
+      "price": 0.1897,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:44.669852Z",
+      "market": "crypto",
+      "symbol": "BATBTC",
+      "price": 1.41e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:44.810943Z",
+      "market": "crypto",
+      "symbol": "EDGE",
+      "price": 0.13601,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:45.053865Z",
+      "market": "crypto",
+      "symbol": "DNT",
+      "price": 0.0078,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:45.550687Z",
+      "market": "crypto",
+      "symbol": "ENSEUR",
+      "price": 4.88,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:45.667052Z",
+      "market": "crypto",
+      "symbol": "BTC",
+      "price": 66903.61,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:45.850428Z",
+      "market": "crypto",
+      "symbol": "AVAX",
+      "price": 8.83,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:46.009268Z",
+      "market": "crypto",
+      "symbol": "METIS",
+      "price": 3.09,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:46.093027Z",
+      "market": "crypto",
+      "symbol": "JTO",
+      "price": 0.2519,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:46.278009Z",
+      "market": "crypto",
+      "symbol": "ZKP",
+      "price": 0.08376,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:46.864659Z",
+      "market": "crypto",
+      "symbol": "GTC",
+      "price": 0.0795,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:47.742869Z",
+      "market": "crypto",
+      "symbol": "DIMO",
+      "price": 0.01269,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:48.112785Z",
+      "market": "crypto",
+      "symbol": "AWE",
+      "price": 0.04963,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:48.430945Z",
+      "market": "crypto",
+      "symbol": "SQD",
+      "price": 0.0386,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:48.811904Z",
+      "market": "crypto",
+      "symbol": "SHPING",
+      "price": 0.001394,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:49.130344Z",
+      "market": "crypto",
+      "symbol": "IMX",
+      "price": 0.1503,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:49.525489Z",
+      "market": "crypto",
+      "symbol": "SHIBGBP",
+      "price": 3.93e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:49.947000Z",
+      "market": "crypto",
+      "symbol": "CRVGBP",
+      "price": 0.1746,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:50.115555Z",
+      "market": "crypto",
+      "symbol": "CORECHAIN",
+      "price": 0.0783,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:50.201762Z",
+      "market": "crypto",
+      "symbol": "BTC",
+      "price": 66906.93,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:50.359251Z",
+      "market": "crypto",
+      "symbol": "MDT",
+      "price": 0.00956,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:50.554457Z",
+      "market": "crypto",
+      "symbol": "LQTY",
+      "price": 0.2685,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:50.809331Z",
+      "market": "crypto",
+      "symbol": "DOGEBTC",
+      "price": 1.32e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:51.152233Z",
+      "market": "crypto",
+      "symbol": "ICP",
+      "price": 2.421,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:51.325056Z",
+      "market": "crypto",
+      "symbol": "FLOCK",
+      "price": 0.0553,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:51.645913Z",
+      "market": "crypto",
+      "symbol": "PENDLE",
+      "price": 1.178,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:51.753326Z",
+      "market": "crypto",
+      "symbol": "KMNO",
+      "price": 0.01895,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:51.947476Z",
+      "market": "crypto",
+      "symbol": "CHZ",
+      "price": 0.0369,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:52.084186Z",
+      "market": "crypto",
+      "symbol": "HBAR",
+      "price": 0.09428,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:52.240751Z",
+      "market": "crypto",
+      "symbol": "WIF",
+      "price": 0.176,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:52.620168Z",
+      "market": "crypto",
+      "symbol": "FORT",
+      "price": 0.0135,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:53.046501Z",
+      "market": "crypto",
+      "symbol": "XPL",
+      "price": 0.0938,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:53.273181Z",
+      "market": "crypto",
+      "symbol": "PYR",
+      "price": 0.297,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:53.353683Z",
+      "market": "crypto",
+      "symbol": "SOL",
+      "price": 81.53,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:53.706280Z",
+      "market": "crypto",
+      "symbol": "ICP",
+      "price": 2.417,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:53.882261Z",
+      "market": "crypto",
+      "symbol": "ETHGBP",
+      "price": 1446.72,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:53.952475Z",
+      "market": "crypto",
+      "symbol": "ANKR",
+      "price": 0.00425,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:54.296231Z",
+      "market": "crypto",
+      "symbol": "WAL",
+      "price": 0.07257,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:54.875900Z",
+      "market": "crypto",
+      "symbol": "ZEN",
+      "price": 5.232,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:55.203039Z",
+      "market": "crypto",
+      "symbol": "ETC",
+      "price": 8.01,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:55.787107Z",
+      "market": "crypto",
+      "symbol": "ACH",
+      "price": 0.006819,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:55.943012Z",
+      "market": "crypto",
+      "symbol": "WCT",
+      "price": 0.0562,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:56.346733Z",
+      "market": "crypto",
+      "symbol": "SOLETH",
+      "price": 0.04205,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:56.683438Z",
+      "market": "crypto",
+      "symbol": "RARI",
+      "price": 0.1497,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:56.968484Z",
+      "market": "crypto",
+      "symbol": "ALT",
+      "price": 0.00709,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:57.147531Z",
+      "market": "crypto",
+      "symbol": "ADA",
+      "price": 0.2494,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:57.480799Z",
+      "market": "crypto",
+      "symbol": "SWFTC",
+      "price": 0.003349,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:57.702745Z",
+      "market": "crypto",
+      "symbol": "ACX",
+      "price": 0.0322,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:57.908258Z",
+      "market": "crypto",
+      "symbol": "GRTBTC",
+      "price": 3.7e-07,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:58.056339Z",
+      "market": "crypto",
+      "symbol": "WLFI",
+      "price": 0.0985,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:58.409960Z",
+      "market": "crypto",
+      "symbol": "PUNDIX",
+      "price": 0.1465,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:58.596937Z",
+      "market": "crypto",
+      "symbol": "GRTEUR",
+      "price": 0.0216,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:58.779797Z",
+      "market": "crypto",
+      "symbol": "ICPEUR",
+      "price": 2.088,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:58.948484Z",
+      "market": "crypto",
+      "symbol": "HNT",
+      "price": 1.16,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:59.153681Z",
+      "market": "crypto",
+      "symbol": "ETH",
+      "price": 1936.93,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:59.290480Z",
+      "market": "crypto",
+      "symbol": "OPN",
+      "price": 0.3106,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:59.785731Z",
+      "market": "crypto",
+      "symbol": "GFI",
+      "price": 0.1291,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:56:59.964387Z",
+      "market": "crypto",
+      "symbol": "CAKE",
+      "price": 1.296,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:00.523996Z",
+      "market": "crypto",
+      "symbol": "ARKM",
+      "price": 0.099,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:00.718324Z",
+      "market": "crypto",
+      "symbol": "ADAEUR",
+      "price": 0.2155,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:00.880328Z",
+      "market": "crypto",
+      "symbol": "MANA",
+      "price": 0.0892,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:01.574860Z",
+      "market": "crypto",
+      "symbol": "SNXEUR",
+      "price": 0.26,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:01.733551Z",
+      "market": "crypto",
+      "symbol": "COMPBTC",
+      "price": 0.00024567,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:01.802078Z",
+      "market": "crypto",
+      "symbol": "YFI",
+      "price": 2469.78,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:02.017902Z",
+      "market": "crypto",
+      "symbol": "ETCGBP",
+      "price": 5.99,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:02.193996Z",
+      "market": "crypto",
+      "symbol": "DOOD",
+      "price": 0.002865,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:02.367088Z",
+      "market": "crypto",
+      "symbol": "ZORA",
+      "price": 0.01754,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:02.775479Z",
+      "market": "crypto",
+      "symbol": "CRVEUR",
+      "price": 0.2016,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:02.959383Z",
+      "market": "crypto",
+      "symbol": "COOKIE",
+      "price": 0.01904,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:03.159368Z",
+      "market": "crypto",
+      "symbol": "1INCHGBP",
+      "price": 0.068,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:03.301703Z",
+      "market": "crypto",
+      "symbol": "BNT",
+      "price": 0.2761,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:03.509669Z",
+      "market": "crypto",
+      "symbol": "ATOMEUR",
+      "price": 1.494,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:03.902333Z",
+      "market": "crypto",
+      "symbol": "ALEPH",
+      "price": 0.0204,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:04.268565Z",
+      "market": "crypto",
+      "symbol": "NCT",
+      "price": 0.00647,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:04.448302Z",
+      "market": "crypto",
+      "symbol": "SUPER",
+      "price": 0.11104,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:04.621475Z",
+      "market": "crypto",
+      "symbol": "MPLX",
+      "price": 0.0302,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:04.833986Z",
+      "market": "crypto",
+      "symbol": "STORJ",
+      "price": 0.0879,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:05.011449Z",
+      "market": "crypto",
+      "symbol": "RAD",
+      "price": 0.233,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:05.476290Z",
+      "market": "crypto",
+      "symbol": "PLUME",
+      "price": 0.01401,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:06.473898Z",
+      "market": "crypto",
+      "symbol": "DOTEUR",
+      "price": 1.25,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:06.679759Z",
+      "market": "crypto",
+      "symbol": "UNIEUR",
+      "price": 3.18,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:07.044142Z",
+      "market": "crypto",
+      "symbol": "XTZGBP",
+      "price": 0.269,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:07.247468Z",
+      "market": "crypto",
+      "symbol": "ALCX",
+      "price": 6.08,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:07.484864Z",
+      "market": "crypto",
+      "symbol": "LA",
+      "price": 0.219,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:07.709563Z",
+      "market": "crypto",
+      "symbol": "OP",
+      "price": 0.114,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:07.941891Z",
+      "market": "crypto",
+      "symbol": "CBETHETH",
+      "price": 1.12469,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:08.129366Z",
+      "market": "crypto",
+      "symbol": "RLS",
+      "price": 0.00383,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:08.354177Z",
+      "market": "crypto",
+      "symbol": "AXS",
+      "price": 1.115,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:08.519168Z",
+      "market": "crypto",
+      "symbol": "XLMBTC",
+      "price": 2.21e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:09.194823Z",
+      "market": "crypto",
+      "symbol": "FILGBP",
+      "price": 0.7,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:09.364963Z",
+      "market": "crypto",
+      "symbol": "DOGINME",
+      "price": 0.000105,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:09.748192Z",
+      "market": "crypto",
+      "symbol": "AZTEC",
+      "price": 0.02086,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:10.779536Z",
+      "market": "crypto",
+      "symbol": "ZETA",
+      "price": 0.0495,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:10.939976Z",
+      "market": "crypto",
+      "symbol": "KERNEL",
+      "price": 0.0813,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:11.355101Z",
+      "market": "crypto",
+      "symbol": "OP",
+      "price": 0.115,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:11.572798Z",
+      "market": "crypto",
+      "symbol": "FIL",
+      "price": 0.932,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:11.811061Z",
+      "market": "crypto",
+      "symbol": "TIA",
+      "price": 0.3131,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:12.454776Z",
+      "market": "crypto",
+      "symbol": "POL",
+      "price": 0.0947,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:12.633480Z",
+      "market": "crypto",
+      "symbol": "BLUR",
+      "price": 0.0186,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:13.098648Z",
+      "market": "crypto",
+      "symbol": "LTCGBP",
+      "price": 39.17,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:13.192725Z",
+      "market": "crypto",
+      "symbol": "MOODENG",
+      "price": 0.0462,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:13.401336Z",
+      "market": "crypto",
+      "symbol": "MOG",
+      "price": 1.4e-07,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:13.523282Z",
+      "market": "crypto",
+      "symbol": "AVAX",
+      "price": 8.84,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:13.721554Z",
+      "market": "crypto",
+      "symbol": "AAVEGBP",
+      "price": 79.11,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:13.948379Z",
+      "market": "crypto",
+      "symbol": "BAL",
+      "price": 0.1449,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:14.133600Z",
+      "market": "crypto",
+      "symbol": "QNT",
+      "price": 64.26,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:14.451035Z",
+      "market": "crypto",
+      "symbol": "PAX",
+      "price": 0.9988,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:14.624090Z",
+      "market": "crypto",
+      "symbol": "AAVE",
+      "price": 105.9,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:15.134731Z",
+      "market": "crypto",
+      "symbol": "PUMP",
+      "price": 0.001935,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:15.334585Z",
+      "market": "crypto",
+      "symbol": "BATEUR",
+      "price": 0.08199,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:15.497078Z",
+      "market": "crypto",
+      "symbol": "CHZEUR",
+      "price": 0.0319,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:15.657475Z",
+      "market": "crypto",
+      "symbol": "T",
+      "price": 0.00672,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:15.827837Z",
+      "market": "crypto",
+      "symbol": "PERP",
+      "price": 0.0427,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:16.003204Z",
+      "market": "crypto",
+      "symbol": "LDO",
+      "price": 0.282,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:16.170308Z",
+      "market": "crypto",
+      "symbol": "DASH",
+      "price": 30.6,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:16.313463Z",
+      "market": "crypto",
+      "symbol": "EGLD",
+      "price": 4.06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:16.471880Z",
+      "market": "crypto",
+      "symbol": "DEEP",
+      "price": 0.02871,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:16.987092Z",
+      "market": "crypto",
+      "symbol": "IOTX",
+      "price": 0.01365,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:17.227049Z",
+      "market": "crypto",
+      "symbol": "BIO",
+      "price": 0.0202,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:17.471568Z",
+      "market": "crypto",
+      "symbol": "AMP",
+      "price": 0.00138,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:17.615375Z",
+      "market": "crypto",
+      "symbol": "LINEA",
+      "price": 0.00303,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:17.809840Z",
+      "market": "crypto",
+      "symbol": "ETHEUR",
+      "price": 1673.27,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:18.185343Z",
+      "market": "crypto",
+      "symbol": "L3",
+      "price": 0.00684,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:18.347949Z",
+      "market": "crypto",
+      "symbol": "IO",
+      "price": 0.1,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:18.807236Z",
+      "market": "crypto",
+      "symbol": "CAUD",
+      "price": 1.4265,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:19.165997Z",
+      "market": "crypto",
+      "symbol": "FIS",
+      "price": 0.017,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:19.338373Z",
+      "market": "crypto",
+      "symbol": "AUDDC",
+      "price": 0.7019,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:19.614461Z",
+      "market": "crypto",
+      "symbol": "1",
+      "price": 0.9996,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:19.785975Z",
+      "market": "crypto",
+      "symbol": "ATOMBTC",
+      "price": 2.594e-05,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:19.970885Z",
+      "market": "crypto",
+      "symbol": "LSETH",
+      "price": 2160.12,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:20.125049Z",
+      "market": "crypto",
+      "symbol": "MATH",
+      "price": 0.0267,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:20.504492Z",
+      "market": "crypto",
+      "symbol": "LMTS",
+      "price": 0.17033,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:21.261372Z",
+      "market": "crypto",
+      "symbol": "ERA",
+      "price": 0.1395,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:21.483944Z",
+      "market": "crypto",
+      "symbol": "TAO",
+      "price": 175.87,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:21.658296Z",
+      "market": "crypto",
+      "symbol": "COMP",
+      "price": 16.72,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:22.216961Z",
+      "market": "crypto",
+      "symbol": "MANTLE",
+      "price": 0.6696,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:22.365057Z",
+      "market": "crypto",
+      "symbol": "ALLO",
+      "price": 0.1238,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:22.544948Z",
+      "market": "crypto",
+      "symbol": "XRP",
+      "price": 1.3403,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:23.097352Z",
+      "market": "crypto",
+      "symbol": "POND",
+      "price": 0.00228,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:23.502472Z",
+      "market": "crypto",
+      "symbol": "MAGIC",
+      "price": 0.0596,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:23.635915Z",
+      "market": "crypto",
+      "symbol": "KRL",
+      "price": 0.1505,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:23.779426Z",
+      "market": "crypto",
+      "symbol": "ME",
+      "price": 0.1108,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:23.937806Z",
+      "market": "crypto",
+      "symbol": "BREV",
+      "price": 0.1376,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:24.486217Z",
+      "market": "crypto",
+      "symbol": "STX",
+      "price": 0.2523,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:24.876266Z",
+      "market": "crypto",
+      "symbol": "COSMOSDYDX",
+      "price": 0.0793,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:25.041315Z",
+      "market": "crypto",
+      "symbol": "SWELL",
+      "price": 0.00121,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:25.197794Z",
+      "market": "crypto",
+      "symbol": "GRT",
+      "price": 0.0249,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:25.370236Z",
+      "market": "crypto",
+      "symbol": "MAMO",
+      "price": 0.01367,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:25.935458Z",
+      "market": "crypto",
+      "symbol": "FILEUR",
+      "price": 0.81,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:26.361227Z",
+      "market": "crypto",
+      "symbol": "EIGEN",
+      "price": 0.178,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:26.537496Z",
+      "market": "crypto",
+      "symbol": "DEGEN",
+      "price": 0.000694,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:26.915266Z",
+      "market": "crypto",
+      "symbol": "FET",
+      "price": 0.1414,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:27.070405Z",
+      "market": "crypto",
+      "symbol": "LTCEUR",
+      "price": 45.29,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:27.509754Z",
+      "market": "crypto",
+      "symbol": "BOBBOB",
+      "price": 0.00592,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:27.644572Z",
+      "market": "crypto",
+      "symbol": "ARPA",
+      "price": 0.0097,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:28.629624Z",
+      "market": "crypto",
+      "symbol": "FLUID",
+      "price": 2.101,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:29.277926Z",
+      "market": "crypto",
+      "symbol": "ALGO",
+      "price": 0.082,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:29.546711Z",
+      "market": "crypto",
+      "symbol": "CGBP",
+      "price": 0.7466,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:29.754541Z",
+      "market": "crypto",
+      "symbol": "ELA",
+      "price": 0.571,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:30.127721Z",
+      "market": "crypto",
+      "symbol": "XCN",
+      "price": 0.00469,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:30.482263Z",
+      "market": "crypto",
+      "symbol": "KAVA",
+      "price": 0.0654,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:30.720224Z",
+      "market": "crypto",
+      "symbol": "OXT",
+      "price": 0.0156,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:31.046023Z",
+      "market": "crypto",
+      "symbol": "OGN",
+      "price": 0.01884,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:31.179930Z",
+      "market": "crypto",
+      "symbol": "SHDW",
+      "price": 0.032,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:31.292829Z",
+      "market": "crypto",
+      "symbol": "WAXL",
+      "price": 0.052,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:31.471042Z",
+      "market": "crypto",
+      "symbol": "TOWNS",
+      "price": 0.00337,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:31.612573Z",
+      "market": "crypto",
+      "symbol": "LRC",
+      "price": 0.0306,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:32.113311Z",
+      "market": "crypto",
+      "symbol": "ZETACHAIN",
+      "price": 0.0494,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:32.933695Z",
+      "market": "crypto",
+      "symbol": "DRIFT",
+      "price": 0.079,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:33.425772Z",
+      "market": "crypto",
+      "symbol": "SOLBTC",
+      "price": 0.0012179,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:33.641832Z",
+      "market": "crypto",
+      "symbol": "DOLO",
+      "price": 0.03267,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:33.835994Z",
+      "market": "crypto",
+      "symbol": "SNX",
+      "price": 0.3,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:34.057825Z",
+      "market": "crypto",
+      "symbol": "BADGER",
+      "price": 0.3706,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:34.614972Z",
+      "market": "crypto",
+      "symbol": "ALGOBTC",
+      "price": 1.22e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:34.802304Z",
+      "market": "crypto",
+      "symbol": "YB",
+      "price": 0.1564,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:35.014482Z",
+      "market": "crypto",
+      "symbol": "AUCTION",
+      "price": 4.66,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:35.311149Z",
+      "market": "crypto",
+      "symbol": "IRYS",
+      "price": 0.01688,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:35.701846Z",
+      "market": "crypto",
+      "symbol": "TREE",
+      "price": 0.0654,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:36.110083Z",
+      "market": "crypto",
+      "symbol": "REQ",
+      "price": 0.0613,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:36.334718Z",
+      "market": "crypto",
+      "symbol": "GHST",
+      "price": 0.086,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:36.472815Z",
+      "market": "crypto",
+      "symbol": "PEPE",
+      "price": 3.15e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:36.623474Z",
+      "market": "crypto",
+      "symbol": "ZAMA",
+      "price": 0.02001,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:36.825558Z",
+      "market": "crypto",
+      "symbol": "XTZBTC",
+      "price": 5.4e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:36.964435Z",
+      "market": "crypto",
+      "symbol": "API3",
+      "price": 0.273,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:37.141626Z",
+      "market": "crypto",
+      "symbol": "CVC",
+      "price": 0.0291,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:37.291358Z",
+      "market": "crypto",
+      "symbol": "VTHO",
+      "price": 0.000562,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:37.768929Z",
+      "market": "crypto",
+      "symbol": "S",
+      "price": 0.03813,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:37.929079Z",
+      "market": "crypto",
+      "symbol": "YFIBTC",
+      "price": 0.0370502,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:38.194667Z",
+      "market": "crypto",
+      "symbol": "CRO",
+      "price": 0.0746,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:38.392783Z",
+      "market": "crypto",
+      "symbol": "KITE",
+      "price": 0.30584,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:38.545349Z",
+      "market": "crypto",
+      "symbol": "ASTER",
+      "price": 0.684,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:38.856569Z",
+      "market": "crypto",
+      "symbol": "XRP",
+      "price": 1.34,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:38.969999Z",
+      "market": "crypto",
+      "symbol": "ETHBTC",
+      "price": 0.028953,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:39.779410Z",
+      "market": "crypto",
+      "symbol": "CSGD",
+      "price": 1.2849,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:40.766498Z",
+      "market": "crypto",
+      "symbol": "SEAM",
+      "price": 0.1089,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:41.135113Z",
+      "market": "crypto",
+      "symbol": "BAT",
+      "price": 0.09499,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:41.562745Z",
+      "market": "crypto",
+      "symbol": "DAI",
+      "price": 0.9999,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:41.735459Z",
+      "market": "crypto",
+      "symbol": "NEAR",
+      "price": 1.211,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:42.060676Z",
+      "market": "crypto",
+      "symbol": "ALGOGBP",
+      "price": 0.0613,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:42.226141Z",
+      "market": "crypto",
+      "symbol": "GIGA",
+      "price": 0.00195,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:42.389730Z",
+      "market": "crypto",
+      "symbol": "THQ",
+      "price": 0.02961,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:42.597322Z",
+      "market": "crypto",
+      "symbol": "COW",
+      "price": 0.2124,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:42.723759Z",
+      "market": "crypto",
+      "symbol": "LINK",
+      "price": 8.529,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:42.957761Z",
+      "market": "crypto",
+      "symbol": "LINK",
+      "price": 8.58,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:43.198980Z",
+      "market": "crypto",
+      "symbol": "INJ",
+      "price": 2.8,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:43.734249Z",
+      "market": "crypto",
+      "symbol": "QNT",
+      "price": 63.73,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:43.886856Z",
+      "market": "crypto",
+      "symbol": "GODS",
+      "price": 0.03295,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:44.296410Z",
+      "market": "crypto",
+      "symbol": "FLOW",
+      "price": 0.04,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:45.360975Z",
+      "market": "crypto",
+      "symbol": "STG",
+      "price": 0.1758,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:47.419502Z",
+      "market": "crypto",
+      "symbol": "NMR",
+      "price": 7.78,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:47.874933Z",
+      "market": "crypto",
+      "symbol": "AURORA",
+      "price": 0.029,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:48.018909Z",
+      "market": "crypto",
+      "symbol": "PNG",
+      "price": 0.02543,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:48.216837Z",
+      "market": "crypto",
+      "symbol": "AAVEBTC",
+      "price": 0.0015841,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:48.377218Z",
+      "market": "crypto",
+      "symbol": "STX",
+      "price": 0.2535,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:48.763396Z",
+      "market": "crypto",
+      "symbol": "APT",
+      "price": 0.9284,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:49.151529Z",
+      "market": "crypto",
+      "symbol": "APR",
+      "price": 0.1067,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:49.519224Z",
+      "market": "crypto",
+      "symbol": "GWEI",
+      "price": 0.047736,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:50.088162Z",
+      "market": "crypto",
+      "symbol": "AAVEEUR",
+      "price": 91.47,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:50.643127Z",
+      "market": "crypto",
+      "symbol": "PROVE",
+      "price": 0.2612,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:50.790543Z",
+      "market": "crypto",
+      "symbol": "HYPER",
+      "price": 0.0884,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:51.331004Z",
+      "market": "crypto",
+      "symbol": "KAITO",
+      "price": 0.3545,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:51.520616Z",
+      "market": "crypto",
+      "symbol": "ICPGBP",
+      "price": 1.805,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:51.662209Z",
+      "market": "crypto",
+      "symbol": "RNBW",
+      "price": 0.01821,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:51.835168Z",
+      "market": "crypto",
+      "symbol": "SUKU",
+      "price": 0.0073,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:52.166025Z",
+      "market": "crypto",
+      "symbol": "NKN",
+      "price": 0.0054,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:52.270880Z",
+      "market": "crypto",
+      "symbol": "RENDER",
+      "price": 1.351,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:52.664921Z",
+      "market": "crypto",
+      "symbol": "ALGOEUR",
+      "price": 0.0708,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:52.843242Z",
+      "market": "crypto",
+      "symbol": "SPA",
+      "price": 0.003356,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:53.015972Z",
+      "market": "crypto",
+      "symbol": "LPT",
+      "price": 2.19,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:53.196322Z",
+      "market": "crypto",
+      "symbol": "MET",
+      "price": 0.1551,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:54.401427Z",
+      "market": "crypto",
+      "symbol": "MORPHO",
+      "price": 1.8597,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:54.630474Z",
+      "market": "crypto",
+      "symbol": "OMNI",
+      "price": 0.755,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:55.011319Z",
+      "market": "crypto",
+      "symbol": "SAPIEN",
+      "price": 0.07378,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:55.286939Z",
+      "market": "crypto",
+      "symbol": "BLAST",
+      "price": 0.0005,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:55.384622Z",
+      "market": "crypto",
+      "symbol": "DOGE",
+      "price": 0.08848,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:55.577879Z",
+      "market": "crypto",
+      "symbol": "SUP",
+      "price": 0.01146,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:55.931544Z",
+      "market": "crypto",
+      "symbol": "BCH",
+      "price": 444.47,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:56.080525Z",
+      "market": "crypto",
+      "symbol": "UNIGBP",
+      "price": 2.75,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:56.245726Z",
+      "market": "crypto",
+      "symbol": "USELESS",
+      "price": 0.0371,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:56.405625Z",
+      "market": "crypto",
+      "symbol": "CRV",
+      "price": 0.2338,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:56.701216Z",
+      "market": "crypto",
+      "symbol": "ADABTC",
+      "price": 3.72e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:57.051819Z",
+      "market": "crypto",
+      "symbol": "BTCGBP",
+      "price": 49969.47,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:57.363069Z",
+      "market": "crypto",
+      "symbol": "RPL",
+      "price": 1.79,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:57.528930Z",
+      "market": "crypto",
+      "symbol": "AXL",
+      "price": 0.052,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:57.883785Z",
+      "market": "crypto",
+      "symbol": "SD",
+      "price": 0.1401,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:58.520820Z",
+      "market": "crypto",
+      "symbol": "HFT",
+      "price": 0.0148,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:58.700294Z",
+      "market": "crypto",
+      "symbol": "S",
+      "price": 1.0,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:59.116564Z",
+      "market": "crypto",
+      "symbol": "MASK",
+      "price": 0.43,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:57:59.654042Z",
+      "market": "crypto",
+      "symbol": "SHIBEUR",
+      "price": 4.54e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:00.300983Z",
+      "market": "crypto",
+      "symbol": "EUL",
+      "price": 0.906,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:00.546025Z",
+      "market": "crypto",
+      "symbol": "LCX",
+      "price": 0.0445,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:00.746333Z",
+      "market": "crypto",
+      "symbol": "GST",
+      "price": 0.001626,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:00.897114Z",
+      "market": "crypto",
+      "symbol": "LINKBTC",
+      "price": 0.00012737,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:01.051047Z",
+      "market": "crypto",
+      "symbol": "FAI",
+      "price": 0.00666,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:01.207429Z",
+      "market": "crypto",
+      "symbol": "PIRATE",
+      "price": 0.0061,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:01.371637Z",
+      "market": "crypto",
+      "symbol": "MANAEUR",
+      "price": 0.077,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:01.707983Z",
+      "market": "crypto",
+      "symbol": "STRK",
+      "price": 0.038,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:02.806652Z",
+      "market": "crypto",
+      "symbol": "SAND",
+      "price": 0.0789,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:02.934032Z",
+      "market": "crypto",
+      "symbol": "SEI",
+      "price": 0.06332,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:03.284504Z",
+      "market": "crypto",
+      "symbol": "LIGHTER",
+      "price": 1.068,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:03.522627Z",
+      "market": "crypto",
+      "symbol": "SAFE",
+      "price": 0.0982,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:03.841665Z",
+      "market": "crypto",
+      "symbol": "AKT",
+      "price": 0.391,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:04.075359Z",
+      "market": "crypto",
+      "symbol": "CCAD",
+      "price": 1.367,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:04.250259Z",
+      "market": "crypto",
+      "symbol": "PLU",
+      "price": 0.14898,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:04.811791Z",
+      "market": "crypto",
+      "symbol": "UMA",
+      "price": 0.406,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:05.007207Z",
+      "market": "crypto",
+      "symbol": "TRB",
+      "price": 14.5,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:05.198558Z",
+      "market": "crypto",
+      "symbol": "AVNT",
+      "price": 0.1504,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:05.405248Z",
+      "market": "crypto",
+      "symbol": "WELL",
+      "price": 0.004351,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:05.724631Z",
+      "market": "crypto",
+      "symbol": "BNKR",
+      "price": 0.0004784,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:05.866849Z",
+      "market": "crypto",
+      "symbol": "CTSI",
+      "price": 0.0237,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:06.642780Z",
+      "market": "crypto",
+      "symbol": "LTCBTC",
+      "price": 0.000783,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:07.187199Z",
+      "market": "crypto",
+      "symbol": "SOL",
+      "price": 81.54,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:07.564911Z",
+      "market": "crypto",
+      "symbol": "BEAM",
+      "price": 0.001913,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:07.735440Z",
+      "market": "crypto",
+      "symbol": "CVX",
+      "price": 2.319,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:08.086571Z",
+      "market": "crypto",
+      "symbol": "A8",
+      "price": 0.0087,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:08.254766Z",
+      "market": "crypto",
+      "symbol": "APT",
+      "price": 0.9387,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:09.274040Z",
+      "market": "crypto",
+      "symbol": "HBAR",
+      "price": 0.09422,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:09.465334Z",
+      "market": "crypto",
+      "symbol": "BTCEUR",
+      "price": 57766.34,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:09.844596Z",
+      "market": "crypto",
+      "symbol": "ROSE",
+      "price": 0.01111,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:10.311304Z",
+      "market": "crypto",
+      "symbol": "BAND",
+      "price": 0.207,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:10.703197Z",
+      "market": "crypto",
+      "symbol": "BCHEUR",
+      "price": 383.45,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:10.884048Z",
+      "market": "crypto",
+      "symbol": "RSR",
+      "price": 0.001616,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:11.052382Z",
+      "market": "crypto",
+      "symbol": "DOGEEUR",
+      "price": 0.0764,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:12.288451Z",
+      "market": "crypto",
+      "symbol": "FLOKI",
+      "price": 2.72e-05,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:12.485019Z",
+      "market": "crypto",
+      "symbol": "SYND",
+      "price": 0.0522,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:12.691811Z",
+      "market": "crypto",
+      "symbol": "PAXG",
+      "price": 5171.83,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:13.223000Z",
+      "market": "crypto",
+      "symbol": "PYTH",
+      "price": 0.0456,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:13.384171Z",
+      "market": "crypto",
+      "symbol": "HOME",
+      "price": 0.02308,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:13.941334Z",
+      "market": "crypto",
+      "symbol": "AVAXBTC",
+      "price": 0.00013215,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:14.552309Z",
+      "market": "crypto",
+      "symbol": "TURBO",
+      "price": 0.00088,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:14.728377Z",
+      "market": "crypto",
+      "symbol": "CHZGBP",
+      "price": 0.0275,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:14.886570Z",
+      "market": "crypto",
+      "symbol": "SUI",
+      "price": 0.8786,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:14.961250Z",
+      "market": "crypto",
+      "symbol": "TNSR",
+      "price": 0.045,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:15.287862Z",
+      "market": "crypto",
+      "symbol": "EURCC",
+      "price": 1.1586,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:15.825618Z",
+      "market": "crypto",
+      "symbol": "DOT",
+      "price": 1.448,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:16.221273Z",
+      "market": "crypto",
+      "symbol": "TON",
+      "price": 1.311,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:16.429285Z",
+      "market": "crypto",
+      "symbol": "BNB",
+      "price": 612.86,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:17.124652Z",
+      "market": "crypto",
+      "symbol": "XAN",
+      "price": 0.00615,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:17.664447Z",
+      "market": "crypto",
+      "symbol": "ENS",
+      "price": 5.66,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:17.865969Z",
+      "market": "crypto",
+      "symbol": "ETHFI",
+      "price": 0.512,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:18.032648Z",
+      "market": "crypto",
+      "symbol": "XLMEUR",
+      "price": 0.127836,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:18.207941Z",
+      "market": "crypto",
+      "symbol": "KARRAT",
+      "price": 0.0055,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:18.341270Z",
+      "market": "crypto",
+      "symbol": "PRO",
+      "price": 0.3535,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:18.453208Z",
+      "market": "crypto",
+      "symbol": "ADA",
+      "price": 0.2495,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:18.624735Z",
+      "market": "crypto",
+      "symbol": "NOM",
+      "price": 0.00334,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:18.998978Z",
+      "market": "crypto",
+      "symbol": "ADAETH",
+      "price": 0.000129,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:19.174066Z",
+      "market": "crypto",
+      "symbol": "NOICE",
+      "price": 4.69e-05,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:19.339031Z",
+      "market": "crypto",
+      "symbol": "CROEUR",
+      "price": 0.0639,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:19.409426Z",
+      "market": "crypto",
+      "symbol": "SPELL",
+      "price": 0.0001691,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:20.175501Z",
+      "market": "crypto",
+      "symbol": "VARA",
+      "price": 0.00087,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:20.799158Z",
+      "market": "crypto",
+      "symbol": "BIRB",
+      "price": 0.1393,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:21.473696Z",
+      "market": "crypto",
+      "symbol": "XLM",
+      "price": 0.148,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:21.660983Z",
+      "market": "crypto",
+      "symbol": "WMTX",
+      "price": 0.06599,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:22.860066Z",
+      "market": "crypto",
+      "symbol": "BARD",
+      "price": 1.0703,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:23.058872Z",
+      "market": "crypto",
+      "symbol": "ADAGBP",
+      "price": 0.1865,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:23.225720Z",
+      "market": "crypto",
+      "symbol": "VELO",
+      "price": 0.01576,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:23.417931Z",
+      "market": "crypto",
+      "symbol": "INX",
+      "price": 0.011507,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:23.922501Z",
+      "market": "crypto",
+      "symbol": "DOGEGBP",
+      "price": 0.066,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:24.383318Z",
+      "market": "crypto",
+      "symbol": "RARE",
+      "price": 0.0154,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:24.592234Z",
+      "market": "crypto",
+      "symbol": "FIGHT",
+      "price": 0.00473,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:24.798499Z",
+      "market": "crypto",
+      "symbol": "MINAEUR",
+      "price": 0.0462,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:25.064522Z",
+      "market": "crypto",
+      "symbol": "APE",
+      "price": 0.092,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:25.236434Z",
+      "market": "crypto",
+      "symbol": "APEEUR",
+      "price": 0.08,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:25.721100Z",
+      "market": "crypto",
+      "symbol": "AVT",
+      "price": 0.64,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:25.938743Z",
+      "market": "crypto",
+      "symbol": "SKY",
+      "price": 0.07265,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:26.285378Z",
+      "market": "crypto",
+      "symbol": "2Z",
+      "price": 0.07316,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:26.587697Z",
+      "market": "crypto",
+      "symbol": "MINA",
+      "price": 0.0534,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:26.756478Z",
+      "market": "crypto",
+      "symbol": "BTRST",
+      "price": 0.074,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:27.095775Z",
+      "market": "crypto",
+      "symbol": "PRCL",
+      "price": 0.0172,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:27.498864Z",
+      "market": "crypto",
+      "symbol": "ONDO",
+      "price": 0.24433,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:27.690151Z",
+      "market": "crypto",
+      "symbol": "ALEO",
+      "price": 0.0625,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:27.848349Z",
+      "market": "crypto",
+      "symbol": "TRUST",
+      "price": 0.06752,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:28.411217Z",
+      "market": "crypto",
+      "symbol": "UP",
+      "price": 0.03716,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:28.599541Z",
+      "market": "crypto",
+      "symbol": "FET",
+      "price": 0.1415,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:28.755511Z",
+      "market": "crypto",
+      "symbol": "VVV",
+      "price": 5.6784,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:28.945238Z",
+      "market": "crypto",
+      "symbol": "LSETHETH",
+      "price": 1.09923,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:29.096456Z",
+      "market": "crypto",
+      "symbol": "FARM",
+      "price": 13.43,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:29.825002Z",
+      "market": "crypto",
+      "symbol": "ASM",
+      "price": 0.0084,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:30.337845Z",
+      "market": "crypto",
+      "symbol": "NEON",
+      "price": 0.03084,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:30.513803Z",
+      "market": "crypto",
+      "symbol": "TOSHI",
+      "price": 0.0002034,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:31.106794Z",
+      "market": "crypto",
+      "symbol": "TIME",
+      "price": 2.96,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:31.341181Z",
+      "market": "crypto",
+      "symbol": "1INCH",
+      "price": 0.09,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:31.529335Z",
+      "market": "crypto",
+      "symbol": "INDEX",
+      "price": 0.29,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:31.599795Z",
+      "market": "crypto",
+      "symbol": "KSM",
+      "price": 4.48,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:32.031186Z",
+      "market": "crypto",
+      "symbol": "HYPE",
+      "price": 30.17,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:32.192354Z",
+      "market": "crypto",
+      "symbol": "DOTBTC",
+      "price": 2.166e-05,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:32.336993Z",
+      "market": "crypto",
+      "symbol": "MLN",
+      "price": 3.45,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:32.479458Z",
+      "market": "crypto",
+      "symbol": "QI",
+      "price": 0.001794,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:32.677965Z",
+      "market": "crypto",
+      "symbol": "CRO",
+      "price": 0.07403,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:32.871912Z",
+      "market": "crypto",
+      "symbol": "FUN1",
+      "price": 0.03479,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:33.010558Z",
+      "market": "crypto",
+      "symbol": "ORCA",
+      "price": 0.8852,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:33.234434Z",
+      "market": "crypto",
+      "symbol": "HIGH",
+      "price": 0.134,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:33.401198Z",
+      "market": "crypto",
+      "symbol": "AGLD",
+      "price": 0.27,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:33.467086Z",
+      "market": "crypto",
+      "symbol": "RLC",
+      "price": 0.361,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:33.669870Z",
+      "market": "crypto",
+      "symbol": "JITOSOL",
+      "price": 103.82,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:33.914733Z",
+      "market": "crypto",
+      "symbol": "C98",
+      "price": 0.0243,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:34.514725Z",
+      "market": "crypto",
+      "symbol": "DBR",
+      "price": 0.01534,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:34.974736Z",
+      "market": "crypto",
+      "symbol": "NEWT",
+      "price": 0.0651,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:35.345138Z",
+      "market": "crypto",
+      "symbol": "TRU",
+      "price": 0.0048,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:35.708705Z",
+      "market": "crypto",
+      "symbol": "SENT",
+      "price": 0.02298,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:35.784589Z",
+      "market": "crypto",
+      "symbol": "SKL",
+      "price": 0.0064,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:35.963978Z",
+      "market": "crypto",
+      "symbol": "BICO",
+      "price": 0.0185,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:36.363527Z",
+      "market": "crypto",
+      "symbol": "DIA",
+      "price": 0.17695,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:36.475082Z",
+      "market": "crypto",
+      "symbol": "RONIN",
+      "price": 0.0883,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:36.688451Z",
+      "market": "crypto",
+      "symbol": "XRPEUR",
+      "price": 1.1554,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:36.845203Z",
+      "market": "crypto",
+      "symbol": "ALICE",
+      "price": 0.114,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:37.056999Z",
+      "market": "crypto",
+      "symbol": "SKR",
+      "price": 0.02407,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:37.203059Z",
+      "market": "crypto",
+      "symbol": "NEAR",
+      "price": 1.211,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:38.180189Z",
+      "market": "crypto",
+      "symbol": "APE",
+      "price": 0.092,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:38.356971Z",
+      "market": "crypto",
+      "symbol": "ELSA",
+      "price": 0.0717,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:38.607369Z",
+      "market": "crypto",
+      "symbol": "ATOMGBP",
+      "price": 1.288,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:38.829270Z",
+      "market": "crypto",
+      "symbol": "ETCEUR",
+      "price": 7.23,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:39.425194Z",
+      "market": "crypto",
+      "symbol": "BCHGBP",
+      "price": 331.93,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:40.521446Z",
+      "market": "crypto",
+      "symbol": "RSC",
+      "price": 0.0845,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:40.760075Z",
+      "market": "crypto",
+      "symbol": "IMU",
+      "price": 0.00287,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:40.933997Z",
+      "market": "crypto",
+      "symbol": "ANKREUR",
+      "price": 0.00367,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:41.445089Z",
+      "market": "crypto",
+      "symbol": "OSMO",
+      "price": 0.0321,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:41.757831Z",
+      "market": "crypto",
+      "symbol": "MNDE",
+      "price": 0.02164,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:42.299909Z",
+      "market": "crypto",
+      "symbol": "UNI",
+      "price": 3.673,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:42.434092Z",
+      "market": "crypto",
+      "symbol": "ENS",
+      "price": 5.65,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:42.911130Z",
+      "market": "crypto",
+      "symbol": "LINKETH",
+      "price": 0.00439464,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:43.044488Z",
+      "market": "crypto",
+      "symbol": "LTC",
+      "price": 52.41,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:43.445155Z",
+      "market": "crypto",
+      "symbol": "REZ",
+      "price": 0.00316,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:44.465052Z",
+      "market": "crypto",
+      "symbol": "FIDA",
+      "price": 0.0149,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:44.691809Z",
+      "market": "crypto",
+      "symbol": "RECALL",
+      "price": 0.0453,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:44.993277Z",
+      "market": "crypto",
+      "symbol": "ZKC",
+      "price": 0.0802,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:45.411675Z",
+      "market": "crypto",
+      "symbol": "W",
+      "price": 0.01753,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:45.574287Z",
+      "market": "crypto",
+      "symbol": "SXT",
+      "price": 0.017,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:45.747705Z",
+      "market": "crypto",
+      "symbol": "POWR",
+      "price": 0.0615,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:45.907610Z",
+      "market": "crypto",
+      "symbol": "CLANKER",
+      "price": 26.54,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:46.259223Z",
+      "market": "crypto",
+      "symbol": "1INCHEUR",
+      "price": 0.078,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:46.397894Z",
+      "market": "crypto",
+      "symbol": "ZRX",
+      "price": 0.10059,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:46.568910Z",
+      "market": "crypto",
+      "symbol": "FOX",
+      "price": 0.00652,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:46.780420Z",
+      "market": "crypto",
+      "symbol": "CEUR",
+      "price": 0.8632,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:46.975045Z",
+      "market": "crypto",
+      "symbol": "WET",
+      "price": 0.1089,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:47.144560Z",
+      "market": "crypto",
+      "symbol": "JASMY",
+      "price": 0.0055,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:47.472454Z",
+      "market": "crypto",
+      "symbol": "ATOM",
+      "price": 1.725,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:48.022180Z",
+      "market": "crypto",
+      "symbol": "AIOZ",
+      "price": 0.0638,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:48.357614Z",
+      "market": "crypto",
+      "symbol": "DOGE",
+      "price": 0.0884,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:48.522284Z",
+      "market": "crypto",
+      "symbol": "SNXGBP",
+      "price": 0.225,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:49.057928Z",
+      "market": "crypto",
+      "symbol": "TRIA",
+      "price": 0.022338,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:49.905952Z",
+      "market": "crypto",
+      "symbol": "JASMY",
+      "price": 0.0054,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:50.113375Z",
+      "market": "crypto",
+      "symbol": "CELR",
+      "price": 0.00247,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:50.538973Z",
+      "market": "crypto",
+      "symbol": "XTZEUR",
+      "price": 0.3111,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:51.322580Z",
+      "market": "crypto",
+      "symbol": "AERGO",
+      "price": 0.0536,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:51.487090Z",
+      "market": "crypto",
+      "symbol": "G",
+      "price": 0.0032,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:51.681238Z",
+      "market": "crypto",
+      "symbol": "ETCBTC",
+      "price": 0.00012,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:51.820525Z",
+      "market": "crypto",
+      "symbol": "POLS",
+      "price": 0.0646,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:51.939345Z",
+      "market": "crypto",
+      "symbol": "SHIB",
+      "price": 5.3e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:52.009907Z",
+      "market": "crypto",
+      "symbol": "AERO",
+      "price": 0.31889,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:52.127492Z",
+      "market": "crypto",
+      "symbol": "XLM",
+      "price": 0.1479,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:52.404935Z",
+      "market": "crypto",
+      "symbol": "MSOL",
+      "price": 112.23,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:52.761033Z",
+      "market": "crypto",
+      "symbol": "KEYCAT",
+      "price": 0.00054,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:52.973130Z",
+      "market": "crypto",
+      "symbol": "RAY",
+      "price": 0.5622,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:53.260837Z",
+      "market": "crypto",
+      "symbol": "LAYER",
+      "price": 0.0791,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:53.430163Z",
+      "market": "crypto",
+      "symbol": "BONK",
+      "price": 5.56e-06,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:53.603770Z",
+      "market": "crypto",
+      "symbol": "AST",
+      "price": 0.008,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:53.743668Z",
+      "market": "crypto",
+      "symbol": "CGLD",
+      "price": 0.0724,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:54.902323Z",
+      "market": "crypto",
+      "symbol": "BATETH",
+      "price": 4.895e-05,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:55.066675Z",
+      "market": "crypto",
+      "symbol": "VET",
+      "price": 0.00679,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:55.431946Z",
+      "market": "crypto",
+      "symbol": "XTZ",
+      "price": 0.3607,
+      "source": "coinbase"
+    },
+    {
+      "timestamp": "2026-03-08T16:58:55.645452Z",
+      "market": "crypto",
+      "symbol": "BLZ",
+      "price": 0.0124,
       "source": "coinbase"
     }
   ]
