@@ -7,6 +7,8 @@ EXPORT_DIR = Path("exports")
 
 EXPORT_DIR.mkdir(exist_ok=True)
 
+MIN_SPREAD_PERCENT = 0.5
+
 
 def load_feed():
 
@@ -61,8 +63,9 @@ def detect_arbitrage(markets):
         high_exchange, high_price = prices[-1]
 
         spread = high_price - low_price
+        spread_percent = (spread / low_price) * 100
 
-        if spread <= 0:
+        if spread_percent < MIN_SPREAD_PERCENT:
             continue
 
         opportunities.append({
@@ -73,7 +76,8 @@ def detect_arbitrage(markets):
             "sell_to": high_exchange,
             "buy_price": low_price,
             "sell_price": high_price,
-            "spread": spread
+            "spread": spread,
+            "spread_percent": spread_percent
         })
 
     return opportunities
