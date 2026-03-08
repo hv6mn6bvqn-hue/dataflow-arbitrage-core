@@ -8,10 +8,26 @@ from core.connector_loader import load_connectors
 FEED_PATH = Path("docs/feed/index.json")
 
 
+def normalize_symbol(symbol):
+
+    if not symbol:
+        return None
+
+    symbol = symbol.upper()
+
+    symbol = symbol.replace("-", "")
+    symbol = symbol.replace("/", "")
+    symbol = symbol.replace("USD", "")
+
+    if symbol == "XBT":
+        symbol = "BTC"
+
+    return symbol
+
+
 def load_feed():
 
     if not FEED_PATH.exists():
-
         return {
             "feed_version": "v2",
             "generated_at": "",
@@ -29,6 +45,24 @@ def save_feed(feed):
     FEED_PATH.write_text(json.dumps(feed, indent=2))
 
 
+def normalize_prices(data):
+
+    normalized = []
+
+    for entry in data:
+
+        symbol = normalize_symbol(entry.get("symbol"))
+
+        if not symbol:
+            continue
+
+        entry["symbol"] = symbol
+
+        normalized.append(entry)
+
+    return normalized
+
+
 def main():
 
     print("[DISCOVERY V2] loading connectors")
@@ -42,6 +76,8 @@ def main():
         if hasattr(connector, "fetch"):
 
             data = connector.fetch()
+
+            data = normalize_prices(data)
 
             print(f"[DISCOVERY] {connector.__name__} → {len(data)} prices")
 
