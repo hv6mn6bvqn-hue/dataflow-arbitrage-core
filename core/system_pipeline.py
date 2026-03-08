@@ -5,6 +5,7 @@ from datetime import datetime
 ENGINE_SEQUENCE = [
     "core.market_feed",
     "core.discovery_engine_v2",
+    "core.spread_engine",
     "core.arbitrage_detector",
     "core.analyzer",
     "core.signal_policy",
