@@ -15,7 +15,14 @@ def fetch():
         print("[COINBASE] request error:", e)
         return signals
 
+    if not isinstance(products, list):
+        print("[COINBASE] unexpected response")
+        return signals
+
     for product in products:
+
+        if not isinstance(product, dict):
+            continue
 
         symbol = product.get("id")
 
@@ -27,24 +34,27 @@ def fetch():
         try:
             r = requests.get(ticker_url, timeout=5)
             ticker = r.json()
-            price = float(ticker.get("price", 0))
-        except Exception:
+        except:
+            continue
+
+        if not isinstance(ticker, dict):
+            continue
+
+        try:
+            price = float(ticker.get("price"))
+        except:
             continue
 
         if price <= 0:
             continue
 
-        signal = {
+        signals.append({
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "market": "crypto",
             "symbol": symbol,
             "price": price,
-            "confidence": 0.5,
-            "type": "price_snapshot",
             "source": "coinbase"
-        }
-
-        signals.append(signal)
+        })
 
     print(f"[COINBASE] price snapshots: {len(signals)}")
 
