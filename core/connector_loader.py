@@ -1,36 +1,27 @@
 import importlib
-import pkgutil
+
+
+CONNECTORS = [
+    "connectors.kraken"
+]
 
 
 def load_connectors():
 
-    connectors = []
+    modules = []
 
-    packages = [
-        "connectors.crypto",
-        "connectors.ecommerce",
-        "connectors.betting"
-    ]
-
-    for package in packages:
+    for connector in CONNECTORS:
 
         try:
-            module = importlib.import_module(package)
-        except Exception:
-            continue
 
-        for _, name, _ in pkgutil.iter_modules(module.__path__):
+            module = importlib.import_module(connector)
 
-            module_name = f"{package}.{name}"
+            modules.append(module)
 
-            try:
-                mod = importlib.import_module(module_name)
+            print(f"[CONNECTOR] loaded {connector}")
 
-                if hasattr(mod, "fetch_signals"):
-                    connectors.append(mod)
-                    print(f"[CONNECTOR] loaded {module_name}")
+        except Exception as e:
 
-            except Exception as e:
-                print(f"[CONNECTOR] failed {module_name}: {e}")
+            print(f"[CONNECTOR] failed {connector}: {e}")
 
-    return connectors
+    return modules
