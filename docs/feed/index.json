@@ -1,7 +1,7 @@
 {
   "feed_version": "v2",
-  "generated_at": "2026-03-08T07:08:15.068129Z",
-  "signal_count": 2749,
+  "generated_at": "2026-03-08T07:53:31.822793Z",
+  "signal_count": 3127,
   "signals": [
     {
       "timestamp": "2026-03-07T23:24:03.874469Z",
@@ -22953,6 +22953,3030 @@
       "timestamp": "2026-03-08T07:08:15.063539Z",
       "symbol": "BARDUSDT",
       "price": 1.0795,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:06.155898Z",
+      "symbol": "PLUUSDT",
+      "price": 0.15005,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:06.293159Z",
+      "symbol": "SAFEUSDT",
+      "price": 0.0995,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:06.455251Z",
+      "symbol": "ZKCUSDT",
+      "price": 0.081,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:06.601655Z",
+      "symbol": "BLURUSDT",
+      "price": 0.0187,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:06.768138Z",
+      "symbol": "AAVEUSDT",
+      "price": 107.72,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:06.959772Z",
+      "symbol": "SKRUSDT",
+      "price": 0.02349,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:07.041573Z",
+      "symbol": "OGNUSDT",
+      "price": 0.01905,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:07.198307Z",
+      "symbol": "IRYSUSDT",
+      "price": 0.01731,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:07.376286Z",
+      "symbol": "COWUSDT",
+      "price": 0.2279,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:07.613294Z",
+      "symbol": "DNTUSDT",
+      "price": 0.0073,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:08.100276Z",
+      "symbol": "GHSTUSDT",
+      "price": 0.084,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:08.209457Z",
+      "symbol": "LDOUSDT",
+      "price": 0.279,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:08.343834Z",
+      "symbol": "ARKMUSDT",
+      "price": 0.1,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:08.636618Z",
+      "symbol": "AUCTIONUSDT",
+      "price": 4.66,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:08.973840Z",
+      "symbol": "SPKUSDT",
+      "price": 0.01964,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:09.121223Z",
+      "symbol": "OXTUSDT",
+      "price": 0.0162,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:09.274456Z",
+      "symbol": "ZKUSDT",
+      "price": 0.0186,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:09.469962Z",
+      "symbol": "KAITOUSDT",
+      "price": 0.3655,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:09.595758Z",
+      "symbol": "ETHUSDT",
+      "price": 1955.35,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:09.782431Z",
+      "symbol": "POPCATUSDT",
+      "price": 0.0495,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:09.944955Z",
+      "symbol": "TOSHIUSDT",
+      "price": 0.000207,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:10.101269Z",
+      "symbol": "TUSDT",
+      "price": 0.00668,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:10.285831Z",
+      "symbol": "REDUSDT",
+      "price": 0.1284,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:10.682928Z",
+      "symbol": "HFTUSDT",
+      "price": 0.0154,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:10.849332Z",
+      "symbol": "LPTUSDT",
+      "price": 2.22,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:11.030278Z",
+      "symbol": "WETUSDT",
+      "price": 0.1084,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:11.408844Z",
+      "symbol": "KNCUSDT",
+      "price": 0.1244,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:11.871745Z",
+      "symbol": "SNXUSDT",
+      "price": 0.311,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:12.006561Z",
+      "symbol": "RNBWUSDT",
+      "price": 0.01845,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:12.152837Z",
+      "symbol": "OPNUSDT",
+      "price": 0.3171,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:12.324875Z",
+      "symbol": "XCNUSDT",
+      "price": 0.00473,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:12.505309Z",
+      "symbol": "PLUMEUSDT",
+      "price": 0.01195,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:12.673093Z",
+      "symbol": "METISUSDT",
+      "price": 3.16,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:12.822144Z",
+      "symbol": "RONINUSDT",
+      "price": 0.0882,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:12.979861Z",
+      "symbol": "BREVUSDT",
+      "price": 0.1416,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:13.181701Z",
+      "symbol": "SEIUSDT",
+      "price": 0.06412,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:13.493558Z",
+      "symbol": "AGLDUSDT",
+      "price": 0.2811,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:13.638912Z",
+      "symbol": "USD1USDT",
+      "price": 0.9996,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:13.979747Z",
+      "symbol": "FIDAUSDT",
+      "price": 0.015,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:14.360083Z",
+      "symbol": "ELSAUSDT",
+      "price": 0.0724,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:14.514234Z",
+      "symbol": "VARAUSDT",
+      "price": 0.00094,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:15.199181Z",
+      "symbol": "PROVEUSDT",
+      "price": 0.2684,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:15.374820Z",
+      "symbol": "PAXUSDT",
+      "price": 0.9996,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:15.743875Z",
+      "symbol": "BARDUSDT",
+      "price": 1.0812,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:15.959102Z",
+      "symbol": "EULUSDT",
+      "price": 0.934,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:16.106528Z",
+      "symbol": "CGLDUSDT",
+      "price": 0.0733,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:16.319174Z",
+      "symbol": "PYTHUSDT",
+      "price": 0.046,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:16.495971Z",
+      "symbol": "XRPUSDT",
+      "price": 1.3607,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:16.674434Z",
+      "symbol": "SWELLUSDT",
+      "price": 0.00119,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:16.861583Z",
+      "symbol": "DOTUSDT",
+      "price": 1.447,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:17.015569Z",
+      "symbol": "LAUSDT",
+      "price": 0.2212,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:17.184368Z",
+      "symbol": "METUSDT",
+      "price": 0.159,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:17.341074Z",
+      "symbol": "GNOUSDT",
+      "price": 124.43,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:17.539433Z",
+      "symbol": "YBUSDT",
+      "price": 0.1589,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:17.776344Z",
+      "symbol": "HYPEUSDT",
+      "price": 30.2,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:17.996000Z",
+      "symbol": "ALGOUSDT",
+      "price": 0.0828,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:18.189329Z",
+      "symbol": "REZUSDT",
+      "price": 0.00319,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:18.473996Z",
+      "symbol": "BNTUSDT",
+      "price": 0.2792,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:18.673129Z",
+      "symbol": "RADUSDT",
+      "price": 0.233,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:18.872532Z",
+      "symbol": "PENGUUSDT",
+      "price": 0.006535,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:19.566061Z",
+      "symbol": "ALEPHUSDT",
+      "price": 0.0201,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:19.716602Z",
+      "symbol": "KSMUSDT",
+      "price": 4.4,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:19.889495Z",
+      "symbol": "THQUSDT",
+      "price": 0.0296,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:20.045635Z",
+      "symbol": "OSMOUSDT",
+      "price": 0.0322,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:20.421208Z",
+      "symbol": "MAMOUSDT",
+      "price": 0.01402,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:20.572946Z",
+      "symbol": "BEAMUSDT",
+      "price": 0.001951,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:20.736988Z",
+      "symbol": "STRKUSDT",
+      "price": 0.038,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:20.980918Z",
+      "symbol": "POLUSDT",
+      "price": 0.0946,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:21.210564Z",
+      "symbol": "C98USDT",
+      "price": 0.025,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:21.391993Z",
+      "symbol": "ALEOUSDT",
+      "price": 0.0647,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:21.827531Z",
+      "symbol": "FOXUSDT",
+      "price": 0.00681,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:22.048990Z",
+      "symbol": "HIGHUSDT",
+      "price": 0.132,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:22.112286Z",
+      "symbol": "GRTUSDT",
+      "price": 0.025,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:22.334931Z",
+      "symbol": "SUSDT",
+      "price": 0.0381,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:22.498709Z",
+      "symbol": "BATUSDT",
+      "price": 0.09695,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:22.660347Z",
+      "symbol": "HNTUSDT",
+      "price": 1.166,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:22.823221Z",
+      "symbol": "COTIUSDT",
+      "price": 0.0114,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:23.233026Z",
+      "symbol": "MAGICUSDT",
+      "price": 0.0608,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:23.768654Z",
+      "symbol": "PRIMEUSDT",
+      "price": 0.435,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:23.836228Z",
+      "symbol": "ICPUSDT",
+      "price": 2.403,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:23.962011Z",
+      "symbol": "ENAUSDT",
+      "price": 0.0999,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:24.308523Z",
+      "symbol": "PUNDIXUSDT",
+      "price": 0.1469,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:24.479032Z",
+      "symbol": "PAXGUSDT",
+      "price": 5178.23,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:24.876195Z",
+      "symbol": "MOGUSDT",
+      "price": 1.5e-07,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:25.198770Z",
+      "symbol": "GUSDT",
+      "price": 0.00318,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:25.268590Z",
+      "symbol": "LQTYUSDT",
+      "price": 0.2723,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:25.441864Z",
+      "symbol": "USDSUSDT",
+      "price": 1.0001,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:26.029362Z",
+      "symbol": "BLZUSDT",
+      "price": 0.0123,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:26.151515Z",
+      "symbol": "AVTUSDT",
+      "price": 0.63,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:26.299180Z",
+      "symbol": "RAVEUSDT",
+      "price": 0.274,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:26.491722Z",
+      "symbol": "WUSDT",
+      "price": 0.01764,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:26.690502Z",
+      "symbol": "STORJUSDT",
+      "price": 0.0886,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:26.759802Z",
+      "symbol": "CHZUSDT",
+      "price": 0.0341,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:26.915227Z",
+      "symbol": "WCTUSDT",
+      "price": 0.0575,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:27.070029Z",
+      "symbol": "ABTUSDT",
+      "price": 0.1656,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:27.209282Z",
+      "symbol": "AERGOUSDT",
+      "price": 0.054,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:27.398857Z",
+      "symbol": "STGUSDT",
+      "price": 0.1745,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:27.705687Z",
+      "symbol": "RARIUSDT",
+      "price": 0.1509,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:27.854294Z",
+      "symbol": "ACSUSDT",
+      "price": 0.0001763,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:28.032575Z",
+      "symbol": "ZORAUSDT",
+      "price": 0.01784,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:28.168492Z",
+      "symbol": "ARPAUSDT",
+      "price": 0.0098,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:28.482307Z",
+      "symbol": "EIGENUSDT",
+      "price": 0.176,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:28.642230Z",
+      "symbol": "SDUSDT",
+      "price": 0.1409,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:29.029949Z",
+      "symbol": "INXUSDT",
+      "price": 0.011564,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:29.163918Z",
+      "symbol": "API3USDT",
+      "price": 0.275,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:29.322955Z",
+      "symbol": "VELOUSDT",
+      "price": 0.01602,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:29.470710Z",
+      "symbol": "PROMPTUSDT",
+      "price": 0.04237,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:29.655221Z",
+      "symbol": "AVNTUSDT",
+      "price": 0.1542,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:29.860113Z",
+      "symbol": "APEUSDT",
+      "price": 0.094,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:30.192999Z",
+      "symbol": "ARBUSDT",
+      "price": 0.0957,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:30.405701Z",
+      "symbol": "DOLOUSDT",
+      "price": 0.03294,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:30.600296Z",
+      "symbol": "FLOWUSDT",
+      "price": 0.042,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:30.773883Z",
+      "symbol": "COSMOSDYDXUSDT",
+      "price": 0.0804,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:30.969562Z",
+      "symbol": "FISUSDT",
+      "price": 0.017,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:31.162225Z",
+      "symbol": "PROUSDT",
+      "price": 0.351,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:31.364138Z",
+      "symbol": "WELLUSDT",
+      "price": 0.004392,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:31.708086Z",
+      "symbol": "ERAUSDT",
+      "price": 0.1408,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:31.895520Z",
+      "symbol": "NKNUSDT",
+      "price": 0.0055,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:32.083915Z",
+      "symbol": "SKYUSDT",
+      "price": 0.07184,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:32.250993Z",
+      "symbol": "BONKUSDT",
+      "price": 5.64e-06,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:32.389958Z",
+      "symbol": "RPLUSDT",
+      "price": 1.8,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:32.527244Z",
+      "symbol": "AUDIOUSDT",
+      "price": 0.0212,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:32.745755Z",
+      "symbol": "FETUSDT",
+      "price": 0.1423,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:32.941052Z",
+      "symbol": "PNUTUSDT",
+      "price": 0.0437,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:33.139642Z",
+      "symbol": "NCTUSDT",
+      "price": 0.00643,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:33.381286Z",
+      "symbol": "XANUSDT",
+      "price": 0.00612,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:33.617704Z",
+      "symbol": "IMUUSDT",
+      "price": 0.00286,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:33.814506Z",
+      "symbol": "RENDERUSDT",
+      "price": 1.382,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:34.001676Z",
+      "symbol": "SYNDUSDT",
+      "price": 0.0537,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:34.157332Z",
+      "symbol": "INJUSDT",
+      "price": 2.84,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:34.319896Z",
+      "symbol": "DOODUSDT",
+      "price": 0.002915,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:34.489491Z",
+      "symbol": "USELESSUSDT",
+      "price": 0.0383,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:34.645325Z",
+      "symbol": "MORPHOUSDT",
+      "price": 1.8417,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:34.785747Z",
+      "symbol": "GFIUSDT",
+      "price": 0.1305,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:35.177962Z",
+      "symbol": "FLOCKUSDT",
+      "price": 0.0564,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:35.362823Z",
+      "symbol": "RLSUSDT",
+      "price": 0.00382,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:35.532242Z",
+      "symbol": "LIGHTERUSDT",
+      "price": 1.108,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:35.856709Z",
+      "symbol": "KERNELUSDT",
+      "price": 0.0803,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:36.051990Z",
+      "symbol": "ASTUSDT",
+      "price": 0.0077,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:36.293896Z",
+      "symbol": "SQDUSDT",
+      "price": 0.0364,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:36.696771Z",
+      "symbol": "SANDUSDT",
+      "price": 0.0791,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:37.033749Z",
+      "symbol": "ZECUSDT",
+      "price": 195.93,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:37.383309Z",
+      "symbol": "IOUSDT",
+      "price": 0.102,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:37.564277Z",
+      "symbol": "SHIBUSDT",
+      "price": 5.31e-06,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:37.908737Z",
+      "symbol": "BICOUSDT",
+      "price": 0.0191,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:38.094660Z",
+      "symbol": "AXSUSDT",
+      "price": 1.118,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:38.168601Z",
+      "symbol": "LINKUSDT",
+      "price": 8.636,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:38.702241Z",
+      "symbol": "PRCLUSDT",
+      "price": 0.0208,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:38.889595Z",
+      "symbol": "ELAUSDT",
+      "price": 0.58,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:38.955617Z",
+      "symbol": "QNTUSDT",
+      "price": 63.95,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:39.087776Z",
+      "symbol": "XTZUSDT",
+      "price": 0.3633,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:39.233802Z",
+      "symbol": "POLSUSDT",
+      "price": 0.0576,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:39.302056Z",
+      "symbol": "ATOMUSDT",
+      "price": 1.771,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:39.469780Z",
+      "symbol": "MANAUSDT",
+      "price": 0.0915,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:39.648147Z",
+      "symbol": "LCXUSDT",
+      "price": 0.044,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:39.785876Z",
+      "symbol": "00USDT",
+      "price": 0.0046,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:39.984473Z",
+      "symbol": "KTAUSDT",
+      "price": 0.2298,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:40.146229Z",
+      "symbol": "VOXELUSDT",
+      "price": 0.0083,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:40.342228Z",
+      "symbol": "CBETHUSDT",
+      "price": 2197.88,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:40.651143Z",
+      "symbol": "BNBUSDT",
+      "price": 619.37,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:40.838876Z",
+      "symbol": "ONDOUSDT",
+      "price": 0.2469,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:41.467533Z",
+      "symbol": "LRDSUSDT",
+      "price": 0.0368,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:41.648501Z",
+      "symbol": "FORTUSDT",
+      "price": 0.0135,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:41.817924Z",
+      "symbol": "CLANKERUSDT",
+      "price": 26.51,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:42.025295Z",
+      "symbol": "ETHFIUSDT",
+      "price": 0.519,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:42.160704Z",
+      "symbol": "TIAUSDT",
+      "price": 0.3178,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:42.516020Z",
+      "symbol": "TRUSTUSDT",
+      "price": 0.06834,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:42.895904Z",
+      "symbol": "NOMUSDT",
+      "price": 0.00334,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:43.089506Z",
+      "symbol": "APRUSDT",
+      "price": 0.1149,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:43.283607Z",
+      "symbol": "KARRATUSDT",
+      "price": 0.0055,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:43.421274Z",
+      "symbol": "PONDUSDT",
+      "price": 0.00228,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:43.531871Z",
+      "symbol": "USDTUSDT",
+      "price": 1.0,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:44.195914Z",
+      "symbol": "UPUSDT",
+      "price": 0.03786,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:44.408299Z",
+      "symbol": "AMPUSDT",
+      "price": 0.00138,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:44.573793Z",
+      "symbol": "TREEUSDT",
+      "price": 0.0661,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:44.753233Z",
+      "symbol": "MOODENGUSDT",
+      "price": 0.047,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:44.920059Z",
+      "symbol": "MNDEUSDT",
+      "price": 0.02108,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:45.002142Z",
+      "symbol": "BCHUSDT",
+      "price": 449.74,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:45.206446Z",
+      "symbol": "SENTUSDT",
+      "price": 0.02392,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:45.347036Z",
+      "symbol": "XYOUSDT",
+      "price": 0.00401,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:45.456706Z",
+      "symbol": "LTCUSDT",
+      "price": 53.24,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:45.601979Z",
+      "symbol": "1INCHUSDT",
+      "price": 0.091,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:45.765271Z",
+      "symbol": "COMPUSDT",
+      "price": 16.83,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:45.901420Z",
+      "symbol": "LRCUSDT",
+      "price": 0.031,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:46.114044Z",
+      "symbol": "KITEUSDT",
+      "price": 0.29376,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:46.327857Z",
+      "symbol": "SUIUSDT",
+      "price": 0.8937,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:46.701413Z",
+      "symbol": "BLASTUSDT",
+      "price": 0.00049,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:47.149450Z",
+      "symbol": "IPUSDT",
+      "price": 0.803,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:47.356373Z",
+      "symbol": "ACXUSDT",
+      "price": 0.0323,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:47.534782Z",
+      "symbol": "NEWTUSDT",
+      "price": 0.0651,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:47.700637Z",
+      "symbol": "CRVUSDT",
+      "price": 0.2333,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:47.880603Z",
+      "symbol": "WMTXUSDT",
+      "price": 0.06484,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:48.099938Z",
+      "symbol": "MASKUSDT",
+      "price": 0.43,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:48.628170Z",
+      "symbol": "2ZUSDT",
+      "price": 0.07302,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:48.900842Z",
+      "symbol": "KAVAUSDT",
+      "price": 0.0653,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:49.278346Z",
+      "symbol": "MONUSDT",
+      "price": 0.02161,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:49.653686Z",
+      "symbol": "LSETHUSDT",
+      "price": 2133.55,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:50.014367Z",
+      "symbol": "COOKIEUSDT",
+      "price": 0.01918,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:50.172573Z",
+      "symbol": "TRACUSDT",
+      "price": 0.305,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:50.324268Z",
+      "symbol": "WLFIUSDT",
+      "price": 0.0963,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:50.472012Z",
+      "symbol": "TOWNSUSDT",
+      "price": 0.00334,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:50.625708Z",
+      "symbol": "STXUSDT",
+      "price": 0.2551,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:50.833042Z",
+      "symbol": "WLDUSDT",
+      "price": 0.3742,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:51.033033Z",
+      "symbol": "B3USDT",
+      "price": 0.00034,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:51.245704Z",
+      "symbol": "TURBOUSDT",
+      "price": 0.000892,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:51.389899Z",
+      "symbol": "PENDLEUSDT",
+      "price": 1.19,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:51.894673Z",
+      "symbol": "IDEXUSDT",
+      "price": 0.0069,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:52.088338Z",
+      "symbol": "L3USDT",
+      "price": 0.00685,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:52.310749Z",
+      "symbol": "ATHUSDT",
+      "price": 0.00596,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:52.639911Z",
+      "symbol": "ALLOUSDT",
+      "price": 0.1261,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:52.825026Z",
+      "symbol": "TRUUSDT",
+      "price": 0.0047,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:52.962750Z",
+      "symbol": "RAREUSDT",
+      "price": 0.0156,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:53.122308Z",
+      "symbol": "ESPUSDT",
+      "price": 0.10788,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:53.490872Z",
+      "symbol": "DEXTUSDT",
+      "price": 0.1365,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:53.688591Z",
+      "symbol": "SUPUSDT",
+      "price": 0.01157,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:54.355199Z",
+      "symbol": "EGLDUSDT",
+      "price": 4.11,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:54.488917Z",
+      "symbol": "CTSIUSDT",
+      "price": 0.0242,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:54.697176Z",
+      "symbol": "JITOSOLUSDT",
+      "price": 104.15,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:54.837212Z",
+      "symbol": "ASMUSDT",
+      "price": 0.00689,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:54.907187Z",
+      "symbol": "CORECHAINUSDT",
+      "price": 0.0793,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:55.061800Z",
+      "symbol": "SPAUSDT",
+      "price": 0.003354,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:55.427628Z",
+      "symbol": "DEEPUSDT",
+      "price": 0.0293,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:55.794448Z",
+      "symbol": "SXTUSDT",
+      "price": 0.0172,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:55.987015Z",
+      "symbol": "OCEANUSDT",
+      "price": 0.1038,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:56.197186Z",
+      "symbol": "SKLUSDT",
+      "price": 0.0063,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:56.372944Z",
+      "symbol": "BANDUSDT",
+      "price": 0.214,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:56.535977Z",
+      "symbol": "SUKUUSDT",
+      "price": 0.0074,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:56.607396Z",
+      "symbol": "ILVUSDT",
+      "price": 3.49,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:56.740923Z",
+      "symbol": "GODSUSDT",
+      "price": 0.03246,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:56.808964Z",
+      "symbol": "CTXUSDT",
+      "price": 0.5511,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:56.960078Z",
+      "symbol": "MATHUSDT",
+      "price": 0.0263,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:57.149749Z",
+      "symbol": "TRBUSDT",
+      "price": 14.57,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:57.372150Z",
+      "symbol": "A8USDT",
+      "price": 0.0087,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:57.531421Z",
+      "symbol": "FARTCOINUSDT",
+      "price": 0.1468,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:57.721556Z",
+      "symbol": "ROSEUSDT",
+      "price": 0.01142,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:57.878170Z",
+      "symbol": "HOPRUSDT",
+      "price": 0.0202,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:58.031580Z",
+      "symbol": "MSOLUSDT",
+      "price": 112.97,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:58.267860Z",
+      "symbol": "OMNIUSDT",
+      "price": 0.727,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:58.419904Z",
+      "symbol": "BIGTIMEUSDT",
+      "price": 0.01316,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:58.858228Z",
+      "symbol": "TRUMPUSDT",
+      "price": 2.99,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:59.081241Z",
+      "symbol": "ALCXUSDT",
+      "price": 6.51,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:59.224002Z",
+      "symbol": "ZRXUSDT",
+      "price": 0.102403,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:59.589797Z",
+      "symbol": "MPLXUSDT",
+      "price": 0.0305,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:52:59.739380Z",
+      "symbol": "PNGUSDT",
+      "price": 0.02607,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:00.243500Z",
+      "symbol": "AWEUSDT",
+      "price": 0.05064,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:00.416314Z",
+      "symbol": "VTHOUSDT",
+      "price": 0.00057,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:00.790326Z",
+      "symbol": "GIGAUSDT",
+      "price": 0.00196,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:01.130389Z",
+      "symbol": "ORCAUSDT",
+      "price": 0.8864,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:01.291786Z",
+      "symbol": "FILUSDT",
+      "price": 0.934,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:01.466138Z",
+      "symbol": "ENSUSDT",
+      "price": 5.74,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:01.669277Z",
+      "symbol": "ETCUSDT",
+      "price": 8.12,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:01.871218Z",
+      "symbol": "SUSHIUSDT",
+      "price": 0.1925,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:02.195342Z",
+      "symbol": "SPXUSDT",
+      "price": 0.306,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:02.395811Z",
+      "symbol": "BERAUSDT",
+      "price": 0.53,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:02.525010Z",
+      "symbol": "ADAUSDT",
+      "price": 0.2526,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:02.688950Z",
+      "symbol": "GMTUSDT",
+      "price": 0.0108,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:02.825076Z",
+      "symbol": "AURORAUSDT",
+      "price": 0.0288,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:02.981616Z",
+      "symbol": "WAXLUSDT",
+      "price": 0.0519,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:03.113150Z",
+      "symbol": "UMAUSDT",
+      "price": 0.405,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:03.272440Z",
+      "symbol": "VVVUSDT",
+      "price": 5.8801,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:03.438688Z",
+      "symbol": "REQUSDT",
+      "price": 0.0609,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:03.964246Z",
+      "symbol": "TONUSDT",
+      "price": 1.318,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:04.158573Z",
+      "symbol": "DOGEUSDT",
+      "price": 0.08927,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:04.353731Z",
+      "symbol": "BADGERUSDT",
+      "price": 0.3761,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:05.046891Z",
+      "symbol": "SHDWUSDT",
+      "price": 0.032,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:05.259354Z",
+      "symbol": "ZKPUSDT",
+      "price": 0.08524,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:05.647078Z",
+      "symbol": "ZAMAUSDT",
+      "price": 0.02056,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:05.715837Z",
+      "symbol": "FARMUSDT",
+      "price": 13.9,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:05.874457Z",
+      "symbol": "DOGINMEUSDT",
+      "price": 0.0001097,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:06.033225Z",
+      "symbol": "MINAUSDT",
+      "price": 0.054,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:06.234775Z",
+      "symbol": "CELRUSDT",
+      "price": 0.00246,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:06.430323Z",
+      "symbol": "AXLUSDT",
+      "price": 0.0521,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:06.606766Z",
+      "symbol": "LAYERUSDT",
+      "price": 0.0801,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:06.785187Z",
+      "symbol": "POWRUSDT",
+      "price": 0.0637,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:06.850922Z",
+      "symbol": "CROUSDT",
+      "price": 0.07465,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:07.013281Z",
+      "symbol": "MANTLEUSDT",
+      "price": 0.6674,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:07.328972Z",
+      "symbol": "RLCUSDT",
+      "price": 0.3696,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:07.547511Z",
+      "symbol": "BIOUSDT",
+      "price": 0.0208,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:07.783959Z",
+      "symbol": "GSTUSDT",
+      "price": 0.001645,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:07.851186Z",
+      "symbol": "FLUIDUSDT",
+      "price": 2.135,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:08.014408Z",
+      "symbol": "ASTERUSDT",
+      "price": 0.687,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:08.555283Z",
+      "symbol": "IOTXUSDT",
+      "price": 0.01382,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:08.815182Z",
+      "symbol": "KRLUSDT",
+      "price": 0.1502,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:09.965501Z",
+      "symbol": "DBRUSDT",
+      "price": 0.01579,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:10.204581Z",
+      "symbol": "HYPERUSDT",
+      "price": 0.0873,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:10.274850Z",
+      "symbol": "OPUSDT",
+      "price": 0.115,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:10.483211Z",
+      "symbol": "RAYUSDT",
+      "price": 0.5734,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:10.676436Z",
+      "symbol": "UNIUSDT",
+      "price": 3.728,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:11.028501Z",
+      "symbol": "NEARUSDT",
+      "price": 1.205,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:11.191177Z",
+      "symbol": "DASHUSDT",
+      "price": 31.28,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:11.288376Z",
+      "symbol": "DRIFTUSDT",
+      "price": 0.08,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:11.626436Z",
+      "symbol": "LMTSUSDT",
+      "price": 0.17298,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:11.811478Z",
+      "symbol": "XPLUSDT",
+      "price": 0.094,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:11.963997Z",
+      "symbol": "TNSRUSDT",
+      "price": 0.045,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:12.117778Z",
+      "symbol": "NEONUSDT",
+      "price": 0.03064,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:12.295801Z",
+      "symbol": "BOBAUSDT",
+      "price": 0.0217,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:12.466657Z",
+      "symbol": "SWFTCUSDT",
+      "price": 0.003355,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:12.625279Z",
+      "symbol": "AZTECUSDT",
+      "price": 0.02092,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:13.020100Z",
+      "symbol": "BOBBOBUSDT",
+      "price": 0.00592,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:13.263023Z",
+      "symbol": "PYRUSDT",
+      "price": 0.294,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:13.522259Z",
+      "symbol": "FLRUSDT",
+      "price": 0.00894,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:13.678421Z",
+      "symbol": "WIFUSDT",
+      "price": 0.179,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:14.049268Z",
+      "symbol": "JASMYUSDT",
+      "price": 0.00545,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:14.376959Z",
+      "symbol": "GTCUSDT",
+      "price": 0.0782,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:14.930204Z",
+      "symbol": "ZENUSDT",
+      "price": 5.301,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:15.546418Z",
+      "symbol": "FAIUSDT",
+      "price": 0.00663,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:15.974623Z",
+      "symbol": "SHPINGUSDT",
+      "price": 0.001361,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:16.221113Z",
+      "symbol": "ALTUSDT",
+      "price": 0.00708,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:16.380118Z",
+      "symbol": "DEGENUSDT",
+      "price": 0.000672,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:16.527173Z",
+      "symbol": "PEPEUSDT",
+      "price": 3.22e-06,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:16.957012Z",
+      "symbol": "TIMEUSDT",
+      "price": 2.9,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:17.118480Z",
+      "symbol": "ACHUSDT",
+      "price": 0.006857,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:17.254250Z",
+      "symbol": "SEAMUSDT",
+      "price": 0.1085,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:17.386821Z",
+      "symbol": "ROBOUSDT",
+      "price": 0.04042,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:17.619833Z",
+      "symbol": "APTUSDT",
+      "price": 0.9342,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:17.787652Z",
+      "symbol": "MDTUSDT",
+      "price": 0.01025,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:18.196429Z",
+      "symbol": "INDEXUSDT",
+      "price": 0.29,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:18.349235Z",
+      "symbol": "YFIUSDT",
+      "price": 2475.49,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:18.521037Z",
+      "symbol": "NMRUSDT",
+      "price": 7.84,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:18.704661Z",
+      "symbol": "PERPUSDT",
+      "price": 0.0507,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:18.937562Z",
+      "symbol": "RECALLUSDT",
+      "price": 0.045,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:19.097089Z",
+      "symbol": "KMNOUSDT",
+      "price": 0.01944,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:19.622467Z",
+      "symbol": "PIRATEUSDT",
+      "price": 0.0067,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:19.688086Z",
+      "symbol": "SOLUSDT",
+      "price": 82.88,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:19.843468Z",
+      "symbol": "INVUSDT",
+      "price": 17.64,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:19.984497Z",
+      "symbol": "AIOZUSDT",
+      "price": 0.0644,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:20.048330Z",
+      "symbol": "BTCUSDT",
+      "price": 67291.18,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:20.464195Z",
+      "symbol": "MLNUSDT",
+      "price": 3.38,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:20.647099Z",
+      "symbol": "TROLLUSDT",
+      "price": 0.0142,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:20.784513Z",
+      "symbol": "LINEAUSDT",
+      "price": 0.00306,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:20.943882Z",
+      "symbol": "SUPERUSDT",
+      "price": 0.1121,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:21.252110Z",
+      "symbol": "BIRBUSDT",
+      "price": 0.1444,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:21.630679Z",
+      "symbol": "TRIAUSDT",
+      "price": 0.022041,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:21.803000Z",
+      "symbol": "JUPITERUSDT",
+      "price": 0.1629,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:21.946439Z",
+      "symbol": "XLMUSDT",
+      "price": 0.149904,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:22.168035Z",
+      "symbol": "RSCUSDT",
+      "price": 0.0851,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:22.342367Z",
+      "symbol": "HONEYUSDT",
+      "price": 0.0031,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:22.863432Z",
+      "symbol": "AVAXUSDT",
+      "price": 8.89,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:23.016447Z",
+      "symbol": "GLMUSDT",
+      "price": 0.1268,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:23.188186Z",
+      "symbol": "ZROUSDT",
+      "price": 1.963,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:23.342132Z",
+      "symbol": "DIAUSDT",
+      "price": 0.17867,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:23.591369Z",
+      "symbol": "QIUSDT",
+      "price": 0.001824,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:23.908754Z",
+      "symbol": "CFGUSDT",
+      "price": 0.145,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:24.066700Z",
+      "symbol": "VETUSDT",
+      "price": 0.00687,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:24.244949Z",
+      "symbol": "DAIUSDT",
+      "price": 1.0001,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:24.418567Z",
+      "symbol": "DIMOUSDT",
+      "price": 0.01139,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:24.579787Z",
+      "symbol": "FORTHUSDT",
+      "price": 0.8781,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:24.727400Z",
+      "symbol": "HBARUSDT",
+      "price": 0.09503,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:24.949414Z",
+      "symbol": "ZETAUSDT",
+      "price": 0.0498,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:25.095480Z",
+      "symbol": "MEUSDT",
+      "price": 0.1117,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:25.294688Z",
+      "symbol": "WALUSDT",
+      "price": 0.07243,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:25.657398Z",
+      "symbol": "TAOUSDT",
+      "price": 177.04,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:25.969512Z",
+      "symbol": "ALICEUSDT",
+      "price": 0.115,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:26.163279Z",
+      "symbol": "RSRUSDT",
+      "price": 0.001564,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:26.428144Z",
+      "symbol": "KEYCATUSDT",
+      "price": 0.000546,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:26.597404Z",
+      "symbol": "SPELLUSDT",
+      "price": 0.0001714,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:26.757795Z",
+      "symbol": "HOMEUSDT",
+      "price": 0.02362,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:26.918189Z",
+      "symbol": "SYRUPUSDT",
+      "price": 0.2204,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:27.332959Z",
+      "symbol": "CAKEUSDT",
+      "price": 1.315,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:27.495516Z",
+      "symbol": "NOICEUSDT",
+      "price": 5.37e-05,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:27.678967Z",
+      "symbol": "FIGHTUSDT",
+      "price": 0.0049,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:27.860775Z",
+      "symbol": "CVCUSDT",
+      "price": 0.0291,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:28.067758Z",
+      "symbol": "FLOKIUSDT",
+      "price": 2.75e-05,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:28.531954Z",
+      "symbol": "BTRSTUSDT",
+      "price": 0.079,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:28.720888Z",
+      "symbol": "FUN1USDT",
+      "price": 0.03531,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:28.827569Z",
+      "symbol": "PUMPUSDT",
+      "price": 0.001887,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:29.042261Z",
+      "symbol": "IMXUSDT",
+      "price": 0.1515,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:29.193983Z",
+      "symbol": "ZETACHAINUSDT",
+      "price": 0.05,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:29.346621Z",
+      "symbol": "BNKRUSDT",
+      "price": 0.000483,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:29.546853Z",
+      "symbol": "EDGEUSDT",
+      "price": 0.13834,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:29.717896Z",
+      "symbol": "AKTUSDT",
+      "price": 0.398,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:29.917728Z",
+      "symbol": "BALUSDT",
+      "price": 0.147,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:29.989721Z",
+      "symbol": "CVXUSDT",
+      "price": 2.236,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:30.533247Z",
+      "symbol": "AEROUSDT",
+      "price": 0.32068,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:30.970815Z",
+      "symbol": "JTOUSDT",
+      "price": 0.254,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:31.208682Z",
+      "symbol": "ANKRUSDT",
+      "price": 0.00438,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:31.635796Z",
+      "symbol": "SAPIENUSDT",
+      "price": 0.07246,
+      "source": "coinbase",
+      "confidence": 0.5,
+      "type": "price_snapshot"
+    },
+    {
+      "timestamp": "2026-03-08T07:53:31.818129Z",
+      "symbol": "GWEIUSDT",
+      "price": 0.04818,
       "source": "coinbase",
       "confidence": 0.5,
       "type": "price_snapshot"
