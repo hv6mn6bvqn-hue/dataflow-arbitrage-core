@@ -1,7 +1,10 @@
 import os
+import json
 import importlib
+from datetime import datetime
 
 CONNECTOR_PATH = "connectors.crypto"
+OUTPUT_FILE = "sources/signals.json"
 
 
 def load_connectors():
@@ -36,6 +39,22 @@ def load_connectors():
     return connectors
 
 
+def save_signals(signals):
+
+    try:
+
+        os.makedirs("sources", exist_ok=True)
+
+        with open(OUTPUT_FILE, "w") as f:
+            json.dump(signals, f, indent=2)
+
+        print(f"[DISCOVERY] signals saved: {len(signals)}")
+
+    except Exception as e:
+
+        print("[DISCOVERY] save error:", e)
+
+
 def main():
 
     print("[DISCOVERY V2] loading connectors")
@@ -66,3 +85,5 @@ def main():
             print(f"[DISCOVERY] error {connector.__name__}: {e}")
 
     print(f"[DISCOVERY V2] raw signals: {len(all_signals)}")
+
+    save_signals(all_signals)
