@@ -1,48 +1,58 @@
+import json
 from pathlib import Path
 from datetime import datetime
-import json
 
-LOG_PATH = Path("core/logs/signal.log")
-EXPORT_PATH = Path("core/exports")
-EXPORT_FILE = EXPORT_PATH / "primary_signal.json"
+EXPORT_DIR = Path("exports")
+PUBLIC_DIR = Path("public")
 
+PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
 
-def read_last_primary():
-    if not LOG_PATH.exists():
-        return None
-
-    blocks = LOG_PATH.read_text().strip().split("---")
-    for block in reversed(blocks):
-        lines = block.strip().splitlines()
-        entry = {}
-        for line in lines:
-            if ":" in line:
-                k, v = line.split(":", 1)
-                entry[k.strip()] = v.strip()
-        if entry.get("source") == "prioritizer":
-            return entry
-
-    return None
+PUBLIC_SIGNAL_FILE = PUBLIC_DIR / "signals.json"
 
 
-def export_signal(signal):
-    EXPORT_PATH.mkdir(parents=True, exist_ok=True)
+def load_signals():
+
+    signals = []
+
+    if not EXPORT_DIR.exists():
+        return signals
+
+    for file in EXPORT_DIR.glob("*.json"):
+
+        try:
+            data = json.loads(file.read_text())
+
+            if data.get("type") == "signal":
+                signals.append(data)
+
+        except Exception:
+            continue
+
+    return signals
+
+
+def publish(signals):
 
     payload = {
-        "exported_at": datetime.utcnow().isoformat() + "Z",
-        "signal_type": signal.get("signal_type"),
-        "confidence": signal.get("confidence"),
-        "note": signal.get("note"),
-        "status": "active"
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "signal_count": len(signals),
+        "signals": signals[-100:]
     }
 
-    EXPORT_FILE.write_text(json.dumps(payload, indent=2))
+    PUBLIC_SIGNAL_FILE.write_text(json.dumps(payload, indent=2))
 
 
 def main():
-    primary = read_last_primary()
-    if primary:
-        export_signal(primary)
+
+    print("[EXPORTER] collecting signals")
+
+    signals = load_signals()
+
+    print(f"[EXPORTER] signals found: {len(signals)}")
+
+    publish(signals)
+
+    print("[EXPORTER] public feed updated")
 
 
 if __name__ == "__main__":
