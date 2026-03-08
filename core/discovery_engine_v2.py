@@ -1,114 +1,69 @@
-import json
-from pathlib import Path
+import os
+import importlib
 from datetime import datetime
 
-from core.connector_loader import load_connectors
+
+CONNECTOR_PATH = "connectors.crypto"
 
 
-FEED_PATH = Path("docs/feed/index.json")
+def load_connectors():
 
+    connectors = []
 
-def normalize_symbol(symbol):
+    base_path = os.path.join("connectors", "crypto")
 
-    if not symbol:
-        return None
+    for file in os.listdir(base_path):
 
-    symbol = str(symbol).upper()
-
-    symbol = symbol.replace("-", "")
-    symbol = symbol.replace("/", "")
-    symbol = symbol.replace("USDT", "")
-    symbol = symbol.replace("USD", "")
-
-    if symbol == "XBT":
-        symbol = "BTC"
-
-    return symbol
-
-
-def load_feed():
-
-    if not FEED_PATH.exists():
-
-        return {
-            "feed_version": "v2",
-            "generated_at": "",
-            "signal_count": 0,
-            "signals": []
-        }
-
-    return json.loads(FEED_PATH.read_text())
-
-
-def save_feed(feed):
-
-    FEED_PATH.parent.mkdir(parents=True, exist_ok=True)
-
-    FEED_PATH.write_text(json.dumps(feed, indent=2))
-
-
-def normalize_prices(data):
-
-    normalized = []
-
-    for entry in data:
-
-        # защита от мусорных значений
-        if not isinstance(entry, dict):
+        if not file.endswith(".py"):
             continue
 
-        symbol = normalize_symbol(entry.get("symbol"))
-
-        if not symbol:
+        if file.startswith("_"):
             continue
 
-        entry["symbol"] = symbol
+        module_name = file.replace(".py", "")
 
-        normalized.append(entry)
+        full_module = f"{CONNECTOR_PATH}.{module_name}"
 
-    return normalized
+        try:
+            module = importlib.import_module(full_module)
+            connectors.append(module)
+
+            print(f"[CONNECTOR] loaded {full_module}")
+
+        except Exception as e:
+
+            print(f"[CONNECTOR] failed {full_module}:", e)
+
+    return connectors
 
 
-def main():
+def run():
 
     print("[DISCOVERY V2] loading connectors")
 
     connectors = load_connectors()
 
-    signals = []
+    all_signals = []
 
     for connector in connectors:
 
-        if hasattr(connector, "fetch"):
+        try:
 
-            data = connector.fetch()
-
-            if not isinstance(data, list):
+            if hasattr(connector, "fetch"):
+                signals = connector.fetch()
+            elif hasattr(connector, "fetch_prices"):
+                signals = connector.fetch_prices()
+            else:
                 continue
 
-            data = normalize_prices(data)
+            print(f"[DISCOVERY] {connector.__name__} → {len(signals)} prices")
 
-            print(f"[DISCOVERY] {connector.__name__} → {len(data)} prices")
+            all_signals.extend(signals)
 
-            signals.extend(data)
+        except Exception as e:
 
-    print(f"[DISCOVERY V2] raw signals: {len(signals)}")
+            print(f"[DISCOVERY] error {connector.__name__}:", e)
 
-    if not signals:
-        return
+    print(f"[DISCOVERY V2] raw signals: {len(all_signals)}")
 
-    feed = load_feed()
-
-    feed["signals"].extend(signals)
-
-    feed["signal_count"] = len(feed["signals"])
-
-    feed["generated_at"] = datetime.utcnow().isoformat() + "Z"
-
-    save_feed(feed)
-
-    print(f"[DISCOVERY V2] signals added: {len(signals)}")
-
-
-if __name__ == "__main__":
-    main()
+    return all_signals
