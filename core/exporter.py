@@ -1,59 +1,46 @@
 import json
-from pathlib import Path
-from datetime import datetime
+import os
 
-EXPORT_DIR = Path("exports")
-PUBLIC_DIR = Path("public")
-
-PUBLIC_DIR.mkdir(parents=True, exist_ok=True)
-
-PUBLIC_SIGNAL_FILE = PUBLIC_DIR / "signals.json"
+INPUT_FILE = "sources/arbitrage.json"
+OUTPUT_FILE = "public/arbitrage_feed.json"
 
 
-def load_signals():
+def load_arbitrage():
 
-    signals = []
+    try:
 
-    if not EXPORT_DIR.exists():
-        return signals
+        with open(INPUT_FILE, "r") as f:
+            return json.load(f)
 
-    for file in EXPORT_DIR.glob("*.json"):
+    except Exception as e:
 
-        try:
-            data = json.loads(file.read_text())
+        print("[EXPORTER] load error:", e)
 
-            if data.get("type") == "signal":
-                signals.append(data)
-
-        except Exception:
-            continue
-
-    return signals
+        return []
 
 
-def publish(signals):
+def save_feed(data):
 
-    payload = {
-        "generated_at": datetime.utcnow().isoformat() + "Z",
-        "signal_count": len(signals),
-        "signals": signals[-100:]
-    }
+    try:
 
-    PUBLIC_SIGNAL_FILE.write_text(json.dumps(payload, indent=2))
+        os.makedirs("public", exist_ok=True)
+
+        with open(OUTPUT_FILE, "w") as f:
+            json.dump(data, f, indent=2)
+
+        print(f"[EXPORTER] public feed updated: {len(data)} signals")
+
+    except Exception as e:
+
+        print("[EXPORTER] save error:", e)
 
 
 def main():
 
-    print("[EXPORTER] collecting signals")
+    print("[EXPORTER] collecting arbitrage signals")
 
-    signals = load_signals()
+    signals = load_arbitrage()
 
     print(f"[EXPORTER] signals found: {len(signals)}")
 
-    publish(signals)
-
-    print("[EXPORTER] public feed updated")
-
-
-if __name__ == "__main__":
-    main()
+    save_feed(signals)
