@@ -1,75 +1,90 @@
-import os
 import json
+import os
 from datetime import datetime
-from core import market_feed, discovery_engine_v2, spread_engine, arbitrage_matrix_engine, funding_engine
-from core import arbitrage_detector, analyzer, signal_policy, action_engine, exporter, portfolio_engine, metrics_engine, performance_engine
-from core.utils.logger import log
+
+from core import market_feed
+from core import discovery_engine_v2
+from core import spread_engine
+from core import arbitrage_matrix_engine
+from core import funding_engine
+from core import arbitrage_detector
+from core import analyzer
+from core import signal_policy
+from core import action_engine
+from core import exporter
+from core import portfolio_engine
+from core import metrics_engine
+from core import performance_engine
+
 
 def run_pipeline():
-    log("[PIPELINE] DataFlow system start")
-    log(f"[PIPELINE] timestamp: {datetime.utcnow()}")
 
-    # 1️⃣ Market feed
+    print("[PIPELINE] DataFlow system start")
+    print("[PIPELINE] timestamp:", datetime.utcnow(), "\n")
+
+    # MARKET FEED
+    print("[PIPELINE] running core.market_feed")
     prices = market_feed.fetch_prices()
-    log(f"[MARKET_FEED] stored {len(prices)} prices")
 
-    # 2️⃣ Discovery Engine
-    connectors = discovery_engine_v2.load_all_connectors(auto=True)
-    raw_signals = discovery_engine_v2.collect_signals(connectors)
-    log(f"[DISCOVERY V2] raw signals: {len(raw_signals)}")
+    # DISCOVERY
+    print("\n[PIPELINE] running core.discovery_engine_v2")
 
-    # Сохраняем сигналы для всех downstream модулей
+    connectors = discovery_engine_v2.load_all_connectors()
+    signals = discovery_engine_v2.collect_signals(connectors)
+
     os.makedirs("sources", exist_ok=True)
+
     with open("sources/signals.json", "w") as f:
-        json.dump(raw_signals, f)
-    log(f"[DISCOVERY] signals saved: {len(raw_signals)}")
+        json.dump(signals, f)
 
-    # 3️⃣ Spread Engine
-    spread_opps = spread_engine.generate_opportunities(raw_signals)
-    spread_engine.save_opportunities(spread_opps)
-    log(f"[SPREAD] opportunities saved: {len(spread_opps)}")
+    print("[DISCOVERY] signals saved:", len(signals))
 
-    # 4️⃣ Arbitrage Matrix
-    matrix_opps = arbitrage_matrix_engine.generate_matrix(raw_signals)
-    arbitrage_matrix_engine.save_opportunities(matrix_opps)
-    log(f"[MATRIX] opportunities saved: {len(matrix_opps)}")
+    # SPREAD ENGINE
+    print("\n[PIPELINE] running core.spread_engine")
+    spread_engine.main()
 
-    # 5️⃣ Funding Engine
-    funding_data = funding_engine.collect_rates(connectors)
-    if not funding_data:
-        log("[FUNDING] no data, using fallback rates")
-    else:
-        log(f"[FUNDING] collected: {len(funding_data)}")
+    # MATRIX ENGINE
+    print("\n[PIPELINE] running core.arbitrage_matrix_engine")
+    arbitrage_matrix_engine.main()
 
-    # 6️⃣ Arbitrage Detector
-    all_opps = spread_opps + matrix_opps
-    detected = arbitrage_detector.scan(all_opps, funding_data)
-    log(f"[ARBITRAGE] opportunities saved: {len(detected)}")
+    # FUNDING ENGINE
+    print("\n[PIPELINE] running core.funding_engine")
+    funding_engine.main()
 
-    # 7️⃣ Analyzer
-    market_strength = analyzer.evaluate_market_strength(prices)
-    log(f"[ANALYZER] market strength {market_strength}")
+    # ARBITRAGE DETECTOR
+    print("\n[PIPELINE] running core.arbitrage_detector")
+    arbitrage_detector.main()
 
-    # 8️⃣ Signal Policy
-    decisions = signal_policy.evaluate(detected, market_strength)
-    log(f"[POLICY] {len(decisions)} decisions saved")
+    # ANALYZER
+    print("\n[PIPELINE] running core.analyzer")
+    analyzer.main()
 
-    # 9️⃣ Action Engine
-    action_engine.execute(decisions)
-    log("[ENGINE] completed")
+    # SIGNAL POLICY
+    print("\n[PIPELINE] running core.signal_policy")
+    signal_policy.main()
 
-    # 🔟 Exporter
-    exporter.publish(decisions)
-    log(f"[EXPORTER] public feed updated: {len(decisions)} signals")
+    # ACTION ENGINE
+    print("\n[PIPELINE] running core.action_engine")
+    action_engine.main()
 
-    # 1️⃣1️⃣ Portfolio Engine
-    portfolio_engine.update(decisions)
-    log("[PORTFOLIO] completed")
+    # EXPORTER
+    print("\n[PIPELINE] running core.exporter")
+    exporter.main()
 
-    # 1️⃣2️⃣ Metrics & Performance
-    metrics_engine.publish()
-    performance_engine.update()
-    log("[PIPELINE] cycle complete\n")
+    # PORTFOLIO
+    print("\n[PIPELINE] running core.portfolio_engine")
+    portfolio_engine.main()
+
+    # METRICS
+    print("\n[PIPELINE] running core.metrics_engine")
+    metrics_engine.main()
+
+    # PERFORMANCE
+    print("\n[PIPELINE] running core.performance_engine")
+    performance_engine.main()
+
+    print("\n[PIPELINE] cycle complete")
+
 
 if __name__ == "__main__":
     run_pipeline()
