@@ -1,67 +1,75 @@
-import importlib
+import os
+import json
 from datetime import datetime
+from core import market_feed, discovery_engine_v2, spread_engine, arbitrage_matrix_engine, funding_engine
+from core import arbitrage_detector, analyzer, signal_policy, action_engine, exporter, portfolio_engine, metrics_engine, performance_engine
+from core.utils.logger import log
 
+def run_pipeline():
+    log("[PIPELINE] DataFlow system start")
+    log(f"[PIPELINE] timestamp: {datetime.utcnow()}")
 
-PIPELINE_MODULES = [
+    # 1️⃣ Market feed
+    prices = market_feed.fetch_prices()
+    log(f"[MARKET_FEED] stored {len(prices)} prices")
 
-    # market data
-    "core.market_feed",
+    # 2️⃣ Discovery Engine
+    connectors = discovery_engine_v2.load_all_connectors(auto=True)
+    raw_signals = discovery_engine_v2.collect_signals(connectors)
+    log(f"[DISCOVERY V2] raw signals: {len(raw_signals)}")
 
-    # discovery
-    "core.discovery_engine_v2",
+    # Сохраняем сигналы для всех downstream модулей
+    os.makedirs("sources", exist_ok=True)
+    with open("sources/signals.json", "w") as f:
+        json.dump(raw_signals, f)
+    log(f"[DISCOVERY] signals saved: {len(raw_signals)}")
 
-    # arbitrage engines
-    "core.spread_engine",
-    "core.arbitrage_matrix_engine",
-    "core.funding_engine",
+    # 3️⃣ Spread Engine
+    spread_opps = spread_engine.generate_opportunities(raw_signals)
+    spread_engine.save_opportunities(spread_opps)
+    log(f"[SPREAD] opportunities saved: {len(spread_opps)}")
 
-    # decision layer
-    "core.arbitrage_detector",
-    "core.analyzer",
-    "core.signal_policy",
+    # 4️⃣ Arbitrage Matrix
+    matrix_opps = arbitrage_matrix_engine.generate_matrix(raw_signals)
+    arbitrage_matrix_engine.save_opportunities(matrix_opps)
+    log(f"[MATRIX] opportunities saved: {len(matrix_opps)}")
 
-    # execution
-    "core.action_engine",
+    # 5️⃣ Funding Engine
+    funding_data = funding_engine.collect_rates(connectors)
+    if not funding_data:
+        log("[FUNDING] no data, using fallback rates")
+    else:
+        log(f"[FUNDING] collected: {len(funding_data)}")
 
-    # public layer
-    "core.exporter",
+    # 6️⃣ Arbitrage Detector
+    all_opps = spread_opps + matrix_opps
+    detected = arbitrage_detector.scan(all_opps, funding_data)
+    log(f"[ARBITRAGE] opportunities saved: {len(detected)}")
 
-    # portfolio
-    "core.portfolio_engine",
+    # 7️⃣ Analyzer
+    market_strength = analyzer.evaluate_market_strength(prices)
+    log(f"[ANALYZER] market strength {market_strength}")
 
-    # analytics
-    "core.metrics_engine",
-    "core.performance_engine"
-]
+    # 8️⃣ Signal Policy
+    decisions = signal_policy.evaluate(detected, market_strength)
+    log(f"[POLICY] {len(decisions)} decisions saved")
 
+    # 9️⃣ Action Engine
+    action_engine.execute(decisions)
+    log("[ENGINE] completed")
 
-def run_module(module_name):
+    # 🔟 Exporter
+    exporter.publish(decisions)
+    log(f"[EXPORTER] public feed updated: {len(decisions)} signals")
 
-    try:
+    # 1️⃣1️⃣ Portfolio Engine
+    portfolio_engine.update(decisions)
+    log("[PORTFOLIO] completed")
 
-        module = importlib.import_module(module_name)
-
-        if hasattr(module, "main"):
-            print(f"[PIPELINE] running {module_name}")
-            module.main()
-        else:
-            print(f"[PIPELINE] skipped {module_name} (no main())")
-
-    except Exception as e:
-
-        print(f"[PIPELINE] error in {module_name}: {e}")
-
-
-def main():
-
-    print("\n[PIPELINE] DataFlow system start")
-    print("[PIPELINE] timestamp:", datetime.utcnow(), "\n")
-
-    for module in PIPELINE_MODULES:
-        run_module(module)
-
-    print("\n[PIPELINE] cycle complete\n")
-
+    # 1️⃣2️⃣ Metrics & Performance
+    metrics_engine.publish()
+    performance_engine.update()
+    log("[PIPELINE] cycle complete\n")
 
 if __name__ == "__main__":
-    main()
+    run_pipeline()
