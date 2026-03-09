@@ -1,47 +1,28 @@
 import requests
-from datetime import datetime
-
-OKX_API = "https://www.okx.com/api/v5/market/tickers?instType=SPOT"
+import time
 
 
-def fetch():
+URL = "https://www.okx.com/api/v5/market/tickers?instType=SPOT"
 
-    signals = []
 
-    try:
-        r = requests.get(OKX_API, timeout=10)
-        data = r.json()
-    except Exception as e:
-        print("[OKX] request error:", e)
-        return signals
+def fetch_prices():
 
-    if "data" not in data:
-        print("[OKX] unexpected response")
-        return signals
+    r = requests.get(URL, timeout=10)
 
-    for asset in data["data"]:
+    data = r.json()
 
-        if not isinstance(asset, dict):
-            continue
+    prices = []
 
-        symbol = asset.get("instId")
+    for item in data.get("data", []):
 
         try:
-            price = float(asset.get("last"))
-        except:
+
+            prices.append({
+                "symbol": item["instId"],
+                "price": float(item["last"])
+            })
+
+        except Exception:
             continue
 
-        if price <= 0:
-            continue
-
-        signals.append({
-            "timestamp": datetime.utcnow().isoformat() + "Z",
-            "market": "crypto",
-            "symbol": symbol,
-            "price": price,
-            "source": "okx"
-        })
-
-    print(f"[OKX] price snapshots: {len(signals)}")
-
-    return signals
+    return prices
