@@ -3,6 +3,9 @@ import importlib
 import json
 import time
 
+from core.utils.symbol_normalizer import normalize_symbol
+
+
 CONNECTOR_PATH = "connectors/crypto"
 SIGNALS_FILE = "sources/signals.json"
 
@@ -27,15 +30,37 @@ def load_all_connectors():
         try:
 
             module = importlib.import_module(f"connectors.crypto.{name}")
-            connectors[name] = module
 
-            print(f"[CONNECTOR] loaded connectors.crypto.{name}")
+            if hasattr(module, "fetch_prices"):
+                connectors[name] = module
+                print(f"[CONNECTOR] loaded connectors.crypto.{name}")
+            else:
+                print(f"[CONNECTOR] skipped {name} (no fetch_prices)")
 
         except Exception as e:
-
             print(f"[CONNECTOR] failed {name}:", e)
 
     return connectors
+
+
+def normalize_snapshot(snapshot):
+
+    try:
+
+        symbol = snapshot.get("symbol")
+
+        if not symbol:
+            return None
+
+        normalized = normalize_symbol(symbol)
+
+        return {
+            "symbol": normalized,
+            "price": float(snapshot["price"])
+        }
+
+    except Exception:
+        return None
 
 
 def collect_signals(connectors):
@@ -48,21 +73,29 @@ def collect_signals(connectors):
 
             snapshots = conn.fetch_prices()
 
+            if not snapshots:
+                print(f"[{name.upper()}] no data")
+                continue
+
             print(f"[{name.upper()}] price snapshots:", len(snapshots))
 
             for s in snapshots:
 
+                normalized = normalize_snapshot(s)
+
+                if not normalized:
+                    continue
+
                 signal = {
                     "exchange": name,
-                    "symbol": s["symbol"],
-                    "price": s["price"],
+                    "symbol": normalized["symbol"],
+                    "price": normalized["price"],
                     "timestamp": int(time.time())
                 }
 
                 all_signals.append(signal)
 
         except Exception as e:
-
             print(f"[{name.upper()}] request error:", e)
 
     return all_signals
@@ -75,6 +108,8 @@ def save_signals(signals):
     with open(SIGNALS_FILE, "w") as f:
         json.dump(signals, f, indent=2)
 
+    print("[DISCOVERY] signals saved:", len(signals))
+
 
 def run():
 
@@ -82,12 +117,10 @@ def run():
 
     connectors = load_all_connectors()
 
-    print("[DISCOVERY] connectors:", len(connectors))
+    print("[DISCOVERY] connectors loaded:", len(connectors))
 
     signals = collect_signals(connectors)
 
     print("[DISCOVERY] signals collected:", len(signals))
 
     save_signals(signals)
-
-    print("[DISCOVERY] signals.json updated")
