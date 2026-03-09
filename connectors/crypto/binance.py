@@ -1,47 +1,49 @@
 import requests
-from datetime import datetime
 
-URL = "https://api.binance.com/api/v3/ticker/price"
+BASE_URLS = [
+    "https://api.binance.com/api/v3/ticker/price",
+    "https://api1.binance.com/api/v3/ticker/price",
+    "https://api2.binance.com/api/v3/ticker/price"
+]
 
-HEADERS = {
-    "User-Agent": "DataFlow-Arbitrage-System"
-}
 
-def fetch():
+def fetch_prices():
 
-    signals = []
-
-    try:
-        r = requests.get(URL, headers=HEADERS, timeout=10)
-        data = r.json()
-    except Exception as e:
-        print("[BINANCE] request error:", e)
-        return signals
-
-    if not isinstance(data, list):
-        print("[BINANCE] unexpected response:", data)
-        return signals
-
-    for asset in data:
-
-        symbol = asset.get("symbol")
+    for url in BASE_URLS:
 
         try:
-            price = float(asset.get("price"))
-        except:
-            continue
 
-        if price <= 0:
-            continue
+            r = requests.get(
+                url,
+                timeout=10,
+                headers={
+                    "User-Agent": "Mozilla/5.0"
+                }
+            )
 
-        signals.append({
-            "timestamp": datetime.utcnow().isoformat() + "Z",
-            "market": "crypto",
-            "symbol": symbol,
-            "price": price,
-            "source": "binance"
-        })
+            data = r.json()
 
-    print(f"[BINANCE] price snapshots: {len(signals)}")
+            if isinstance(data, list):
 
-    return signals
+                prices = []
+
+                for item in data:
+                    prices.append({
+                        "exchange": "binance",
+                        "symbol": item["symbol"],
+                        "price": float(item["price"])
+                    })
+
+                print("[BINANCE] price snapshots:", len(prices))
+
+                return prices
+
+            else:
+
+                print("[BINANCE] unexpected response:", data)
+
+        except Exception as e:
+
+            print("[BINANCE] request error:", e)
+
+    return []
