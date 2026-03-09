@@ -1,61 +1,28 @@
 import requests
-from datetime import datetime
 
-COINBASE_PRODUCTS = "https://api.exchange.coinbase.com/products"
+URL = "https://api.exchange.coinbase.com/products"
 
 
-def fetch():
+def fetch_prices():
 
-    signals = []
+    products = requests.get(URL, timeout=10).json()
 
-    try:
-        r = requests.get(COINBASE_PRODUCTS, timeout=10)
-        products = r.json()
-    except Exception as e:
-        print("[COINBASE] request error:", e)
-        return signals
+    prices = []
 
-    if not isinstance(products, list):
-        print("[COINBASE] unexpected response")
-        return signals
-
-    for product in products:
-
-        if not isinstance(product, dict):
-            continue
-
-        symbol = product.get("id")
-
-        if not symbol:
-            continue
-
-        ticker_url = f"https://api.exchange.coinbase.com/products/{symbol}/ticker"
+    for p in products:
 
         try:
-            r = requests.get(ticker_url, timeout=5)
-            ticker = r.json()
+            ticker = requests.get(
+                f"https://api.exchange.coinbase.com/products/{p['id']}/ticker",
+                timeout=10
+            ).json()
+
+            prices.append({
+                "symbol": p["id"],
+                "price": float(ticker["price"])
+            })
+
         except:
             continue
 
-        if not isinstance(ticker, dict):
-            continue
-
-        try:
-            price = float(ticker.get("price"))
-        except:
-            continue
-
-        if price <= 0:
-            continue
-
-        signals.append({
-            "timestamp": datetime.utcnow().isoformat() + "Z",
-            "market": "crypto",
-            "symbol": symbol,
-            "price": price,
-            "source": "coinbase"
-        })
-
-    print(f"[COINBASE] price snapshots: {len(signals)}")
-
-    return signals
+    return prices
