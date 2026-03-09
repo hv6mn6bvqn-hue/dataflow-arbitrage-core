@@ -2,10 +2,13 @@ import requests
 
 URL = "https://api.binance.com/api/v3/ticker/price"
 
+headers = {
+    "User-Agent": "Mozilla/5.0"
+}
 
 def fetch_prices():
 
-    r = requests.get(URL, timeout=10)
+    r = requests.get(URL, headers=headers, timeout=10)
     data = r.json()
 
     prices = []
