@@ -2,15 +2,18 @@ import os
 import importlib
 import json
 import time
-from core.utils.logger import log
 
-CONNECTOR_PATH = "core/connectors/crypto"
+CONNECTOR_PATH = "connectors/crypto"
 SIGNALS_FILE = "sources/signals.json"
 
 
 def load_all_connectors():
 
     connectors = {}
+
+    if not os.path.exists(CONNECTOR_PATH):
+        print("[DISCOVERY] connector path missing:", CONNECTOR_PATH)
+        return connectors
 
     files = [
         f for f in os.listdir(CONNECTOR_PATH)
@@ -23,14 +26,14 @@ def load_all_connectors():
 
         try:
 
-            module = importlib.import_module(f"core.connectors.crypto.{name}")
+            module = importlib.import_module(f"connectors.crypto.{name}")
             connectors[name] = module
 
-            log(f"[CONNECTOR] loaded {name}")
+            print(f"[CONNECTOR] loaded connectors.crypto.{name}")
 
         except Exception as e:
 
-            log(f"[CONNECTOR] failed {name}: {e}")
+            print(f"[CONNECTOR] failed {name}:", e)
 
     return connectors
 
@@ -45,7 +48,7 @@ def collect_signals(connectors):
 
             snapshots = conn.fetch_prices()
 
-            log(f"[{name.upper()}] snapshots: {len(snapshots)}")
+            print(f"[{name.upper()}] price snapshots:", len(snapshots))
 
             for s in snapshots:
 
@@ -60,7 +63,7 @@ def collect_signals(connectors):
 
         except Exception as e:
 
-            log(f"[{name.upper()}] request error: {e}")
+            print(f"[{name.upper()}] request error:", e)
 
     return all_signals
 
@@ -70,22 +73,21 @@ def save_signals(signals):
     os.makedirs("sources", exist_ok=True)
 
     with open(SIGNALS_FILE, "w") as f:
-
         json.dump(signals, f, indent=2)
 
 
 def run():
 
-    log("[DISCOVERY] starting")
+    print("[DISCOVERY] starting")
 
     connectors = load_all_connectors()
 
-    log(f"[DISCOVERY] connectors: {len(connectors)}")
+    print("[DISCOVERY] connectors:", len(connectors))
 
     signals = collect_signals(connectors)
 
-    log(f"[DISCOVERY] signals collected: {len(signals)}")
+    print("[DISCOVERY] signals collected:", len(signals))
 
     save_signals(signals)
 
-    log("[DISCOVERY] signals.json updated")
+    print("[DISCOVERY] signals.json updated")
