@@ -22,7 +22,10 @@ def group_by_symbol(signals):
 
     for s in signals:
 
-        symbol = s["symbol"]
+        symbol = s.get("symbol")
+
+        if not symbol:
+            continue
 
         if symbol not in markets:
             markets[symbol] = []
@@ -43,20 +46,25 @@ def find_spreads(markets):
 
         for a, b in itertools.combinations(listings, 2):
 
-            price_a = a["price"]
-            price_b = b["price"]
+            price_a = a.get("price")
+            price_b = b.get("price")
 
-            if price_a == 0 or price_b == 0:
+            if not price_a or not price_b:
                 continue
 
-            spread = abs(price_a - price_b) / min(price_a, price_b)
+            try:
+
+                spread = abs(price_a - price_b) / min(price_a, price_b)
+
+            except ZeroDivisionError:
+                continue
 
             if spread > 0.002:  # 0.2%
 
                 opp = {
                     "symbol": symbol,
-                    "exchange_a": a["exchange"],
-                    "exchange_b": b["exchange"],
+                    "exchange_a": a.get("exchange"),
+                    "exchange_b": b.get("exchange"),
                     "price_a": price_a,
                     "price_b": price_b,
                     "spread": spread
@@ -92,3 +100,7 @@ def run():
     print("[SPREAD] opportunities found:", len(opportunities))
 
     save_opportunities(opportunities)
+
+
+def main():
+    run()
