@@ -1,107 +1,94 @@
 import json
-from collections import defaultdict
-from datetime import datetime
+import os
+import itertools
 
-
-INPUT_FILE = "sources/signals.json"
-OUTPUT_FILE = "sources/spreads.json"
-
-SPREAD_THRESHOLD = 0.004   # 0.4%
+SIGNALS_FILE = "sources/signals.json"
+SPREAD_FILE = "sources/spread_opportunities.json"
 
 
 def load_signals():
 
-    try:
-        with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-    except Exception as e:
-        print("[SPREAD] failed to load signals:", e)
+    if not os.path.exists(SIGNALS_FILE):
+        print("[SPREAD] signals file missing")
         return []
+
+    with open(SIGNALS_FILE) as f:
+        return json.load(f)
 
 
 def group_by_symbol(signals):
 
-    markets = defaultdict(list)
+    markets = {}
 
     for s in signals:
 
-        symbol = s.get("symbol")
-        source = s.get("source")
-        price = s.get("price")
+        symbol = s["symbol"]
 
-        if not symbol or not source or not price:
-            continue
+        if symbol not in markets:
+            markets[symbol] = []
 
-        markets[symbol].append({
-            "exchange": source,
-            "price": price
-        })
+        markets[symbol].append(s)
 
     return markets
 
 
-def calculate_spreads(grouped):
+def find_spreads(markets):
 
     opportunities = []
 
-    for symbol, quotes in grouped.items():
+    for symbol, listings in markets.items():
 
-        if len(quotes) < 2:
+        if len(listings) < 2:
             continue
 
-        min_q = min(quotes, key=lambda x: x["price"])
-        max_q = max(quotes, key=lambda x: x["price"])
+        for a, b in itertools.combinations(listings, 2):
 
-        min_price = min_q["price"]
-        max_price = max_q["price"]
+            price_a = a["price"]
+            price_b = b["price"]
 
-        if min_price <= 0:
-            continue
+            if price_a == 0 or price_b == 0:
+                continue
 
-        spread = (max_price - min_price) / min_price
+            spread = abs(price_a - price_b) / min(price_a, price_b)
 
-        if spread < SPREAD_THRESHOLD:
-            continue
+            if spread > 0.002:  # 0.2%
 
-        opportunities.append({
-            "timestamp": datetime.utcnow().isoformat() + "Z",
-            "symbol": symbol,
-            "buy_from": min_q["exchange"],
-            "buy_price": min_price,
-            "sell_to": max_q["exchange"],
-            "sell_price": max_price,
-            "spread": round(spread, 6)
-        })
+                opp = {
+                    "symbol": symbol,
+                    "exchange_a": a["exchange"],
+                    "exchange_b": b["exchange"],
+                    "price_a": price_a,
+                    "price_b": price_b,
+                    "spread": spread
+                }
+
+                opportunities.append(opp)
 
     return opportunities
 
 
-def save_spreads(spreads):
+def save_opportunities(opps):
 
-    try:
+    os.makedirs("sources", exist_ok=True)
 
-        with open(OUTPUT_FILE, "w") as f:
-            json.dump(spreads, f, indent=2)
+    with open(SPREAD_FILE, "w") as f:
+        json.dump(opps, f, indent=2)
 
-        print(f"[SPREAD] opportunities saved: {len(spreads)}")
-
-    except Exception as e:
-
-        print("[SPREAD] save error:", e)
+    print("[SPREAD] opportunities saved:", len(opps))
 
 
-def main():
+def run():
 
     print("[SPREAD] engine start")
 
     signals = load_signals()
 
-    print(f"[SPREAD] signals loaded: {len(signals)}")
+    print("[SPREAD] signals loaded:", len(signals))
 
-    grouped = group_by_symbol(signals)
+    markets = group_by_symbol(signals)
 
-    spreads = calculate_spreads(grouped)
+    opportunities = find_spreads(markets)
 
-    print(f"[SPREAD] opportunities found: {len(spreads)}")
+    print("[SPREAD] opportunities found:", len(opportunities))
 
-    save_spreads(spreads)
+    save_opportunities(opportunities)
