@@ -1,8 +1,8 @@
 {
   "engine_version": "v1.0.0",
-  "last_updated": "2026-03-11T02:07:07.197754Z",
+  "last_updated": "2026-03-11T04:26:27.535323Z",
   "capital": 10000,
-  "equity": 10174.38,
+  "equity": 9936.18,
   "total_trades": 2,
-  "drawdown": 0
+  "drawdown": 117.25
 }
