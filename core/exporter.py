@@ -1,46 +1,41 @@
 import json
 import os
 
-INPUT_FILE = "sources/arbitrage.json"
-OUTPUT_FILE = "public/arbitrage_feed.json"
+INPUT_FILE = "sources/arbitrage_opportunities.json"
+OUTPUT_FILE = "public/arbitrage_signals.json"
 
 
-def load_arbitrage():
+def load_signals():
 
-    try:
-
-        with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-
-    except Exception as e:
-
-        print("[EXPORTER] load error:", e)
-
+    if not os.path.exists(INPUT_FILE):
+        print("[EXPORTER] signals file missing")
         return []
 
+    with open(INPUT_FILE) as f:
+        data = json.load(f)
 
-def save_feed(data):
-
-    try:
-
-        os.makedirs("public", exist_ok=True)
-
-        with open(OUTPUT_FILE, "w") as f:
-            json.dump(data, f, indent=2)
-
-        print(f"[EXPORTER] public feed updated: {len(data)} signals")
-
-    except Exception as e:
-
-        print("[EXPORTER] save error:", e)
+    print("[EXPORTER] signals found:", len(data))
+    return data
 
 
-def main():
+def save_public_feed(signals):
+
+    os.makedirs("public", exist_ok=True)
+
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(signals, f, indent=2)
+
+    print("[EXPORTER] public feed updated:", len(signals), "signals")
+
+
+def run():
 
     print("[EXPORTER] collecting arbitrage signals")
 
-    signals = load_arbitrage()
+    signals = load_signals()
 
-    print(f"[EXPORTER] signals found: {len(signals)}")
+    save_public_feed(signals)
 
-    save_feed(signals)
+
+def main():
+    run()
