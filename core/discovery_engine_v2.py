@@ -1,63 +1,71 @@
 import os
 import importlib
 import json
+import time
 
 CONNECTOR_PATH = "connectors/crypto"
-OUTPUT_FILE = "sources/discovery_signals.json"
+OUTPUT_FILE = "sources/signals.json"
 
 
 def load_all_connectors():
 
-    connectors = []
+    connectors = {}
 
     if not os.path.exists(CONNECTOR_PATH):
-        print("[DISCOVERY] connector path not found:", CONNECTOR_PATH)
+        print("[DISCOVERY] connector path missing:", CONNECTOR_PATH)
         return connectors
 
     files = [
         f for f in os.listdir(CONNECTOR_PATH)
-        if f.endswith(".py") and not f.startswith("_")
+        if f.endswith(".py") and f != "__init__.py"
     ]
 
-    for f in files:
+    for file in files:
 
-        module_name = f.replace(".py", "")
-        module_path = f"connectors.crypto.{module_name}"
+        name = file.replace(".py", "")
 
         try:
 
-            module = importlib.import_module(module_path)
-            connectors.append(module)
+            module = importlib.import_module(f"connectors.crypto.{name}")
+            connectors[name] = module
 
-            print("[CONNECTOR] loaded", module_path)
+            print(f"[CONNECTOR] loaded connectors.crypto.{name}")
 
         except Exception as e:
 
-            print("[CONNECTOR] failed:", module_path, e)
+            print(f"[CONNECTOR] failed {name}:", e)
 
     return connectors
 
 
-def collect_prices():
+def collect_signals(connectors):
 
-    connectors = load_all_connectors()
-    signals = []
+    all_signals = []
 
-    for c in connectors:
+    for name, conn in connectors.items():
 
         try:
 
-            data = c.fetch()
+            snapshots = conn.fetch_prices()
 
-            if data:
-                signals.extend(data)
-                print(f"[{c.__name__.split('.')[-1].upper()}] price snapshots:", len(data))
+            print(f"[{name.upper()}] price snapshots:", len(snapshots))
+
+            for s in snapshots:
+
+                signal = {
+                    "exchange": name,
+                    "symbol": s["symbol"],
+                    "price": s["price"],
+                    "timestamp": int(time.time())
+                }
+
+                all_signals.append(signal)
 
         except Exception as e:
 
-            print("[DISCOVERY] connector error:", c.__name__, e)
+            print(f"[{name.upper()}] request error:", e)
 
-    return signals
+    return all_signals
 
 
 def save_signals(signals):
@@ -65,14 +73,17 @@ def save_signals(signals):
     os.makedirs("sources", exist_ok=True)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(signals, f)
+        json.dump(signals, f, indent=2)
 
     print("[DISCOVERY] signals saved:", len(signals))
 
 
 def run():
 
-    signals = collect_prices()
+    connectors = load_all_connectors()
+
+    signals = collect_signals(connectors)
+
     save_signals(signals)
 
 
