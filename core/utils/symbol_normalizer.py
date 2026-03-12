@@ -2,60 +2,49 @@ import re
 
 
 BASE_ALIASES = {
-    "XBT": "BTC"
+    "XBT": "BTC",
+    "BCC": "BCH"
 }
 
 QUOTE_ALIASES = {
-    "USDT": "USD",
-    "USDC": "USD"
+    "USD": "USD",
+    "USDT": "USDT",
+    "USDC": "USDC"
 }
 
 
-def normalize_symbol(symbol: str) -> str:
-    """
-    Convert exchange-specific symbol formats to unified format.
-
-    Examples:
-        BTCUSDT  -> BTCUSD
-        BTC-USDT -> BTCUSD
-        BTC/USD  -> BTCUSD
-        XBTUSD   -> BTCUSD
-    """
+def normalize(symbol: str):
 
     if not symbol:
         return None
 
     s = symbol.upper()
 
-    # remove separators
-    s = s.replace("-", "")
-    s = s.replace("_", "")
-    s = s.replace("/", "")
+    # replace separators
+    s = s.replace("-", "/")
+    s = s.replace("_", "/")
 
-    # known quote currencies
-    quotes = ["USDT", "USDC", "USD", "BTC", "ETH", "EUR"]
+    parts = None
 
-    for q in quotes:
-        if s.endswith(q):
+    if "/" in s:
+        parts = s.split("/")
+    else:
 
-            base = s[:-len(q)]
-            quote = q
+        # try detect common quotes
+        for q in ["USDT", "USDC", "USD", "BTC", "ETH"]:
+            if s.endswith(q):
+                base = s[:-len(q)]
+                quote = q
+                parts = [base, quote]
+                break
 
-            base = BASE_ALIASES.get(base, base)
-            quote = QUOTE_ALIASES.get(quote, quote)
+    if not parts or len(parts) != 2:
+        return None
 
-            return base + quote
+    base = parts[0]
+    quote = parts[1]
 
-    return s
+    base = BASE_ALIASES.get(base, base)
+    quote = QUOTE_ALIASES.get(quote, quote)
 
-
-def normalize_snapshot(snapshot: dict):
-
-    if "symbol" not in snapshot:
-        return snapshot
-
-    normalized = normalize_symbol(snapshot["symbol"])
-
-    snapshot["symbol"] = normalized
-
-    return snapshot
+    return f"{base}_{quote}"
