@@ -5,6 +5,7 @@ from core import discovery_engine_v2
 from core import spread_engine
 from core import signal_filter_engine
 from core import arbitrage_matrix_engine
+from core import triangular_arbitrage_engine
 from core import funding_engine
 from core import arbitrage_detector
 from core import analyzer
@@ -35,6 +36,9 @@ def run_pipeline():
 
     print("\n[PIPELINE] running core.arbitrage_matrix_engine")
     arbitrage_matrix_engine.main()
+    
+    print("\n[PIPELINE] running core.triangular_arbitrage_engine")
+    triangular_arbitrage_engine.main()
 
     print("\n[PIPELINE] running core.funding_engine")
     funding_engine.main()
