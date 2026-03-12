@@ -1,114 +1,103 @@
 import json
 import os
-from datetime import datetime
-from itertools import permutations
-
+from collections import defaultdict
+from core.utils.symbol_normalizer import normalize
 
 INPUT_FILE = "sources/signals.json"
-OUTPUT_FILE = "sources/arbitrage_matrix.json"
+OUTPUT_FILE = "sources/matrix_opportunities.json"
 
-SPREAD_THRESHOLD = 0.004
+SPREAD_THRESHOLD = 0.002
 
 
 def load_signals():
 
-    try:
-        with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-    except Exception as e:
-        print("[MATRIX] load error:", e)
+    if not os.path.exists(INPUT_FILE):
+        print("[MATRIX] signals file missing")
         return []
 
+    with open(INPUT_FILE) as f:
+        data = json.load(f)
 
-def group_by_symbol(signals):
+    print("[MATRIX] signals loaded:", len(data))
+    return data
 
-    markets = {}
+
+def build_symbol_matrix(signals):
+
+    matrix = defaultdict(list)
 
     for s in signals:
 
-        symbol = s.get("symbol")
-        exchange = s.get("source")
-        price = s.get("price")
+        symbol = normalize(s["symbol"])
 
-        if not symbol or not exchange or not price:
+        if not symbol:
             continue
 
-        markets.setdefault(symbol, []).append({
-            "exchange": exchange,
-            "price": price
-        })
+        entry = {
+            "exchange": s["exchange"],
+            "price": s["price"],
+            "symbol": symbol
+        }
 
-    return markets
+        matrix[symbol].append(entry)
+
+    return matrix
 
 
-def compute_matrix(grouped):
+def detect_arbitrage(matrix):
 
     opportunities = []
 
-    for symbol, quotes in grouped.items():
+    for symbol, markets in matrix.items():
 
-        if len(quotes) < 2:
+        if len(markets) < 2:
             continue
 
-        for a, b in permutations(quotes, 2):
+        prices = sorted(markets, key=lambda x: x["price"])
 
-            buy_price = a["price"]
-            sell_price = b["price"]
+        lowest = prices[0]
+        highest = prices[-1]
 
-            if buy_price <= 0:
-                continue
+        spread = (highest["price"] - lowest["price"]) / lowest["price"]
 
-            spread = (sell_price - buy_price) / buy_price
-
-            if spread < SPREAD_THRESHOLD:
-                continue
+        if spread > SPREAD_THRESHOLD:
 
             opportunities.append({
-
-                "timestamp": datetime.utcnow().isoformat() + "Z",
                 "symbol": symbol,
-
-                "buy_exchange": a["exchange"],
-                "buy_price": buy_price,
-
-                "sell_exchange": b["exchange"],
-                "sell_price": sell_price,
-
-                "spread": round(spread, 6)
-
+                "buy_exchange": lowest["exchange"],
+                "sell_exchange": highest["exchange"],
+                "buy_price": lowest["price"],
+                "sell_price": highest["price"],
+                "spread": spread
             })
 
     return opportunities
 
 
-def save_results(results):
+def save_opportunities(opps):
 
-    try:
+    os.makedirs("sources", exist_ok=True)
 
-        os.makedirs("sources", exist_ok=True)
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(opps, f, indent=2)
 
-        with open(OUTPUT_FILE, "w") as f:
-            json.dump(results, f, indent=2)
-
-        print(f"[MATRIX] opportunities saved: {len(results)}")
-
-    except Exception as e:
-
-        print("[MATRIX] save error:", e)
+    print("[MATRIX] opportunities saved:", len(opps))
 
 
-def main():
+def run():
 
     print("[MATRIX] engine start")
 
     signals = load_signals()
 
-    print(f"[MATRIX] signals loaded: {len(signals)}")
+    matrix = build_symbol_matrix(signals)
 
-    grouped = group_by_symbol(signals)
+    opportunities = detect_arbitrage(matrix)
 
-    opportunities = compute_matrix(grouped)
+    print("[MATRIX] opportunities found:", len(opportunities))
 
-    print(f"[MATRIX] opportunities found: {len(opportunities)}")
+    save_opportunities(opportunities)
 
-    save_results(opportunities)
+
+def main():
+    run()
