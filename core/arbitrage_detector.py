@@ -1,92 +1,61 @@
 import json
 import os
-from datetime import datetime
 
-INPUT_FILE = "sources/arbitrage_matrix.json"
-OUTPUT_FILE = "sources/arbitrage.json"
-
-SPREAD_MIN = 0.004
-SPREAD_MAX = 0.05
+INPUT_FILE = "sources/matrix_opportunities.json"
+OUTPUT_FILE = "sources/arbitrage_opportunities.json"
 
 
 def load_matrix():
 
-    try:
-
-        with open(INPUT_FILE, "r") as f:
-
-            return json.load(f)
-
-    except Exception as e:
-
-        print("[ARBITRAGE] load error:", e)
-
+    if not os.path.exists(INPUT_FILE):
+        print("[ARBITRAGE] matrix file missing")
         return []
+
+    with open(INPUT_FILE) as f:
+        data = json.load(f)
+
+    print("[ARBITRAGE] matrix loaded:", len(data))
+
+    return data
 
 
 def filter_opportunities(matrix):
 
-    results = []
+    opportunities = []
 
     for m in matrix:
 
-        spread = m.get("spread")
+        spread = m.get("spread", 0)
 
-        if spread is None:
-            continue
+        if spread > 0.003:
 
-        if spread < SPREAD_MIN:
-            continue
+            opportunities.append(m)
 
-        if spread > SPREAD_MAX:
-            continue
-
-        results.append({
-
-            "timestamp": datetime.utcnow().isoformat() + "Z",
-
-            "symbol": m["symbol"],
-
-            "buy_exchange": m["buy_exchange"],
-            "buy_price": m["buy_price"],
-
-            "sell_exchange": m["sell_exchange"],
-            "sell_price": m["sell_price"],
-
-            "spread": spread
-
-        })
-
-    return results
+    return opportunities
 
 
-def save_results(results):
+def save_opportunities(opps):
 
-    try:
+    os.makedirs("sources", exist_ok=True)
 
-        os.makedirs("sources", exist_ok=True)
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(opps, f, indent=2)
 
-        with open(OUTPUT_FILE, "w") as f:
-
-            json.dump(results, f, indent=2)
-
-        print(f"[ARBITRAGE] opportunities saved: {len(results)}")
-
-    except Exception as e:
-
-        print("[ARBITRAGE] save error:", e)
+    print("[ARBITRAGE] opportunities saved:", len(opps))
 
 
-def main():
+def run():
 
     print("[ARBITRAGE] loading matrix opportunities")
 
     matrix = load_matrix()
 
-    print(f"[ARBITRAGE] matrix loaded: {len(matrix)}")
-
     opportunities = filter_opportunities(matrix)
 
-    print(f"[ARBITRAGE] opportunities found: {len(opportunities)}")
+    print("[ARBITRAGE] opportunities found:", len(opportunities))
 
-    save_results(opportunities)
+    save_opportunities(opportunities)
+
+
+def main():
+    run()
