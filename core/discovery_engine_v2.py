@@ -1,126 +1,80 @@
 import os
 import importlib
 import json
-import time
-
-from core.utils.symbol_normalizer import normalize_symbol
-
 
 CONNECTOR_PATH = "connectors/crypto"
-SIGNALS_FILE = "sources/signals.json"
+OUTPUT_FILE = "sources/discovery_signals.json"
 
 
 def load_all_connectors():
 
-    connectors = {}
+    connectors = []
 
     if not os.path.exists(CONNECTOR_PATH):
-        print("[DISCOVERY] connector path missing:", CONNECTOR_PATH)
+        print("[DISCOVERY] connector path not found:", CONNECTOR_PATH)
         return connectors
 
     files = [
         f for f in os.listdir(CONNECTOR_PATH)
-        if f.endswith(".py") and f != "__init__.py"
+        if f.endswith(".py") and not f.startswith("_")
     ]
 
-    for file in files:
+    for f in files:
 
-        name = file.replace(".py", "")
+        module_name = f.replace(".py", "")
+        module_path = f"connectors.crypto.{module_name}"
 
         try:
 
-            module = importlib.import_module(f"connectors.crypto.{name}")
+            module = importlib.import_module(module_path)
+            connectors.append(module)
 
-            if hasattr(module, "fetch_prices"):
-                connectors[name] = module
-                print(f"[CONNECTOR] loaded connectors.crypto.{name}")
-            else:
-                print(f"[CONNECTOR] skipped {name} (no fetch_prices)")
+            print("[CONNECTOR] loaded", module_path)
 
         except Exception as e:
-            print(f"[CONNECTOR] failed {name}:", e)
+
+            print("[CONNECTOR] failed:", module_path, e)
 
     return connectors
 
 
-def normalize_snapshot(snapshot):
+def collect_prices():
 
-    try:
+    connectors = load_all_connectors()
+    signals = []
 
-        symbol = snapshot.get("symbol")
-
-        if not symbol:
-            return None
-
-        normalized = normalize_symbol(symbol)
-
-        return {
-            "symbol": normalized,
-            "price": float(snapshot["price"])
-        }
-
-    except Exception:
-        return None
-
-
-def collect_signals(connectors):
-
-    all_signals = []
-
-    for name, conn in connectors.items():
+    for c in connectors:
 
         try:
 
-            snapshots = conn.fetch_prices()
+            data = c.fetch()
 
-            if not snapshots:
-                print(f"[{name.upper()}] no data")
-                continue
-
-            print(f"[{name.upper()}] price snapshots:", len(snapshots))
-
-            for s in snapshots:
-
-                normalized = normalize_snapshot(s)
-
-                if not normalized:
-                    continue
-
-                signal = {
-                    "exchange": name,
-                    "symbol": normalized["symbol"],
-                    "price": normalized["price"],
-                    "timestamp": int(time.time())
-                }
-
-                all_signals.append(signal)
+            if data:
+                signals.extend(data)
+                print(f"[{c.__name__.split('.')[-1].upper()}] price snapshots:", len(data))
 
         except Exception as e:
-            print(f"[{name.upper()}] request error:", e)
 
-    return all_signals
+            print("[DISCOVERY] connector error:", c.__name__, e)
+
+    return signals
 
 
 def save_signals(signals):
 
     os.makedirs("sources", exist_ok=True)
 
-    with open(SIGNALS_FILE, "w") as f:
-        json.dump(signals, f, indent=2)
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(signals, f)
 
     print("[DISCOVERY] signals saved:", len(signals))
 
 
 def run():
 
-    print("[DISCOVERY] starting")
-
-    connectors = load_all_connectors()
-
-    print("[DISCOVERY] connectors loaded:", len(connectors))
-
-    signals = collect_signals(connectors)
-
-    print("[DISCOVERY] signals collected:", len(signals))
-
+    signals = collect_prices()
     save_signals(signals)
+
+
+def main():
+    run()
