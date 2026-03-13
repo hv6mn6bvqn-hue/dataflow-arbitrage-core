@@ -9,6 +9,7 @@ from core import triangular_arbitrage_engine
 from core import funding_engine
 from core import arbitrage_detector
 from core import fee_engine
+from core import orderbook_engine
 from core import liquidity_engine
 from core import analyzer
 from core import signal_policy
@@ -50,6 +51,9 @@ def run_pipeline():
 
     print("\n[PIPELINE] running core.fee_engine")
     fee_engine.main()
+
+    print("\n[PIPELINE] running core.orderbook_engine")
+    orderbook_engine.main()
 
     print("\n[PIPELINE] running core.liquidity_engine")
     liquidity_engine.main()
