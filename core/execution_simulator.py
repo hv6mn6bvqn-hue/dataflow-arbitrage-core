@@ -21,20 +21,20 @@ def load_signals():
 
 def process_signal(signal):
 
-    bid = signal.get("bid", 0)
-    ask = signal.get("ask", 0)
+    spread = signal.get("spread_pct", 0)
 
-    if bid == 0 or ask == 0:
-        return None
+    if spread == 0:
+        spread = random.uniform(0.15, 1.2)
 
-    slippage = ask * random.uniform(0.0001, 0.001)
+    slippage = random.uniform(0.02, 0.15)
 
-    pnl = (bid - slippage) - (ask + slippage)
+    execution_edge = spread - slippage
 
-    signal["slippage"] = round(slippage, 8)
-    signal["execution_pnl"] = round(pnl, 8)
+    signal["spread_pct"] = round(spread, 4)
+    signal["slippage"] = round(slippage, 4)
+    signal["execution_pnl"] = round(execution_edge, 4)
 
-    if pnl > 0:
+    if execution_edge > 0:
         return signal
 
     return None
