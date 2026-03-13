@@ -25,7 +25,6 @@ def normalize_symbol(symbol):
         return None
 
     symbol = symbol.upper()
-
     symbol = symbol.replace("/", "")
     symbol = symbol.replace("-", "")
     symbol = symbol.replace("_", "")
@@ -33,52 +32,53 @@ def normalize_symbol(symbol):
     return symbol
 
 
-def fetch_orderbook(symbol):
+def fetch_all_books():
 
     try:
 
-        symbol = normalize_symbol(symbol)
+        url = "https://api.binance.com/api/v3/ticker/bookTicker"
 
-        if symbol is None:
-            return None, None
-
-        url = f"https://api.binance.com/api/v3/ticker/bookTicker?symbol={symbol}"
-
-        r = requests.get(url, timeout=5)
+        r = requests.get(url, timeout=10)
 
         if r.status_code != 200:
-            return None, None
+            print("[ORDERBOOK] api blocked")
+            return {}
 
         data = r.json()
 
-        if "bidPrice" not in data:
-            return None, None
+        books = {}
 
-        bid = float(data["bidPrice"])
-        ask = float(data["askPrice"])
+        for item in data:
 
-        return bid, ask
+            books[item["symbol"]] = {
+                "bid": float(item["bidPrice"]),
+                "ask": float(item["askPrice"])
+            }
 
-    except Exception:
+        print("[ORDERBOOK] books loaded:", len(books))
 
-        return None, None
+        return books
+
+    except Exception as e:
+
+        print("[ORDERBOOK] request error:", e)
+
+        return {}
 
 
-def enrich(signals):
+def enrich(signals, books):
 
     enriched = []
 
     for s in signals:
 
-        symbol = s.get("symbol")
+        symbol = normalize_symbol(s.get("symbol"))
 
-        bid, ask = fetch_orderbook(symbol)
-
-        if bid is None:
+        if symbol not in books:
             continue
 
-        s["bid"] = bid
-        s["ask"] = ask
+        s["bid"] = books[symbol]["bid"]
+        s["ask"] = books[symbol]["ask"]
         s["volume"] = s.get("volume", 1000)
 
         enriched.append(s)
@@ -102,7 +102,9 @@ def run():
 
     signals = load_signals()
 
-    enriched = enrich(signals)
+    books = fetch_all_books()
+
+    enriched = enrich(signals, books)
 
     print("[ORDERBOOK] signals enriched:", len(enriched))
 
