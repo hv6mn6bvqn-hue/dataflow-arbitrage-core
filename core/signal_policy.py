@@ -2,44 +2,93 @@ import json
 import os
 from datetime import datetime
 
-INPUT_FILE = "sources/risk_checked.json"
-OUTPUT_FILE = "sources/policy_decision.json"
+INPUT_FILE = "sources/capital_allocated.json"
+OUTPUT_FILE = "sources/decision.json"
+
+
+def load_signals():
+
+    if not os.path.exists(INPUT_FILE):
+        print("[POLICY] capital file missing")
+        return []
+
+    with open(INPUT_FILE) as f:
+        return json.load(f)
+
+
+def evaluate(signals):
+
+    if not signals:
+        return {
+            "engine_version": "v3.0.0",
+            "timestamp": datetime.utcnow().isoformat() + "Z",
+            "action": "HOLD",
+            "confidence": 0.0,
+            "state": "ACTIVE"
+        }
+
+    total_score = 0
+
+    for signal in signals:
+
+        spread = signal.get("spread_pct", 0)
+        slippage = signal.get("slippage", 0)
+        capital = signal.get("capital", 0)
+        strategy = signal.get("strategy", "")
+
+        score = spread - slippage
+
+        if strategy == "cross_exchange":
+            score += 0.25
+
+        elif strategy == "triangular":
+            score += 0.15
+
+        elif strategy == "micro_scalp":
+            score += 0.05
+
+        if capital >= 3000:
+            score += 0.10
+
+        total_score += score
+
+    avg_score = total_score / len(signals)
+
+    if avg_score > 0.9:
+        action = "EXECUTE_FULL"
+        confidence = 0.93
+
+    elif avg_score > 0.45:
+        action = "EXECUTE_PARTIAL"
+        confidence = 0.76
+
+    else:
+        action = "HOLD"
+        confidence = 0.42
+
+    return {
+        "engine_version": "v3.0.0",
+        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "action": action,
+        "confidence": confidence,
+        "avg_score": round(avg_score, 4),
+        "signals": len(signals),
+        "state": "ACTIVE"
+    }
 
 
 def run():
 
     print("[POLICY] evaluating signal")
 
-    action = "HOLD"
-    confidence = 0.50
+    signals = load_signals()
 
-    if os.path.exists(INPUT_FILE):
-
-        with open(INPUT_FILE) as f:
-            data = json.load(f)
-
-        if len(data) > 10:
-            action = "EXECUTE_FULL"
-            confidence = 0.91
-        elif len(data) > 3:
-            action = "EXECUTE_SMALL"
-            confidence = 0.78
-        elif len(data) > 0:
-            action = "HOLD"
-            confidence = 0.61
-
-    decision = {
-        "engine_version": "v2.0.0",
-        "timestamp": datetime.utcnow().isoformat() + "Z",
-        "action": action,
-        "confidence": confidence,
-        "state": "ACTIVE"
-    }
+    decision = evaluate(signals)
 
     with open(OUTPUT_FILE, "w") as f:
         json.dump(decision, f, indent=2)
 
-    print(f"[POLICY] action={action}")
+    print(f"[POLICY] action={decision['action']}")
     print("[POLICY] decision saved")
 
 
