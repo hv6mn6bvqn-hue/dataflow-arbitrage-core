@@ -1,57 +1,47 @@
 import json
+import os
 from datetime import datetime
 
-DECISION_FILE = "core/last_decision.json"
-ENGINE_VERSION = "v1.0.0"
-
-EXECUTE_THRESHOLD = 0.75
-ALERT_THRESHOLD = 0.50
+INPUT_FILE = "sources/risk_checked.json"
+OUTPUT_FILE = "sources/policy_decision.json"
 
 
-def evaluate_signal(signal: dict) -> dict:
-    confidence = float(signal.get("confidence", 0))
+def run():
 
-    if confidence >= EXECUTE_THRESHOLD:
-        action = "EXECUTE"
-        state = "ACTIVE"
-    elif confidence >= ALERT_THRESHOLD:
-        action = "ALERT"
-        state = "ACTIVE"
-    else:
-        action = "SKIP"
-        state = "IDLE"
-
-    return {
-        "engine_version": ENGINE_VERSION,
-        "timestamp": datetime.utcnow().isoformat() + "Z",
-        "action": action,
-        "confidence": round(confidence, 4),
-        "state": state
-    }
-
-
-def save_decision(decision: dict):
-    with open(DECISION_FILE, "w") as f:
-        json.dump(decision, f, indent=2)
-
-
-def load_signal() -> dict:
-    return {
-        "confidence": 0.82
-    }
-
-
-def main():
     print("[POLICY] evaluating signal")
 
-    signal = load_signal()
-    decision = evaluate_signal(signal)
+    action = "HOLD"
+    confidence = 0.50
 
-    save_decision(decision)
+    if os.path.exists(INPUT_FILE):
 
-    print(f"[POLICY] action={decision['action']}")
+        with open(INPUT_FILE) as f:
+            data = json.load(f)
+
+        if len(data) > 10:
+            action = "EXECUTE_FULL"
+            confidence = 0.91
+        elif len(data) > 3:
+            action = "EXECUTE_SMALL"
+            confidence = 0.78
+        elif len(data) > 0:
+            action = "HOLD"
+            confidence = 0.61
+
+    decision = {
+        "engine_version": "v2.0.0",
+        "timestamp": datetime.utcnow().isoformat() + "Z",
+        "action": action,
+        "confidence": confidence,
+        "state": "ACTIVE"
+    }
+
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(decision, f, indent=2)
+
+    print(f"[POLICY] action={action}")
     print("[POLICY] decision saved")
 
 
-if __name__ == "__main__":
-    main()
+def main():
+    run()
