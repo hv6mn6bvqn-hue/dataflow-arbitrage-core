@@ -2,7 +2,7 @@ import json
 import os
 import random
 
-INPUT_FILE = "sources/liquidity_signals.json"
+INPUT_FILE = "sources/liquidity_filtered.json"
 OUTPUT_FILE = "sources/execution_ready.json"
 
 
@@ -27,20 +27,14 @@ def process_signal(signal):
     if bid == 0 or ask == 0:
         return None
 
-    latency = random.randint(20, 100)
-    slippage = ask * random.uniform(0.0001, 0.0012)
+    slippage = ask * random.uniform(0.0001, 0.001)
 
-    entry = ask + slippage
-    exit_price = bid - slippage
+    pnl = (bid - slippage) - (ask + slippage)
 
-    pnl = exit_price - entry
-
-    signal["latency_ms"] = latency
     signal["slippage"] = round(slippage, 8)
     signal["execution_pnl"] = round(pnl, 8)
 
     if pnl > 0:
-        signal["execution_score"] = "PASS"
         return signal
 
     return None
@@ -59,11 +53,10 @@ def run():
         if processed:
             result.append(processed)
 
-    print("[EXECUTION] execution-valid signals:", len(result))
-
     with open(OUTPUT_FILE, "w") as f:
         json.dump(result, f, indent=2)
 
+    print("[EXECUTION] execution-valid signals:", len(result))
     print("[EXECUTION] signals saved:", len(result))
 
 
