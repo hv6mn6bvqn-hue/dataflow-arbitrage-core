@@ -5,6 +5,7 @@ import requests
 INPUT_FILE = "sources/arbitrage_after_fees.json"
 OUTPUT_FILE = "sources/orderbook_data.json"
 
+
 def load_signals():
 
     if not os.path.exists(INPUT_FILE):
@@ -18,13 +19,40 @@ def load_signals():
     return data
 
 
+def normalize_symbol(symbol):
+
+    if symbol is None:
+        return None
+
+    symbol = symbol.upper()
+
+    symbol = symbol.replace("/", "")
+    symbol = symbol.replace("-", "")
+    symbol = symbol.replace("_", "")
+
+    return symbol
+
+
 def fetch_orderbook(symbol):
 
-    # пример запроса к публичному API (можно расширять под другие биржи)
     try:
-        url = f"https://api.binance.com/api/v3/ticker/bookTicker?symbol={symbol.replace('/', '')}"
+
+        symbol = normalize_symbol(symbol)
+
+        if symbol is None:
+            return None, None
+
+        url = f"https://api.binance.com/api/v3/ticker/bookTicker?symbol={symbol}"
+
         r = requests.get(url, timeout=5)
+
+        if r.status_code != 200:
+            return None, None
+
         data = r.json()
+
+        if "bidPrice" not in data:
+            return None, None
 
         bid = float(data["bidPrice"])
         ask = float(data["askPrice"])
@@ -32,10 +60,11 @@ def fetch_orderbook(symbol):
         return bid, ask
 
     except Exception:
+
         return None, None
 
 
-def enrich_with_orderbook(signals):
+def enrich(signals):
 
     enriched = []
 
@@ -50,8 +79,6 @@ def enrich_with_orderbook(signals):
 
         s["bid"] = bid
         s["ask"] = ask
-
-        # условная оценка объёма
         s["volume"] = s.get("volume", 1000)
 
         enriched.append(s)
@@ -59,14 +86,14 @@ def enrich_with_orderbook(signals):
     return enriched
 
 
-def save(signals):
+def save(data):
 
     os.makedirs("sources", exist_ok=True)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(signals, f, indent=2)
+        json.dump(data, f, indent=2)
 
-    print("[ORDERBOOK] signals saved:", len(signals))
+    print("[ORDERBOOK] signals saved:", len(data))
 
 
 def run():
@@ -75,7 +102,7 @@ def run():
 
     signals = load_signals()
 
-    enriched = enrich_with_orderbook(signals)
+    enriched = enrich(signals)
 
     print("[ORDERBOOK] signals enriched:", len(enriched))
 
