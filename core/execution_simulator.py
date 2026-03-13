@@ -2,7 +2,7 @@ import json
 import os
 import random
 
-INPUT_FILE = "sources/liquidity_filtered.json"
+INPUT_FILE = "sources/arbitrage_liquid.json"
 OUTPUT_FILE = "sources/execution_ready.json"
 
 
@@ -50,6 +50,7 @@ def run():
 
     for signal in signals:
         processed = process_signal(signal)
+
         if processed:
             result.append(processed)
 
