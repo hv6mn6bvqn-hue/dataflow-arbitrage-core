@@ -1,16 +1,17 @@
 import json
 import os
 
-INPUT_FILE = "sources/arbitrage_after_fees.json"
+INPUT_FILE = "sources/orderbook_data.json"
 OUTPUT_FILE = "sources/arbitrage_liquid.json"
 
-MIN_NOTIONAL = 1000        # минимальный объём сделки в quote (например USDT)
-MAX_SPREAD_SLIPPAGE = 0.0015  # допустимое ухудшение цены (0.15%)
+MIN_NOTIONAL = 500
+MAX_SLIPPAGE = 0.003
 
-def load_signals():
+
+def load():
 
     if not os.path.exists(INPUT_FILE):
-        print("[LIQ] signals file missing")
+        print("[LIQ] orderbook file missing")
         return []
 
     with open(INPUT_FILE) as f:
@@ -20,42 +21,29 @@ def load_signals():
     return data
 
 
-def estimate_depth(signal):
-
-    """
-    Упрощённая модель ликвидности.
-    Если есть поля bid/ask/volume — используем их.
-    Иначе применяем консервативную оценку.
-    """
-
-    bid = signal.get("bid", signal.get("price", 0))
-    ask = signal.get("ask", signal.get("price", 0))
-    volume = signal.get("volume", 0)
-
-    mid_price = (bid + ask) / 2 if bid and ask else signal.get("price", 0)
-
-    notional = volume * mid_price
-
-    slippage = abs(ask - bid) / mid_price if mid_price else 1
-
-    signal["estimated_notional"] = notional
-    signal["estimated_slippage"] = slippage
-
-    return signal
-
-
 def filter_liquidity(signals):
 
     filtered = []
 
     for s in signals:
 
-        s = estimate_depth(s)
+        bid = s.get("bid")
+        ask = s.get("ask")
+        volume = s.get("volume", 0)
 
-        if s["estimated_notional"] < MIN_NOTIONAL:
+        mid = (bid + ask) / 2
+
+        slippage = abs(ask - bid) / mid
+
+        notional = volume * mid
+
+        s["slippage"] = slippage
+        s["notional"] = notional
+
+        if notional < MIN_NOTIONAL:
             continue
 
-        if s["estimated_slippage"] > MAX_SPREAD_SLIPPAGE:
+        if slippage > MAX_SLIPPAGE:
             continue
 
         filtered.append(s)
@@ -63,7 +51,7 @@ def filter_liquidity(signals):
     return filtered
 
 
-def save_signals(signals):
+def save(signals):
 
     os.makedirs("sources", exist_ok=True)
 
@@ -77,13 +65,13 @@ def run():
 
     print("[LIQ] liquidity engine start")
 
-    signals = load_signals()
+    signals = load()
 
     filtered = filter_liquidity(signals)
 
     print("[LIQ] signals after liquidity filter:", len(filtered))
 
-    save_signals(filtered)
+    save(filtered)
 
 
 def main():
