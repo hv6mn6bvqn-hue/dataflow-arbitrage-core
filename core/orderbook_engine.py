@@ -25,48 +25,65 @@ def normalize_symbol(symbol):
         return None
 
     symbol = symbol.upper()
-    symbol = symbol.replace("/", "")
-    symbol = symbol.replace("-", "")
-    symbol = symbol.replace("_", "")
+    symbol = symbol.replace("/", "-")
+    symbol = symbol.replace("_", "-")
 
     return symbol
 
 
-def fetch_all_books():
+def fetch_okx_book(symbol):
 
     try:
 
-        url = "https://api.binance.com/api/v3/ticker/bookTicker"
+        url = f"https://www.okx.com/api/v5/market/ticker?instId={symbol}"
 
-        r = requests.get(url, timeout=10)
+        r = requests.get(url, timeout=5)
 
         if r.status_code != 200:
-            print("[ORDERBOOK] api blocked")
-            return {}
+            return None, None
 
         data = r.json()
 
-        books = {}
+        if "data" not in data or len(data["data"]) == 0:
+            return None, None
 
-        for item in data:
+        bid = float(data["data"][0]["bidPx"])
+        ask = float(data["data"][0]["askPx"])
 
-            books[item["symbol"]] = {
-                "bid": float(item["bidPrice"]),
-                "ask": float(item["askPrice"])
-            }
+        return bid, ask
 
-        print("[ORDERBOOK] books loaded:", len(books))
-
-        return books
-
-    except Exception as e:
-
-        print("[ORDERBOOK] request error:", e)
-
-        return {}
+    except Exception:
+        return None, None
 
 
-def enrich(signals, books):
+def fetch_kucoin_book(symbol):
+
+    try:
+
+        kucoin_symbol = symbol.replace("-", "")
+
+        url = f"https://api.kucoin.com/api/v1/market/orderbook/level1?symbol={symbol}"
+
+        r = requests.get(url, timeout=5)
+
+        if r.status_code != 200:
+            return None, None
+
+        data = r.json()
+
+        if "data" not in data:
+            return None, None
+
+        bid = float(data["data"]["bestBid"])
+        ask = float(data["data"]["bestAsk"])
+
+        return bid, ask
+
+    except Exception:
+        return None, None
+
+
+def enrich(signals):
 
     enriched = []
 
@@ -74,11 +91,16 @@ def enrich(signals, books):
 
         symbol = normalize_symbol(s.get("symbol"))
 
-        if symbol not in books:
+        bid, ask = fetch_okx_book(symbol)
+
+        if bid is None:
+            bid, ask = fetch_kucoin_book(symbol)
+
+        if bid is None:
             continue
 
-        s["bid"] = books[symbol]["bid"]
-        s["ask"] = books[symbol]["ask"]
+        s["bid"] = bid
+        s["ask"] = ask
         s["volume"] = s.get("volume", 1000)
 
         enriched.append(s)
@@ -102,9 +124,7 @@ def run():
 
     signals = load_signals()
 
-    books = fetch_all_books()
-
-    enriched = enrich(signals, books)
+    enriched = enrich(signals)
 
     print("[ORDERBOOK] signals enriched:", len(enriched))
 
