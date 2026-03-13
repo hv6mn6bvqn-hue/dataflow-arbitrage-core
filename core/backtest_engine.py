@@ -1,36 +1,76 @@
-from pathlib import Path
-from datetime import datetime
 import json
+import os
+import random
 
-from core.feed_loader import load_feed
-from core.signal_policy import evaluate_signal
-
-BACKTEST_PATH = Path("docs/backtest/index.json")
+INPUT_FILE = "sources/risk_checked.json"
+OUTPUT_FILE = "sources/backtest_report.json"
 
 
-def run_backtest():
-    feed = load_feed()  # <-- теперь это list
-    results = []
+def load_signals():
 
-    for signal in feed:
-        decision = evaluate_signal(signal)
+    if not os.path.exists(INPUT_FILE):
+        print("[BACKTEST] input file missing")
+        return []
 
-        results.append({
-            "evaluated_at": datetime.utcnow().isoformat() + "Z",
-            "signal": signal,
-            "decision": decision
-        })
+    with open(INPUT_FILE) as f:
+        return json.load(f)
 
-    output = {
-        "engine_version": "v1.0.0",
-        "generated_at": datetime.utcnow().isoformat() + "Z",
-        "total_signals": len(feed),
-        "results": results
+
+def simulate(signal):
+
+    pnl = signal.get("execution_pnl", 0)
+
+    variation = random.uniform(-0.5, 1.5)
+
+    result = pnl * variation
+
+    signal["backtest_pnl"] = round(result, 8)
+
+    if result > 0:
+        signal["backtest_result"] = "WIN"
+    else:
+        signal["backtest_result"] = "LOSS"
+
+    return signal
+
+
+def run():
+
+    print("[BACKTEST] engine start")
+
+    signals = load_signals()
+
+    result = []
+
+    wins = 0
+    losses = 0
+
+    for signal in signals:
+
+        tested = simulate(signal)
+
+        if tested["backtest_result"] == "WIN":
+            wins += 1
+        else:
+            losses += 1
+
+        result.append(tested)
+
+    report = {
+        "total": len(result),
+        "wins": wins,
+        "losses": losses,
+        "winrate": round(wins / len(result), 4) if result else 0,
+        "signals": result
     }
 
-    BACKTEST_PATH.parent.mkdir(parents=True, exist_ok=True)
-    BACKTEST_PATH.write_text(json.dumps(output, indent=2))
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(report, f, indent=2)
+
+    print("[BACKTEST] total:", len(result))
+    print("[BACKTEST] wins:", wins)
+    print("[BACKTEST] losses:", losses)
 
 
-if __name__ == "__main__":
-    run_backtest()
+def main():
+    run()
