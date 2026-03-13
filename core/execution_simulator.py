@@ -2,7 +2,7 @@ import json
 import os
 import random
 
-INPUT_FILE = "sources/liquidity_checked.json"
+INPUT_FILE = "sources/liquid_signals.json"
 OUTPUT_FILE = "sources/execution_ready.json"
 
 
@@ -27,23 +27,21 @@ def simulate_execution(signal):
     if bid == 0 or ask == 0:
         return None
 
-    spread = ask - bid
-
     latency_ms = random.randint(20, 120)
 
     slippage_factor = random.uniform(0.0001, 0.0015)
 
     slippage = ask * slippage_factor
 
-    executable_entry = ask + slippage
-    executable_exit = bid - slippage
+    entry = ask + slippage
+    exit_price = bid - slippage
 
-    pnl = executable_exit - executable_entry
+    pnl = exit_price - entry
 
     signal["latency_ms"] = latency_ms
     signal["slippage"] = round(slippage, 8)
-    signal["entry_exec"] = round(executable_entry, 8)
-    signal["exit_exec"] = round(executable_exit, 8)
+    signal["entry_exec"] = round(entry, 8)
+    signal["exit_exec"] = round(exit_price, 8)
     signal["execution_pnl"] = round(pnl, 8)
 
     if pnl >= 0:
@@ -58,9 +56,9 @@ def process(signals):
 
     result = []
 
-    for s in signals:
+    for signal in signals:
 
-        executed = simulate_execution(s)
+        executed = simulate_execution(signal)
 
         if executed is None:
             continue
