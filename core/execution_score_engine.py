@@ -6,6 +6,7 @@ OUTPUT_FILE = "sources/execution_scored.json"
 
 
 def load_signals():
+
     if not os.path.exists(INPUT_FILE):
         print("[EXEC_SCORE] input missing")
         return []
@@ -14,14 +15,16 @@ def load_signals():
         return json.load(f)
 
 
-def score_signal(signal):
+def score(signal):
 
-    spread = signal.get("spread_pct", 0)
-    slippage = signal.get("slippage", 0)
+    spread = signal.get("execution_spread", 0)
+    slippage = signal.get("slippage", 0.12)
 
-    score = spread - slippage
+    raw_score = spread - slippage
 
-    signal["execution_score"] = round(score, 4)
+    final_score = round(raw_score, 4)
+
+    signal["execution_score"] = final_score
 
     return signal
 
@@ -32,7 +35,7 @@ def run():
 
     signals = load_signals()
 
-    scored = [score_signal(s) for s in signals]
+    scored = [score(s) for s in signals]
 
     with open(OUTPUT_FILE, "w") as f:
         json.dump(scored, f, indent=2)
