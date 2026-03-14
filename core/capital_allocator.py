@@ -1,13 +1,23 @@
 import json
 import os
 
-INPUT_FILE = "sources/strategy_signals.json"
+INPUT_FILE = "sources/routed_signals.json"
 OUTPUT_FILE = "sources/capital_allocated.json"
+
+
+def load_signals():
+
+    if not os.path.exists(INPUT_FILE):
+        print("[ALLOCATOR] strategy file missing")
+        return []
+
+    with open(INPUT_FILE) as f:
+        return json.load(f)
 
 
 def allocate(signal):
 
-    strategy = signal.get("strategy")
+    strategy = signal.get("strategy", "")
 
     if strategy == "cross_exchange":
         signal["capital"] = 3000
@@ -25,19 +35,14 @@ def run():
 
     print("[ALLOCATOR] capital allocator start")
 
-    if not os.path.exists(INPUT_FILE):
-        print("[ALLOCATOR] strategy file missing")
-        return
+    signals = load_signals()
 
-    with open(INPUT_FILE) as f:
-        signals = json.load(f)
-
-    result = [allocate(s) for s in signals]
+    allocated = [allocate(s) for s in signals]
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(result, f, indent=2)
+        json.dump(allocated, f, indent=2)
 
-    print("[ALLOCATOR] allocated:", len(result))
+    print(f"[ALLOCATOR] allocated: {len(allocated)}")
 
 
 def main():
