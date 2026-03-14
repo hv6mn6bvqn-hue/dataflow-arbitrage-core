@@ -18,11 +18,17 @@ def load_signals():
 def score(signal):
 
     spread = signal.get("execution_spread", 0)
-    slippage = signal.get("slippage", 0.12)
 
-    raw_score = spread - slippage
+    if spread > 0.3:
+        slippage = 0.05
+    elif spread > 0.15:
+        slippage = 0.03
+    else:
+        slippage = 0.015
 
-    final_score = round(raw_score, 4)
+    signal["slippage"] = slippage
+
+    final_score = round(spread - slippage, 4)
 
     signal["execution_score"] = final_score
 
