@@ -1,40 +1,27 @@
 import json
 import os
-import random
 
 INPUT_FILE = "sources/arbitrage_liquid.json"
-OUTPUT_FILE = "sources/execution_ready.json"
+OUTPUT_FILE = "sources/execution_validated.json"
 
 
 def load_signals():
 
     if not os.path.exists(INPUT_FILE):
-        print("[EXECUTION] liquidity file missing")
+        print("[EXECUTION] input missing")
         return []
 
     with open(INPUT_FILE) as f:
-        data = json.load(f)
-
-    print("[EXECUTION] signals loaded:", len(data))
-    return data
+        return json.load(f)
 
 
-def process_signal(signal):
+def validate(signal):
 
     spread = signal.get("spread_pct", 0)
+    liquidity = signal.get("liquidity_score", 0)
 
-    if spread == 0:
-        spread = random.uniform(0.15, 1.2)
-
-    slippage = random.uniform(0.02, 0.15)
-
-    execution_edge = spread - slippage
-
-    signal["spread_pct"] = round(spread, 4)
-    signal["slippage"] = round(slippage, 4)
-    signal["execution_pnl"] = round(execution_edge, 4)
-
-    if execution_edge > 0:
+    if spread > 0.2 and liquidity > 0:
+        signal["execution_valid"] = True
         return signal
 
     return None
@@ -46,19 +33,20 @@ def run():
 
     signals = load_signals()
 
-    result = []
+    print(f"[EXECUTION] signals loaded: {len(signals)}")
+
+    validated = []
 
     for signal in signals:
-        processed = process_signal(signal)
-
-        if processed:
-            result.append(processed)
+        result = validate(signal)
+        if result:
+            validated.append(result)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(result, f, indent=2)
+        json.dump(validated, f, indent=2)
 
-    print("[EXECUTION] execution-valid signals:", len(result))
-    print("[EXECUTION] signals saved:", len(result))
+    print(f"[EXECUTION] execution-valid signals: {len(validated)}")
+    print("[EXECUTION] signals saved")
 
 
 def main():
