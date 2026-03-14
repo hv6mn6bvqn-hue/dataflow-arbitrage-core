@@ -1,34 +1,17 @@
 import json
 import os
 
-INPUT_FILE = "sources/policy_decision.json"
+INPUT_FILE = "sources/decision.json"
 
 
 def load_decision():
 
     if not os.path.exists(INPUT_FILE):
-        print("[ENGINE] policy file missing")
+        print("[ENGINE] decision file missing")
         return None
 
     with open(INPUT_FILE) as f:
         return json.load(f)
-
-
-def execute(decision):
-
-    action = decision.get("action", "HOLD")
-
-    if action == "EXECUTE_FULL":
-        print("[ENGINE] full execution approved")
-
-    elif action == "EXECUTE_SMALL":
-        print("[ENGINE] reduced execution approved")
-
-    elif action == "HOLD":
-        print("[ENGINE] hold state")
-
-    else:
-        print("[ENGINE] unknown action")
 
 
 def run():
@@ -40,7 +23,16 @@ def run():
     if not decision:
         return
 
-    execute(decision)
+    action = decision.get("action")
+
+    if action == "EXECUTE_FULL":
+        print("[ENGINE] full execution approved")
+
+    elif action == "EXECUTE_PARTIAL":
+        print("[ENGINE] partial execution approved")
+
+    else:
+        print("[ENGINE] hold state")
 
     print("[ENGINE] completed")
 
