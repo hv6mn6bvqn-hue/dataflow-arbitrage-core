@@ -2,14 +2,14 @@ import json
 import os
 from datetime import datetime
 
-INPUT_FILE = "sources/capital_allocated.json"
+INPUT_FILE = "sources/latency_checked.json"
 OUTPUT_FILE = "sources/decision.json"
 
 
 def load_signals():
 
     if not os.path.exists(INPUT_FILE):
-        print("[POLICY] capital file missing")
+        print("[POLICY] input missing")
         return []
 
     with open(INPUT_FILE) as f:
@@ -20,7 +20,7 @@ def evaluate(signals):
 
     if not signals:
         return {
-            "engine_version": "v3.0.0",
+            "engine_version": "v3.1.0",
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "action": "HOLD",
             "confidence": 0.0,
@@ -31,47 +31,33 @@ def evaluate(signals):
 
     for signal in signals:
 
-        spread = signal.get("spread_pct", 0)
-        slippage = signal.get("slippage", 0)
-        capital = signal.get("capital", 0)
-        strategy = signal.get("strategy", "")
+        score = signal.get("execution_score", 0)
+        latency = signal.get("latency", 0)
 
-        score = spread - slippage
+        adjusted = score - latency
 
-        if strategy == "cross_exchange":
-            score += 0.25
+        total_score += adjusted
 
-        elif strategy == "triangular":
-            score += 0.15
+    avg = total_score / len(signals)
 
-        elif strategy == "micro_scalp":
-            score += 0.05
-
-        if capital >= 3000:
-            score += 0.10
-
-        total_score += score
-
-    avg_score = total_score / len(signals)
-
-    if avg_score > 0.9:
+    if avg > 0.9:
         action = "EXECUTE_FULL"
         confidence = 0.93
 
-    elif avg_score > 0.45:
+    elif avg > 0.45:
         action = "EXECUTE_PARTIAL"
         confidence = 0.76
 
     else:
         action = "HOLD"
-        confidence = 0.42
+        confidence = 0.40
 
     return {
-        "engine_version": "v3.0.0",
+        "engine_version": "v3.1.0",
         "timestamp": datetime.utcnow().isoformat() + "Z",
         "action": action,
         "confidence": confidence,
-        "avg_score": round(avg_score, 4),
+        "avg_score": round(avg, 4),
         "signals": len(signals),
         "state": "ACTIVE"
     }
