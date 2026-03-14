@@ -2,8 +2,8 @@ import json
 import os
 import random
 
-INPUT_FILE = "sources/policy_decision.json"
-OUTPUT_FILE = "sources/portfolio_report.json"
+INPUT_FILE = "sources/decision.json"
+OUTPUT_FILE = "sources/portfolio_state.json"
 
 
 def load_decision():
@@ -14,6 +14,17 @@ def load_decision():
 
     with open(INPUT_FILE) as f:
         return json.load(f)
+
+
+def simulate_pnl(action):
+
+    if action == "EXECUTE_FULL":
+        return round(random.uniform(-200, 400), 2)
+
+    if action == "EXECUTE_PARTIAL":
+        return round(random.uniform(-80, 180), 2)
+
+    return 0
 
 
 def run():
@@ -28,31 +39,21 @@ def run():
 
     print("[PORTFOLIO] loaded decision:", decision)
 
-    equity = 10000
-
     action = decision.get("action")
+    pnl = simulate_pnl(action)
 
-    if action == "EXECUTE_FULL":
-        pnl = random.uniform(-150, 250)
+    equity = 10000 + pnl
 
-    elif action == "EXECUTE_SMALL":
-        pnl = random.uniform(-50, 120)
-
-    else:
-        pnl = 0
-
-    equity += pnl
-
-    report = {
+    state = {
         "action": action,
-        "pnl": round(pnl, 2),
-        "equity": round(equity, 2)
+        "pnl": pnl,
+        "equity": equity
     }
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(report, f, indent=2)
+        json.dump(state, f, indent=2)
 
-    print(f"[PORTFOLIO] trade executed | pnl={round(pnl,2)} | equity={round(equity,2)}")
+    print(f"[PORTFOLIO] trade executed | pnl={pnl} | equity={equity}")
     print("[PORTFOLIO] completed")
 
 
