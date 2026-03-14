@@ -18,10 +18,13 @@ def load_signals():
 def validate(signal):
 
     spread = signal.get("spread_pct", 0)
-    liquidity = signal.get("liquidity_score", 0)
 
-    if spread > 0.2 and liquidity > 0:
+    if spread > 0.05:
         signal["execution_valid"] = True
+
+        if "slippage" not in signal:
+            signal["slippage"] = 0.12
+
         return signal
 
     return None
