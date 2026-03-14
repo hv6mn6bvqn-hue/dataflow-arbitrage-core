@@ -1,41 +1,41 @@
 import json
 import os
 
-INPUT_FILE = "sources/execution_ready.json"
-OUTPUT_FILE = "sources/position_ready.json"
+INPUT_FILE = "sources/capital_allocated.json"
+OUTPUT_FILE = "sources/position_sized.json"
+
+
+def load_signals():
+
+    if not os.path.exists(INPUT_FILE):
+        print("[SIZE] execution file missing")
+        return []
+
+    with open(INPUT_FILE) as f:
+        return json.load(f)
+
+
+def size(signal):
+
+    capital = signal.get("capital", 0)
+
+    signal["position_size"] = round(capital * 0.25, 2)
+
+    return signal
 
 
 def run():
 
     print("[SIZE] position sizing start")
 
-    if not os.path.exists(INPUT_FILE):
-        print("[SIZE] execution file missing")
-        return
+    signals = load_signals()
 
-    with open(INPUT_FILE) as f:
-        data = json.load(f)
-
-    result = []
-
-    for signal in data:
-
-        pnl = signal.get("execution_pnl", 0)
-
-        if pnl > 1:
-            size = 1.0
-        elif pnl > 0.3:
-            size = 0.5
-        else:
-            size = 0.2
-
-        signal["position_size"] = size
-        result.append(signal)
+    sized = [size(s) for s in signals]
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(result, f, indent=2)
+        json.dump(sized, f, indent=2)
 
-    print("[SIZE] signals sized:", len(result))
+    print(f"[SIZE] signals sized: {len(sized)}")
 
 
 def main():
