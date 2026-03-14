@@ -1,39 +1,49 @@
 import json
 import os
 
-INPUT_FILE = "sources/position_ready.json"
-OUTPUT_FILE = "sources/risk_checked.json"
+INPUT_FILE = "sources/position_sized.json"
+OUTPUT_FILE = "sources/risk_approved.json"
+
+
+def load_signals():
+
+    if not os.path.exists(INPUT_FILE):
+        print("[RISK] position file missing")
+        return []
+
+    with open(INPUT_FILE) as f:
+        return json.load(f)
+
+
+def approve(signal):
+
+    position = signal.get("position_size", 0)
+
+    if position <= 1000:
+        signal["risk_status"] = "approved"
+        return signal
+
+    return None
 
 
 def run():
 
     print("[RISK] drawdown guard start")
 
-    if not os.path.exists(INPUT_FILE):
-        print("[RISK] position file missing")
-        return
+    signals = load_signals()
 
-    with open(INPUT_FILE) as f:
-        data = json.load(f)
+    approved = []
 
-    equity = 10000
+    for signal in signals:
+        result = approve(signal)
 
-    result = []
-
-    for signal in data:
-
-        if equity < 9500:
-            signal["risk_mode"] = "REDUCED"
-            signal["position_size"] *= 0.5
-        else:
-            signal["risk_mode"] = "NORMAL"
-
-        result.append(signal)
+        if result:
+            approved.append(result)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(result, f, indent=2)
+        json.dump(approved, f, indent=2)
 
-    print("[RISK] signals approved:", len(result))
+    print(f"[RISK] signals approved: {len(approved)}")
 
 
 def main():
