@@ -36,6 +36,7 @@ from core.execution_memory import main as execution_memory
 from core.fill_probability_engine import main as fill_probability_engine
 from core.partial_fill_guard import main as partial_fill_guard
 from core.failed_execution_recovery import main as failed_execution_recovery
+from core.arbitrage_heatmap_engine import main as arbitrage_heatmap_engine
 
 from core.analyzer import main as analyzer
 from core.signal_policy import main as signal_policy
@@ -47,7 +48,6 @@ from core.performance_engine import main as performance_engine
 
 
 def run_step(name, func):
-
     print(f"\n[PIPELINE] running {name}")
 
     try:
@@ -98,6 +98,7 @@ def main():
         ("core.fill_probability_engine", fill_probability_engine),
         ("core.partial_fill_guard", partial_fill_guard),
         ("core.failed_execution_recovery", failed_execution_recovery),
+        ("core.arbitrage_heatmap_engine", arbitrage_heatmap_engine),
 
         ("core.analyzer", analyzer),
         ("core.signal_policy", signal_policy),
