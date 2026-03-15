@@ -1,39 +1,55 @@
 import json
 import os
 
-INPUT_FILE = "sources/fill_guarded.json"
-OUTPUT_FILE = "sources/recovered_execution.json"
+INPUT_FILE = "data/partial_fill_guard.json"
+OUTPUT_FILE = "data/recovered_execution_signals.json"
 
 
-def load():
-    if not os.path.exists(INPUT_FILE):
-        print("[RECOVERY] input missing")
+def load_signals():
+    try:
+        with open(INPUT_FILE, "r") as f:
+            return json.load(f)
+    except:
         return []
 
-    with open(INPUT_FILE) as f:
-        return json.load(f)
+
+def recover(signals):
+
+    recovered = []
+
+    for signal in signals:
+
+        recovered.append({
+            "exchange": signal.get("exchange", "unknown"),
+            "symbol": signal.get("symbol", "unknown"),
+            "net_profit": signal.get("net_profit", 0),
+            "score": signal.get("score", 0),
+            "status": "RECOVERED"
+        })
+
+    return recovered
 
 
-def enrich(signal):
+def save_signals(data):
 
-    signal["recovery_ready"] = True
-
-    return signal
-
-
-def run():
-
-    print("[RECOVERY] start")
-
-    signals = load()
-
-    output = [enrich(s) for s in signals]
+    os.makedirs("data", exist_ok=True)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(output, f, indent=2)
-
-    print(f"[RECOVERY] ready: {len(output)}")
+        json.dump(data, f, indent=4)
 
 
 def main():
-    run()
+
+    print("[RECOVERY] start")
+
+    signals = load_signals()
+
+    recovered = recover(signals)
+
+    save_signals(recovered)
+
+    print(f"[RECOVERY] ready: {len(recovered)}")
+
+
+if __name__ == "__main__":
+    main()
