@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import datetime
 
 INPUT_FILE = "data/recovered_execution_signals.json"
@@ -37,7 +38,7 @@ def build_heatmap(signals):
 
     result = []
 
-    for key, value in heatmap.items():
+    for _, value in heatmap.items():
 
         count = value["count"]
 
@@ -52,6 +53,9 @@ def build_heatmap(signals):
 
 
 def save_heatmap(data):
+
+    os.makedirs("data", exist_ok=True)
+
     with open(OUTPUT_FILE, "w") as f:
         json.dump({
             "timestamp": datetime.utcnow().isoformat(),
