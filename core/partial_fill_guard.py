@@ -1,40 +1,52 @@
 import json
 import os
 
-INPUT_FILE = "sources/fill_probability.json"
-OUTPUT_FILE = "sources/fill_guarded.json"
+INPUT_FILE = "data/fill_probability.json"
+OUTPUT_FILE = "data/partial_fill_guard.json"
 
 
-def load():
-    if not os.path.exists(INPUT_FILE):
-        print("[FILL_GUARD] input missing")
+def load_signals():
+    try:
+        with open(INPUT_FILE, "r") as f:
+            return json.load(f)
+    except:
         return []
 
-    with open(INPUT_FILE) as f:
-        return json.load(f)
+
+def guard(signals):
+
+    approved = []
+
+    for signal in signals:
+
+        fill_probability = signal.get("fill_probability", 0)
+
+        if fill_probability >= 0.3:
+            approved.append(signal)
+
+    return approved
 
 
-def filter_signal(signal):
+def save_signals(data):
 
-    if signal.get("fill_probability", 0) >= 0.5:
-        return signal
-
-    return None
-
-
-def run():
-
-    print("[FILL_GUARD] start")
-
-    signals = load()
-
-    output = [s for s in (filter_signal(x) for x in signals) if s]
+    os.makedirs("data", exist_ok=True)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(output, f, indent=2)
-
-    print(f"[FILL_GUARD] kept: {len(output)}")
+        json.dump(data, f, indent=4)
 
 
 def main():
-    run()
+
+    print("[FILL_GUARD] start")
+
+    signals = load_signals()
+
+    approved = guard(signals)
+
+    save_signals(approved)
+
+    print(f"[FILL_GUARD] kept: {len(approved)}")
+
+
+if __name__ == "__main__":
+    main()
