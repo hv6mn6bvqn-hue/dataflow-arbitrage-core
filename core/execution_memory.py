@@ -1,7 +1,7 @@
 import json
 import os
 
-INPUT_FILE = "data/signal_decay.json"
+INPUT_FILE = "sources/decay_filtered.json"
 OUTPUT_FILE = "data/execution_memory.json"
 
 
