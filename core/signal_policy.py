@@ -2,7 +2,7 @@ import json
 import os
 from datetime import datetime
 
-INPUT_FILE = "sources/latency_checked.json"
+INPUT_FILE = "sources/risk_approved.json"
 OUTPUT_FILE = "sources/decision.json"
 
 
@@ -20,44 +20,38 @@ def evaluate(signals):
 
     if not signals:
         return {
-            "engine_version": "v3.1.0",
+            "engine_version": "v3.2.0",
             "timestamp": datetime.utcnow().isoformat() + "Z",
             "action": "HOLD",
             "confidence": 0.0,
             "state": "ACTIVE"
         }
 
-    total_score = 0
+    scores = []
 
     for signal in signals:
-
         score = signal.get("execution_score", 0)
-        latency = signal.get("latency", 0)
+        scores.append(score)
 
-        adjusted = score - latency
+    avg_score = round(sum(scores) / len(scores), 4)
 
-        total_score += adjusted
+    confidence = round(min(len(signals) / 50, 1.0), 2)
 
-    avg = total_score / len(signals)
-
-    if avg > 0.9:
+    if avg_score > 0.02 and confidence >= 0.5:
         action = "EXECUTE_FULL"
-        confidence = 0.93
 
-    elif avg > 0.45:
+    elif avg_score > -0.02 and confidence >= 0.4:
         action = "EXECUTE_PARTIAL"
-        confidence = 0.76
 
     else:
         action = "HOLD"
-        confidence = 0.40
 
     return {
-        "engine_version": "v3.1.0",
+        "engine_version": "v3.2.0",
         "timestamp": datetime.utcnow().isoformat() + "Z",
         "action": action,
         "confidence": confidence,
-        "avg_score": round(avg, 4),
+        "avg_score": avg_score,
         "signals": len(signals),
         "state": "ACTIVE"
     }
