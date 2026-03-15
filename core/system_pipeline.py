@@ -27,6 +27,11 @@ from core.opportunity_ranker import main as opportunity_ranker
 from core.policy_v3 import main as policy_v3
 from core.portfolio_intelligence_v2 import main as portfolio_intelligence_v2
 
+from core.exchange_trust_engine import main as exchange_trust_engine
+from core.signal_repeatability_engine import main as signal_repeatability_engine
+from core.venue_quality_engine import main as venue_quality_engine
+from core.signal_decay_engine import main as signal_decay_engine
+
 from core.analyzer import main as analyzer
 from core.signal_policy import main as signal_policy
 from core.action_engine import main as action_engine
@@ -78,6 +83,11 @@ def main():
         ("core.opportunity_ranker", opportunity_ranker),
         ("core.policy_v3", policy_v3),
         ("core.portfolio_intelligence_v2", portfolio_intelligence_v2),
+
+        ("core.exchange_trust_engine", exchange_trust_engine),
+        ("core.signal_repeatability_engine", signal_repeatability_engine),
+        ("core.venue_quality_engine", venue_quality_engine),
+        ("core.signal_decay_engine", signal_decay_engine),
 
         ("core.analyzer", analyzer),
         ("core.signal_policy", signal_policy),
