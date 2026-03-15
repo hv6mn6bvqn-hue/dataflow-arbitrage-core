@@ -21,7 +21,7 @@ def guard(signals):
 
         fill_probability = signal.get("fill_probability", 0)
 
-        if fill_probability >= 0.3:
+        if fill_probability >= 0.1:
             approved.append(signal)
 
     return approved
