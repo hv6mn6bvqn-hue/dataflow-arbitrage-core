@@ -44,13 +44,16 @@ PIPELINE = [
     "core.adaptive_capital_bridge",
     "core.pnl_consensus_engine",
     "core.execution_confidence_engine",
-    "core.execution_policy_bridge",
-    "core.real_pnl_reconciliation",
-    "core.exchange_sandbox_guard",
     "core.venue_rotation_engine",
     "core.anomaly_guard_engine",
     "core.live_session_controller",
     "core.arbitrage_heatmap_engine",
+
+    # only after live signal tail stabilizes:
+    "core.execution_policy_bridge",
+    "core.real_pnl_reconciliation",
+    "core.exchange_sandbox_guard",
+
     "core.analyzer",
     "core.signal_policy",
     "core.action_engine",
