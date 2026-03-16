@@ -39,6 +39,8 @@ PIPELINE = [
     "core.exchange_api_executor",
     "core.live_order_router",
     "core.order_confirmation_engine",
+    "core.real_pnl_tracker",
+    "core.live_capital_controller",
     "core.arbitrage_heatmap_engine",
     "core.analyzer",
     "core.signal_policy",
