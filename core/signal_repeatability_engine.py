@@ -15,16 +15,15 @@ def load():
 
 
 def enrich(signal):
+    confidence = signal.get("confidence", 0)
+    score = signal.get("score", 0)
 
-    score = signal.get("execution_score", 0)
-
-    signal["repeatability"] = 1 if score > 0 else 0
+    signal["repeatability"] = round((confidence + score) / 2, 2)
 
     return signal
 
 
 def run():
-
     print("[REPEAT] start")
 
     signals = load()
@@ -39,3 +38,7 @@ def run():
 
 def main():
     run()
+
+
+if __name__ == "__main__":
+    main()
