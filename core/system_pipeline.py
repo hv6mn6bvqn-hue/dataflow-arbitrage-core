@@ -47,13 +47,13 @@ PIPELINE = [
     "core.venue_rotation_engine",
     "core.anomaly_guard_engine",
     "core.live_session_controller",
-    "core.profit_lock_engine",
     "core.arbitrage_heatmap_engine",
     "core.analyzer",
     "core.signal_policy",
     "core.action_engine",
     "core.exporter",
     "core.portfolio_engine",
+    "core.profit_lock_engine",
     "core.metrics_engine",
     "core.performance_engine"
 ]
