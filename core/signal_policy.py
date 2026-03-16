@@ -2,52 +2,48 @@ import json
 import os
 from datetime import datetime
 
-INPUT_FILE = "sources/risk_approved.json"
-OUTPUT_FILE = "sources/decision.json"
+INPUT_FILE = "data/ranked_opportunities.json"
+OUTPUT_FILE = "data/policy_decision.json"
 
 
 def load_signals():
-
-    if not os.path.exists(INPUT_FILE):
-        print("[POLICY] input missing")
+    try:
+        with open(INPUT_FILE, "r") as f:
+            return json.load(f)
+    except:
         return []
 
-    with open(INPUT_FILE) as f:
-        return json.load(f)
 
-
-def evaluate(signals):
+def evaluate_signal(signals):
 
     if not signals:
         return {
-            "engine_version": "v3.2.0",
+            "engine_version": "v3.3.0",
             "timestamp": datetime.utcnow().isoformat() + "Z",
-            "action": "HOLD",
-            "confidence": 0.0,
-            "state": "ACTIVE"
+            "action": "WAIT",
+            "confidence": 0.55,
+            "avg_score": 0,
+            "signals": 0,
+            "state": "IDLE"
         }
 
-    scores = []
+    avg_score = round(
+        sum(signal.get("spread_pct", 0) for signal in signals) / len(signals),
+        4
+    )
 
-    for signal in signals:
-        score = signal.get("execution_score", 0)
-        scores.append(score)
-
-    avg_score = round(sum(scores) / len(scores), 4)
-
-    confidence = round(min(len(signals) / 50, 1.0), 2)
-
-    if avg_score > 0.02 and confidence >= 0.5:
-        action = "EXECUTE_FULL"
-
-    elif avg_score > -0.02 and confidence >= 0.4:
+    if avg_score <= 0:
+        action = "WAIT"
+        confidence = 0.55
+    elif avg_score < 0.003:
         action = "EXECUTE_PARTIAL"
-
+        confidence = 0.68
     else:
-        action = "HOLD"
+        action = "EXECUTE"
+        confidence = 0.84
 
     return {
-        "engine_version": "v3.2.0",
+        "engine_version": "v3.3.0",
         "timestamp": datetime.utcnow().isoformat() + "Z",
         "action": action,
         "confidence": confidence,
@@ -57,20 +53,22 @@ def evaluate(signals):
     }
 
 
-def run():
+def main():
 
     print("[POLICY] evaluating signal")
 
     signals = load_signals()
 
-    decision = evaluate(signals)
+    decision = evaluate_signal(signals)
+
+    os.makedirs("data", exist_ok=True)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(decision, f, indent=2)
+        json.dump(decision, f, indent=4)
 
     print(f"[POLICY] action={decision['action']}")
     print("[POLICY] decision saved")
 
 
-def main():
-    run()
+if __name__ == "__main__":
+    main()
