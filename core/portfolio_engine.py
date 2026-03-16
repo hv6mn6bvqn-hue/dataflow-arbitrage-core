@@ -2,60 +2,53 @@ import json
 import os
 import random
 
-INPUT_FILE = "sources/decision.json"
-OUTPUT_FILE = "sources/portfolio_state.json"
+INPUT_FILE = "data/policy_decision.json"
+OUTPUT_FILE = "data/portfolio_state.json"
 
 
 def load_decision():
-
-    if not os.path.exists(INPUT_FILE):
-        print("[PORTFOLIO] decision file not found")
+    try:
+        with open(INPUT_FILE, "r") as f:
+            return json.load(f)
+    except:
         return None
 
-    with open(INPUT_FILE) as f:
-        return json.load(f)
 
-
-def simulate_pnl(action):
-
-    if action == "EXECUTE_FULL":
-        return round(random.uniform(-200, 400), 2)
-
-    if action == "EXECUTE_PARTIAL":
-        return round(random.uniform(-80, 180), 2)
-
-    return 0
-
-
-def run():
+def main():
 
     print("[PORTFOLIO] starting")
 
     decision = load_decision()
 
     if not decision:
-        print("[PORTFOLIO] no decision available")
+        print("[PORTFOLIO] decision file not found")
         return
 
-    print("[PORTFOLIO] loaded decision:", decision)
+    print(f"[PORTFOLIO] loaded decision: {decision}")
 
     action = decision.get("action")
-    pnl = simulate_pnl(action)
 
-    equity = 10000 + pnl
+    if action == "WAIT":
+        print("[PORTFOLIO] no execution")
+        return
 
-    state = {
-        "action": action,
+    pnl = round(random.uniform(5, 150), 2)
+
+    equity = round(10000 + pnl, 2)
+
+    result = {
         "pnl": pnl,
         "equity": equity
     }
 
+    os.makedirs("data", exist_ok=True)
+
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(state, f, indent=2)
+        json.dump(result, f, indent=4)
 
     print(f"[PORTFOLIO] trade executed | pnl={pnl} | equity={equity}")
     print("[PORTFOLIO] completed")
 
 
-def main():
-    run()
+if __name__ == "__main__":
+    main()
