@@ -1,7 +1,7 @@
 import json
 import os
 
-INPUT_FILE = "data/failed_execution_recovery.json"
+INPUT_FILE = "data/recovered_execution_signals.json"
 OUTPUT_FILE = "data/capital_fragmented.json"
 
 
@@ -15,28 +15,28 @@ def load_signals():
 
 def fragment(signals):
 
-    result = []
+    fragmented = []
 
     for signal in signals:
 
-        fp = signal.get("fill_probability", 0)
+        fill_probability = signal.get("fill_probability", 0)
 
         fragments = 1
 
-        if fp > 0.9:
+        if fill_probability > 0.9:
             fragments = 3
-        elif fp > 0.75:
+        elif fill_probability > 0.75:
             fragments = 2
 
         signal["capital_fragments"] = fragments
         signal["fragment_size"] = round(1000 / fragments, 2)
 
-        result.append(signal)
+        fragmented.append(signal)
 
-    return result
+    return fragmented
 
 
-def save(data):
+def save_signals(data):
 
     os.makedirs("data", exist_ok=True)
 
@@ -50,11 +50,11 @@ def main():
 
     signals = load_signals()
 
-    result = fragment(signals)
+    fragmented = fragment(signals)
 
-    save(result)
+    save_signals(fragmented)
 
-    print(f"[CAPITAL_FRAGMENT] fragmented: {len(result)}")
+    print(f"[CAPITAL_FRAGMENT] fragmented: {len(fragmented)}")
 
 
 if __name__ == "__main__":
