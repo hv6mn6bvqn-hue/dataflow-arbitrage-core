@@ -15,17 +15,17 @@ def load():
 
 
 def filter_signal(signal):
-
     quality = signal.get("venue_quality", 0)
 
-    if quality >= 1.5:
+    # adaptive decay threshold for live pipeline
+    if quality >= 1.0:
+        signal["decay_pass"] = True
         return signal
 
     return None
 
 
 def run():
-
     print("[DECAY] start")
 
     signals = load()
@@ -40,3 +40,7 @@ def run():
 
 def main():
     run()
+
+
+if __name__ == "__main__":
+    main()
