@@ -13,6 +13,14 @@ def load_signals():
         return []
 
 
+def normalize(value, min_v, max_v):
+    if value < min_v:
+        return min_v
+    if value > max_v:
+        return max_v
+    return value
+
+
 def score_confidence(signals):
 
     scored = []
@@ -22,7 +30,9 @@ def score_confidence(signals):
         fill_prob = signal.get("fill_probability", 0.5)
         spread = signal.get("spread_pct", 0)
 
-        confidence = round((fill_prob * 0.7) + (spread * 10), 4)
+        raw = (fill_prob * 0.7) + (spread * 10)
+
+        confidence = round(normalize(raw, 0.55, 0.92), 4)
 
         signal["execution_confidence"] = confidence
 
