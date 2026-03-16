@@ -1,4 +1,4 @@
-import importlib
+import subprocess
 from datetime import datetime
 
 PIPELINE = [
@@ -44,6 +44,9 @@ PIPELINE = [
     "core.adaptive_capital_bridge",
     "core.pnl_consensus_engine",
     "core.execution_confidence_engine",
+    "core.execution_policy_bridge",
+    "core.real_pnl_reconciliation",
+    "core.exchange_sandbox_guard",
     "core.venue_rotation_engine",
     "core.anomaly_guard_engine",
     "core.live_session_controller",
@@ -59,23 +62,17 @@ PIPELINE = [
 ]
 
 
-def run_module(module_name):
-    print(f"\n[PIPELINE] running {module_name}")
-
-    module = importlib.import_module(module_name)
-
-    if hasattr(module, "main"):
-        module.main()
-    else:
-        print(f"[PIPELINE] {module_name} has no main()")
+def run_module(module):
+    print(f"\n[PIPELINE] running {module}")
+    subprocess.run(["python", "-m", module], check=True)
 
 
 def main():
     print("[PIPELINE] DataFlow system start")
     print(f"[PIPELINE] timestamp: {datetime.utcnow()}")
 
-    for module_name in PIPELINE:
-        run_module(module_name)
+    for module in PIPELINE:
+        run_module(module)
 
     print("\n[PIPELINE] cycle complete")
 
