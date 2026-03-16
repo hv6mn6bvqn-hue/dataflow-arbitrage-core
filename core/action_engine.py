@@ -1,41 +1,37 @@
 import json
-import os
 
-INPUT_FILE = "sources/decision.json"
+INPUT_FILE = "data/policy_decision.json"
 
 
 def load_decision():
-
-    if not os.path.exists(INPUT_FILE):
-        print("[ENGINE] decision file missing")
+    try:
+        with open(INPUT_FILE, "r") as f:
+            return json.load(f)
+    except:
         return None
 
-    with open(INPUT_FILE) as f:
-        return json.load(f)
 
-
-def run():
+def main():
 
     print("[ENGINE] starting action engine")
 
     decision = load_decision()
 
     if not decision:
+        print("[ENGINE] decision file missing")
         return
 
     action = decision.get("action")
 
-    if action == "EXECUTE_FULL":
-        print("[ENGINE] full execution approved")
-
+    if action == "WAIT":
+        print("[ENGINE] waiting")
     elif action == "EXECUTE_PARTIAL":
         print("[ENGINE] partial execution approved")
-
-    else:
-        print("[ENGINE] hold state")
+    elif action == "EXECUTE":
+        print("[ENGINE] full execution approved")
 
     print("[ENGINE] completed")
 
 
-def main():
-    run()
+if __name__ == "__main__":
+    main()
