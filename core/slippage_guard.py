@@ -20,10 +20,13 @@ def run():
 
     signals = load_signals()
 
-    filtered = [
-        s for s in signals
-        if s.get("slippage", 0) < 0.25
-    ]
+    filtered = []
+
+    for s in signals:
+        slippage = s.get("slippage", 0.05)
+
+        if slippage < 0.25:
+            filtered.append(s)
 
     with open(OUTPUT_FILE, "w") as f:
         json.dump(filtered, f, indent=2)
