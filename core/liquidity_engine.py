@@ -4,8 +4,8 @@ import os
 INPUT_FILE = "sources/orderbook_data.json"
 OUTPUT_FILE = "sources/arbitrage_liquid.json"
 
-MIN_NOTIONAL = 500
-MAX_SLIPPAGE = 0.003
+MIN_NOTIONAL = 100
+MAX_SLIPPAGE = 0.01
 
 
 def load():
@@ -27,18 +27,20 @@ def filter_liquidity(signals):
 
     for s in signals:
 
-        bid = s.get("bid")
-        ask = s.get("ask")
+        bid = s.get("bid", 0)
+        ask = s.get("ask", 0)
         volume = s.get("volume", 0)
+
+        if bid <= 0 or ask <= 0:
+            continue
 
         mid = (bid + ask) / 2
 
         slippage = abs(ask - bid) / mid
-
         notional = volume * mid
 
-        s["slippage"] = slippage
-        s["notional"] = notional
+        s["slippage"] = round(slippage, 6)
+        s["notional"] = round(notional, 2)
 
         if notional < MIN_NOTIONAL:
             continue
