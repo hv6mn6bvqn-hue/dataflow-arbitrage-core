@@ -28,6 +28,10 @@ def normalize_symbol(symbol):
     symbol = symbol.replace("/", "-")
     symbol = symbol.replace("_", "-")
 
+    if "-" not in symbol and symbol.endswith("USDT"):
+        base = symbol[:-4]
+        symbol = f"{base}-USDT"
+
     return symbol
 
 
@@ -60,8 +64,6 @@ def fetch_kucoin_book(symbol):
 
     try:
 
-        kucoin_symbol = symbol.replace("-", "")
-
         url = f"https://api.kucoin.com/api/v1/market/orderbook/level1?symbol={symbol}"
 
         r = requests.get(url, timeout=5)
@@ -91,12 +93,15 @@ def enrich(signals):
 
         symbol = normalize_symbol(s.get("symbol"))
 
+        if not symbol:
+            continue
+
         bid, ask = fetch_okx_book(symbol)
 
         if bid is None:
             bid, ask = fetch_kucoin_book(symbol)
 
-        if bid is None:
+        if bid is None or ask is None:
             continue
 
         s["bid"] = bid
@@ -133,3 +138,7 @@ def run():
 
 def main():
     run()
+
+
+if __name__ == "__main__":
+    main()
