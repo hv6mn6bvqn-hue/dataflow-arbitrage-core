@@ -4,7 +4,6 @@ import os
 INPUT_FILE = "sources/arbitrage_opportunities.json"
 OUTPUT_FILE = "sources/arbitrage_after_fees.json"
 
-# примерные комиссии бирж
 FEES = {
     "binance": 0.001,
     "okx": 0.001,
@@ -13,7 +12,7 @@ FEES = {
     "kraken": 0.0026
 }
 
-MIN_PROFIT = 0.001
+MIN_PROFIT = 0.0005
 
 
 def load_signals():
@@ -29,12 +28,29 @@ def load_signals():
     return data
 
 
+def extract_spread(signal):
+
+    candidates = [
+        signal.get("spread"),
+        signal.get("spread_pct"),
+        signal.get("profit"),
+        signal.get("net_spread"),
+        signal.get("margin")
+    ]
+
+    for value in candidates:
+        if isinstance(value, (int, float)):
+            return value
+
+    return 0
+
+
 def calculate_real_profit(signal):
 
     buy_ex = signal.get("buy_exchange", "").lower()
     sell_ex = signal.get("sell_exchange", "").lower()
 
-    spread = signal.get("spread", 0)
+    spread = extract_spread(signal)
 
     fee_buy = FEES.get(buy_ex, 0.002)
     fee_sell = FEES.get(sell_ex, 0.002)
@@ -43,7 +59,8 @@ def calculate_real_profit(signal):
 
     real_profit = spread - total_fees
 
-    signal["real_profit"] = real_profit
+    signal["spread"] = spread
+    signal["real_profit"] = round(real_profit, 6)
 
     return signal
 
