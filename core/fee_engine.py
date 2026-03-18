@@ -12,7 +12,7 @@ FEES = {
     "kraken": 0.0026
 }
 
-MIN_PROFIT = 0.0005
+MIN_PROFIT = 0.001
 
 
 def load_signals():
@@ -22,27 +22,7 @@ def load_signals():
         return []
 
     with open(INPUT_FILE) as f:
-        data = json.load(f)
-
-    print("[FEES] signals loaded:", len(data))
-    return data
-
-
-def extract_spread(signal):
-
-    candidates = [
-        signal.get("spread"),
-        signal.get("spread_pct"),
-        signal.get("profit"),
-        signal.get("net_spread"),
-        signal.get("margin")
-    ]
-
-    for value in candidates:
-        if isinstance(value, (int, float)):
-            return value
-
-    return 0
+        return json.load(f)
 
 
 def calculate_real_profit(signal):
@@ -50,38 +30,30 @@ def calculate_real_profit(signal):
     buy_ex = signal.get("buy_exchange", "").lower()
     sell_ex = signal.get("sell_exchange", "").lower()
 
-    spread = extract_spread(signal)
+    spread = signal.get("spread", 0)
 
     fee_buy = FEES.get(buy_ex, 0.002)
     fee_sell = FEES.get(sell_ex, 0.002)
 
-    total_fees = fee_buy + fee_sell
-
-    real_profit = spread - total_fees
-
-    signal["spread"] = spread
-    signal["real_profit"] = round(real_profit, 6)
+    signal["real_profit"] = spread - fee_buy - fee_sell
 
     return signal
 
 
 def filter_signals(signals):
 
-    filtered = []
+    result = []
 
     for s in signals:
-
         s = calculate_real_profit(s)
 
         if s["real_profit"] > MIN_PROFIT:
-            filtered.append(s)
+            result.append(s)
 
-    return filtered
+    return result
 
 
 def save_signals(signals):
-
-    os.makedirs("sources", exist_ok=True)
 
     with open(OUTPUT_FILE, "w") as f:
         json.dump(signals, f, indent=2)
@@ -104,3 +76,7 @@ def run():
 
 def main():
     run()
+
+
+if __name__ == "__main__":
+    main()
