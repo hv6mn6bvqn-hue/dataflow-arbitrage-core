@@ -28,33 +28,24 @@ def filter_spreads(spreads):
 
         if spread >= MIN_SPREAD:
 
-            signal = {
+            filtered.append({
                 "symbol": s["symbol"],
                 "exchange": s["exchange_a"],
                 "price": s["price_a"]
-            }
+            })
 
-            filtered.append(signal)
-
-            signal2 = {
+            filtered.append({
                 "symbol": s["symbol"],
                 "exchange": s["exchange_b"],
                 "price": s["price_b"]
-            }
-
-            filtered.append(signal2)
+            })
 
     return filtered
 
 
 def rank_signals(signals):
 
-    ranked = sorted(
-        signals,
-        key=lambda x: x["price"]
-    )
-
-    return ranked[:MAX_SIGNALS]
+    return signals[:MAX_SIGNALS]
 
 
 def save_signals(signals):
@@ -81,10 +72,12 @@ def run():
 
     ranked = rank_signals(filtered)
 
-    print("[SIGNAL] top signals:", len(ranked))
-
     save_signals(ranked)
 
 
 def main():
     run()
+
+
+if __name__ == "__main__":
+    main()
