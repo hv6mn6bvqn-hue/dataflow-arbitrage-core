@@ -1,7 +1,8 @@
 import json
 import os
+from collections import defaultdict
 
-INPUT_FILE = "sources/discovery_output.json"
+INPUT_FILE = "sources/signals.json"
 OUTPUT_FILE = "sources/spread_opportunities.json"
 
 MIN_SPREAD = 0.002
@@ -10,7 +11,7 @@ MIN_SPREAD = 0.002
 def load_data():
 
     if not os.path.exists(INPUT_FILE):
-        print("[SPREAD] discovery file missing")
+        print("[SPREAD] signals file missing")
         return []
 
     with open(INPUT_FILE) as f:
@@ -20,19 +21,18 @@ def load_data():
     return data
 
 
-def build_pairs(data):
+def group_by_symbol(data):
 
-    grouped = {}
+    grouped = defaultdict(list)
 
     for item in data:
 
         symbol = item.get("symbol")
+        price = item.get("price")
+        exchange = item.get("exchange")
 
-        if not symbol:
+        if not symbol or not price or not exchange:
             continue
-
-        if symbol not in grouped:
-            grouped[symbol] = []
 
         grouped[symbol].append(item)
 
@@ -85,7 +85,7 @@ def run():
 
     data = load_data()
 
-    grouped = build_pairs(data)
+    grouped = group_by_symbol(data)
 
     spreads = detect_spreads(grouped)
 
