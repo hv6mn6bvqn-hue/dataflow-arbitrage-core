@@ -4,6 +4,8 @@ import os
 INPUT_FILE = "sources/matrix_opportunities.json"
 OUTPUT_FILE = "sources/arbitrage_opportunities.json"
 
+MIN_SPREAD = 0.001
+
 
 def load_matrix():
 
@@ -19,16 +21,46 @@ def load_matrix():
     return data
 
 
+def extract_spread(item):
+
+    candidates = [
+        item.get("spread"),
+        item.get("spread_pct"),
+        item.get("profit"),
+        item.get("net_spread"),
+        item.get("margin")
+    ]
+
+    for value in candidates:
+        if isinstance(value, (int, float)):
+            return value
+
+    return 0
+
+
+def normalize_signal(item, spread):
+
+    item["spread"] = spread
+
+    if "buy_exchange" not in item:
+        item["buy_exchange"] = item.get("exchange_a", "unknown")
+
+    if "sell_exchange" not in item:
+        item["sell_exchange"] = item.get("exchange_b", "unknown")
+
+    return item
+
+
 def filter_opportunities(matrix):
 
     opportunities = []
 
     for m in matrix:
 
-        spread = m.get("spread", 0)
+        spread = extract_spread(m)
 
-        if spread > 0.003:
-
+        if spread > MIN_SPREAD:
+            m = normalize_signal(m, spread)
             opportunities.append(m)
 
     return opportunities
