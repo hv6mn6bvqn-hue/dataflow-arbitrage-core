@@ -1,106 +1,102 @@
 import json
 import os
-import itertools
 
-SIGNALS_FILE = "sources/signals.json"
-SPREAD_FILE = "sources/spread_opportunities.json"
+INPUT_FILE = "sources/discovery_output.json"
+OUTPUT_FILE = "sources/spread_opportunities.json"
+
+MIN_SPREAD = 0.002
 
 
-def load_signals():
+def load_data():
 
-    if not os.path.exists(SIGNALS_FILE):
-        print("[SPREAD] signals file missing")
+    if not os.path.exists(INPUT_FILE):
+        print("[SPREAD] discovery file missing")
         return []
 
-    with open(SIGNALS_FILE) as f:
-        return json.load(f)
+    with open(INPUT_FILE) as f:
+        data = json.load(f)
+
+    print("[SPREAD] loaded:", len(data))
+    return data
 
 
-def group_by_symbol(signals):
+def build_pairs(data):
 
-    markets = {}
+    grouped = {}
 
-    for s in signals:
+    for item in data:
 
-        symbol = s.get("symbol")
+        symbol = item.get("symbol")
 
         if not symbol:
             continue
 
-        if symbol not in markets:
-            markets[symbol] = []
+        if symbol not in grouped:
+            grouped[symbol] = []
 
-        markets[symbol].append(s)
+        grouped[symbol].append(item)
 
-    return markets
+    return grouped
 
 
-def find_spreads(markets):
+def detect_spreads(grouped):
 
-    opportunities = []
+    spreads = []
 
-    for symbol, listings in markets.items():
+    for symbol, entries in grouped.items():
 
-        if len(listings) < 2:
+        if len(entries) < 2:
             continue
 
-        for a, b in itertools.combinations(listings, 2):
+        entries = sorted(entries, key=lambda x: x["price"])
 
-            price_a = a.get("price")
-            price_b = b.get("price")
+        low = entries[0]
+        high = entries[-1]
 
-            if not price_a or not price_b:
-                continue
+        spread = (high["price"] - low["price"]) / low["price"]
 
-            try:
+        if spread >= MIN_SPREAD:
 
-                spread = abs(price_a - price_b) / min(price_a, price_b)
+            spreads.append({
+                "symbol": symbol,
+                "exchange_a": low["exchange"],
+                "exchange_b": high["exchange"],
+                "price_a": low["price"],
+                "price_b": high["price"],
+                "spread": spread
+            })
 
-            except ZeroDivisionError:
-                continue
-
-            if spread > 0.002:  # 0.2%
-
-                opp = {
-                    "symbol": symbol,
-                    "exchange_a": a.get("exchange"),
-                    "exchange_b": b.get("exchange"),
-                    "price_a": price_a,
-                    "price_b": price_b,
-                    "spread": spread
-                }
-
-                opportunities.append(opp)
-
-    return opportunities
+    return spreads
 
 
-def save_opportunities(opps):
+def save_spreads(spreads):
 
     os.makedirs("sources", exist_ok=True)
 
-    with open(SPREAD_FILE, "w") as f:
-        json.dump(opps, f, indent=2)
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(spreads, f, indent=2)
 
-    print("[SPREAD] opportunities saved:", len(opps))
+    print("[SPREAD] saved:", len(spreads))
 
 
 def run():
 
     print("[SPREAD] engine start")
 
-    signals = load_signals()
+    data = load_data()
 
-    print("[SPREAD] signals loaded:", len(signals))
+    grouped = build_pairs(data)
 
-    markets = group_by_symbol(signals)
+    spreads = detect_spreads(grouped)
 
-    opportunities = find_spreads(markets)
+    print("[SPREAD] opportunities:", len(spreads))
 
-    print("[SPREAD] opportunities found:", len(opportunities))
-
-    save_opportunities(opportunities)
+    save_spreads(spreads)
 
 
 def main():
     run()
+
+
+if __name__ == "__main__":
+    main()
