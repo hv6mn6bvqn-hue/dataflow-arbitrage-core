@@ -6,7 +6,7 @@ from core.utils.symbol_normalizer import normalize
 INPUT_FILE = "sources/signals.json"
 OUTPUT_FILE = "sources/matrix_opportunities.json"
 
-SPREAD_THRESHOLD = 0.001
+SPREAD_THRESHOLD = 0.002
 
 
 def load_signals():
@@ -28,28 +28,16 @@ def build_symbol_matrix(signals):
 
     for s in signals:
 
-        symbol_raw = s.get("symbol")
-        exchange = s.get("exchange")
-        price = s.get("price")
-
-        if not symbol_raw or not exchange:
-            continue
-
-        if not isinstance(price, (int, float)):
-            continue
-
-        symbol = normalize(symbol_raw)
+        symbol = normalize(s["symbol"])
 
         if not symbol:
             continue
 
-        entry = {
-            "exchange": exchange,
-            "price": price,
+        matrix[symbol].append({
+            "exchange": s["exchange"],
+            "price": s["price"],
             "symbol": symbol
-        }
-
-        matrix[symbol].append(entry)
+        })
 
     return matrix
 
@@ -68,9 +56,6 @@ def detect_arbitrage(matrix):
         lowest = prices[0]
         highest = prices[-1]
 
-        if lowest["price"] <= 0:
-            continue
-
         spread = (highest["price"] - lowest["price"]) / lowest["price"]
 
         if spread > SPREAD_THRESHOLD:
@@ -81,15 +66,13 @@ def detect_arbitrage(matrix):
                 "sell_exchange": highest["exchange"],
                 "buy_price": lowest["price"],
                 "sell_price": highest["price"],
-                "spread": round(spread, 6)
+                "spread": spread
             })
 
     return opportunities
 
 
 def save_opportunities(opps):
-
-    os.makedirs("sources", exist_ok=True)
 
     with open(OUTPUT_FILE, "w") as f:
         json.dump(opps, f, indent=2)
@@ -114,3 +97,7 @@ def run():
 
 def main():
     run()
+
+
+if __name__ == "__main__":
+    main()
