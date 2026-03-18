@@ -2,9 +2,9 @@ import json
 import os
 
 SPREAD_FILE = "sources/spread_opportunities.json"
-SIGNAL_FILE = "sources/arbitrage_signals.json"
+SIGNAL_FILE = "sources/signals.json"
 
-MIN_SPREAD = 0.003   # 0.3%
+MIN_SPREAD = 0.003
 MAX_SIGNALS = 30
 
 
@@ -30,14 +30,19 @@ def filter_spreads(spreads):
 
             signal = {
                 "symbol": s["symbol"],
-                "buy_exchange": s["exchange_a"],
-                "sell_exchange": s["exchange_b"],
-                "buy_price": s["price_a"],
-                "sell_price": s["price_b"],
-                "spread": spread
+                "exchange": s["exchange_a"],
+                "price": s["price_a"]
             }
 
             filtered.append(signal)
+
+            signal2 = {
+                "symbol": s["symbol"],
+                "exchange": s["exchange_b"],
+                "price": s["price_b"]
+            }
+
+            filtered.append(signal2)
 
     return filtered
 
@@ -46,8 +51,7 @@ def rank_signals(signals):
 
     ranked = sorted(
         signals,
-        key=lambda x: x["spread"],
-        reverse=True
+        key=lambda x: x["price"]
     )
 
     return ranked[:MAX_SIGNALS]
