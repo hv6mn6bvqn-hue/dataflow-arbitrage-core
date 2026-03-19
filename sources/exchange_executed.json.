@@ -1,0 +1,14 @@
+[
+    {
+        "signal_id": "TEST-001",
+        "capital_fragments": 1,
+        "execution_status": "SUCCESS",
+        "executed_fragments": 1
+    },
+    {
+        "signal_id": "TEST-002",
+        "capital_fragments": 3,
+        "execution_status": "SUCCESS",
+        "executed_fragments": 3
+    }
+]
