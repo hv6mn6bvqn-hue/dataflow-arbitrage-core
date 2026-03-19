@@ -1,74 +1,27 @@
+# core/signal_policy.py
 import json
 import os
-from datetime import datetime
 
-INPUT_FILE = "data/ranked_opportunities.json"
-OUTPUT_FILE = "data/policy_decision.json"
+INPUT_FILE = "sources/analyzed_signals.json"
+OUTPUT_FILE = "sources/policy_decision.json"
 
-
-def load_signals():
-    try:
-        with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-    except:
-        return []
-
-
-def evaluate_signal(signals):
-
-    if not signals:
-        return {
-            "engine_version": "v3.3.0",
-            "timestamp": datetime.utcnow().isoformat() + "Z",
-            "action": "WAIT",
-            "confidence": 0.55,
-            "avg_score": 0,
-            "signals": 0,
-            "state": "IDLE"
-        }
-
-    avg_score = round(
-        sum(signal.get("spread_pct", 0) for signal in signals) / len(signals),
-        4
-    )
-
-    if avg_score <= 0:
-        action = "WAIT"
-        confidence = 0.55
-    elif avg_score < 0.003:
-        action = "EXECUTE_PARTIAL"
-        confidence = 0.68
+def run():
+    if not os.path.exists(INPUT_FILE):
+        signals = []
+        print("[POLICY] input missing")
     else:
-        action = "EXECUTE"
-        confidence = 0.84
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
-    return {
-        "engine_version": "v3.3.0",
-        "timestamp": datetime.utcnow().isoformat() + "Z",
-        "action": action,
-        "confidence": confidence,
-        "avg_score": avg_score,
-        "signals": len(signals),
-        "state": "ACTIVE"
-    }
-
-
-def main():
-
-    print("[POLICY] evaluating signal")
-
-    signals = load_signals()
-
-    decision = evaluate_signal(signals)
-
-    os.makedirs("data", exist_ok=True)
+    for s in signals:
+        # Простая политика: WAIT если confidence < 0.6
+        s["action"] = "WAIT" if s["confidence"] < 0.6 else "EXECUTE"
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(decision, f, indent=4)
+        json.dump(signals, f)
 
-    print(f"[POLICY] action={decision['action']}")
-    print("[POLICY] decision saved")
-
+    print(f"[POLICY] decisions evaluated: {len(signals)}")
 
 if __name__ == "__main__":
-    main()
+    print("[POLICY] evaluating signal")
+    run()
