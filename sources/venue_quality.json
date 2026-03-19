@@ -1,0 +1,10 @@
+[
+  {
+    "exchange": "mexc",
+    "symbol": "BTCUSDT",
+    "venue_quality": 1.15,
+    "score": 0.82,
+    "real_profit": 0.014,
+    "spread_pct": 0.012
+  }
+]
