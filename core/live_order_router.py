@@ -1,21 +1,14 @@
-# core/live_order_router.py
+# пример для live_order_router.py
+from core.exchange_loader import load_connectors
 import json
 import os
-from connectors import binance, bybit, coinbase, kraken, kucoin, okx
 
 INPUT_FILE = "sources/live_export.json"
 OUTPUT_FILE = "sources/live_routed.json"
 
-EXCHANGE_MAP = {
-    "binance": binance,
-    "bybit": bybit,
-    "coinbase": coinbase,
-    "kraken": kraken,
-    "kucoin": kucoin,
-    "okx": okx
-}
-
 def run():
+    connectors = load_connectors()
+
     if not os.path.exists(INPUT_FILE):
         print("[LIVE_ROUTER] input file missing")
         signals = []
@@ -26,14 +19,12 @@ def run():
     routed_signals = []
     for s in signals:
         ex = s.get("exchange")
-        if ex not in EXCHANGE_MAP:
+        connector = connectors.get(ex)
+        if not connector:
             print(f"[LIVE_ROUTER] unknown exchange {ex}")
             continue
 
-        connector = EXCHANGE_MAP[ex]
-
         try:
-            # Отправка ордера на биржу
             result = connector.place_order(
                 symbol=s["symbol"],
                 side=s["side"],
@@ -52,7 +43,3 @@ def run():
         json.dump(routed_signals, f)
 
     print(f"[LIVE_ROUTER] routed: {len(routed_signals)}")
-
-if __name__ == "__main__":
-    print("[LIVE_ROUTER] start")
-    run()
