@@ -1,50 +1,25 @@
+# core/live_session_controller.py
 import json
 import os
-from datetime import datetime
 
-INPUT_FILE = "data/anomaly_guarded.json"
-OUTPUT_FILE = "data/live_session.json"
+INPUT_FILE = "sources/anomaly_guard.json"
+OUTPUT_FILE = "sources/live_session.json"
 
-
-def load_signals():
-    try:
-        with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-    except:
-        return []
-
-
-def build_session(signals):
-
-    state = "RUN" if len(signals) > 0 else "PAUSE"
-
-    return {
-        "timestamp": datetime.utcnow().isoformat(),
-        "signals": len(signals),
-        "session_state": state
-    }
-
-
-def save_state(data):
-
-    os.makedirs("data", exist_ok=True)
+def run():
+    if not os.path.exists(INPUT_FILE):
+        signals = []
+        state = "PAUSE"
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
+        # Сессия активна, если хотя бы один сигнал approved
+        state = "RUN" if any(s.get("approved", False) for s in signals) else "PAUSE"
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump({"state": state}, f)
 
-
-def main():
-
-    print("[SESSION] start")
-
-    signals = load_signals()
-
-    state = build_session(signals)
-
-    save_state(state)
-
-    print(f"[SESSION] state: {state['session_state']}")
-
+    print(f"[SESSION] state: {state}")
 
 if __name__ == "__main__":
-    main()
+    print("[SESSION] start")
+    run()
