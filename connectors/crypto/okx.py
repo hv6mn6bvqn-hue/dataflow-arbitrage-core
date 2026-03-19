@@ -1,22 +1,20 @@
+# connectors/crypto/okx.py
 import requests
 
-URL = "https://www.okx.com/api/v5/market/tickers?instType=SPOT"
+class Connector:
+    def __init__(self):
+        self.name = "okx"
+        self.base_url = "https://www.okx.com/api/spot/v3"
 
-
-def fetch_prices():
-
-    r = requests.get(URL, timeout=10)
-    data = r.json()
-
-    prices = []
-
-    for item in data.get("data", []):
+    def get_tickers(self):
         try:
-            prices.append({
-                "symbol": item["instId"],
-                "price": float(item["last"])
-            })
-        except:
-            continue
+            r = requests.get(f"{self.base_url}/instruments/ticker")
+            r.raise_for_status()
+            return r.json()
+        except Exception as e:
+            print(f"[OKX] request error: {e}")
+            return []
 
-    return prices
+    def place_order(self, symbol, side, quantity, price=None):
+        print(f"[OKX] placing {side} {quantity} {symbol} at {price}")
+        return {"id": "TEST_OKX"}
