@@ -1,41 +1,25 @@
+# core/exporter.py
 import json
 import os
+import shutil
 
-INPUT_FILE = "sources/arbitrage_opportunities.json"
-OUTPUT_FILE = "public/arbitrage_signals.json"
-
-
-def load_signals():
-
-    if not os.path.exists(INPUT_FILE):
-        print("[EXPORTER] signals file missing")
-        return []
-
-    with open(INPUT_FILE) as f:
-        data = json.load(f)
-
-    print("[EXPORTER] signals found:", len(data))
-    return data
-
-
-def save_public_feed(signals):
-
-    os.makedirs("public", exist_ok=True)
-
-    with open(OUTPUT_FILE, "w") as f:
-        json.dump(signals, f, indent=2)
-
-    print("[EXPORTER] public feed updated:", len(signals), "signals")
-
+INPUT_FILE = "sources/action_executed.json"
+OUTPUT_FILE = "sources/live_export.json"
 
 def run():
+    if not os.path.exists(INPUT_FILE):
+        print("[EXPORTER] input missing")
+        signals = []
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
-    print("[EXPORTER] collecting arbitrage signals")
+    # Экспортируем для live routing
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(signals, f)
 
-    signals = load_signals()
+    print(f"[EXPORTER] exported: {len(signals)} signals")
 
-    save_public_feed(signals)
-
-
-def main():
+if __name__ == "__main__":
+    print("[EXPORTER] start")
     run()
