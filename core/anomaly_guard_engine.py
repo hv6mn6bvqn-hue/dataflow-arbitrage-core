@@ -1,54 +1,30 @@
+# core/anomaly_guard_engine.py
 import json
 import os
 
-INPUT_FILE = "data/venue_rotated.json"
-OUTPUT_FILE = "data/anomaly_guarded.json"
+INPUT_FILE = "sources/venue_rotation.json"
+OUTPUT_FILE = "sources/anomaly_guard.json"
 
+def run():
+    if not os.path.exists(INPUT_FILE):
+        signals = []
+        print("[ANOMALY_GUARD] input missing")
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
-def load_signals():
-    try:
-        with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-    except:
-        return []
-
-
-def guard(signals):
-
-    approved = []
-
-    for signal in signals:
-
-        spread = signal.get("spread_pct", 0)
-
-        if spread > 0.05:
-            continue
-
-        approved.append(signal)
-
-    return approved
-
-
-def save_signals(data):
-
-    os.makedirs("data", exist_ok=True)
+    approved_count = 0
+    for s in signals:
+        # Блокировка аномалий: например, слишком большой PnL
+        s["approved"] = abs(s.get("pnl", 0)) < 5000
+        if s["approved"]:
+            approved_count += 1
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump(signals, f)
 
-
-def main():
-
-    print("[ANOMALY_GUARD] start")
-
-    signals = load_signals()
-
-    approved = guard(signals)
-
-    save_signals(approved)
-
-    print(f"[ANOMALY_GUARD] approved: {len(approved)}")
-
+    print(f"[ANOMALY_GUARD] approved: {approved_count}")
 
 if __name__ == "__main__":
-    main()
+    print("[ANOMALY_GUARD] start")
+    run()
