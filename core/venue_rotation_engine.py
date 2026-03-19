@@ -1,56 +1,30 @@
+# core/venue_rotation_engine.py
 import json
 import os
 
-INPUT_FILE = "data/execution_confidence.json"
-OUTPUT_FILE = "data/venue_rotated.json"
+INPUT_FILE = "sources/execution_confidence.json"
+OUTPUT_FILE = "sources/venue_rotation.json"
 
+def run():
+    if not os.path.exists(INPUT_FILE):
+        signals = []
+        print("[VENUE_ROTATION] input missing")
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
-def load_signals():
-    try:
-        with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-    except:
-        return []
-
-
-def rotate_venues(signals):
-
-    rotated = []
-
-    blocked = ["bybit", "binance"]
-
-    for signal in signals:
-
-        venue = str(signal.get("exchange", "")).lower()
-
-        if venue in blocked:
-            continue
-
-        rotated.append(signal)
-
-    return rotated
-
-
-def save_signals(data):
-
-    os.makedirs("data", exist_ok=True)
+    active_count = 0
+    for s in signals:
+        # Если confidence >= 0.7 — активируем
+        s["active"] = s.get("confidence", 0) >= 0.7
+        if s["active"]:
+            active_count += 1
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump(signals, f)
 
-
-def main():
-
-    print("[VENUE_ROTATION] start")
-
-    signals = load_signals()
-
-    rotated = rotate_venues(signals)
-
-    save_signals(rotated)
-
-    print(f"[VENUE_ROTATION] active: {len(rotated)}")
-
+    print(f"[VENUE_ROTATION] active: {active_count}")
 
 if __name__ == "__main__":
-    main()
+    print("[VENUE_ROTATION] start")
+    run()
