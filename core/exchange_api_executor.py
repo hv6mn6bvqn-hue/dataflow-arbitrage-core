@@ -1,65 +1,30 @@
+# core/exchange_api_executor.py
 import json
 import os
 
-INPUT_FILE = "sources/capital_fragmented.json"
-OUTPUT_FILE = "sources/exchange_executed.json"
+INPUT_FILE = "sources/allocated_signals.json"
+OUTPUT_FILE = "sources/executed_signals.json"
 
-
-def load_data():
-
+def run():
     if not os.path.exists(INPUT_FILE):
+        signals = []
         print("[API_EXECUTOR] input missing")
-        return []
-
-    try:
-        with open(INPUT_FILE, "r") as f:
-            data = json.load(f)
-
-            if not isinstance(data, list):
-                return []
-
-            return data
-
-    except Exception as e:
-        print(f"[API_EXECUTOR] load error: {e}")
-        return []
-
-
-def execute(signals):
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
     executed = []
-
-    for signal in signals:
-
-        signal["exchange_execution"] = "SIMULATED_OK"
-        signal["execution_status"] = "FILLED"
-        signal["executed_fragments"] = signal.get("capital_fragments", 1)
-
-        executed.append(signal)
-
-    return executed
-
-
-def save(data):
-
-    os.makedirs("sources", exist_ok=True)
+    for s in signals:
+        # Симуляция успешного исполнения для live
+        s["executed"] = True
+        s["fill_price"] = s.get("price", 0)
+        executed.append(s)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump(executed, f)
 
-    print(f"[API_EXECUTOR] executed: {len(data)}")
-
-
-def main():
-
-    print("[API_EXECUTOR] start")
-
-    signals = load_data()
-
-    result = execute(signals)
-
-    save(result)
-
+    print(f"[API_EXECUTOR] executed: {len(executed)}")
 
 if __name__ == "__main__":
-    main()
+    print("[API_EXECUTOR] start")
+    run()
