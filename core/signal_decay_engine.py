@@ -10,14 +10,13 @@ def load():
         print("[DECAY] input missing")
         return []
 
-    with open(INPUT_FILE) as f:
+    with open(INPUT_FILE, "r") as f:
         return json.load(f)
 
 
 def filter_signal(signal):
     quality = signal.get("venue_quality", 0)
 
-    # adaptive decay threshold for live pipeline
     if quality >= 1.0:
         signal["decay_pass"] = True
         return signal
@@ -33,7 +32,7 @@ def run():
     output = [s for s in (filter_signal(x) for x in signals) if s]
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(output, f, indent=2)
+        json.dump(output, f, indent=4)
 
     print(f"[DECAY] kept: {len(output)}")
 
