@@ -2,32 +2,29 @@
 import json
 import os
 
-INPUT_FILE = "sources/fee_filtered_signals.json"
+INPUT_FILE = "sources/signals.json"
 OUTPUT_FILE = "sources/orderbook_signals.json"
 
-def enrich_signal(signal):
-    # пример enrichment: добавление текущих bid/ask с биржи
-    signal["orderbook"] = {
-        "bid": signal.get("best_bid", 0),
-        "ask": signal.get("best_ask", 0)
-    }
-    return signal
-
-def main():
+def run():
     if not os.path.exists(INPUT_FILE):
-        print(f"[ORDERBOOK] input missing, file: {INPUT_FILE}")
-        with open(OUTPUT_FILE, "w") as f:
-            json.dump([], f)
-        return
+        print(f"[ORDERBOOK] input missing")
+        signals = []
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
-    with open(INPUT_FILE, "r") as f:
-        signals = json.load(f)
+    enriched = []
+    for s in signals:
+        s["orderbook"] = {"bid": s.get("price", 0)*0.99, "ask": s.get("price", 0)*1.01}
+        enriched.append(s)
 
-    enriched = [enrich_signal(s) for s in signals]
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(enriched, f, indent=2)
+        json.dump(enriched, f)
 
+    print(f"[ORDERBOOK] signals enriched: {len(enriched)}")
     print(f"[ORDERBOOK] signals saved: {len(enriched)}")
+    print(f"[ORDERBOOK] file: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
-    main()
+    print("[ORDERBOOK] orderbook engine start")
+    run()
