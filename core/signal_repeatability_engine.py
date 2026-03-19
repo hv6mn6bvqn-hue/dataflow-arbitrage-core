@@ -1,43 +1,73 @@
 import json
 import os
 
-INPUT_FILE = "sources/trusted_signals.json"
-OUTPUT_FILE = "sources/repeatable_signals.json"
+INPUT_FILE = "sources/orderbook_signals.json"
+OUTPUT_FILE = "sources/repeatability_signals.json"
 
 
-def load():
+def load_signals():
+
     if not os.path.exists(INPUT_FILE):
         print("[REPEAT] input missing")
         return []
 
-    with open(INPUT_FILE) as f:
-        return json.load(f)
+    try:
+        with open(INPUT_FILE, "r") as f:
+            data = json.load(f)
+
+            if not isinstance(data, list):
+                return []
+
+            return data
+
+    except Exception as e:
+        print(f"[REPEAT] load error: {e}")
+        return []
 
 
-def enrich(signal):
-    confidence = signal.get("confidence", 0)
-    score = signal.get("score", 0)
+def process(signals):
 
-    signal["repeatability"] = round((confidence + score) / 2, 2)
+    processed = []
 
-    return signal
+    for signal in signals:
+
+        spread = signal.get("spread_pct", 0)
+
+        repeat_score = 0.2
+
+        if spread >= 0.02:
+            repeat_score = 0.9
+        elif spread >= 0.01:
+            repeat_score = 0.7
+        elif spread >= 0.005:
+            repeat_score = 0.5
+
+        signal["repeatability_score"] = repeat_score
+
+        processed.append(signal)
+
+    return processed
 
 
-def run():
-    print("[REPEAT] start")
+def save_signals(data):
 
-    signals = load()
-
-    output = [enrich(s) for s in signals]
+    os.makedirs("sources", exist_ok=True)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(output, f, indent=2)
+        json.dump(data, f, indent=4)
 
-    print(f"[REPEAT] processed: {len(output)}")
+    print(f"[REPEAT] processed: {len(data)}")
 
 
 def main():
-    run()
+
+    print("[REPEAT] start")
+
+    signals = load_signals()
+
+    processed = process(signals)
+
+    save_signals(processed)
 
 
 if __name__ == "__main__":
