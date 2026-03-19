@@ -1,56 +1,28 @@
+# core/live_capital_controller.py
 import json
 import os
 
-INPUT_FILE = "data/real_pnl.json"
-OUTPUT_FILE = "data/live_capital_state.json"
+INPUT_FILE = "sources/pnl_tracked.json"
 
-BASE_CAPITAL = 10000
+CAPITAL_FILE = "sources/live_capital.json"
 
+def run():
+    if not os.path.exists(INPUT_FILE):
+        signals = []
+        print("[LIVE_CAPITAL] input missing")
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
-def load_signals():
-    try:
-        with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-    except:
-        return []
+    equity = 10000  # стартовая капитализация
+    for s in signals:
+        equity += s.get("pnl", 0)
 
+    with open(CAPITAL_FILE, "w") as f:
+        json.dump({"equity": equity}, f)
 
-def calculate_capital(signals):
-
-    total_pnl = sum(signal.get("real_pnl", 0) for signal in signals)
-
-    equity = round(BASE_CAPITAL + total_pnl, 4)
-
-    state = {
-        "base_capital": BASE_CAPITAL,
-        "realized_pnl": round(total_pnl, 4),
-        "equity": equity,
-        "active_signals": len(signals)
-    }
-
-    return state
-
-
-def save_state(state):
-
-    os.makedirs("data", exist_ok=True)
-
-    with open(OUTPUT_FILE, "w") as f:
-        json.dump(state, f, indent=4)
-
-
-def main():
-
-    print("[LIVE_CAPITAL] start")
-
-    signals = load_signals()
-
-    state = calculate_capital(signals)
-
-    save_state(state)
-
-    print(f"[LIVE_CAPITAL] equity: {state['equity']}")
-
+    print(f"[LIVE_CAPITAL] equity: {equity}")
 
 if __name__ == "__main__":
-    main()
+    print("[LIVE_CAPITAL] start")
+    run()
