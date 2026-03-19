@@ -27,7 +27,6 @@ def run():
             continue
 
         try:
-            # place_order должен быть определён в каждом Connector
             result = connector.place_order(
                 symbol=s["symbol"],
                 side=s["side"],
@@ -42,7 +41,6 @@ def run():
 
         routed_signals.append(s)
 
-    # Сохраняем результат
     with open(OUTPUT_FILE, "w") as f:
         json.dump(routed_signals, f)
 
