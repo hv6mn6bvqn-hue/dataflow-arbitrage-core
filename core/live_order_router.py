@@ -1,4 +1,4 @@
-# пример для live_order_router.py
+# core/live_order_router.py
 from core.exchange_loader import load_connectors
 import json
 import os
@@ -43,3 +43,6 @@ def run():
         json.dump(routed_signals, f)
 
     print(f"[LIVE_ROUTER] routed: {len(routed_signals)}")
+
+if __name__ == "__main__":
+    run()
