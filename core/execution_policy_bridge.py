@@ -1,50 +1,27 @@
+# core/execution_policy_bridge.py
 import json
-from pathlib import Path
-from datetime import datetime
+import os
 
-INPUT_FILE = "data/execution_confidence.json"
-OUTPUT_FILE = "data/policy_ready_signals.json"
+INPUT_FILE = "sources/live_session.json"
+OUTPUT_FILE = "sources/policy_bridge.json"
 
+def run():
+    if not os.path.exists(INPUT_FILE):
+        state = "PAUSE"
+        print("[EXEC_POLICY_BRIDGE] input missing")
+    else:
+        with open(INPUT_FILE) as f:
+            session = json.load(f)
+        state = session.get("state", "PAUSE")
 
-def load_data():
-    path = Path(INPUT_FILE)
-    if not path.exists():
-        return []
-    with open(path, "r") as f:
-        return json.load(f)
-
-
-def transform(signals):
-    result = []
-
-    for signal in signals:
-        confidence = signal.get("execution_confidence", 0)
-
-        signal["policy_score"] = confidence
-        signal["policy_ready"] = confidence >= 0.60
-        signal["bridge_timestamp"] = datetime.utcnow().isoformat()
-
-        result.append(signal)
-
-    return result
-
-
-def save_data(data):
-    Path("data").mkdir(exist_ok=True)
+    # Если сессия активна, разрешаем мост политики
+    bridged = state == "RUN"
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump({"bridged": bridged}, f)
 
-
-def main():
-    print("[EXEC_POLICY_BRIDGE] start")
-
-    signals = load_data()
-    transformed = transform(signals)
-    save_data(transformed)
-
-    print(f"[EXEC_POLICY_BRIDGE] bridged: {len(transformed)}")
-
+    print(f"[EXEC_POLICY_BRIDGE] bridged: {bridged}")
 
 if __name__ == "__main__":
-    main()
+    print("[EXEC_POLICY_BRIDGE] start")
+    run()
