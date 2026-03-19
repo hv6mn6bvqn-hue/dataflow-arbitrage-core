@@ -1,57 +1,26 @@
+# core/live_order_router.py
 import json
 import os
 
-INPUT_FILE = "sources/exchange_executed.json"
-OUTPUT_FILE = "sources/live_routed.json"
+INPUT_FILE = "sources/executed_signals.json"
+OUTPUT_FILE = "sources/routed_signals.json"
 
-def load_data():
+def run():
     if not os.path.exists(INPUT_FILE):
+        signals = []
         print("[LIVE_ROUTER] input missing")
-        return []
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
-    try:
-        with open(INPUT_FILE, "r") as f:
-            data = json.load(f)
-            if not isinstance(data, list):
-                return []
-            return data
-    except Exception as e:
-        print(f"[LIVE_ROUTER] load error: {e}")
-        return []
+    for s in signals:
+        s["route"] = "PRIMARY"
 
-def route(signals):
-    routed = []
-
-    for signal in signals:
-        fragments = signal.get("capital_fragments", 1)
-        route = "PRIMARY"
-        if fragments >= 3:
-            route = "MULTI_FRAGMENT"
-
-        signal["route"] = route
-
-        # --- исправление для CONFIRMATION ---
-        if signal.get("execution_status") == "SUCCESS":
-            signal["confirmation"] = "CONFIRMED"
-        else:
-            signal["confirmation"] = "PENDING"
-        # ------------------------------------
-
-        routed.append(signal)
-
-    return routed
-
-def save(data):
-    os.makedirs("sources", exist_ok=True)
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(data, f, indent=4)
-    print(f"[LIVE_ROUTER] routed: {len(data)}")
+        json.dump(signals, f)
 
-def main():
-    print("[LIVE_ROUTER] start")
-    signals = load_data()
-    result = route(signals)
-    save(result)
+    print(f"[LIVE_ROUTER] routed: {len(signals)}")
 
 if __name__ == "__main__":
-    main()
+    print("[LIVE_ROUTER] start")
+    run()
