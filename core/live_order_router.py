@@ -1,30 +1,58 @@
 import json
 import os
 
-INPUT_FILE = "data/exchange_executed.json"
-OUTPUT_FILE = "data/live_routed.json"
+INPUT_FILE = "sources/exchange_executed.json"
+OUTPUT_FILE = "sources/live_routed.json"
 
 
 def load_data():
+
+    if not os.path.exists(INPUT_FILE):
+        print("[LIVE_ROUTER] input missing")
+        return []
+
     try:
         with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-    except:
+            data = json.load(f)
+
+            if not isinstance(data, list):
+                return []
+
+            return data
+
+    except Exception as e:
+        print(f"[LIVE_ROUTER] load error: {e}")
         return []
 
 
 def route(signals):
 
-    for signal in signals:
-        signal["route"] = "PRIMARY"
+    routed = []
 
-    return signals
+    for signal in signals:
+
+        fragments = signal.get("capital_fragments", 1)
+
+        route = "PRIMARY"
+
+        if fragments >= 3:
+            route = "MULTI_FRAGMENT"
+
+        signal["route"] = route
+
+        routed.append(signal)
+
+    return routed
 
 
 def save(data):
 
+    os.makedirs("sources", exist_ok=True)
+
     with open(OUTPUT_FILE, "w") as f:
         json.dump(data, f, indent=4)
+
+    print(f"[LIVE_ROUTER] routed: {len(data)}")
 
 
 def main():
@@ -36,8 +64,6 @@ def main():
     result = route(signals)
 
     save(result)
-
-    print(f"[LIVE_ROUTER] routed: {len(result)}")
 
 
 if __name__ == "__main__":
