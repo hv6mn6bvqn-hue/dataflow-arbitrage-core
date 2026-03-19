@@ -1,66 +1,27 @@
+# core/execution_confidence_engine.py
 import json
 import os
 
-INPUT_FILE = "data/order_confirmed.json"
-OUTPUT_FILE = "data/execution_confidence.json"
+INPUT_FILE = "sources/pnl_tracked.json"
+OUTPUT_FILE = "sources/execution_confidence.json"
 
+def run():
+    if not os.path.exists(INPUT_FILE):
+        signals = []
+        print("[EXEC_CONFIDENCE] input missing")
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
-def load_signals():
-    try:
-        with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-    except:
-        return []
-
-
-def normalize(value, min_v, max_v):
-    if value < min_v:
-        return min_v
-    if value > max_v:
-        return max_v
-    return value
-
-
-def score_confidence(signals):
-
-    scored = []
-
-    for signal in signals:
-
-        fill_prob = signal.get("fill_probability", 0.5)
-        spread = signal.get("spread_pct", 0)
-
-        raw = (fill_prob * 0.7) + (spread * 10)
-
-        confidence = round(normalize(raw, 0.55, 0.92), 4)
-
-        signal["execution_confidence"] = confidence
-
-        scored.append(signal)
-
-    return scored
-
-
-def save_signals(data):
-
-    os.makedirs("data", exist_ok=True)
+    for s in signals:
+        # Простая модель confidence: 0.8 если PnL > 0, иначе 0.5
+        s["confidence"] = 0.8 if s.get("pnl", 0) > 0 else 0.5
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump(signals, f)
 
-
-def main():
-
-    print("[EXEC_CONFIDENCE] start")
-
-    signals = load_signals()
-
-    scored = score_confidence(signals)
-
-    save_signals(scored)
-
-    print(f"[EXEC_CONFIDENCE] scored: {len(scored)}")
-
+    print(f"[EXEC_CONFIDENCE] scored: {len(signals)}")
 
 if __name__ == "__main__":
-    main()
+    print("[EXEC_CONFIDENCE] start")
+    run()
