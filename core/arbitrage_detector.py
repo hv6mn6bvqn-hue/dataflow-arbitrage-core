@@ -1,52 +1,31 @@
+# core/arbitrage_detector.py
 import json
 import os
 
-INPUT_FILE = "sources/matrix_opportunities.json"
+INPUT_FILE = "sources/triangular_opportunities.json"
 OUTPUT_FILE = "sources/arbitrage_opportunities.json"
 
-
-def load_matrix():
-
+def run():
     if not os.path.exists(INPUT_FILE):
-        print("[ARBITRAGE] matrix file missing")
-        return []
+        signals = []
+        print("[ARBITRAGE] input missing")
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
-    with open(INPUT_FILE) as f:
-        data = json.load(f)
-
-    print("[ARBITRAGE] matrix loaded:", len(data))
-    return data
-
-
-def filter_opportunities(matrix):
-
-    return [m for m in matrix if m.get("spread", 0) > 0.003]
-
-
-def save_opportunities(opps):
+    detected = []
+    for s in signals:
+        if s.get("tri_arb", False):
+            s["arbitrage"] = True
+            detected.append(s)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(opps, f, indent=2)
+        json.dump(detected, f)
 
-    print("[ARBITRAGE] opportunities saved:", len(opps))
-
-
-def run():
-
-    print("[ARBITRAGE] loading matrix opportunities")
-
-    matrix = load_matrix()
-
-    opportunities = filter_opportunities(matrix)
-
-    print("[ARBITRAGE] opportunities found:", len(opportunities))
-
-    save_opportunities(opportunities)
-
-
-def main():
-    run()
-
+    print(f"[ARBITRAGE] matrix loaded: {len(signals)}")
+    print(f"[ARBITRAGE] opportunities found: {len(detected)}")
+    print(f"[ARBITRAGE] opportunities saved: {len(detected)}")
 
 if __name__ == "__main__":
-    main()
+    print("[ARBITRAGE] loading matrix opportunities")
+    run()
