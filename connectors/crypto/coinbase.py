@@ -1,28 +1,20 @@
+# connectors/crypto/coinbase.py
 import requests
 
-URL = "https://api.exchange.coinbase.com/products"
+class Connector:
+    def __init__(self):
+        self.name = "coinbase"
+        self.base_url = "https://api.exchange.coinbase.com"
 
-
-def fetch_prices():
-
-    products = requests.get(URL, timeout=10).json()
-
-    prices = []
-
-    for p in products:
-
+    def get_tickers(self):
         try:
-            ticker = requests.get(
-                f"https://api.exchange.coinbase.com/products/{p['id']}/ticker",
-                timeout=10
-            ).json()
+            r = requests.get(f"{self.base_url}/products")
+            r.raise_for_status()
+            return r.json()
+        except Exception as e:
+            print(f"[COINBASE] request error: {e}")
+            return []
 
-            prices.append({
-                "symbol": p["id"],
-                "price": float(ticker["price"])
-            })
-
-        except:
-            continue
-
-    return prices
+    def place_order(self, symbol, side, quantity, price=None):
+        print(f"[COINBASE] placing {side} {quantity} {symbol} at {price}")
+        return {"id": "TEST_COINBASE"}
