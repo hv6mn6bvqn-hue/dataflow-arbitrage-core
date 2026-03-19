@@ -1,21 +1,19 @@
-# connectors/crypto/kucoin.py
 import requests
 
 class Connector:
     def __init__(self):
-        self.name = "kucoin"
-        self.base_url = "https://api.kucoin.com/api/v1"
+        self.name = "KuCoin"
+        self.base_url = "https://api.kucoin.com/api/v1/market/allTickers"
 
-    def get_tickers(self):
+    def get_snapshot(self):
         try:
-            r = requests.get(f"{self.base_url}/market/allTickers")
-            r.raise_for_status()
-            data = r.json()
-            return data.get("data", {}).get("ticker", [])
+            resp = requests.get(self.base_url, timeout=5)
+            data = resp.json().get("data", {}).get("ticker", [])
+            return [{"symbol": d["symbol"], "price": float(d["last"])} for d in data]
         except Exception as e:
             print(f"[KUCOIN] request error: {e}")
             return []
 
     def place_order(self, symbol, side, quantity, price=None):
         print(f"[KUCOIN] placing {side} {quantity} {symbol} at {price}")
-        return {"id": "TEST_KUCOIN"}
+        return {"id": f"{symbol}-{side}-test"}
