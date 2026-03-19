@@ -1,67 +1,29 @@
+# core/failed_execution_recovery.py
 import json
 import os
 
-INPUT_FILE = "sources/partial_fill_guard.json"
-OUTPUT_FILE = "sources/recovered_execution_signals.json"
+INPUT_FILE = "sources/fill_signals.json"
+OUTPUT_FILE = "sources/recovered_signals.json"
 
-
-def load_signals():
-
+def run():
     if not os.path.exists(INPUT_FILE):
+        signals = []
         print("[RECOVERY] input missing")
-        return []
-
-    try:
-        with open(INPUT_FILE, "r") as f:
-            data = json.load(f)
-
-            if not isinstance(data, list):
-                return []
-
-            return data
-
-    except Exception as e:
-        print(f"[RECOVERY] load error: {e}")
-        return []
-
-
-def recover(signals):
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
     recovered = []
-
-    for signal in signals:
-
-        recovered.append({
-            "exchange": signal.get("exchange", signal.get("buy_exchange", "unknown")),
-            "symbol": signal.get("symbol", "unknown"),
-            "net_profit": signal.get("real_profit", signal.get("net_profit", 0)),
-            "score": signal.get("fill_probability", 0),
-            "status": "RECOVERED"
-        })
-
-    return recovered
-
-
-def save_signals(data):
-
-    os.makedirs("sources", exist_ok=True)
+    for s in signals:
+        if s.get("fill_prob", 0) < 1.0:
+            s["retry"] = True
+        recovered.append(s)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump(recovered, f)
 
-    print(f"[RECOVERY] ready: {len(data)}")
-
-
-def main():
-
-    print("[RECOVERY] start")
-
-    signals = load_signals()
-
-    recovered = recover(signals)
-
-    save_signals(recovered)
-
+    print(f"[RECOVERY] ready: {len(recovered)}")
 
 if __name__ == "__main__":
-    main()
+    print("[RECOVERY] start")
+    run()
