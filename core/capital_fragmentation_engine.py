@@ -1,15 +1,27 @@
 import json
 import os
 
-INPUT_FILE = "data/recovered_execution_signals.json"
-OUTPUT_FILE = "data/capital_fragmented.json"
+INPUT_FILE = "sources/recovered_execution_signals.json"
+OUTPUT_FILE = "sources/capital_fragmented.json"
 
 
 def load_signals():
+
+    if not os.path.exists(INPUT_FILE):
+        print("[CAPITAL_FRAGMENT] input missing")
+        return []
+
     try:
         with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-    except:
+            data = json.load(f)
+
+            if not isinstance(data, list):
+                return []
+
+            return data
+
+    except Exception as e:
+        print(f"[CAPITAL_FRAGMENT] load error: {e}")
         return []
 
 
@@ -19,13 +31,13 @@ def fragment(signals):
 
     for signal in signals:
 
-        fill_probability = signal.get("fill_probability", 0)
+        fill_probability = signal.get("score", signal.get("fill_probability", 0))
 
         fragments = 1
 
-        if fill_probability > 0.9:
+        if fill_probability >= 0.9:
             fragments = 3
-        elif fill_probability > 0.75:
+        elif fill_probability >= 0.7:
             fragments = 2
 
         signal["capital_fragments"] = fragments
@@ -38,10 +50,12 @@ def fragment(signals):
 
 def save_signals(data):
 
-    os.makedirs("data", exist_ok=True)
+    os.makedirs("sources", exist_ok=True)
 
     with open(OUTPUT_FILE, "w") as f:
         json.dump(data, f, indent=4)
+
+    print(f"[CAPITAL_FRAGMENT] fragmented: {len(data)}")
 
 
 def main():
@@ -53,8 +67,6 @@ def main():
     fragmented = fragment(signals)
 
     save_signals(fragmented)
-
-    print(f"[CAPITAL_FRAGMENT] fragmented: {len(fragmented)}")
 
 
 if __name__ == "__main__":
