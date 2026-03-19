@@ -1,41 +1,66 @@
 import json
 import os
 
-INPUT_FILE = "sources/arbitrage_after_fees.json"
-OUTPUT_FILE = "sources/orderbook_ready.json"
+INPUT_FILE = "sources/fee_filtered_signals.json"
+OUTPUT_FILE = "sources/orderbook_signals.json"
 
 
 def load_signals():
 
     if not os.path.exists(INPUT_FILE):
-        print("[ORDERBOOK] signals file missing")
+        print("[ORDERBOOK] input missing")
         return []
 
-    with open(INPUT_FILE) as f:
-        return json.load(f)
+    try:
+        with open(INPUT_FILE, "r") as f:
+            data = json.load(f)
+
+        if not isinstance(data, list):
+            print("[ORDERBOOK] invalid format")
+            return []
+
+        return data
+
+    except Exception as e:
+        print(f"[ORDERBOOK] load error: {e}")
+        return []
 
 
 def enrich(signals):
 
     enriched = []
 
-    for s in signals:
-        s["orderbook_depth"] = 1.0
-        s["liquidity_score"] = 1.0
-        enriched.append(s)
+    for signal in signals:
+
+        spread = signal.get("spread_pct", 0)
+
+        liquidity_score = 0.5
+
+        if spread >= 0.02:
+            liquidity_score = 0.9
+        elif spread >= 0.01:
+            liquidity_score = 0.7
+
+        signal["liquidity_score"] = liquidity_score
+        signal["orderbook_depth"] = 100000
+
+        enriched.append(signal)
 
     return enriched
 
 
-def save(signals):
+def save_signals(data):
+
+    os.makedirs("sources", exist_ok=True)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(signals, f, indent=2)
+        json.dump(data, f, indent=4)
 
-    print("[ORDERBOOK] signals saved:", len(signals))
+    print(f"[ORDERBOOK] signals saved: {len(data)}")
+    print(f"[ORDERBOOK] file: {OUTPUT_FILE}")
 
 
-def run():
+def main():
 
     print("[ORDERBOOK] orderbook engine start")
 
@@ -43,13 +68,7 @@ def run():
 
     enriched = enrich(signals)
 
-    print("[ORDERBOOK] signals enriched:", len(enriched))
-
-    save(enriched)
-
-
-def main():
-    run()
+    save_signals(enriched)
 
 
 if __name__ == "__main__":
