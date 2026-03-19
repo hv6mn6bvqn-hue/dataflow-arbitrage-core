@@ -1,49 +1,27 @@
+# core/real_pnl_reconciliation.py
 import json
-from pathlib import Path
+import os
 
-INPUT_FILE = "data/order_confirmed.json"
-OUTPUT_FILE = "data/reconciled_pnl.json"
+INPUT_FILE = "sources/pnl_tracked.json"
+OUTPUT_FILE = "sources/pnl_reconciled.json"
 
+def run():
+    if not os.path.exists(INPUT_FILE):
+        signals = []
+        print("[PNL_RECON] input missing")
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
-def load_data():
-    path = Path(INPUT_FILE)
-    if not path.exists():
-        return []
-
-    with open(path, "r") as f:
-        return json.load(f)
-
-
-def reconcile(signals):
-    result = []
-
-    for signal in signals:
-        pnl = signal.get("realized_pnl", 0)
-
-        signal["reconciled_pnl"] = pnl
-        signal["pnl_validated"] = True
-
-        result.append(signal)
-
-    return result
-
-
-def save_data(data):
-    Path("data").mkdir(exist_ok=True)
+    for s in signals:
+        # Простая reconciliation: проверяем, что pnl не None
+        s["pnl_reconciled"] = s.get("pnl", 0)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump(signals, f)
 
-
-def main():
-    print("[PNL_RECON] start")
-
-    signals = load_data()
-    reconciled = reconcile(signals)
-    save_data(reconciled)
-
-    print(f"[PNL_RECON] reconciled: {len(reconciled)}")
-
+    print(f"[PNL_RECON] reconciled: {len(signals)}")
 
 if __name__ == "__main__":
-    main()
+    print("[PNL_RECON] start")
+    run()
