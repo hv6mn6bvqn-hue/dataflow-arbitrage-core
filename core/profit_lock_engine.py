@@ -1,50 +1,25 @@
+# core/profit_lock_engine.py
 import json
 import os
 
-INPUT_FILE = "data/live_capital_state.json"
-OUTPUT_FILE = "data/profit_lock.json"
+INPUT_FILE = "sources/portfolio_state.json"
+OUTPUT_FILE = "sources/profit_locked.json"
 
-
-def load_state():
-    try:
-        with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-    except:
-        return {}
-
-
-def lock_profit(state):
-
-    equity = state.get("equity", 10000)
-
-    locked = equity >= 10100
-
-    return {
-        "equity": equity,
-        "profit_locked": locked
-    }
-
-
-def save_state(data):
-
-    os.makedirs("data", exist_ok=True)
+def run():
+    if not os.path.exists(INPUT_FILE):
+        locked = False
+        print("[PROFIT_LOCK] input missing")
+    else:
+        with open(INPUT_FILE) as f:
+            portfolio = json.load(f)
+        # Простая логика: lock, если есть активные сигналы
+        locked = portfolio.get("signals", 0) > 0
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump({"locked": locked}, f)
 
-
-def main():
-
-    print("[PROFIT_LOCK] start")
-
-    state = load_state()
-
-    result = lock_profit(state)
-
-    save_state(result)
-
-    print(f"[PROFIT_LOCK] locked: {result['profit_locked']}")
-
+    print(f"[PROFIT_LOCK] locked: {locked}")
 
 if __name__ == "__main__":
-    main()
+    print("[PROFIT_LOCK] start")
+    run()
