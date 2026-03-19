@@ -4,13 +4,14 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  run-core:
+  core-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Python
@@ -18,5 +19,5 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Run signal decay
+      - name: Run signal decay engine
         run: python core/signal_decay_engine.py
