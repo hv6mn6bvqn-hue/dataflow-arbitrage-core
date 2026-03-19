@@ -1,7 +1,6 @@
-# core/order_confirmation_engine.py
-from core.exchange_loader import load_connectors
 import json
 import os
+from core.exchange_loader import load_connectors
 
 INPUT_FILE = "sources/live_routed.json"
 OUTPUT_FILE = "sources/live_confirmed.json"
@@ -10,23 +9,19 @@ def run():
     connectors = load_connectors()
 
     if not os.path.exists(INPUT_FILE):
-        print("[CONFIRMATION] input missing")
+        print("[CONFIRMATION] input file missing")
         signals = []
     else:
-        with open(INPUT_FILE) as f:
+        with open(INPUT_FILE, "r") as f:
             signals = json.load(f)
 
     confirmed_signals = []
     for s in signals:
-        ex = s.get("exchange")
-        connector = connectors.get(ex)
-        if not connector:
-            print(f"[CONFIRMATION] unknown exchange {ex}")
-            continue
-
-        if not s.get("routed"):
+        ex_name = s.get("exchange")
+        connector = connectors.get(ex_name)
+        if not connector or not s.get("routed"):
             s["confirmed"] = False
-            s["error"] = "Not routed"
+            s["error"] = s.get("error", "not routed or unknown exchange")
             confirmed_signals.append(s)
             continue
 
@@ -42,7 +37,7 @@ def run():
     with open(OUTPUT_FILE, "w") as f:
         json.dump(confirmed_signals, f)
 
-    print(f"[CONFIRMATION] confirmed: {len(confirmed_signals)}")
+    print(f"[CONFIRMATION] confirmed: {len([s for s in confirmed_signals if s.get('confirmed')])}")
 
 if __name__ == "__main__":
     run()
