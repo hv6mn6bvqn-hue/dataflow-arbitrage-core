@@ -1,26 +1,28 @@
 # core/exchange_loader.py
+import importlib
 import os
-import importlib.util
+import sys
 
-CONNECTORS_DIR = "crypto"
-CONNECTORS = {}
+CONNECTORS_DIR = os.path.join(os.path.dirname(__file__), "../crypto")
 
 def load_connectors():
-    global CONNECTORS
-    CONNECTORS = {}
+    """
+    Автоматически загружает все коннекторы из папки crypto.
+    Возвращает словарь: { "binance": connector_instance, ... }
+    """
+    connectors = {}
+    sys.path.insert(0, CONNECTORS_DIR)
 
-    for file in os.listdir(CONNECTORS_DIR):
-        if file.endswith(".py") and file != "__init__.py":
-            name = file[:-3]  # убираем .py
-            path = os.path.join(CONNECTORS_DIR, file)
+    for filename in os.listdir(CONNECTORS_DIR):
+        if filename.endswith(".py") and not filename.startswith("__"):
+            module_name = filename[:-3]
+            try:
+                module = importlib.import_module(module_name)
+                if hasattr(module, "Connector"):
+                    connectors[module_name] = module.Connector()
+                    print(f"[EXCHANGE_LOADER] loaded: {module_name}")
+            except Exception as e:
+                print(f"[EXCHANGE_LOADER] failed to load {module_name}: {e}")
 
-            spec = importlib.util.spec_from_file_location(name, path)
-            module = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(module)
-            CONNECTORS[name] = module
-
-    print(f"[EXCHANGE_LOADER] loaded exchanges: {list(CONNECTORS.keys())}")
-    return CONNECTORS
-
-if __name__ == "__main__":
-    load_connectors()
+    sys.path.pop(0)
+    return connectors
