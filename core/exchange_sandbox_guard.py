@@ -1,46 +1,24 @@
+# core/exchange_sandbox_guard.py
 import json
-from pathlib import Path
+import os
 
-INPUT_FILE = "data/recovered_execution_signals.json"
-OUTPUT_FILE = "data/sandbox_execution_signals.json"
+INPUT_FILE = "sources/policy_bridge.json"
+OUTPUT_FILE = "sources/sandbox_guard.json"
 
-
-def load_data():
-    path = Path(INPUT_FILE)
-    if not path.exists():
-        return []
-
-    with open(path, "r") as f:
-        return json.load(f)
-
-
-def apply_guard(signals):
-    result = []
-
-    for signal in signals:
-        signal["sandbox_mode"] = True
-        signal["live_execution_allowed"] = False
-        result.append(signal)
-
-    return result
-
-
-def save_data(data):
-    Path("data").mkdir(exist_ok=True)
+def run():
+    if not os.path.exists(INPUT_FILE):
+        allow_execution = False
+        print("[SANDBOX_GUARD] input missing")
+    else:
+        with open(INPUT_FILE) as f:
+            bridge = json.load(f)
+        allow_execution = bridge.get("bridged", False)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump({"guarded": not allow_execution}, f)
 
-
-def main():
-    print("[SANDBOX_GUARD] start")
-
-    signals = load_data()
-    guarded = apply_guard(signals)
-    save_data(guarded)
-
-    print(f"[SANDBOX_GUARD] guarded: {len(guarded)}")
-
+    print(f"[SANDBOX_GUARD] guarded: {not allow_execution}")
 
 if __name__ == "__main__":
-    main()
+    print("[SANDBOX_GUARD] start")
+    run()
