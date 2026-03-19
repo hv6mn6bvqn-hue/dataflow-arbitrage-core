@@ -1,49 +1,28 @@
+# core/capital_allocator.py
 import json
 import os
 
-INPUT_FILE = "sources/routed_signals.json"
-OUTPUT_FILE = "sources/capital_allocated.json"
+INPUT_FILE = "sources/recovered_signals.json"
+OUTPUT_FILE = "sources/allocated_signals.json"
 
-
-def load_signals():
-
-    if not os.path.exists(INPUT_FILE):
-        print("[ALLOCATOR] strategy file missing")
-        return []
-
-    with open(INPUT_FILE) as f:
-        return json.load(f)
-
-
-def allocate(signal):
-
-    strategy = signal.get("strategy", "")
-
-    if strategy == "cross_exchange":
-        signal["capital"] = 3000
-
-    elif strategy == "triangular":
-        signal["capital"] = 2000
-
-    else:
-        signal["capital"] = 1000
-
-    return signal
-
+CAPITAL = 10000
 
 def run():
+    if not os.path.exists(INPUT_FILE):
+        signals = []
+        print("[CAPITAL_FRAGMENT] input missing")
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
-    print("[ALLOCATOR] capital allocator start")
-
-    signals = load_signals()
-
-    allocated = [allocate(s) for s in signals]
+    for s in signals:
+        s["allocated"] = CAPITAL / max(len(signals), 1)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(allocated, f, indent=2)
+        json.dump(signals, f)
 
-    print(f"[ALLOCATOR] allocated: {len(allocated)}")
+    print(f"[CAPITAL_FRAGMENT] fragmented: {len(signals)}")
 
-
-def main():
+if __name__ == "__main__":
+    print("[CAPITAL_FRAGMENT] start")
     run()
