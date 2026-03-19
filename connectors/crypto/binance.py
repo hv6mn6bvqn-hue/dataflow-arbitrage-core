@@ -1,25 +1,20 @@
+# connectors/crypto/binance.py
 import requests
 
-URL = "https://api.binance.com/api/v3/ticker/price"
+class Connector:
+    def __init__(self):
+        self.name = "binance"
+        self.base_url = "https://api.binance.com/api/v3"
 
-headers = {
-    "User-Agent": "Mozilla/5.0"
-}
-
-def fetch_prices():
-
-    r = requests.get(URL, headers=headers, timeout=10)
-    data = r.json()
-
-    prices = []
-
-    for item in data:
+    def get_tickers(self):
         try:
-            prices.append({
-                "symbol": item["symbol"],
-                "price": float(item["price"])
-            })
-        except:
-            continue
+            r = requests.get(f"{self.base_url}/ticker/price")
+            r.raise_for_status()
+            return r.json()
+        except Exception as e:
+            print(f"[BINANCE] request error: {e}")
+            return []
 
-    return prices
+    def place_order(self, symbol, side, quantity, price=None):
+        print(f"[BINANCE] placing {side} {quantity} {symbol} at {price}")
+        return {"id": "TEST_BINANCE"}
