@@ -1,4 +1,3 @@
-# core/live_order_router.py
 from core.exchange_loader import load_connectors
 import json
 import os
@@ -13,18 +12,22 @@ def run():
         print("[LIVE_ROUTER] input file missing")
         signals = []
     else:
-        with open(INPUT_FILE) as f:
+        with open(INPUT_FILE, "r") as f:
             signals = json.load(f)
 
     routed_signals = []
     for s in signals:
-        ex = s.get("exchange")
-        connector = connectors.get(ex)
+        ex_name = s.get("exchange")
+        connector = connectors.get(ex_name)
         if not connector:
-            print(f"[LIVE_ROUTER] unknown exchange {ex}")
+            print(f"[LIVE_ROUTER] unknown exchange {ex_name}")
+            s["routed"] = False
+            s["error"] = "unknown exchange"
+            routed_signals.append(s)
             continue
 
         try:
+            # place_order должен быть определён в каждом Connector
             result = connector.place_order(
                 symbol=s["symbol"],
                 side=s["side"],
@@ -39,6 +42,7 @@ def run():
 
         routed_signals.append(s)
 
+    # Сохраняем результат
     with open(OUTPUT_FILE, "w") as f:
         json.dump(routed_signals, f)
 
