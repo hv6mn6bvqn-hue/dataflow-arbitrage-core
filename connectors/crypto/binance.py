@@ -1,20 +1,20 @@
-# connectors/crypto/binance.py
 import requests
 
 class Connector:
     def __init__(self):
-        self.name = "binance"
-        self.base_url = "https://api.binance.com/api/v3"
+        self.name = "Binance"
+        self.base_url = "https://api.binance.com/api/v3/ticker/price"
 
-    def get_tickers(self):
+    def get_snapshot(self):
         try:
-            r = requests.get(f"{self.base_url}/ticker/price")
-            r.raise_for_status()
-            return r.json()
+            resp = requests.get(self.base_url, timeout=5)
+            data = resp.json()
+            return [{"symbol": d["symbol"], "price": float(d["price"])} for d in data]
         except Exception as e:
             print(f"[BINANCE] request error: {e}")
             return []
 
     def place_order(self, symbol, side, quantity, price=None):
+        # Здесь можно симулировать order_id
         print(f"[BINANCE] placing {side} {quantity} {symbol} at {price}")
-        return {"id": "TEST_BINANCE"}
+        return {"id": f"{symbol}-{side}-test"}
