@@ -1,37 +1,27 @@
+# core/action_engine.py
 import json
+import os
 
-INPUT_FILE = "data/policy_decision.json"
+INPUT_FILE = "sources/policy_decision.json"
+OUTPUT_FILE = "sources/action_executed.json"
 
+def run():
+    if not os.path.exists(INPUT_FILE):
+        signals = []
+        print("[ENGINE] no signals to process")
+    else:
+        with open(INPUT_FILE) as f:
+            signals = json.load(f)
 
-def load_decision():
-    try:
-        with open(INPUT_FILE, "r") as f:
-            return json.load(f)
-    except:
-        return None
+    for s in signals:
+        # Имитируем выполнение
+        s["executed"] = s["action"] == "EXECUTE"
 
+    with open(OUTPUT_FILE, "w") as f:
+        json.dump(signals, f)
 
-def main():
-
-    print("[ENGINE] starting action engine")
-
-    decision = load_decision()
-
-    if not decision:
-        print("[ENGINE] decision file missing")
-        return
-
-    action = decision.get("action")
-
-    if action == "WAIT":
-        print("[ENGINE] waiting")
-    elif action == "EXECUTE_PARTIAL":
-        print("[ENGINE] partial execution approved")
-    elif action == "EXECUTE":
-        print("[ENGINE] full execution approved")
-
-    print("[ENGINE] completed")
-
+    print(f"[ENGINE] processed: {len(signals)}")
 
 if __name__ == "__main__":
-    main()
+    print("[ENGINE] starting action engine")
+    run()
