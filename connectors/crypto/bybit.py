@@ -1,20 +1,19 @@
-# connectors/crypto/bybit.py
 import requests
 
 class Connector:
     def __init__(self):
-        self.name = "bybit"
-        self.base_url = "https://api.bybit.com/v2/public"
+        self.name = "Bybit"
+        self.base_url = "https://api.bybit.com/v2/public/tickers"
 
-    def get_tickers(self):
+    def get_snapshot(self):
         try:
-            r = requests.get(f"{self.base_url}/tickers")
-            r.raise_for_status()
-            return r.json()
+            resp = requests.get(self.base_url, timeout=5)
+            data = resp.json().get("result", [])
+            return [{"symbol": d["symbol"], "price": float(d["last_price"])} for d in data]
         except Exception as e:
             print(f"[BYBIT] request error: {e}")
             return []
 
     def place_order(self, symbol, side, quantity, price=None):
         print(f"[BYBIT] placing {side} {quantity} {symbol} at {price}")
-        return {"id": "TEST_BYBIT"}
+        return {"id": f"{symbol}-{side}-test"}
