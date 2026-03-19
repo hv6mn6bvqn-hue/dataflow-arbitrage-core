@@ -14,6 +14,7 @@ def run():
             signals = json.load(f)
 
     for s in signals:
+        # Роутинг на PRIMARY/SECONDARY
         s["route"] = "PRIMARY"
 
     with open(OUTPUT_FILE, "w") as f:
