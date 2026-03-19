@@ -1,20 +1,22 @@
-# connectors/crypto/kraken.py
 import requests
 
 class Connector:
     def __init__(self):
-        self.name = "kraken"
-        self.base_url = "https://api.kraken.com/0/public"
+        self.name = "Kraken"
+        self.base_url = "https://api.kraken.com/0/public/Ticker?pair=ETHUSD,BTCUSD"
 
-    def get_tickers(self):
+    def get_snapshot(self):
         try:
-            r = requests.get(f"{self.base_url}/Ticker?pair=BTCUSD,ETHUSD")
-            r.raise_for_status()
-            return r.json()
+            resp = requests.get(self.base_url, timeout=5)
+            result = resp.json().get("result", {})
+            snapshots = []
+            for k, v in result.items():
+                snapshots.append({"symbol": k, "price": float(v["c"][0])})
+            return snapshots
         except Exception as e:
             print(f"[KRAKEN] request error: {e}")
             return []
 
     def place_order(self, symbol, side, quantity, price=None):
         print(f"[KRAKEN] placing {side} {quantity} {symbol} at {price}")
-        return {"id": "TEST_KRAKEN"}
+        return {"id": f"{symbol}-{side}-test"}
