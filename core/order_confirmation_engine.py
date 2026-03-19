@@ -18,24 +18,21 @@ def run():
 
     confirmed_signals = []
     for s in signals:
-        if not s.get("routed"):
-            s["confirmed"] = False
-            s["error"] = "not routed"
-            confirmed_signals.append(s)
-            continue
-
         ex = s.get("exchange")
         connector = connectors.get(ex)
         if not connector:
+            print(f"[CONFIRMATION] unknown exchange {ex}")
+            continue
+
+        if not s.get("routed"):
             s["confirmed"] = False
-            s["error"] = f"unknown exchange {ex}"
+            s["error"] = "Not routed"
             confirmed_signals.append(s)
             continue
 
         try:
-            status = connector.check_order_status(s["order_id"])
+            status = connector.check_order(s["order_id"])
             s["confirmed"] = status.get("filled", False)
-            s["filled_qty"] = status.get("filled_qty", 0)
         except Exception as e:
             s["confirmed"] = False
             s["error"] = str(e)
@@ -43,7 +40,7 @@ def run():
         confirmed_signals.append(s)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(confirmed_signals, f, indent=2)
+        json.dump(confirmed_signals, f)
 
     print(f"[CONFIRMATION] confirmed: {len(confirmed_signals)}")
 
