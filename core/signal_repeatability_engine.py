@@ -7,6 +7,8 @@ OUTPUT_FILE = "sources/repeatability_signals.json"
 
 def load_signals():
 
+    print(f"[REPEAT] reading: {INPUT_FILE}")
+
     if not os.path.exists(INPUT_FILE):
         print("[REPEAT] input missing")
         return []
@@ -15,10 +17,11 @@ def load_signals():
         with open(INPUT_FILE, "r") as f:
             data = json.load(f)
 
-            if not isinstance(data, list):
-                return []
+        if not isinstance(data, list):
+            print("[REPEAT] invalid format")
+            return []
 
-            return data
+        return data
 
     except Exception as e:
         print(f"[REPEAT] load error: {e}")
