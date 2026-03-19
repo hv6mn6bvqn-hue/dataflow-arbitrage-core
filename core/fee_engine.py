@@ -2,80 +2,70 @@ import json
 import os
 
 INPUT_FILE = "sources/arbitrage_opportunities.json"
-OUTPUT_FILE = "sources/arbitrage_after_fees.json"
-
-FEES = {
-    "binance": 0.001,
-    "okx": 0.001,
-    "kucoin": 0.001,
-    "coinbase": 0.002,
-    "kraken": 0.0026
-}
-
-MIN_PROFIT = 0.001
+OUTPUT_FILE = "sources/fee_filtered_signals.json"
 
 
 def load_signals():
 
     if not os.path.exists(INPUT_FILE):
-        print("[FEES] signals file missing")
+        print("[FEES] input missing")
         return []
 
-    with open(INPUT_FILE) as f:
-        return json.load(f)
+    try:
+        with open(INPUT_FILE, "r") as f:
+            data = json.load(f)
+
+        if not isinstance(data, list):
+            print("[FEES] invalid format")
+            return []
+
+        return data
+
+    except Exception as e:
+        print(f"[FEES] load error: {e}")
+        return []
 
 
-def calculate_real_profit(signal):
+def apply_fees(signals):
 
-    buy_ex = signal.get("buy_exchange", "").lower()
-    sell_ex = signal.get("sell_exchange", "").lower()
+    filtered = []
 
-    spread = signal.get("spread", 0)
+    for signal in signals:
 
-    fee_buy = FEES.get(buy_ex, 0.002)
-    fee_sell = FEES.get(sell_ex, 0.002)
+        spread = signal.get("spread_pct", 0)
 
-    signal["real_profit"] = spread - fee_buy - fee_sell
+        fee = 0.002
 
-    return signal
+        net = spread - fee
 
+        if net > 0:
+            signal["fee_pct"] = fee
+            signal["net_spread"] = net
+            filtered.append(signal)
 
-def filter_signals(signals):
-
-    result = []
-
-    for s in signals:
-        s = calculate_real_profit(s)
-
-        if s["real_profit"] > MIN_PROFIT:
-            result.append(s)
-
-    return result
+    return filtered
 
 
-def save_signals(signals):
+def save_signals(data):
+
+    os.makedirs("sources", exist_ok=True)
 
     with open(OUTPUT_FILE, "w") as f:
-        json.dump(signals, f, indent=2)
+        json.dump(data, f, indent=4)
 
-    print("[FEES] signals saved:", len(signals))
+    print(f"[FEES] signals saved: {len(data)}")
+    print(f"[FEES] file: {OUTPUT_FILE}")
 
 
-def run():
+def main():
 
     print("[FEES] fee engine start")
 
     signals = load_signals()
 
-    filtered = filter_signals(signals)
-
-    print("[FEES] signals after fees:", len(filtered))
+    filtered = apply_fees(signals)
 
     save_signals(filtered)
-
-
-def main():
-    run()
 
 
 if __name__ == "__main__":
